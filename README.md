@@ -52,19 +52,63 @@ Không dùng file tải ngoài để tránh lỗi 404 (Link rot). Ứng dụng d
 
 ---
 
-## 🚀 Hướng dẫn Cài đặt & Chạy ứng dụng
+## 🚀 Hướng dẫn Cài đặt & Chạy ứng dụng (Dành cho người mới Clone)
 
-1. **Cài đặt thư viện (Nếu chưa có):**
-   ```bash
-   npm install
-   ```
+Dự án này sử dụng **Next.js** kết hợp với **PostgreSQL** (qua Docker) và **Prisma ORM**. Hãy làm theo các bước sau để khởi chạy dự án từ con số 0.
 
-2. **Chạy Môi trường Phát triển (Development):**
-   ```bash
-   npm run dev
-   ```
+### Bước 1: Clone mã nguồn
+```bash
+git clone https://github.com/quandh-sanshin-vn/MiniThink.git
+cd MiniThink
+```
 
-3. **Truy cập ứng dụng:**
-   - Mở trình duyệt và truy cập: [http://localhost:3000/timmer](http://localhost:3000/timmer)
+### Bước 2: Cài đặt thư viện (Dependencies)
+```bash
+npm install
+```
+
+### Bước 3: Khởi chạy Cơ sở dữ liệu (PostgreSQL)
+Dự án có sẵn file `docker-compose.yml`. Bạn cần cài đặt Docker trên máy, sau đó chạy lệnh:
+```bash
+docker-compose up -d
+```
+*Lệnh này sẽ tải và chạy một container PostgreSQL ở port `5432` dưới ngầm (background).*
+
+### Bước 4: Thiết lập Biến môi trường (.env)
+Tạo file `.env` ở thư mục gốc (nếu chưa có) và copy nội dung sau vào:
+```env
+# URL kết nối Database (Mặc định theo docker-compose.yml)
+DATABASE_URL="postgresql://root:password@localhost:5432/minithink?schema=public"
+
+# OpenAI API Key (Tùy chọn - Dành cho chức năng quét PDF trong Creator)
+# OPENAI_API_KEY="your_api_key_here"
+```
+
+### Bước 5: Khởi tạo Database (Prisma Migration)
+Chạy lệnh sau để Prisma nạp cấu trúc bảng (Schema) vào Database của bạn:
+```bash
+npx prisma db push
+```
+*(Nếu muốn quản lý bằng file migration chuẩn, bạn có thể dùng `npx prisma migrate dev`)*
+
+Tiếp theo, tạo Prisma Client để tương tác code:
+```bash
+npx prisma generate
+```
+
+### Bước 6: Nạp dữ liệu mẫu (Seeding - Tùy chọn)
+Nếu bạn muốn có sẵn dữ liệu Từ vựng / Ngữ pháp để test app mà không phải nhập tay, hãy chạy script nạp dữ liệu:
+```bash
+node seed_vocab.js
+```
+
+### Bước 7: Chạy ứng dụng (Development Server)
+```bash
+npm run dev
+```
+
+### 🌐 Truy cập các Modules:
+- **Hệ thống học Tiếng Nhật (Spaced Repetition):** [http://localhost:3000/learning-japanese/goals](http://localhost:3000/learning-japanese/goals)
+- **Mervyn Pomodoro Timer:** [http://localhost:3000/timmer](http://localhost:3000/timmer)
 
 > **Lưu ý trong quá trình phát triển tiếp:** Nếu cần nâng cấp tính năng Music, hãy tương tác với file `route.js` và cập nhật lại mảng dữ liệu trả về cho Frontend. Khi làm việc với Web Audio API trên trình duyệt hiện đại, đảm bảo người dùng đã có tương tác (click play) trước khi gọi hàm `.play()` để tránh bị block autoplay.
