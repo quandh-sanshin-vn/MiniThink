@@ -1,8 +1,11 @@
-# Mervyn Timer (Minimalist Pomodoro App)
+# Mervyn MiniThink (Productivity Ecosystem)
 
-Mervyn Timer là một ứng dụng Pomodoro được thiết kế tối giản dựa trên tính cách và triết lý thiết kế của **Harry Mervyn** (Tối giản - Thiết thực - Tinh tế). 
+Mervyn MiniThink là một hệ sinh thái các ứng dụng năng suất và học tập được thiết kế tối giản, dựa trên tính cách và triết lý thiết kế của **Harry Mervyn** (Tối giản - Thiết thực - Tinh tế). 
 
-Dự án này được xây dựng trên nền tảng Next.js và React, ưu tiên tập trung vào hiệu năng, giao diện sạch sẽ, và các tính năng âm thanh được tùy biến sâu nhằm tăng cường tối đa sự tập trung cho người dùng.
+Dự án này được xây dựng trên nền tảng Next.js, React, PostgreSQL và Prisma ORM. Thay vì là một ứng dụng đơn lẻ, MiniThink tập hợp nhiều công cụ (Modules) mạnh mẽ nhằm tối ưu hóa sự tập trung và cường độ học tập của người dùng. Hiện tại, hệ thống bao gồm 2 phân hệ chính:
+
+1. **Japanese Learning System (SRS):** Hệ thống học thuật Tiếng Nhật khắc nghiệt, ứng dụng thuật toán lặp lại ngắt quãng (Spaced Repetition - SM2) kết hợp với thiết kế giao diện Terminal Brutalist siêu ngầu.
+2. **Mervyn Pomodoro Timer:** Ứng dụng quản lý thời gian làm việc tối giản với hệ thống Web Audio tự tạo tiếng ồn trắng (White/Brown noise) giúp tăng cường sự tập trung tuyệt đối.
 
 ---
 
