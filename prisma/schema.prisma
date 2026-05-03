@@ -1,0 +1,176 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String   @id @default(uuid()) @db.Uuid
+  email            String   @unique
+  displayName      String?
+  createdAt        DateTime @default(now())
+
+  goals                 Goal[]
+  dailyTasks            DailyTask[]
+  learningProgress      LearningProgress[]
+  planModificationLogs  PlanModificationLog[]
+  userGrammars          UserGrammar[]
+
+  @@map("users")
+}
+
+model Goal {
+  id                    String   @id @default(uuid()) @db.Uuid
+  userId                String   @db.Uuid
+  user                  User     @relation(fields: [userId], references: [id])
+  name                  String
+  description           String?
+  startDate             DateTime
+  endDate               DateTime
+  skipWeekends          Boolean  @default(false)
+  status                String   // "vượt", "đúng", "chậm"
+
+  // Workload targets & currents
+  vocabTarget           Int      @default(0)
+  vocabCurrent          Int      @default(0)
+  grammarTarget         Int      @default(0)
+  grammarCurrent        Int      @default(0)
+  sentencesTarget       Int      @default(0)
+  sentencesCurrent      Int      @default(0)
+  conversationsTarget   Int      @default(0)
+  conversationsCurrent  Int      @default(0)
+
+  // Quality Metrics
+  qualityPerfect        Int      @default(0)
+  qualityGood           Int      @default(0)
+  qualityMemorized      Int      @default(0)
+  qualityBad            Int      @default(0)
+  qualityAlarming       Int      @default(0)
+
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  dailyTasks            DailyTask[]
+  planModificationLogs  PlanModificationLog[]
+
+  @@map("goals")
+}
+
+model DailyTask {
+  id             String   @id @default(uuid()) @db.Uuid
+  userId         String   @db.Uuid
+  user           User     @relation(fields: [userId], references: [id])
+  goalId         String   @db.Uuid
+  goal           Goal     @relation(fields: [goalId], references: [id], onDelete: Cascade)
+  scheduledDate  DateTime
+  taskType       String   // "vocab" | "grammar" | "map" | "conversation"
+  isReview       Boolean  @default(false)
+  itemIds        Json     @default("[]") // mảng các item_id
+  title          String
+  status         String   // "pending" | "done"
+  completedAt    DateTime?
+  createdAt      DateTime @default(now())
+
+  @@map("daily_tasks")
+}
+
+model LearningProgress {
+  id                 String   @id @default(uuid()) @db.Uuid
+  userId             String   @db.Uuid
+  user               User     @relation(fields: [userId], references: [id])
+  itemType           String   // "vocab" | "grammar" | "sentence" | "conversation"
+  itemId             String   // ID của từ vựng/ngữ pháp
+  learningPhase      Int      @default(1) // 1: Flashcard, 2: Word Map, 3: 10s Test
+
+  // Spaced Repetition System
+  consecutiveCorrect Int      @default(0)
+  easeFactor         Float    @default(2.5)
+  intervalDays       Int      @default(0)
+  nextReviewDate     DateTime @default(now())
+  lastReviewedAt     DateTime @default(now())
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@unique([userId, itemId, itemType])
+  @@map("learning_progress")
+}
+
+model Vocabulary {
+  id          String   @id @default(uuid()) @db.Uuid
+  kanji       String
+  hiragana    String
+  meaning     String
+  type        String
+  level       String
+  sourcePage  Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  examples    ExampleSentence[]
+  
+  @@map("vocabularies")
+}
+
+model ExampleSentence {
+  id             String     @id @default(uuid()) @db.Uuid
+  vocabularyId   String     @db.Uuid
+  vocabulary     Vocabulary @relation(fields: [vocabularyId], references: [id], onDelete: Cascade)
+  ja             String
+  vi             String
+  createdAt      DateTime   @default(now())
+
+  @@map("example_sentences")
+}
+
+model PlanModificationLog {
+  id          String   @id @default(uuid()) @db.Uuid
+  userId      String   @db.Uuid
+  user        User     @relation(fields: [userId], references: [id])
+  goalId      String   @db.Uuid
+  goal        Goal     @relation(fields: [goalId], references: [id], onDelete: Cascade)
+  eventType   String   @default("PLAN_MODIFIED") // "INIT_GOAL", "GOAL_MODIFIED", "SCHEDULE_OVERRIDDEN", "TASK_COMPLETED", "TASK_EDITED", "DYNAMIC_PLAN_GENERATED"
+  reason      String?
+  changes     Json     // Lưu chi tiết nội dung thay đổi
+  createdAt   DateTime @default(now())
+
+  @@map("plan_modification_logs")
+}
+
+// ==========================================
+// 4. GRAMMAR LEARNING ENGINE
+// ==========================================
+
+model UserGrammar {
+  id            String   @id @default(uuid()) @db.Uuid
+  userId        String   @db.Uuid
+  user          User     @relation(fields: [userId], references: [id])
+  
+  // Syntax pattern có chứa dấu {} để render UI
+  patternSyntax String   
+  meaning       String   
+  nuance        String?  // Bối cảnh sử dụng
+  
+  examples      GrammarExample[]
+  
+  createdAt     DateTime @default(now())
+
+  @@map("user_grammars")
+}
+
+model GrammarExample {
+  id                String   @id @default(uuid()) @db.Uuid
+  grammarId         String   @db.Uuid
+  grammar           UserGrammar @relation(fields: [grammarId], references: [id], onDelete: Cascade)
+  
+  jaSentence        String   
+  viMeaning         String?  
+  
+  isReviewGenerated Boolean @default(false) // True nếu được tạo ra lúc ôn tập
+  createdAt         DateTime @default(now())
+
+  @@map("grammar_examples")
+}

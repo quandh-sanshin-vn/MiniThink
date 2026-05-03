@@ -1,0 +1,8622 @@
+[
+  {
+    "kanji": "男性",
+    "hiragana": "だんせい",
+    "meaning": "nam, đàn ông",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "彼は素敵な男性ですね。",
+        "vi": "Anh ấy là một người đàn ông tuyệt vời nhỉ."
+      },
+      {
+        "ja": "この服は男性用です。",
+        "vi": "Quần áo này dành cho nam giới."
+      },
+      {
+        "ja": "理想の男性と結婚したい。",
+        "vi": "Tôi muốn kết hôn với người đàn ông lý tưởng."
+      }
+    ],
+    "id": "0af34fb9-4296-488c-ab2c-979970ef72e6"
+  },
+  {
+    "kanji": "女性",
+    "hiragana": "じょせい",
+    "meaning": "nữ, phụ nữ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "女性の働き方が変わってきた。",
+        "vi": "Cách làm việc của phụ nữ đã thay đổi."
+      },
+      {
+        "ja": "彼女は美しい女性です。",
+        "vi": "Cô ấy là một người phụ nữ xinh đẹp."
+      },
+      {
+        "ja": "女性専用の車両に乗る。",
+        "vi": "Lên toa xe dành riêng cho phụ nữ."
+      }
+    ],
+    "id": "38a3dbe6-d8ff-44f6-a3be-79025ab66621"
+  },
+  {
+    "kanji": "高齢",
+    "hiragana": "こうれい",
+    "meaning": "tuổi cao, cao tuổi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "祖母は高齢ですが元気です。",
+        "vi": "Bà tôi tuổi đã cao nhưng vẫn khỏe mạnh."
+      },
+      {
+        "ja": "高齢者のための施設。",
+        "vi": "Cơ sở dành cho người cao tuổi."
+      },
+      {
+        "ja": "日本は高齢化が進んでいる。",
+        "vi": "Nhật Bản đang già hóa dân số."
+      }
+    ],
+    "id": "a683e1c9-2ec8-4179-82a2-27ad179cb9af"
+  },
+  {
+    "kanji": "年上",
+    "hiragana": "としうえ",
+    "meaning": "người lớn tuổi hơn, lớn tuổi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "彼の方が私より三つ年上です。",
+        "vi": "Anh ấy lớn hơn tôi ba tuổi."
+      },
+      {
+        "ja": "年上の人を敬うべきだ。",
+        "vi": "Nên tôn trọng người lớn tuổi hơn."
+      },
+      {
+        "ja": "年上の彼女がいます。",
+        "vi": "Tôi có bạn gái lớn tuổi hơn."
+      }
+    ],
+    "id": "84207b00-fe6d-4d57-9e01-279950420960"
+  },
+  {
+    "kanji": "目上",
+    "hiragana": "めうえ",
+    "meaning": "cấp trên, người trên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "目上の人には敬語を使う。",
+        "vi": "Dùng kính ngữ với người bề trên."
+      },
+      {
+        "ja": "目上の意見を聞く。",
+        "vi": "Lắng nghe ý kiến của người trên."
+      },
+      {
+        "ja": "目上に対して失礼な態度はよくない。",
+        "vi": "Thái độ vô lễ với người bề trên là không tốt."
+      }
+    ],
+    "id": "017e7cb1-5820-438e-89c1-c387513f9809"
+  },
+  {
+    "kanji": "先輩",
+    "hiragana": "せんぱい",
+    "meaning": "tiền bối, người đi trước",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "大学の先輩に会いました。",
+        "vi": "Tôi đã gặp tiền bối ở trường đại học."
+      },
+      {
+        "ja": "先輩に仕事を教えてもらう。",
+        "vi": "Được tiền bối chỉ việc cho."
+      },
+      {
+        "ja": "彼は私の高校の先輩です。",
+        "vi": "Anh ấy là đàn anh học cùng trường cấp 3 với tôi."
+      }
+    ],
+    "id": "27edea46-8d42-4fda-9b1a-122e7714c7c2"
+  },
+  {
+    "kanji": "後輩",
+    "hiragana": "こうはい",
+    "meaning": "hậu bối, người đi sau",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "後輩にご飯をおごる。",
+        "vi": "Đãi hậu bối ăn cơm."
+      },
+      {
+        "ja": "今年、新しい後輩が入社した。",
+        "vi": "Năm nay có hậu bối mới vào công ty."
+      },
+      {
+        "ja": "後輩の面倒を見る。",
+        "vi": "Chăm sóc, giúp đỡ người đi sau."
+      }
+    ],
+    "id": "dbf315c2-998c-43d2-aeab-d9846e277157"
+  },
+  {
+    "kanji": "上司",
+    "hiragana": "じょうし",
+    "meaning": "sếp, cấp trên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "上司に相談してから決めます。",
+        "vi": "Tôi sẽ quyết định sau khi bàn bạc với cấp trên."
+      },
+      {
+        "ja": "優しい上司でよかった。",
+        "vi": "Thật tốt vì có một người sếp hiền lành."
+      },
+      {
+        "ja": "上司の指示に従う。",
+        "vi": "Tuân theo chỉ thị của sếp."
+      }
+    ],
+    "id": "0fc25e3e-49fb-4d12-91b7-a81ad65d570b"
+  },
+  {
+    "kanji": "相手",
+    "hiragana": "あいて",
+    "meaning": "đối tác, đối phương",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "結婚の相手を探している。",
+        "vi": "Tôi đang tìm đối tượng để kết hôn."
+      },
+      {
+        "ja": "相手の目を見て話す。",
+        "vi": "Nhìn vào mắt đối phương khi nói chuyện."
+      },
+      {
+        "ja": "試合の相手はとても強い。",
+        "vi": "Đối thủ trong trận đấu rất mạnh."
+      }
+    ],
+    "id": "a18f7a15-bfff-4710-9436-f664b1a3e788"
+  },
+  {
+    "kanji": "知り合い",
+    "hiragana": "しりあい",
+    "meaning": "người quen, bạn bè",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 9,
+    "examples": [
+      {
+        "ja": "パーティーで知り合いに会った。",
+        "vi": "Tôi đã gặp người quen ở bữa tiệc."
+      },
+      {
+        "ja": "知り合いを通して仕事を見つけた。",
+        "vi": "Tôi tìm được công việc thông qua người quen."
+      },
+      {
+        "ja": "彼はただの知り合いです。",
+        "vi": "Anh ta chỉ là người quen thôi."
+      }
+    ],
+    "id": "6e02395b-5865-47d5-a844-f18e6c4a661d"
+  },
+  {
+    "kanji": "友人",
+    "hiragana": "ゆうじん",
+    "meaning": "bạn, bạn bè",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 10,
+    "examples": [
+      {
+        "ja": "休日は友人と遊びます。",
+        "vi": "Ngày nghỉ tôi đi chơi với bạn bè."
+      },
+      {
+        "ja": "彼は古くからの友人です。",
+        "vi": "Anh ấy là một người bạn từ rất lâu rồi."
+      },
+      {
+        "ja": "友人の結婚式に出席する。",
+        "vi": "Tham dự lễ cưới của bạn."
+      }
+    ],
+    "id": "d0038286-c3d2-4486-b72c-6fb242922e69"
+  },
+  {
+    "kanji": "関係",
+    "hiragana": "かんけい",
+    "meaning": "mối quan hệ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 10,
+    "examples": [
+      {
+        "ja": "二人の関係はどうですか？",
+        "vi": "Mối quan hệ của hai người thế nào?"
+      },
+      {
+        "ja": "この事件は私に関係ありません。",
+        "vi": "Vụ án này không liên quan đến tôi."
+      },
+      {
+        "ja": "人間関係に悩んでいる。",
+        "vi": "Tôi đang phiền não về các mối quan hệ con người."
+      }
+    ],
+    "id": "26c586fd-443d-48d8-85b6-523be905de1c"
+  },
+  {
+    "kanji": "仲",
+    "hiragana": "なか",
+    "meaning": "mối quan hệ, tình bạn",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 10,
+    "examples": [
+      {
+        "ja": "私たちはとても仲がいいです。",
+        "vi": "Chúng tôi có mối quan hệ rất tốt (rất thân)."
+      },
+      {
+        "ja": "兄弟の仲が悪い。",
+        "vi": "Mối quan hệ của anh em rất tệ."
+      },
+      {
+        "ja": "仲直りしましょう。",
+        "vi": "Chúng ta hãy làm hòa nhé."
+      }
+    ],
+    "id": "6ee1722e-6d0c-41ff-9a19-2f69db363304"
+  },
+  {
+    "kanji": "生年月日",
+    "hiragana": "せいねんがっぴ",
+    "meaning": "ngày sinh",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 10,
+    "examples": [
+      {
+        "ja": "生年月日を書いてください。",
+        "vi": "Xin hãy viết ngày tháng năm sinh."
+      },
+      {
+        "ja": "書類に生年月日を記入する。",
+        "vi": "Điền ngày sinh vào tài liệu."
+      },
+      {
+        "ja": "生年月日で年齢を確認する。",
+        "vi": "Xác nhận tuổi bằng ngày tháng năm sinh."
+      }
+    ],
+    "id": "88efb9de-21e1-483b-8403-cb559212ffae"
+  },
+  {
+    "kanji": "誕生日",
+    "hiragana": "たんじょうび",
+    "meaning": "sinh nhật",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 10,
+    "examples": [
+      {
+        "ja": "お誕生日おめでとう！",
+        "vi": "Chúc mừng sinh nhật!"
+      },
+      {
+        "ja": "誕生日プレゼントをもらった。",
+        "vi": "Tôi đã nhận được quà sinh nhật."
+      },
+      {
+        "ja": "来月は私の誕生日です。",
+        "vi": "Tháng sau là sinh nhật tôi."
+      }
+    ],
+    "id": "741553c7-0e81-4655-8f52-29865a423ecf"
+  },
+  {
+    "kanji": "年",
+    "hiragana": "とし",
+    "meaning": "năm, tuổi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 10,
+    "examples": [
+      {
+        "ja": "年を取るのは早いです。",
+        "vi": "Có tuổi (già đi) thật nhanh."
+      },
+      {
+        "ja": "良いお年を！",
+        "vi": "Chúc mừng năm mới (nói trước Tết)!"
+      },
+      {
+        "ja": "年が明ける。",
+        "vi": "Năm mới bắt đầu."
+      }
+    ],
+    "id": "ea52b37d-bd88-4be1-9a1d-b060381f5e2c"
+  },
+  {
+    "kanji": "出身",
+    "hiragana": "しゅっしん",
+    "meaning": "quê quán, nơi xuất thân",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 10,
+    "examples": [
+      {
+        "ja": "ご出身はどちらですか？",
+        "vi": "Quê của bạn ở đâu?"
+      },
+      {
+        "ja": "私は東京の出身です。",
+        "vi": "Tôi xuất thân từ Tokyo."
+      },
+      {
+        "ja": "出身大学はどこですか。",
+        "vi": "Bạn tốt nghiệp đại học nào?"
+      }
+    ],
+    "id": "8a846b03-adb0-4259-b17a-fcdcf5d020c7"
+  },
+  {
+    "kanji": "故郷",
+    "hiragana": "ふるさと",
+    "meaning": "quê hương",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 10,
+    "examples": [
+      {
+        "ja": "ふるさとの母から手紙が届いた。",
+        "vi": "Có thư từ người mẹ ở quê gửi đến."
+      },
+      {
+        "ja": "ふるさとが恋しい。",
+        "vi": "Tôi nhớ quê hương."
+      },
+      {
+        "ja": "年に一度ふるさとに帰る。",
+        "vi": "Mỗi năm về quê một lần."
+      }
+    ],
+    "id": "0801ee50-2f92-41a5-9536-9ac44149669f"
+  },
+  {
+    "kanji": "成長する",
+    "hiragana": "せいちょうする",
+    "meaning": "tăng trưởng, phát triển",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 11,
+    "examples": [
+      {
+        "ja": "子供の成長は早い。",
+        "vi": "Sự trưởng thành của trẻ con rất nhanh."
+      },
+      {
+        "ja": "会社が大きく成長した。",
+        "vi": "Công ty đã phát triển lớn mạnh."
+      },
+      {
+        "ja": "経験を通して成長する。",
+        "vi": "Trưởng thành thông qua những kinh nghiệm."
+      }
+    ],
+    "id": "f447283d-45b9-43be-8e62-ac1b84993c6e"
+  },
+  {
+    "kanji": "成人",
+    "hiragana": "せいじん",
+    "meaning": "người trưởng thành",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 11,
+    "examples": [
+      {
+        "ja": "日本では20歳で成人になる。",
+        "vi": "Ở Nhật, 20 tuổi là trở thành người trưởng thành."
+      },
+      {
+        "ja": "成人式に参加する。",
+        "vi": "Tham dự lễ trưởng thành."
+      },
+      {
+        "ja": "成人の日でお休みです。",
+        "vi": "Hôm nay nghỉ lễ Ngày Trưởng thành."
+      }
+    ],
+    "id": "2fb901bb-088b-410f-85f1-4e15b3fd0594"
+  },
+  {
+    "kanji": "合格する",
+    "hiragana": "ごうかくする",
+    "meaning": "đậu, đạt yêu cầu",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 11,
+    "examples": [
+      {
+        "ja": "大学に合格しました！",
+        "vi": "Tôi đã đậu đại học rồi!"
+      },
+      {
+        "ja": "N3の試験に合格する。",
+        "vi": "Đậu kỳ thi N3."
+      },
+      {
+        "ja": "合格発表を見に行く。",
+        "vi": "Đi xem thông báo kết quả thi đỗ."
+      }
+    ],
+    "id": "b2842dbb-573e-41e5-8479-0e30c18107fc"
+  },
+  {
+    "kanji": "進学する",
+    "hiragana": "しんがくする",
+    "meaning": "tiếp tục học lên",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 11,
+    "examples": [
+      {
+        "ja": "大学院へ進学する予定です。",
+        "vi": "Tôi dự định sẽ học lên cao học."
+      },
+      {
+        "ja": "進学のために勉強する。",
+        "vi": "Học để thi lên cấp cao hơn."
+      },
+      {
+        "ja": "進学をあきらめる。",
+        "vi": "Từ bỏ việc học lên."
+      }
+    ],
+    "id": "a604b60e-16a9-49b2-9370-a9c2b18ee9a9"
+  },
+  {
+    "kanji": "退学する",
+    "hiragana": "たいがくする",
+    "meaning": "bỏ học",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 11,
+    "examples": [
+      {
+        "ja": "病気で学校を退学した。",
+        "vi": "Vì bệnh nên tôi đã thôi học."
+      },
+      {
+        "ja": "退学届けを出す。",
+        "vi": "Nộp đơn xin thôi học."
+      },
+      {
+        "ja": "理由があって退学する。",
+        "vi": "Vì có lý do nên tôi bỏ học."
+      }
+    ],
+    "id": "0424ae3e-4716-4422-93ef-2fc02cfc1de0"
+  },
+  {
+    "kanji": "就職する",
+    "hiragana": "しゅうしょくする",
+    "meaning": "tìm việc, có việc làm",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 11,
+    "examples": [
+      {
+        "ja": "IT企業に就職しました。",
+        "vi": "Tôi đã xin được việc vào công ty IT."
+      },
+      {
+        "ja": "就職活動は大変です。",
+        "vi": "Hoạt động tìm việc làm rất vất vả."
+      },
+      {
+        "ja": "日本で就職したい。",
+        "vi": "Tôi muốn làm việc tại Nhật Bản."
+      }
+    ],
+    "id": "0b54a7cf-527f-41c0-86cf-392b6044383c"
+  },
+  {
+    "kanji": "退職する",
+    "hiragana": "たいしょくする",
+    "meaning": "nghỉ việc, về hưu",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 11,
+    "examples": [
+      {
+        "ja": "来月、会社を退職します。",
+        "vi": "Tháng sau tôi sẽ nghỉ việc ở công ty."
+      },
+      {
+        "ja": "定年で退職する。",
+        "vi": "Nghỉ hưu vì đến tuổi."
+      },
+      {
+        "ja": "退職金をもらう。",
+        "vi": "Nhận tiền trợ cấp thôi việc."
+      }
+    ],
+    "id": "71198b36-c289-4c3f-bdf3-cca8dc17842d"
+  },
+  {
+    "kanji": "失業",
+    "hiragana": "しつぎょう",
+    "meaning": "thất nghiệp",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 11,
+    "examples": [
+      {
+        "ja": "会社が倒産して失業した。",
+        "vi": "Công ty phá sản nên tôi đã thất nghiệp."
+      },
+      {
+        "ja": "失業率が上がっている。",
+        "vi": "Tỷ lệ thất nghiệp đang tăng lên."
+      },
+      {
+        "ja": "失業保険を受け取る。",
+        "vi": "Nhận bảo hiểm thất nghiệp."
+      }
+    ],
+    "id": "6a204ae2-7c32-4bf5-89d6-8eb05283d2ad"
+  },
+  {
+    "kanji": "残業",
+    "hiragana": "ざんぎょう",
+    "meaning": "làm thêm giờ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 11,
+    "examples": [
+      {
+        "ja": "今日は残業があります。",
+        "vi": "Hôm nay có làm thêm giờ."
+      },
+      {
+        "ja": "残業代が支払われる。",
+        "vi": "Được trả tiền làm thêm."
+      },
+      {
+        "ja": "毎日残業して疲れた。",
+        "vi": "Ngày nào cũng làm thêm nên tôi mệt rồi."
+      }
+    ],
+    "id": "5a7d3693-75f9-4baa-b29f-ad29f7c94523"
+  },
+  {
+    "kanji": "生活",
+    "hiragana": "せいかつ",
+    "meaning": "cuộc sống",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 12,
+    "examples": [
+      {
+        "ja": "日本の生活に慣れましたか。",
+        "vi": "Bạn đã quen với cuộc sống ở Nhật chưa?"
+      },
+      {
+        "ja": "生活費が高い。",
+        "vi": "Chi phí sinh hoạt cao."
+      },
+      {
+        "ja": "健康的な生活を送る。",
+        "vi": "Sống một cuộc sống lành mạnh."
+      }
+    ],
+    "id": "3dabe706-7aee-4ec2-8198-6c22db06c7d6"
+  },
+  {
+    "kanji": "通勤",
+    "hiragana": "つうきん",
+    "meaning": "đi làm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 12,
+    "examples": [
+      {
+        "ja": "通勤に１時間かかります。",
+        "vi": "Mất 1 tiếng để đi làm."
+      },
+      {
+        "ja": "電車で通勤する。",
+        "vi": "Đi làm bằng tàu điện."
+      },
+      {
+        "ja": "通勤ラッシュは疲れる。",
+        "vi": "Giờ cao điểm đi làm rất mệt mỏi."
+      }
+    ],
+    "id": "fa75bb7c-a8b2-4ff4-b543-42f443905e04"
+  },
+  {
+    "kanji": "学歴",
+    "hiragana": "がくれき",
+    "meaning": "học vấn",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 12,
+    "examples": [
+      {
+        "ja": "学歴より能力が大切だ。",
+        "vi": "Năng lực quan trọng hơn bằng cấp."
+      },
+      {
+        "ja": "高学歴の人が多い。",
+        "vi": "Có nhiều người học vấn cao."
+      },
+      {
+        "ja": "学歴社会は終わった。",
+        "vi": "Xã hội trọng bằng cấp đã kết thúc."
+      }
+    ],
+    "id": "4d013929-1cfa-4fd3-90d1-31f5bccaf020"
+  },
+  {
+    "kanji": "給料",
+    "hiragana": "きゅうりょう",
+    "meaning": "lương",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 12,
+    "examples": [
+      {
+        "ja": "給料が上がって嬉しい。",
+        "vi": "Tôi rất vui vì lương tăng."
+      },
+      {
+        "ja": "給料日は毎月25日です。",
+        "vi": "Ngày nhận lương là ngày 25 hàng tháng."
+      },
+      {
+        "ja": "給料が少ない。",
+        "vi": "Tiền lương ít."
+      }
+    ],
+    "id": "598aeeb7-82bd-4894-aa74-f84a0ace8f0f"
+  },
+  {
+    "kanji": "面接",
+    "hiragana": "めんせつ",
+    "meaning": "phỏng vấn",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 12,
+    "examples": [
+      {
+        "ja": "明日、アルバイトの面接がある。",
+        "vi": "Ngày mai tôi có buổi phỏng vấn làm thêm."
+      },
+      {
+        "ja": "面接官の質問に答える。",
+        "vi": "Trả lời câu hỏi của người phỏng vấn."
+      },
+      {
+        "ja": "面接で緊張した。",
+        "vi": "Tôi đã lo lắng trong buổi phỏng vấn."
+      }
+    ],
+    "id": "107fbbc2-f2d4-42f1-b8e7-bdbb3a59f774"
+  },
+  {
+    "kanji": "休憩",
+    "hiragana": "きゅうけい",
+    "meaning": "nghỉ ngơi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 12,
+    "examples": [
+      {
+        "ja": "10分間、休憩しましょう。",
+        "vi": "Hãy nghỉ giải lao 10 phút nhé."
+      },
+      {
+        "ja": "休憩室でお茶を飲む。",
+        "vi": "Uống trà trong phòng nghỉ."
+      },
+      {
+        "ja": "休憩時間が短い。",
+        "vi": "Thời gian nghỉ ngơi quá ngắn."
+      }
+    ],
+    "id": "0de92844-3fc5-4919-a05b-275de2ec65c1"
+  },
+  {
+    "kanji": "観光",
+    "hiragana": "かんこう",
+    "meaning": "du lịch",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 12,
+    "examples": [
+      {
+        "ja": "京都を観光する。",
+        "vi": "Đi tham quan Kyoto."
+      },
+      {
+        "ja": "外国の観光客が多い。",
+        "vi": "Có nhiều khách du lịch người nước ngoài."
+      },
+      {
+        "ja": "観光地に行く。",
+        "vi": "Đến khu du lịch."
+      }
+    ],
+    "id": "82dc4746-d89d-4c73-ac49-ed6ebf61b8da"
+  },
+  {
+    "kanji": "帰国",
+    "hiragana": "きこく",
+    "meaning": "về nước",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 12,
+    "examples": [
+      {
+        "ja": "来月、ベトナムへ帰国します。",
+        "vi": "Tháng sau tôi sẽ về nước (Việt Nam)."
+      },
+      {
+        "ja": "帰国の準備をする。",
+        "vi": "Chuẩn bị về nước."
+      },
+      {
+        "ja": "無事に帰国した。",
+        "vi": "Đã về nước bình an."
+      }
+    ],
+    "id": "618635c4-801f-4aa5-b603-e964359c0fe6"
+  },
+  {
+    "kanji": "帰省",
+    "hiragana": "きせい",
+    "meaning": "trở về quê hương",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 13,
+    "examples": [
+      {
+        "ja": "お盆休みに帰省する。",
+        "vi": "Về quê vào kỳ nghỉ Obon."
+      },
+      {
+        "ja": "帰省ラッシュで道が混む。",
+        "vi": "Đường tắc vì dòng người ồ ạt về quê."
+      },
+      {
+        "ja": "久しぶりに帰省した。",
+        "vi": "Lâu lắm rồi mới về quê."
+      }
+    ],
+    "id": "512d0681-02a0-470e-bbcb-d6f5fb1a0e01"
+  },
+  {
+    "kanji": "帰宅",
+    "hiragana": "きたく",
+    "meaning": "về nhà",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 13,
+    "examples": [
+      {
+        "ja": "夜10時に帰宅した。",
+        "vi": "Tôi đã về nhà lúc 10 giờ tối."
+      },
+      {
+        "ja": "帰宅時間が遅い。",
+        "vi": "Giờ về nhà muộn."
+      },
+      {
+        "ja": "帰宅ラッシュの時間だ。",
+        "vi": "Đang là giờ cao điểm đi làm về."
+      }
+    ],
+    "id": "8a63b84c-d425-4dfc-8ff2-fcb04789d39d"
+  },
+  {
+    "kanji": "参加",
+    "hiragana": "さんか",
+    "meaning": "tham gia",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 13,
+    "examples": [
+      {
+        "ja": "ボランティア活動に参加する。",
+        "vi": "Tham gia hoạt động tình nguyện."
+      },
+      {
+        "ja": "参加費は無料です。",
+        "vi": "Phí tham gia là miễn phí."
+      },
+      {
+        "ja": "コンテストに参加する。",
+        "vi": "Tham gia vào cuộc thi."
+      }
+    ],
+    "id": "73858b4f-bf65-4922-9e56-6377427be224"
+  },
+  {
+    "kanji": "出席",
+    "hiragana": "しゅっせき",
+    "meaning": "tham dự",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 13,
+    "examples": [
+      {
+        "ja": "今日の会議に出席します。",
+        "vi": "Tôi sẽ tham dự cuộc họp hôm nay."
+      },
+      {
+        "ja": "出席をとります。",
+        "vi": "Tôi sẽ điểm danh nhé."
+      },
+      {
+        "ja": "授業の出席率が悪い。",
+        "vi": "Tỉ lệ tham gia lớp học kém."
+      }
+    ],
+    "id": "da53ece5-13bb-47d6-93e6-56e4e1be44fc"
+  },
+  {
+    "kanji": "欠席",
+    "hiragana": "けっせき",
+    "meaning": "vắng mặt",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 13,
+    "examples": [
+      {
+        "ja": "熱があるので、授業を欠席します。",
+        "vi": "Vì bị sốt nên tôi vắng mặt buổi học."
+      },
+      {
+        "ja": "欠席者が多い。",
+        "vi": "Có nhiều người vắng mặt."
+      },
+      {
+        "ja": "無断欠席はよくない。",
+        "vi": "Vắng mặt không phép là không tốt."
+      }
+    ],
+    "id": "92184299-7871-44b8-a169-b504fd6711d9"
+  },
+  {
+    "kanji": "遅刻",
+    "hiragana": "ちこく",
+    "meaning": "đến muộn",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 13,
+    "examples": [
+      {
+        "ja": "寝坊して学校に遅刻した。",
+        "vi": "Ngủ quên nên tôi đã đến trường muộn."
+      },
+      {
+        "ja": "遅刻しないでください。",
+        "vi": "Xin đừng đến muộn."
+      },
+      {
+        "ja": "バスが遅れて遅刻した。",
+        "vi": "Vì xe buýt trễ nên tôi đã đến muộn."
+      }
+    ],
+    "id": "2f961503-017a-42d3-a82c-f46d539940e1"
+  },
+  {
+    "kanji": "化粧",
+    "hiragana": "けしょう",
+    "meaning": "trang điểm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 13,
+    "examples": [
+      {
+        "ja": "彼女は化粧が濃い。",
+        "vi": "Cô ấy trang điểm đậm."
+      },
+      {
+        "ja": "化粧品を買う。",
+        "vi": "Mua mỹ phẩm."
+      },
+      {
+        "ja": "化粧室はどこですか。",
+        "vi": "Phòng trang điểm (nhà vệ sinh) ở đâu vậy?"
+      }
+    ],
+    "id": "de561803-77bf-4024-aa47-e18720064016"
+  },
+  {
+    "kanji": "計算",
+    "hiragana": "けいさん",
+    "meaning": "tính toán",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 13,
+    "examples": [
+      {
+        "ja": "お金を計算する。",
+        "vi": "Tính toán tiền bạc."
+      },
+      {
+        "ja": "計算が合わない。",
+        "vi": "Tính toán không khớp."
+      },
+      {
+        "ja": "彼は計算が早い。",
+        "vi": "Anh ấy tính toán rất nhanh."
+      }
+    ],
+    "id": "088d4dfd-484c-4bd9-b273-13b7b478ea07"
+  },
+  {
+    "kanji": "計画",
+    "hiragana": "けいかく",
+    "meaning": "kế hoạch",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 13,
+    "examples": [
+      {
+        "ja": "旅行の計画を立てる。",
+        "vi": "Lập kế hoạch đi du lịch."
+      },
+      {
+        "ja": "計画通りに進む。",
+        "vi": "Tiến triển đúng theo kế hoạch."
+      },
+      {
+        "ja": "新しい計画を発表する。",
+        "vi": "Công bố kế hoạch mới."
+      }
+    ],
+    "id": "274a3159-2dbf-46bb-8891-62ac271bce0f"
+  },
+  {
+    "kanji": "成功",
+    "hiragana": "せいこう",
+    "meaning": "thành công",
+    "type": "noun",
+    "level": "N4",
+    "source_page": 14,
+    "examples": [
+      {
+        "ja": "実験は成功した。",
+        "vi": "Cuộc thử nghiệm đã thành công."
+      },
+      {
+        "ja": "大成功でした。",
+        "vi": "Đó là một thành công lớn."
+      },
+      {
+        "ja": "成功を祈ります。",
+        "vi": "Cầu chúc cho sự thành công."
+      }
+    ],
+    "id": "f84fcb88-ebc8-49f8-ab4f-864125697d60"
+  },
+  {
+    "kanji": "失敗",
+    "hiragana": "しっぱい",
+    "meaning": "thất bại",
+    "type": "noun",
+    "level": "N4",
+    "source_page": 14,
+    "examples": [
+      {
+        "ja": "失敗は成功の母。",
+        "vi": "Thất bại là mẹ thành công."
+      },
+      {
+        "ja": "テストで失敗した。",
+        "vi": "Tôi đã làm hỏng bài kiểm tra."
+      },
+      {
+        "ja": "同じ失敗を繰り返さない。",
+        "vi": "Không lặp lại thất bại cũ."
+      }
+    ],
+    "id": "f5d48a80-8cb8-41ce-8eb8-2e8345906780"
+  },
+  {
+    "kanji": "準備",
+    "hiragana": "じゅんび",
+    "meaning": "chuẩn bị",
+    "type": "noun",
+    "level": "N4",
+    "source_page": 14,
+    "examples": [
+      {
+        "ja": "出発の準備ができました。",
+        "vi": "Đã chuẩn bị xong để xuất phát."
+      },
+      {
+        "ja": "パーティーの準備をする。",
+        "vi": "Chuẩn bị cho bữa tiệc."
+      },
+      {
+        "ja": "準備運動をする。",
+        "vi": "Tập thể dục khởi động."
+      }
+    ],
+    "id": "0e57b873-48b0-4803-98e0-95065739f96c"
+  },
+  {
+    "kanji": "整理",
+    "hiragana": "せいり",
+    "meaning": "sắp xếp, tổ chức",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 14,
+    "examples": [
+      {
+        "ja": "机の上を整理する。",
+        "vi": "Sắp xếp lại mặt bàn."
+      },
+      {
+        "ja": "心の整理がつかない。",
+        "vi": "Chưa thể sắp xếp lại cảm xúc."
+      },
+      {
+        "ja": "書類を整理して捨てる。",
+        "vi": "Sắp xếp tài liệu và vứt đi."
+      }
+    ],
+    "id": "7fda131f-0950-471f-bb54-6458af1f617c"
+  },
+  {
+    "kanji": "注文",
+    "hiragana": "ちゅうもん",
+    "meaning": "đặt hàng, yêu cầu",
+    "type": "noun",
+    "level": "N4",
+    "source_page": 14,
+    "examples": [
+      {
+        "ja": "コーヒーを注文する。",
+        "vi": "Gọi một ly cà phê."
+      },
+      {
+        "ja": "注文した品が届く。",
+        "vi": "Món đồ đã đặt đã giao đến."
+      },
+      {
+        "ja": "ネットで本を注文した。",
+        "vi": "Tôi đã đặt mua sách trên mạng."
+      }
+    ],
+    "id": "5fcff05b-40a4-4835-ab71-5bb09e210515"
+  },
+  {
+    "kanji": "貯金",
+    "hiragana": "ちょきん",
+    "meaning": "tiết kiệm, gửi tiền",
+    "type": "noun",
+    "level": "N4",
+    "source_page": 14,
+    "examples": [
+      {
+        "ja": "車を買うために貯金している。",
+        "vi": "Tôi đang tiết kiệm tiền để mua xe."
+      },
+      {
+        "ja": "貯金がなくなった。",
+        "vi": "Hết tiền tiết kiệm rồi."
+      },
+      {
+        "ja": "銀行に貯金する。",
+        "vi": "Gửi tiền tiết kiệm vào ngân hàng."
+      }
+    ],
+    "id": "38bdeda6-efd8-4aa6-9ecd-d7fbdc72d831"
+  },
+  {
+    "kanji": "徹夜",
+    "hiragana": "てつや",
+    "meaning": "thức trắng đêm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 14,
+    "examples": [
+      {
+        "ja": "昨日は徹夜で勉強した。",
+        "vi": "Hôm qua tôi đã thức trắng đêm để học."
+      },
+      {
+        "ja": "徹夜仕事で眠い。",
+        "vi": "Làm việc thâu đêm nên tôi rất buồn ngủ."
+      },
+      {
+        "ja": "徹夜は体に悪い。",
+        "vi": "Thức thâu đêm thì không tốt cho cơ thể."
+      }
+    ],
+    "id": "886f0c25-4481-4bf7-9e7a-3c87683e23f4"
+  },
+  {
+    "kanji": "身長",
+    "hiragana": "しんちょう",
+    "meaning": "chiều cao cơ thể",
+    "type": "noun",
+    "level": "N4",
+    "source_page": 14,
+    "examples": [
+      {
+        "ja": "兄は身長が高い。",
+        "vi": "Anh trai tôi có chiều cao nổi bật."
+      },
+      {
+        "ja": "身長を測る。",
+        "vi": "Đo chiều cao."
+      },
+      {
+        "ja": "身長が伸びた。",
+        "vi": "Đã cao lên rồi."
+      }
+    ],
+    "id": "e194ad2f-c3a4-46b0-9cd6-4d2f12521f33"
+  },
+  {
+    "kanji": "体重",
+    "hiragana": "たいじゅう",
+    "meaning": "cân nặng, trọng lượng cơ thể",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 15,
+    "examples": [
+      {
+        "ja": "最近、体重が増えた。",
+        "vi": "Gần đây, cân nặng của tôi đã tăng."
+      },
+      {
+        "ja": "体重を減らす。",
+        "vi": "Giảm cân."
+      },
+      {
+        "ja": "体重計に乗る。",
+        "vi": "Bước lên cân."
+      }
+    ],
+    "id": "01652c3c-9d76-4904-891b-711252debe12"
+  },
+  {
+    "kanji": "けが",
+    "hiragana": "けが",
+    "meaning": "chấn thương, bị thương",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 15,
+    "examples": [
+      {
+        "ja": "転んで足にけがをした。",
+        "vi": "Bị ngã nên chân bị thương."
+      },
+      {
+        "ja": "大けがをして入院した。",
+        "vi": "Bị thương nặng nên đã nhập viện."
+      },
+      {
+        "ja": "けがは治りましたか。",
+        "vi": "Vết thương của bạn đã lành chưa?"
+      }
+    ],
+    "id": "94f55a22-bd93-48e9-b016-2050a27a80c8"
+  },
+  {
+    "kanji": "会",
+    "hiragana": "かい",
+    "meaning": "buổi tiệc, hội họp",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 15,
+    "examples": [
+      {
+        "ja": "歓迎会を開く。",
+        "vi": "Tổ chức tiệc chào mừng."
+      },
+      {
+        "ja": "女子会をする。",
+        "vi": "Tổ chức tiệc chỉ dành cho con gái."
+      },
+      {
+        "ja": "忘年会のお知らせ。",
+        "vi": "Thông báo về tiệc tất niên."
+      }
+    ],
+    "id": "f60a4cb2-b3ef-41aa-9009-3080ca6b1dd8"
+  },
+  {
+    "kanji": "趣味",
+    "hiragana": "しゅみ",
+    "meaning": "sở thích, thú vui",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 15,
+    "examples": [
+      {
+        "ja": "休日は趣味の時間に使う。",
+        "vi": "Dành thời gian ngày nghỉ cho sở thích."
+      },
+      {
+        "ja": "共通の趣味を持つ。",
+        "vi": "Có sở thích chung."
+      },
+      {
+        "ja": "趣味は写真撮影です。",
+        "vi": "Sở thích của tôi là chụp ảnh."
+      }
+    ],
+    "id": "b1e16832-79d1-4f72-b9c6-a41b420d1308"
+  },
+  {
+    "kanji": "興味",
+    "hiragana": "きょうみ",
+    "meaning": "sự quan tâm, hứng thú",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 15,
+    "examples": [
+      {
+        "ja": "日本の文化に興味があります。",
+        "vi": "Tôi có hứng thú với văn hóa Nhật Bản."
+      },
+      {
+        "ja": "歴史に興味を持つ。",
+        "vi": "Quan tâm đến lịch sử."
+      },
+      {
+        "ja": "興味深い話ですね。",
+        "vi": "Câu chuyện thú vị thật đấy."
+      }
+    ],
+    "id": "70d99bd2-d8eb-4960-bd60-05fa4cc88c77"
+  },
+  {
+    "kanji": "思い出",
+    "hiragana": "おもいで",
+    "meaning": "kỷ niệm, hồi ức",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 15,
+    "examples": [
+      {
+        "ja": "子どもの頃の思い出。",
+        "vi": "Kỷ niệm thời thơ ấu."
+      },
+      {
+        "ja": "良い思い出ができた。",
+        "vi": "Đã có được một kỷ niệm đẹp."
+      },
+      {
+        "ja": "思い出の写真を残す。",
+        "vi": "Giữ lại bức ảnh kỷ niệm."
+      }
+    ],
+    "id": "6bee5ea5-68ce-472f-a720-6112932468c5"
+  },
+  {
+    "kanji": "冗談",
+    "hiragana": "じょうだん",
+    "meaning": "trò đùa, câu chuyện đùa",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 15,
+    "examples": [
+      {
+        "ja": "冗談を言って笑わせる。",
+        "vi": "Nói đùa để làm mọi người cười."
+      },
+      {
+        "ja": "それは冗談でしょう？",
+        "vi": "Đó là đùa đúng không?"
+      },
+      {
+        "ja": "冗談が通じない人。",
+        "vi": "Người không hiểu được chuyện đùa."
+      }
+    ],
+    "id": "4386f343-f9eb-4e7b-aa6a-0228df3501a9"
+  },
+  {
+    "kanji": "目的",
+    "hiragana": "もくてき",
+    "meaning": "mục đích, mục tiêu",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 15,
+    "examples": [
+      {
+        "ja": "日本へ来た目的は何ですか。",
+        "vi": "Mục đích bạn đến Nhật Bản là gì?"
+      },
+      {
+        "ja": "目的を達成する。",
+        "vi": "Đạt được mục đích."
+      },
+      {
+        "ja": "旅行の目的はリラックスです。",
+        "vi": "Mục đích của chuyến du lịch là thư giãn."
+      }
+    ],
+    "id": "48c170c9-98b2-49f8-8f29-c4e375785c50"
+  },
+  {
+    "kanji": "約束",
+    "hiragana": "やくそく",
+    "meaning": "hứa hẹn, lời hứa",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "友達と遊ぶ約束がある。",
+        "vi": "Tôi có hẹn đi chơi với bạn."
+      },
+      {
+        "ja": "約束を守る。",
+        "vi": "Giữ lời hứa."
+      },
+      {
+        "ja": "約束を破る。",
+        "vi": "Thất hứa."
+      }
+    ],
+    "id": "e5c5cbe4-2d9b-426f-a372-1cde24223f13"
+  },
+  {
+    "kanji": "おしゃべり",
+    "hiragana": "おしゃべり",
+    "meaning": "nói chuyện, trò chuyện",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "彼女はおしゃべりだ。",
+        "vi": "Cô ấy là người nói nhiều (nhiều chuyện)."
+      },
+      {
+        "ja": "授業中におしゃべりするな。",
+        "vi": "Không nói chuyện riêng trong giờ học."
+      },
+      {
+        "ja": "友達とおしゃべりを楽しむ。",
+        "vi": "Tận hưởng cuộc trò chuyện với bạn bè."
+      }
+    ],
+    "id": "b7bfd99a-779f-496f-a55f-2a40c844713c"
+  },
+  {
+    "kanji": "",
+    "hiragana": "しゃべる",
+    "meaning": "nói, trò chuyện",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "日本語をしゃべる。",
+        "vi": "Nói tiếng Nhật."
+      },
+      {
+        "ja": "ずっとしゃべっている。",
+        "vi": "Đang nói chuyện suốt nãy giờ."
+      },
+      {
+        "ja": "秘密をしゃべってしまった。",
+        "vi": "Đã lỡ nói ra bí mật rồi."
+      }
+    ],
+    "id": "8ad546ec-f46d-4f0c-8728-8fd3d248c230"
+  },
+  {
+    "kanji": "遠慮",
+    "hiragana": "えんりょ",
+    "meaning": "ngại ngần, dè dặt",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "どうぞ遠慮しないで食べてください。",
+        "vi": "Xin đừng ngại ngần, hãy ăn đi."
+      },
+      {
+        "ja": "遠慮なく言及する。",
+        "vi": "Nói ra không ngần ngại."
+      },
+      {
+        "ja": "遠慮がちにする。",
+        "vi": "Có phần e dè."
+      }
+    ],
+    "id": "dbe8aeba-6a9f-4502-8048-95daf898e501"
+  },
+  {
+    "kanji": "",
+    "hiragana": "遠慮する",
+    "meaning": "ngại ngần, từ chối",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "タバコはご遠慮ください。",
+        "vi": "Xin hãy hạn chế hút thuốc."
+      },
+      {
+        "ja": "ここでの通話は遠慮して。",
+        "vi": "Xin hạn chế gọi điện ở đây."
+      },
+      {
+        "ja": "参加を遠慮する。",
+        "vi": "Xin phép không tham gia."
+      }
+    ],
+    "id": "fc2923ab-0feb-4412-bac7-8ebdd5c404d0"
+  },
+  {
+    "kanji": "我慢",
+    "hiragana": "がまん",
+    "meaning": "kiên nhẫn, nhẫn nại",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "痛みを我慢する。",
+        "vi": "Chịu đựng cơn đau."
+      },
+      {
+        "ja": "もう我慢できない！",
+        "vi": "Không thể chịu đựng thêm nữa!"
+      },
+      {
+        "ja": "我慢強い性格。",
+        "vi": "Tính cách kiên nhẫn."
+      }
+    ],
+    "id": "fec0f96b-c8e1-404a-a228-f6aa78001704"
+  },
+  {
+    "kanji": "",
+    "hiragana": "我慢する",
+    "meaning": "chịu đựng, nhẫn nại",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "お菓子を食べるのを我慢する。",
+        "vi": "Nhẫn nhịn việc ăn bánh kẹo."
+      },
+      {
+        "ja": "トイレを我慢する。",
+        "vi": "Nhịn đi vệ sinh."
+      },
+      {
+        "ja": "少し我慢してください。",
+        "vi": "Xin hãy chịu đựng thêm một chút."
+      }
+    ],
+    "id": "cde2a1f3-6070-41fa-947c-a951082e4b11"
+  },
+  {
+    "kanji": "迷惑",
+    "hiragana": "めいわく",
+    "meaning": "phiền phức, quấy rầy",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "人に迷惑をかけてはいけない。",
+        "vi": "Không được gây phiền phức cho người khác."
+      },
+      {
+        "ja": "ご迷惑をおかけしました。",
+        "vi": "Đã làm phiền bạn rồi."
+      },
+      {
+        "ja": "迷惑な客。",
+        "vi": "Vị khách phiền phức."
+      }
+    ],
+    "id": "c586137c-d6fe-43f6-84a0-1ce965b89bed"
+  },
+  {
+    "kanji": "",
+    "hiragana": "迷惑する",
+    "meaning": "gây phiền phức",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "夜中に電話されて迷惑する。",
+        "vi": "Bị gọi điện giữa đêm nên thấy phiền phức."
+      },
+      {
+        "ja": "隣の騒音に迷惑している。",
+        "vi": "Bị phiền phức bởi tiếng ồn của nhà hàng xóm."
+      },
+      {
+        "ja": "迷惑している人が多い。",
+        "vi": "Có rất nhiều người đang thấy phiền."
+      }
+    ],
+    "id": "05f9ec88-7449-4343-9914-f462efa5217b"
+  },
+  {
+    "kanji": "希望",
+    "hiragana": "きぼう",
+    "meaning": "hy vọng, mong muốn",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "将来の希望を持つ。",
+        "vi": "Có hi vọng về tương lai."
+      },
+      {
+        "ja": "希望が叶う。",
+        "vi": "Hi vọng trở thành hiện thực."
+      },
+      {
+        "ja": "あなたの希望を聞かせて。",
+        "vi": "Hãy cho tôi nghe mong muốn của bạn."
+      }
+    ],
+    "id": "2d8f3be2-c36b-4536-921a-568109244ea5"
+  },
+  {
+    "kanji": "",
+    "hiragana": "希望する",
+    "meaning": "hy vọng, mong muốn",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 16,
+    "examples": [
+      {
+        "ja": "参加を希望する人は手を挙げて。",
+        "vi": "Những người hi vọng tham gia hãy giơ tay."
+      },
+      {
+        "ja": "新しいパソコンを希望する。",
+        "vi": "Tôi mong có một cái máy tính mới."
+      },
+      {
+        "ja": "就職を希望する。",
+        "vi": "Hi vọng xin được việc làm."
+      }
+    ],
+    "id": "3a2abe91-706d-404c-8fdf-2279d087162c"
+  },
+  {
+    "kanji": "夢",
+    "hiragana": "ゆめ",
+    "meaning": "giấc mơ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 17,
+    "examples": [
+      {
+        "ja": "怖い夢を見た。",
+        "vi": "Tôi đã thấy một giấc mơ đáng sợ."
+      },
+      {
+        "ja": "私の夢は医者になることです。",
+        "vi": "Ước mơ của tôi là trở thành bác sĩ."
+      },
+      {
+        "ja": "夢を叶えるために頑張る。",
+        "vi": "Cố gắng để biến ước mơ thành hiện thực."
+      }
+    ],
+    "id": "e5f17bb1-d745-4ee4-8fdf-57d6d5db2179"
+  },
+  {
+    "kanji": "賛成",
+    "hiragana": "さんせい",
+    "meaning": "sự đồng ý, sự ủng hộ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 17,
+    "examples": [
+      {
+        "ja": "あなたの意見に賛成です。",
+        "vi": "Tôi đồng ý với ý kiến của bạn."
+      },
+      {
+        "ja": "賛成多数で決まる。",
+        "vi": "Được quyết định bằng đa số tán thành."
+      },
+      {
+        "ja": "彼らはこの計画に賛成している。",
+        "vi": "Họ đang ủng hộ kế hoạch này."
+      }
+    ],
+    "id": "1bc6806d-eef7-49e9-9ba5-a73ebcf203a1"
+  },
+  {
+    "kanji": "反対",
+    "hiragana": "はんたい",
+    "meaning": "sự đối lập, sự phản đối",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 17,
+    "examples": [
+      {
+        "ja": "親に反対された。",
+        "vi": "Bị bố mẹ phản đối."
+      },
+      {
+        "ja": "反対の意見を言う。",
+        "vi": "Nói ý kiến phản đối."
+      },
+      {
+        "ja": "逆の方向は反対です。",
+        "vi": "Hướng ngược lại."
+      }
+    ],
+    "id": "bfaa6921-c42c-4a88-9523-7f36adf86100"
+  },
+  {
+    "kanji": "想像",
+    "hiragana": "そうぞう",
+    "meaning": "sự tưởng tượng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 17,
+    "examples": [
+      {
+        "ja": "未来の生活を想像する。",
+        "vi": "Tưởng tượng về cuộc sống tương lai."
+      },
+      {
+        "ja": "想像力が豊かだ。",
+        "vi": "Trí tưởng tượng phong phú."
+      },
+      {
+        "ja": "想像以上の結果が出た。",
+        "vi": "Ra kết quả hơn cả sức tưởng tượng."
+      }
+    ],
+    "id": "9991abb2-43a0-40d6-a87d-db366b804f04"
+  },
+  {
+    "kanji": "努力",
+    "hiragana": "どりょく",
+    "meaning": "nỗ lực, cố gắng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 17,
+    "examples": [
+      {
+        "ja": "努力すれば成功する。",
+        "vi": "Nếu nỗ lực thì sẽ thành công."
+      },
+      {
+        "ja": "努力が実を結ぶ。",
+        "vi": "Sự nỗ lực đơm hoa kết trái."
+      },
+      {
+        "ja": "目標に向けて努力する。",
+        "vi": "Nỗ lực hướng đến mục tiêu."
+      }
+    ],
+    "id": "bd38c6c3-8f75-47f6-8f74-737fdef328bf"
+  },
+  {
+    "kanji": "私",
+    "hiragana": "わたし",
+    "meaning": "tôi",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "私は学生です。",
+        "vi": "Tôi là học sinh."
+      },
+      {
+        "ja": "私の名前は田中です。",
+        "vi": "Tên của tôi là Tanaka."
+      },
+      {
+        "ja": "私の趣味は旅行です。",
+        "vi": "Sở thích của tôi là đi du lịch."
+      }
+    ],
+    "id": "97e6137d-c6de-4e28-a3a0-1b5976d8ad1e"
+  },
+  {
+    "kanji": "家族",
+    "hiragana": "かぞく",
+    "meaning": "gia đình",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "私の家族は４人です。",
+        "vi": "Gia đình tôi có 4 người."
+      },
+      {
+        "ja": "家族と旅行に行く。",
+        "vi": "Đi du lịch cùng gia đình."
+      },
+      {
+        "ja": "家族を大切にする。",
+        "vi": "Trân trọng gia đình."
+      }
+    ],
+    "id": "a4ffcc0e-f2fa-41da-aa18-9624d8d8020b"
+  },
+  {
+    "kanji": "父",
+    "hiragana": "ちち",
+    "meaning": "cha",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "父は会社員です。",
+        "vi": "Bố tôi là nhân viên văn phòng."
+      },
+      {
+        "ja": "父とキャッチボールをする。",
+        "vi": "Chơi ném bóng với bố."
+      },
+      {
+        "ja": "父の日にプレゼントをあげる。",
+        "vi": "Tặng quà nhân Ngày Của Cha."
+      }
+    ],
+    "id": "a9e168fd-fb29-462d-9f51-c1146af93997"
+  },
+  {
+    "kanji": "母",
+    "hiragana": "はは",
+    "meaning": "mẹ",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "母の料理は美味しい。",
+        "vi": "Đồ ăn mẹ nấu rất ngon."
+      },
+      {
+        "ja": "母と一緒に買い物に行く。",
+        "vi": "Đi mua sắm cùng mẹ."
+      },
+      {
+        "ja": "母はいつも忙しい。",
+        "vi": "Mẹ lúc nào cũng bận rộn."
+      }
+    ],
+    "id": "8f451051-efcb-4cce-b437-c531d0a51b6d"
+  },
+  {
+    "kanji": "兄",
+    "hiragana": "あに",
+    "meaning": "anh",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "兄は大学生です。",
+        "vi": "Anh trai tôi là sinh viên đại học."
+      },
+      {
+        "ja": "兄に勉強を教えてもらう。",
+        "vi": "Được anh trai dạy học cho."
+      },
+      {
+        "ja": "兄とケンカした。",
+        "vi": "Tôi đã cãi nhau với anh trai."
+      }
+    ],
+    "id": "9d46d465-0f67-4e5d-9b84-0c63b1203b52"
+  },
+  {
+    "kanji": "弟",
+    "hiragana": "おとうと",
+    "meaning": "em trai",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "弟はサッカーが好きです。",
+        "vi": "Em trai tôi thích bóng đá."
+      },
+      {
+        "ja": "弟と一緒にゲームをする。",
+        "vi": "Chơi game cùng em trai."
+      },
+      {
+        "ja": "弟が生まれた。",
+        "vi": "Em trai đã ra đời."
+      }
+    ],
+    "id": "47347cb3-36ca-4491-8be1-d904f4deab79"
+  },
+  {
+    "kanji": "姉",
+    "hiragana": "あね",
+    "meaning": "chị",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "姉は結婚しています。",
+        "vi": "Chị gái tôi đã kết hôn."
+      },
+      {
+        "ja": "姉の服を借りる。",
+        "vi": "Mượn quần áo của chị gái."
+      },
+      {
+        "ja": "姉は髪が長い。",
+        "vi": "Chị gái có mái tóc dài."
+      }
+    ],
+    "id": "8e947795-02b2-4465-ba16-d6f8d425f29b"
+  },
+  {
+    "kanji": "妹",
+    "hiragana": "いもうと",
+    "meaning": "em gái",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "妹は泣き虫だ。",
+        "vi": "Em gái tôi hay khóc nhè."
+      },
+      {
+        "ja": "妹とケーキを分ける。",
+        "vi": "Chia bánh kem với em gái."
+      },
+      {
+        "ja": "妹が可愛くて仕方ない。",
+        "vi": "Em gái đáng yêu không chịu nổi."
+      }
+    ],
+    "id": "7f135c10-3b32-4f6f-a9a4-d5e8aa6593a7"
+  },
+  {
+    "kanji": "祖父",
+    "hiragana": "そふ",
+    "meaning": "ông",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "祖父は庭いじりが好きです。",
+        "vi": "Ông tôi thích làm vườn."
+      },
+      {
+        "ja": "祖父の家を訪ねる。",
+        "vi": "Đến thăm nhà ông."
+      },
+      {
+        "ja": "祖父は今年80歳になる。",
+        "vi": "Ông tôi năm nay 80 tuổi."
+      }
+    ],
+    "id": "aaf5b4b3-dcb8-4347-85de-f14be959c863"
+  },
+  {
+    "kanji": "祖母",
+    "hiragana": "そぼ",
+    "meaning": "bà",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "祖母は料理が上手です。",
+        "vi": "Bà tôi nấu ăn rất giỏi."
+      },
+      {
+        "ja": "祖母から昔の話を聞く。",
+        "vi": "Nghe câu chuyện ngày xưa từ bà."
+      },
+      {
+        "ja": "祖母に手紙を書く。",
+        "vi": "Viết thư cho bà."
+      }
+    ],
+    "id": "0e3bd10b-8128-48d8-ab4c-e3f2199ab0eb"
+  },
+  {
+    "kanji": "おじ",
+    "hiragana": "おじ",
+    "meaning": "chú, bác trai",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "夏休みにおじの家へ行った。",
+        "vi": "Kỳ nghỉ hè tôi đã đến nhà chú."
+      },
+      {
+        "ja": "おじは医者をしています。",
+        "vi": "Chú tôi đang làm bác sĩ."
+      },
+      {
+        "ja": "おじからお年玉をもらう。",
+        "vi": "Nhận tiền mừng tuổi từ chú."
+      }
+    ],
+    "id": "1b68f967-bf85-4aa7-ae22-938a36ab7bc3"
+  },
+  {
+    "kanji": "おば",
+    "hiragana": "おば",
+    "meaning": "cô, bác gái",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "おばはとても親切です。",
+        "vi": "Cô tôi rất tốt bụng."
+      },
+      {
+        "ja": "おばの作ったクッキーを食べる。",
+        "vi": "Ăn bánh quy do cô làm."
+      },
+      {
+        "ja": "おばは東京に住んでいる。",
+        "vi": "Cô tôi sống ở Tokyo."
+      }
+    ],
+    "id": "2049cc42-24b1-4e2d-bfb0-51742973e3be"
+  },
+  {
+    "kanji": "いとこ",
+    "hiragana": "いとこ",
+    "meaning": "anh chị em họ",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "いとことよく遊んだ。",
+        "vi": "Tôi thường hay chơi với anh em họ."
+      },
+      {
+        "ja": "いとこの結婚式に行く。",
+        "vi": "Đến dự lễ cưới của anh họ."
+      },
+      {
+        "ja": "いとこは私と同い年だ。",
+        "vi": "Anh/em họ cùng tuổi với tôi."
+      }
+    ],
+    "id": "b5a5d425-ce39-4d2a-a684-e17a06d2a757"
+  },
+  {
+    "kanji": "家",
+    "hiragana": "いえ",
+    "meaning": "nhà",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 18,
+    "examples": [
+      {
+        "ja": "新しい家を建てる。",
+        "vi": "Xây một căn nhà mới."
+      },
+      {
+        "ja": "家でゆっくり休む。",
+        "vi": "Nghỉ ngơi thư giãn ở nhà."
+      },
+      {
+        "ja": "家に帰る。",
+        "vi": "Trở về nhà."
+      }
+    ],
+    "id": "a5df8a24-4801-4923-b613-9c816e3af0ef"
+  },
+  {
+    "kanji": "音楽",
+    "hiragana": "おんがく",
+    "meaning": "âm nhạc",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "音楽を聴くのが好きです。",
+        "vi": "Tôi thích nghe nhạc."
+      },
+      {
+        "ja": "クラシック音楽を聴く。",
+        "vi": "Nghe nhạc cổ điển."
+      },
+      {
+        "ja": "音楽の授業は楽しい。",
+        "vi": "Giờ học âm nhạc rất vui."
+      }
+    ],
+    "id": "a559396b-f800-4e55-8517-e10379c4a560"
+  },
+  {
+    "kanji": "記憶",
+    "hiragana": "きおく",
+    "meaning": "kí ức",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "その時の記憶がありません。",
+        "vi": "Tôi không có ký ức về lúc đó."
+      },
+      {
+        "ja": "記憶力が良い。",
+        "vi": "Trí nhớ tốt."
+      },
+      {
+        "ja": "記憶に残る言葉。",
+        "vi": "Những lời nói đọng lại trong trí nhớ."
+      }
+    ],
+    "id": "ba948353-bd86-41a6-bbe7-04d337acff69"
+  },
+  {
+    "kanji": "運動",
+    "hiragana": "うんどう",
+    "meaning": "vận động",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "毎日運動するようにしている。",
+        "vi": "Tôi đang cố gắng vận động mỗi ngày."
+      },
+      {
+        "ja": "運動不足を解消する。",
+        "vi": "Giải quyết việc thiếu vận động."
+      },
+      {
+        "ja": "公園で運動する。",
+        "vi": "Tập thể dục trong công viên."
+      }
+    ],
+    "id": "57c8398f-3221-4ee8-93b2-92686394b1cd"
+  },
+  {
+    "kanji": "大切",
+    "hiragana": "たいせつ",
+    "meaning": "quan trọng",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "時間を大切にする。",
+        "vi": "Trân trọng thời gian."
+      },
+      {
+        "ja": "大切な友達。",
+        "vi": "Người bạn quan trọng."
+      },
+      {
+        "ja": "健康は一番大切です。",
+        "vi": "Sức khỏe là quan trọng nhất."
+      }
+    ],
+    "id": "b75a68f5-38c3-4160-a486-1b328ac50851"
+  },
+  {
+    "kanji": "スポーツ",
+    "hiragana": "すぽーつ",
+    "meaning": "thể thao",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "スポーツをするのは体に良い。",
+        "vi": "Chơi thể thao rất tốt cho cơ thể."
+      },
+      {
+        "ja": "冬のスポーツといえばスキーだ。",
+        "vi": "Nói đến thể thao mùa đông là nhắc đến trượt tuyết."
+      },
+      {
+        "ja": "スポーツニュースを見る。",
+        "vi": "Xem tin tức thể thao."
+      }
+    ],
+    "id": "f26d7bdf-7073-49b3-abbe-028db56cf284"
+  },
+  {
+    "kanji": "学生",
+    "hiragana": "がくせい",
+    "meaning": "học sinh, sinh viên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "私は大学の学生です。",
+        "vi": "Tôi là sinh viên đại học."
+      },
+      {
+        "ja": "学生時代が懐かしい。",
+        "vi": "Nhớ nhung thời học sinh."
+      },
+      {
+        "ja": "真面目な学生が多い。",
+        "vi": "Có rất nhiều học sinh chăm chỉ."
+      }
+    ],
+    "id": "30064656-2c89-43b7-857b-b4cbab679f7f"
+  },
+  {
+    "kanji": "正しい",
+    "hiragana": "ただしい",
+    "meaning": "đúng",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "正しい答えを選ぶ。",
+        "vi": "Chọn câu trả lời đúng."
+      },
+      {
+        "ja": "正しい日本語を使う。",
+        "vi": "Sử dụng tiếng Nhật chuẩn."
+      },
+      {
+        "ja": "彼の言っていることは正しい。",
+        "vi": "Những gì anh ấy nói là đúng."
+      }
+    ],
+    "id": "4a3656de-f71b-40ad-b1b2-2a88cea36126"
+  },
+  {
+    "kanji": "言葉",
+    "hiragana": "ことば",
+    "meaning": "từ ngữ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "外国の言葉を学ぶ。",
+        "vi": "Học ngôn ngữ nước ngoài."
+      },
+      {
+        "ja": "優しい言葉をかける。",
+        "vi": "Dành cho những lời nói dịu dàng."
+      },
+      {
+        "ja": "言葉の意味を調べる。",
+        "vi": "Tra nghĩa của từ vựng."
+      }
+    ],
+    "id": "70f2f7ba-120f-4acd-becb-efb501aa030e"
+  },
+  {
+    "kanji": "話す",
+    "hiragana": "はなす",
+    "meaning": "nói",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "日本語を話すことができます。",
+        "vi": "Tôi có thể nói tiếng Nhật."
+      },
+      {
+        "ja": "友達と電話で話す。",
+        "vi": "Nói chuyện điện thoại với bạn."
+      },
+      {
+        "ja": "ゆっくり話してください。",
+        "vi": "Xin hãy nói chậm lại."
+      }
+    ],
+    "id": "e8559b2e-3acf-4960-89af-62bf944c4a8f"
+  },
+  {
+    "kanji": "書く",
+    "hiragana": "かく",
+    "meaning": "viết",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "名前をノートに書く。",
+        "vi": "Viết tên vào vở."
+      },
+      {
+        "ja": "漢字を書く練習をする。",
+        "vi": "Luyện tập viết Kanji."
+      },
+      {
+        "ja": "友達に手紙を書く。",
+        "vi": "Viết thư cho bạn bè."
+      }
+    ],
+    "id": "09fdd755-e6a1-469a-8148-171bb8244ba1"
+  },
+  {
+    "kanji": "見る",
+    "hiragana": "みる",
+    "meaning": "nhìn",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "テレビを見るのが好きです。",
+        "vi": "Tôi thích xem ti vi."
+      },
+      {
+        "ja": "美しい景色を見る。",
+        "vi": "Ngắm cảnh đẹp."
+      },
+      {
+        "ja": "映画を見るために映画館へ行く。",
+        "vi": "Đến rạp để xem phim."
+      }
+    ],
+    "id": "97e609dc-7043-47cd-b5fa-cf4f7b66e8e0"
+  },
+  {
+    "kanji": "食べる",
+    "hiragana": "たべる",
+    "meaning": "ăn",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "朝ご飯を食べる。",
+        "vi": "Ăn bữa sáng."
+      },
+      {
+        "ja": "寿司を食べるのが好きです。",
+        "vi": "Tôi thích ăn Sushi."
+      },
+      {
+        "ja": "たくさん食べてください。",
+        "vi": "Hãy ăn nhiều vào nhé."
+      }
+    ],
+    "id": "03cfc836-3981-4c93-a6a5-baf60a191c32"
+  },
+  {
+    "kanji": "遊ぶ",
+    "hiragana": "あそぶ",
+    "meaning": "chơi",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "子供が公園で遊ぶ。",
+        "vi": "Trẻ con chơi trong công viên."
+      },
+      {
+        "ja": "友達と遊ぶ約束をした。",
+        "vi": "Đã hẹn đi chơi với bạn."
+      },
+      {
+        "ja": "ゲームをして遊ぶ。",
+        "vi": "Chơi game."
+      }
+    ],
+    "id": "91e873a1-2709-4ecc-8f65-a0d6915ecba5"
+  },
+  {
+    "kanji": "",
+    "hiragana": "しゅみ",
+    "meaning": "sở thích",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 19,
+    "examples": [
+      {
+        "ja": "休日は趣味の時間に使う。",
+        "vi": "Dành thời gian ngày nghỉ cho sở thích."
+      },
+      {
+        "ja": "共通の趣味を持つ。",
+        "vi": "Có sở thích chung."
+      },
+      {
+        "ja": "趣味は写真撮影です。",
+        "vi": "Sở thích của tôi là chụp ảnh."
+      }
+    ],
+    "id": "f3d08e66-c2ca-4222-8212-731c808d740b"
+  },
+  {
+    "kanji": "新年会",
+    "hiragana": "しんねんかい",
+    "meaning": "tiệc mừng năm mới",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "会社の新年会に参加する。",
+        "vi": "Tham gia tiệc tân niên của công ty."
+      },
+      {
+        "ja": "新年会で乾杯する。",
+        "vi": "Cạn ly tại bữa tiệc năm mới."
+      },
+      {
+        "ja": "新年会の幹事を任された。",
+        "vi": "Được giao nhiệm vụ quản trò cho bữa tiệc năm mới."
+      }
+    ],
+    "id": "ba384a45-b24e-4a23-b1a0-6ccdef3a8d1e"
+  },
+  {
+    "kanji": "言う",
+    "hiragana": "いう",
+    "meaning": "nói",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "彼は「ありがとう」と言った。",
+        "vi": "Anh ấy đã nói 'Cảm ơn'."
+      },
+      {
+        "ja": "嘘を言うのは良くない。",
+        "vi": "Nói dối là không tốt."
+      },
+      {
+        "ja": "自分の意見をはっきり言う。",
+        "vi": "Nói rõ ràng ý kiến của bản thân."
+      }
+    ],
+    "id": "4c81d74d-d472-4a3c-beba-a0e6f3a3c1c0"
+  },
+  {
+    "kanji": "年",
+    "hiragana": "ねん",
+    "meaning": "năm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "今年は2026年です。",
+        "vi": "Năm nay là năm 2026."
+      },
+      {
+        "ja": "来年、日本へ行きます。",
+        "vi": "Năm sau tôi sẽ đi Nhật."
+      },
+      {
+        "ja": "数年前に彼に会った。",
+        "vi": "Tôi đã gặp anh ấy vài năm trước."
+      }
+    ],
+    "id": "ce97e983-187b-4c65-9a2e-75eac298759b"
+  },
+  {
+    "kanji": "日",
+    "hiragana": "ひ",
+    "meaning": "ngày",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "今日は天気がいい日ですね。",
+        "vi": "Hôm nay là một ngày thời tiết đẹp nhỉ."
+      },
+      {
+        "ja": "記念日をお祝いする。",
+        "vi": "Ăn mừng ngày kỷ niệm."
+      },
+      {
+        "ja": "次の休みの日には何をするの？",
+        "vi": "Ngày nghỉ tiếp theo bạn sẽ làm gì?"
+      }
+    ],
+    "id": "3f919035-f3d8-48bd-adc8-6bd86d017d31"
+  },
+  {
+    "kanji": "上",
+    "hiragana": "うえ",
+    "meaning": "trên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "机の上に本がある。",
+        "vi": "Có quyển sách ở trên bàn."
+      },
+      {
+        "ja": "山の上の空気はきれいだ。",
+        "vi": "Không khí trên núi rất trong lành."
+      },
+      {
+        "ja": "上を向いて歩く。",
+        "vi": "Ngẩng mặt lên trên và bước đi."
+      }
+    ],
+    "id": "f2f380a6-c0a4-4c0c-b304-8541c2dbcb18"
+  },
+  {
+    "kanji": "楽しい",
+    "hiragana": "たのしい",
+    "meaning": "vui vẻ",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "パーティーはとても楽しい。",
+        "vi": "Bữa tiệc rất vui."
+      },
+      {
+        "ja": "楽しい時間を過ごした。",
+        "vi": "Đã trải qua một khoảng thời gian vui vẻ."
+      },
+      {
+        "ja": "旅行は楽しい思い出になった。",
+        "vi": "Chuyến du lịch đã trở thành kỷ niệm vui vẻ."
+      }
+    ],
+    "id": "b56ed3a8-9488-4d0c-9647-0ccbba2046ec"
+  },
+  {
+    "kanji": "時間",
+    "hiragana": "じかん",
+    "meaning": "thời gian",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "もうこんな時間だ。",
+        "vi": "Đã đến giờ này rồi sao."
+      },
+      {
+        "ja": "時間に遅れないようにしてください。",
+        "vi": "Xin đừng đến trễ giờ."
+      },
+      {
+        "ja": "勉強する時間を作る。",
+        "vi": "Tạo thời gian để học tập."
+      }
+    ],
+    "id": "d156c4d8-fd4b-49d8-b011-f85c6e2a7262"
+  },
+  {
+    "kanji": "場所",
+    "hiragana": "ばしょ",
+    "meaning": "địa điểm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "集合場所を決める。",
+        "vi": "Quyết định địa điểm tập trung."
+      },
+      {
+        "ja": "静かな場所で本を読む。",
+        "vi": "Đọc sách ở một nơi yên tĩnh."
+      },
+      {
+        "ja": "ここは安全な場所です。",
+        "vi": "Nơi này là địa điểm an toàn."
+      }
+    ],
+    "id": "2093416e-0c18-41b1-ad78-ed0af6f52950"
+  },
+  {
+    "kanji": "物",
+    "hiragana": "もの",
+    "meaning": "vật",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "美味しいものを食べたい。",
+        "vi": "Tôi muốn ăn đồ ngon."
+      },
+      {
+        "ja": "忘れ物に注意する。",
+        "vi": "Chú ý để không quên đồ."
+      },
+      {
+        "ja": "古いものを捨てる。",
+        "vi": "Vứt bỏ đồ cũ."
+      }
+    ],
+    "id": "6cc40ef0-b0e3-4f14-8f75-04df464bd8c5"
+  },
+  {
+    "kanji": "方",
+    "hiragana": "かた",
+    "meaning": "người, cách",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "あの方はどなたですか？",
+        "vi": "Vị kia là ai vậy?"
+      },
+      {
+        "ja": "漢字の読み方を調べる。",
+        "vi": "Tra cứu cách đọc chữ Kanji."
+      },
+      {
+        "ja": "作り方を教えてください。",
+        "vi": "Xin hãy chỉ cho tôi cách làm."
+      }
+    ],
+    "id": "362d12fc-0ecb-4c36-9c18-66368f61f335"
+  },
+  {
+    "kanji": "進行",
+    "hiragana": "しんこう",
+    "meaning": "tiến hành",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "工事が進行している。",
+        "vi": "Công trình đang được tiến hành."
+      },
+      {
+        "ja": "プログラムを進行する。",
+        "vi": "Tiến hành chương trình."
+      },
+      {
+        "ja": "ゲームの進行を保存する。",
+        "vi": "Lưu tiến trình của trò chơi."
+      }
+    ],
+    "id": "17c903ac-57a9-4cc0-b1e8-dafe0fb9e0f1"
+  },
+  {
+    "kanji": "必要",
+    "hiragana": "ひつよう",
+    "meaning": "cần thiết",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "パスポートが必要です。",
+        "vi": "Cần phải có hộ chiếu."
+      },
+      {
+        "ja": "彼には休息が必要だ。",
+        "vi": "Anh ấy cần được nghỉ ngơi."
+      },
+      {
+        "ja": "必要なものをリストにする。",
+        "vi": "Lập danh sách những thứ cần thiết."
+      }
+    ],
+    "id": "28686df5-cafd-424c-882b-50980dca4b5d"
+  },
+  {
+    "kanji": "年日",
+    "hiragana": "ねんび",
+    "meaning": "ngày tháng năm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "年日を記録する。",
+        "vi": "Ghi chép lại ngày tháng năm."
+      },
+      {
+        "ja": "書類に年日を記入する。",
+        "vi": "Điền ngày tháng năm vào tài liệu."
+      },
+      {
+        "ja": "正確な年日を確認する。",
+        "vi": "Xác nhận ngày tháng năm chính xác."
+      }
+    ],
+    "id": "c17fc140-2b71-4d49-af79-103a414f9afc"
+  },
+  {
+    "kanji": "大事",
+    "hiragana": "だいじ",
+    "meaning": "quan trọng",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 20,
+    "examples": [
+      {
+        "ja": "大事な会議がある。",
+        "vi": "Có một cuộc họp quan trọng."
+      },
+      {
+        "ja": "体を大事にしてください。",
+        "vi": "Xin hãy giữ gìn cơ thể cẩn thận."
+      },
+      {
+        "ja": "大事な用事を思い出した。",
+        "vi": "Đã nhớ ra việc quan trọng."
+      }
+    ],
+    "id": "c1c94613-e8df-4e16-856f-f1947161b3ce"
+  },
+  {
+    "kanji": "日本",
+    "hiragana": "にほん",
+    "meaning": "Nhật Bản",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "日本へようこそ。",
+        "vi": "Chào mừng đến với Nhật Bản."
+      },
+      {
+        "ja": "日本の文化に興味がある。",
+        "vi": "Tôi quan tâm đến văn hóa Nhật Bản."
+      },
+      {
+        "ja": "日本語を勉強しています。",
+        "vi": "Tôi đang học tiếng Nhật."
+      }
+    ],
+    "id": "83eb1eea-26e0-4104-88d5-d333cd9a849f"
+  },
+  {
+    "kanji": "引き",
+    "hiragana": "ひき",
+    "meaning": "Kéo, dẫn",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "ドアを引き開ける。",
+        "vi": "Kéo mở cửa."
+      },
+      {
+        "ja": "犬の引きひもを持つ。",
+        "vi": "Cầm dây dắt chó."
+      },
+      {
+        "ja": "強い引きに驚いた。",
+        "vi": "Tôi bất ngờ vì sức kéo mạnh."
+      }
+    ],
+    "id": "b5ffc087-8b10-4d08-9435-85e2f909f9b6"
+  },
+  {
+    "kanji": "遠い",
+    "hiragana": "とおい",
+    "meaning": "Xa",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "駅からは遠いです。",
+        "vi": "Nó ở xa nhà ga."
+      },
+      {
+        "ja": "遠い国へ旅行したい。",
+        "vi": "Tôi muốn đi du lịch đến một đất nước xa xôi."
+      },
+      {
+        "ja": "遠くまで歩いた。",
+        "vi": "Đã đi bộ đến một nơi rất xa."
+      }
+    ],
+    "id": "4dfa1be7-c649-4975-a967-446289e6be86"
+  },
+  {
+    "kanji": "",
+    "hiragana": "まだ",
+    "meaning": "Vẫn còn",
+    "type": "adverb",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "宿題はまだ終わっていません。",
+        "vi": "Bài tập về nhà thì vẫn chưa xong."
+      },
+      {
+        "ja": "まだ時間があります。",
+        "vi": "Vẫn còn thời gian."
+      },
+      {
+        "ja": "彼はまだ寝ている。",
+        "vi": "Anh ấy vẫn còn đang ngủ."
+      }
+    ],
+    "id": "6fcaa2b5-85e4-463b-a646-3164099e4635"
+  },
+  {
+    "kanji": "知る",
+    "hiragana": "しる",
+    "meaning": "Biết",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "そのニュースを知っていますか？",
+        "vi": "Bạn có biết tin tức đó không?"
+      },
+      {
+        "ja": "彼を知る人は少ない。",
+        "vi": "Có ít người biết anh ấy."
+      },
+      {
+        "ja": "真実を知りたい。",
+        "vi": "Tôi muốn biết sự thật."
+      }
+    ],
+    "id": "22cb8dbd-10b2-43bb-852d-2c29a7a716b1"
+  },
+  {
+    "kanji": "新しい",
+    "hiragana": "あたらしい",
+    "meaning": "Mới",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "新しい靴を買った。",
+        "vi": "Tôi đã mua đôi giày mới."
+      },
+      {
+        "ja": "新しい技術を学ぶ。",
+        "vi": "Học hỏi công nghệ mới."
+      },
+      {
+        "ja": "新しい年が始まる。",
+        "vi": "Một năm mới bắt đầu."
+      }
+    ],
+    "id": "24d0392a-0508-435a-b750-f5d55f257b50"
+  },
+  {
+    "kanji": "旅行",
+    "hiragana": "りょこう",
+    "meaning": "Du lịch",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "来月、旅行に行きます。",
+        "vi": "Tháng sau tôi sẽ đi du lịch."
+      },
+      {
+        "ja": "家族旅行は楽しかった。",
+        "vi": "Chuyến du lịch gia đình đã rất vui."
+      },
+      {
+        "ja": "海外旅行を計画する。",
+        "vi": "Lập kế hoạch đi du lịch nước ngoài."
+      }
+    ],
+    "id": "65761bbf-4054-4cfb-bd75-8608b74a8460"
+  },
+  {
+    "kanji": "子ども",
+    "hiragana": "こども",
+    "meaning": "Trẻ em",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "子供が公園で遊んでいる。",
+        "vi": "Bọn trẻ đang chơi trong công viên."
+      },
+      {
+        "ja": "子供のために本を買う。",
+        "vi": "Mua sách cho bọn trẻ."
+      },
+      {
+        "ja": "子供の成長は早い。",
+        "vi": "Sự trưởng thành của trẻ con rất nhanh."
+      }
+    ],
+    "id": "aada0024-70ce-4b87-9bda-389c80b4b5fe"
+  },
+  {
+    "kanji": "サッカー",
+    "hiragana": "さっかー",
+    "meaning": "Bóng đá",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "サッカーを見るのが好きです。",
+        "vi": "Tôi thích xem bóng đá."
+      },
+      {
+        "ja": "彼はサッカーの試合に出た。",
+        "vi": "Anh ấy đã ra sân trong trận đấu bóng đá."
+      },
+      {
+        "ja": "公園でサッカーをする。",
+        "vi": "Chơi bóng đá trong công viên."
+      }
+    ],
+    "id": "404d0bfc-50fa-4369-88da-910a38b55546"
+  },
+  {
+    "kanji": "選手",
+    "hiragana": "せんしゅ",
+    "meaning": "Vận động viên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "彼は有名なサッカー選手です。",
+        "vi": "Anh ấy là một cầu thủ bóng đá nổi tiếng."
+      },
+      {
+        "ja": "オリンピックの選手を応援する。",
+        "vi": "Cổ vũ cho vận động viên Olympic."
+      },
+      {
+        "ja": "プロの選手になる。",
+        "vi": "Trở thành vận động viên chuyên nghiệp."
+      }
+    ],
+    "id": "281f45d1-19fd-4b01-bd24-758c478ab4d6"
+  },
+  {
+    "kanji": "思う",
+    "hiragana": "おもう",
+    "meaning": "Nghĩ",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 21,
+    "examples": [
+      {
+        "ja": "これがいいと思います。",
+        "vi": "Tôi nghĩ cái này tốt đấy."
+      },
+      {
+        "ja": "あなたのことをいつも思っている。",
+        "vi": "Lúc nào tôi cũng nghĩ về bạn."
+      },
+      {
+        "ja": "どう思うか教えてください。",
+        "vi": "Xin hãy cho tôi biết bạn nghĩ gì."
+      }
+    ],
+    "id": "d116abb2-21d6-4a45-8eba-87acd47a9be3"
+  },
+  {
+    "kanji": "高齢者",
+    "hiragana": "こうれいしゃ",
+    "meaning": "người cao tuổi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 22,
+    "examples": [
+      {
+        "ja": "日本の高齢者は増えている。",
+        "vi": "Người cao tuổi ở Nhật Bản đang tăng lên."
+      },
+      {
+        "ja": "席を高齢者に譲る。",
+        "vi": "Nhường ghế cho người cao tuổi."
+      },
+      {
+        "ja": "高齢者向けのスポーツクラブがある。",
+        "vi": "Có câu lạc bộ thể thao dành cho người cao tuổi."
+      }
+    ],
+    "id": "2e92891e-e021-4ba7-908d-29c62afc6c40"
+  },
+  {
+    "kanji": "中年",
+    "hiragana": "ちゅうねん",
+    "meaning": "trung niên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 22,
+    "examples": [
+      {
+        "ja": "中年の男性が道を尋ねてきた。",
+        "vi": "Một người đàn ông trung niên đã hỏi đường."
+      },
+      {
+        "ja": "彼は中太りの中年だ。",
+        "vi": "Ông ấy là một người trung niên hơi béo."
+      },
+      {
+        "ja": "中年の夫婦が散歩している。",
+        "vi": "Cặp vợ chồng trung niên đang đi dạo."
+      }
+    ],
+    "id": "b9a69958-4c58-4895-9fe0-cc698455fbf8"
+  },
+  {
+    "kanji": "青年",
+    "hiragana": "せいねん",
+    "meaning": "thanh niên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 22,
+    "examples": [
+      {
+        "ja": "立派な青年に成長した。",
+        "vi": "Đã trưởng thành thành một thanh niên tuyệt vời."
+      },
+      {
+        "ja": "青年の主張を真剣に聞く。",
+        "vi": "Nghiêm túc lắng nghe ý kiến của thanh niên."
+      },
+      {
+        "ja": "彼はとても真面目な青年だ。",
+        "vi": "Cậu ấy là một thanh niên rất nghiêm túc."
+      }
+    ],
+    "id": "15398b0f-1647-4034-9ecc-ef32fbedf2ca"
+  },
+  {
+    "kanji": "幼児",
+    "hiragana": "ようじ",
+    "meaning": "trẻ nhỏ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 22,
+    "examples": [
+      {
+        "ja": "幼児向けの絵本を買う。",
+        "vi": "Mua sách tranh dành cho trẻ nhỏ."
+      },
+      {
+        "ja": "公園で幼児が遊んでいる。",
+        "vi": "Trẻ nhỏ đang chơi trong công viên."
+      },
+      {
+        "ja": "幼児の成長は早い。",
+        "vi": "Sự phát triển của trẻ nhỏ rất nhanh."
+      }
+    ],
+    "id": "59b24bdc-9fc7-4081-9fd1-687b72df629f"
+  },
+  {
+    "kanji": "太陽",
+    "hiragana": "たいよう",
+    "meaning": "Mặt trời",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 23,
+    "examples": [
+      {
+        "ja": "太陽が昇る。",
+        "vi": "Mặt trời mọc."
+      },
+      {
+        "ja": "太陽の光がまぶしい。",
+        "vi": "Ánh sáng mặt trời chói chang."
+      },
+      {
+        "ja": "地球は太陽の周りを回っている。",
+        "vi": "Trái đất quay quanh mặt trời."
+      }
+    ],
+    "id": "ec4282e0-492d-4fd4-bf60-b65f4e363d0b"
+  },
+  {
+    "kanji": "地球",
+    "hiragana": "ちきゅう",
+    "meaning": "Trái đất",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 23,
+    "examples": [
+      {
+        "ja": "地球の環境を守る。",
+        "vi": "Bảo vệ môi trường Trái đất."
+      },
+      {
+        "ja": "地球温暖化が進んでいる。",
+        "vi": "Sự nóng lên toàn cầu đang tiến triển."
+      },
+      {
+        "ja": "地球は丸い。",
+        "vi": "Trái đất hình tròn."
+      }
+    ],
+    "id": "e11d4140-ec44-4071-ba74-07300d5f4272"
+  },
+  {
+    "kanji": "温度",
+    "hiragana": "おんど",
+    "meaning": "Nhiệt độ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 23,
+    "examples": [
+      {
+        "ja": "部屋の温度を調節する。",
+        "vi": "Điều chỉnh nhiệt độ trong phòng."
+      },
+      {
+        "ja": "今日の温度は高い。",
+        "vi": "Nhiệt độ hôm nay cao."
+      },
+      {
+        "ja": "水が沸騰する温度は100度だ。",
+        "vi": "Nhiệt độ nước sôi là 100 độ."
+      }
+    ],
+    "id": "af8b701f-e87f-4efa-8586-a45f3c9a2477"
+  },
+  {
+    "kanji": "湿度",
+    "hiragana": "しつど",
+    "meaning": "Độ ẩm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 23,
+    "examples": [
+      {
+        "ja": "日本の夏は湿度が高い。",
+        "vi": "Mùa hè ở Nhật có độ ẩm cao."
+      },
+      {
+        "ja": "湿度が低いと風邪を引きやすい。",
+        "vi": "Độ ẩm thấp dễ bị cảm cúm."
+      },
+      {
+        "ja": "今日の湿度は60％だ。",
+        "vi": "Độ ẩm hôm nay là 60%."
+      }
+    ],
+    "id": "0c77ffd2-5e64-4960-a8d9-04e8d424bb2f"
+  },
+  {
+    "kanji": "湿気",
+    "hiragana": "しっけ",
+    "meaning": "Độ ẩm, hơi ẩm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 23,
+    "examples": [
+      {
+        "ja": "この部屋は湿気が多い。",
+        "vi": "Phòng này có nhiều hơi ẩm."
+      },
+      {
+        "ja": "湿気でカビが生えた。",
+        "vi": "Do ẩm ướt nên nấm mốc đã mọc lên."
+      },
+      {
+        "ja": "梅雨の時期は湿気がひどい。",
+        "vi": "Thời kỳ mùa mưa độ ẩm rất tệ."
+      }
+    ],
+    "id": "670980c4-e0a3-4ec9-a2c6-3e8494dc4070"
+  },
+  {
+    "kanji": "梅雨",
+    "hiragana": "つゆ",
+    "meaning": "Mùa mưa",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 23,
+    "examples": [
+      {
+        "ja": "もうすぐ梅雨に入る。",
+        "vi": "Sắp bước vào mùa mưa."
+      },
+      {
+        "ja": "梅雨の季節は洗濯物が乾かない。",
+        "vi": "Mùa mưa đồ giặt không khô được."
+      },
+      {
+        "ja": "梅雨が明けて、夏が来た。",
+        "vi": "Mùa mưa kết thúc, mùa hè đã đến."
+      }
+    ],
+    "id": "8a402218-2006-4f83-ae62-91e38c2232c4"
+  },
+  {
+    "kanji": "暖房",
+    "hiragana": "だんぼう",
+    "meaning": "Hệ thống sưởi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 23,
+    "examples": [
+      {
+        "ja": "部屋が寒いので暖房をつける。",
+        "vi": "Vì phòng lạnh nên tôi bật hệ thống sưởi."
+      },
+      {
+        "ja": "暖房が効いていて暖かい。",
+        "vi": "Hệ thống sưởi hoạt động tốt nên rất ấm."
+      },
+      {
+        "ja": "暖房の温度を下げる。",
+        "vi": "Giảm nhiệt độ của máy sưởi."
+      }
+    ],
+    "id": "446d15bf-7d20-4836-bc35-e95a5efde32d"
+  },
+  {
+    "kanji": "",
+    "hiragana": "かけ",
+    "meaning": "Mô hình",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 23,
+    "examples": [
+      {
+        "ja": "作りかけの料理がある。",
+        "vi": "Có món ăn đang làm dở."
+      },
+      {
+        "ja": "読みかけの本を机に置く。",
+        "vi": "Đặt cuốn sách đang đọc dở lên bàn."
+      },
+      {
+        "ja": "飲みかけのコーヒーを捨てる。",
+        "vi": "Vứt cốc cà phê uống dở."
+      }
+    ],
+    "id": "529ac1ae-b346-4a52-b3d8-a4216974d0ff"
+  },
+  {
+    "kanji": "皮",
+    "hiragana": "かわ",
+    "meaning": "da, vỏ",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 24,
+    "examples": [
+      {
+        "ja": "りんごの皮をむく。",
+        "vi": "Gọt vỏ quả táo."
+      },
+      {
+        "ja": "みかんの皮を捨てる。",
+        "vi": "Vứt vỏ quýt."
+      },
+      {
+        "ja": "この動物の皮は柔らかい。",
+        "vi": "Da của loài động vật này rất mềm."
+      }
+    ],
+    "id": "d4a3b6e6-e976-4d45-acac-4c87b43b4e9d"
+  },
+  {
+    "kanji": "缶",
+    "hiragana": "かん",
+    "meaning": "lon, hộp",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 24,
+    "examples": [
+      {
+        "ja": "缶ビールを飲む。",
+        "vi": "Uống bia lon."
+      },
+      {
+        "ja": "ゴミ箱に空き缶を捨てる。",
+        "vi": "Vứt lon rỗng vào thùng rác."
+      },
+      {
+        "ja": "缶詰を開ける。",
+        "vi": "Mở đồ hộp."
+      }
+    ],
+    "id": "b132e526-bd7f-4da0-bd0a-52d95cd54a1b"
+  },
+  {
+    "kanji": "画面",
+    "hiragana": "がめん",
+    "meaning": "màn hình",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 24,
+    "examples": [
+      {
+        "ja": "パソコンの画面を見る。",
+        "vi": "Nhìn vào màn hình máy tính."
+      },
+      {
+        "ja": "スマホの画面が割れた。",
+        "vi": "Màn hình điện thoại bị vỡ."
+      },
+      {
+        "ja": "テレビの画面が暗い。",
+        "vi": "Màn hình tivi tối."
+      }
+    ],
+    "id": "2d285564-f728-4569-bc88-e0deb943b95d"
+  },
+  {
+    "kanji": "番組",
+    "hiragana": "ばんぐみ",
+    "meaning": "chương trình (truyền hình, radio)",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 24,
+    "examples": [
+      {
+        "ja": "好きなテレビ番組を見る。",
+        "vi": "Xem chương trình truyền hình yêu thích."
+      },
+      {
+        "ja": "この番組はとても面白い。",
+        "vi": "Chương trình này rất thú vị."
+      },
+      {
+        "ja": "新しい番組が始まる。",
+        "vi": "Một chương trình mới sẽ bắt đầu."
+      }
+    ],
+    "id": "0a1ce954-5d30-45bd-92f4-22ea5d9a57b1"
+  },
+  {
+    "kanji": "記事",
+    "hiragana": "きじ",
+    "meaning": "bài báo, bài viết",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 24,
+    "examples": [
+      {
+        "ja": "新聞の記事を読む。",
+        "vi": "Đọc bài báo trên báo giấy."
+      },
+      {
+        "ja": "この記事は嘘だ。",
+        "vi": "Bài báo này là dối trá."
+      },
+      {
+        "ja": "面白い記事を見つけた。",
+        "vi": "Tôi đã tìm thấy một bài viết thú vị."
+      }
+    ],
+    "id": "88f5d127-2928-4e1f-bfa6-842474364c78"
+  },
+  {
+    "kanji": "近所",
+    "hiragana": "きんじょ",
+    "meaning": "hàng xóm, khu vực lân cận",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 24,
+    "examples": [
+      {
+        "ja": "近所の人に挨拶する。",
+        "vi": "Chào hỏi người hàng xóm."
+      },
+      {
+        "ja": "近所にコンビニができた。",
+        "vi": "Ở khu vực lân cận mới có cửa hàng tiện lợi."
+      },
+      {
+        "ja": "近所を散歩する。",
+        "vi": "Đi dạo quanh khu vực gần nhà."
+      }
+    ],
+    "id": "a8a624e2-9b84-471b-a94b-6cdf555462f7"
+  },
+  {
+    "kanji": "警察",
+    "hiragana": "けいさつ",
+    "meaning": "cảnh sát",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 24,
+    "examples": [
+      {
+        "ja": "警察に電話する。",
+        "vi": "Gọi điện cho cảnh sát."
+      },
+      {
+        "ja": "警察が事件を調べている。",
+        "vi": "Cảnh sát đang điều tra vụ án."
+      },
+      {
+        "ja": "泥棒が警察に捕まった。",
+        "vi": "Tên trộm đã bị cảnh sát bắt."
+      }
+    ],
+    "id": "8cba8274-0861-4b04-ad61-c4b5d8f6ecb0"
+  },
+  {
+    "kanji": "犯人",
+    "hiragana": "はんにん",
+    "meaning": "tội phạm, kẻ phạm tội",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 24,
+    "examples": [
+      {
+        "ja": "犯人はまだ逃げている。",
+        "vi": "Thủ phạm vẫn đang bỏ trốn."
+      },
+      {
+        "ja": "犯人が警察に捕まった。",
+        "vi": "Kẻ phạm tội đã bị cảnh sát bắt."
+      },
+      {
+        "ja": "彼が犯人だとわかった。",
+        "vi": "Đã biết anh ta là hung thủ."
+      }
+    ],
+    "id": "98c3e594-97a5-4fa9-b2ad-1768f2c3b3c7"
+  },
+  {
+    "kanji": "小さい",
+    "hiragana": "ちいさい",
+    "meaning": "nhỏ, bé",
+    "type": "adjective",
+    "level": "N5",
+    "source_page": 24,
+    "examples": [
+      {
+        "ja": "小さい犬を飼っている。",
+        "vi": "Đang nuôi một con chó nhỏ."
+      },
+      {
+        "ja": "服のサイズが小さい。",
+        "vi": "Kích cỡ quần áo nhỏ."
+      },
+      {
+        "ja": "声が小さいので聞こえない。",
+        "vi": "Vì giọng nói nhỏ nên không thể nghe thấy."
+      }
+    ],
+    "id": "1ea84ae4-4863-4182-9349-bbca230d2871"
+  },
+  {
+    "kanji": "ごちそう",
+    "hiragana": "ごちそう",
+    "meaning": "bữa tiệc, món ăn ngon",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 25,
+    "examples": [
+      {
+        "ja": "母がごちそうを作ってくれた。",
+        "vi": "Mẹ đã nấu một bữa ăn ngon cho tôi."
+      },
+      {
+        "ja": "今日は私がごちそうします。",
+        "vi": "Hôm nay tôi sẽ khao."
+      },
+      {
+        "ja": "たくさんのごちそうが並んでいる。",
+        "vi": "Rất nhiều món ăn ngon được bày biện."
+      }
+    ],
+    "id": "1c0cd18a-01d4-45ae-98a8-e70f83b9202c"
+  },
+  {
+    "kanji": "ざくしゃ",
+    "hiragana": "ざくしゃ",
+    "meaning": "tác giả, nghệ sĩ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 25,
+    "examples": [
+      {
+        "ja": "この本のざくしゃは誰ですか。",
+        "vi": "Tác giả của cuốn sách này là ai?"
+      },
+      {
+        "ja": "ざくしゃにサインをもらった。",
+        "vi": "Đã nhận được chữ ký của tác giả."
+      },
+      {
+        "ja": "有名なざくしゃの作品を読む。",
+        "vi": "Đọc tác phẩm của một tác giả nổi tiếng."
+      }
+    ],
+    "id": "7f12ad18-793b-45a6-9374-5d2f956cc187"
+  },
+  {
+    "kanji": "さくひん",
+    "hiragana": "さくひん",
+    "meaning": "tác phẩm (nghệ thuật, văn học)",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 25,
+    "examples": [
+      {
+        "ja": "これは彼の素晴らしいさくひんだ。",
+        "vi": "Đây là một tác phẩm tuyệt vời của anh ấy."
+      },
+      {
+        "ja": "美術館でさくひんを見る。",
+        "vi": "Xem các tác phẩm tại bảo tàng mỹ thuật."
+      },
+      {
+        "ja": "新しいさくひんを発表する。",
+        "vi": "Công bố tác phẩm mới."
+      }
+    ],
+    "id": "c5ed401f-a72e-494c-8811-2777568144f2"
+  },
+  {
+    "kanji": "せいふく",
+    "hiragana": "せいふく",
+    "meaning": "đồng phục",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 25,
+    "examples": [
+      {
+        "ja": "学校のせいふくを着る。",
+        "vi": "Mặc đồng phục của trường."
+      },
+      {
+        "ja": "あの高校のせいふくは可愛い。",
+        "vi": "Đồng phục của trường cấp 3 đó rất dễ thương."
+      },
+      {
+        "ja": "せいふくをクリーニングに出す。",
+        "vi": "Đem đồng phục đi giặt khô."
+      }
+    ],
+    "id": "326649aa-d5d4-4557-8184-bc3ca20b4951"
+  },
+  {
+    "kanji": "せんざい",
+    "hiragana": "せんざい",
+    "meaning": "chất tẩy rửa",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 25,
+    "examples": [
+      {
+        "ja": "洗濯のせんざいを買う。",
+        "vi": "Mua chất tẩy rửa để giặt giũ."
+      },
+      {
+        "ja": "このせんざいはよく汚れが落ちる。",
+        "vi": "Loại bột giặt này tẩy vết bẩn rất tốt."
+      },
+      {
+        "ja": "せんざいの匂いが好きだ。",
+        "vi": "Tôi thích mùi của bột giặt."
+      }
+    ],
+    "id": "ea698e41-1b8a-4174-816b-b010f3860015"
+  },
+  {
+    "kanji": "そこ",
+    "hiragana": "そこ",
+    "meaning": "đáy, dưới cùng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 25,
+    "examples": [
+      {
+        "ja": "海のそこを見る。",
+        "vi": "Nhìn xuống đáy biển."
+      },
+      {
+        "ja": "カバンのそこから鍵が出てきた。",
+        "vi": "Chìa khóa rơi ra từ đáy túi xách."
+      },
+      {
+        "ja": "靴のそこがすり減っている。",
+        "vi": "Đáy giày đã bị mòn."
+      }
+    ],
+    "id": "1d45e070-de2e-461d-9454-3f8cc800a6a6"
+  },
+  {
+    "kanji": "ちか",
+    "hiragana": "ちか",
+    "meaning": "tầng hầm, dưới lòng đất",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 25,
+    "examples": [
+      {
+        "ja": "ちかの駐車場に車を停める。",
+        "vi": "Đỗ xe ở bãi đậu xe tầng hầm."
+      },
+      {
+        "ja": "デパートのちかで買い物をする。",
+        "vi": "Mua sắm ở tầng hầm của cửa hàng bách hóa."
+      },
+      {
+        "ja": "ちか鉄に乗って会社に行く。",
+        "vi": "Đi tàu điện ngầm đến công ty."
+      }
+    ],
+    "id": "1ce17138-1dbf-4178-ae97-6a73c1cd2b90"
+  },
+  {
+    "kanji": "てら",
+    "hiragana": "てら",
+    "meaning": "chùa",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 25,
+    "examples": [
+      {
+        "ja": "京都の古いてらを観光する。",
+        "vi": "Tham quan các ngôi chùa cổ ở Kyoto."
+      },
+      {
+        "ja": "てらでお参りをする。",
+        "vi": "Đi viếng chùa."
+      },
+      {
+        "ja": "このてらは歴史がある。",
+        "vi": "Ngôi chùa này có bề dày lịch sử."
+      }
+    ],
+    "id": "1931844f-d940-42f0-93d9-3e587ae47da9"
+  },
+  {
+    "kanji": "道路",
+    "hiragana": "どうろ",
+    "meaning": "đường, con đường",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "道路が混んでいる。",
+        "vi": "Con đường đang đông đúc."
+      },
+      {
+        "ja": "新しい道路を作る。",
+        "vi": "Xây dựng một con đường mới."
+      },
+      {
+        "ja": "道路で遊んではいけない。",
+        "vi": "Không được chơi đùa trên đường phố."
+      }
+    ],
+    "id": "362beb34-c04c-4487-ac54-71c239f091ea"
+  },
+  {
+    "kanji": "坂",
+    "hiragana": "さか",
+    "meaning": "dốc, đồi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "急な坂を登る。",
+        "vi": "Leo lên một con dốc cao."
+      },
+      {
+        "ja": "自転車で坂を下る。",
+        "vi": "Đi xe đạp xuống dốc."
+      },
+      {
+        "ja": "この坂はきつい。",
+        "vi": "Con dốc này thật mệt mỏi."
+      }
+    ],
+    "id": "5f25c3d9-b8da-4980-8002-41e39309e41e"
+  },
+  {
+    "kanji": "煙",
+    "hiragana": "けむり",
+    "meaning": "khói",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "火事の煙が見える。",
+        "vi": "Có thể thấy khói của đám cháy."
+      },
+      {
+        "ja": "タバコの煙が嫌いだ。",
+        "vi": "Tôi ghét khói thuốc lá."
+      },
+      {
+        "ja": "工場から煙が出ている。",
+        "vi": "Khói đang bốc ra từ nhà máy."
+      }
+    ],
+    "id": "492afeaa-b58f-44e1-8c4c-2998e0f60812"
+  },
+  {
+    "kanji": "灰",
+    "hiragana": "はい",
+    "meaning": "tro, bụi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "タバコの灰を落とす。",
+        "vi": "Làm rơi tro thuốc lá."
+      },
+      {
+        "ja": "紙が燃えて灰になった。",
+        "vi": "Giấy cháy và biến thành tro."
+      },
+      {
+        "ja": "灰皿を洗う。",
+        "vi": "Rửa gạt tàn."
+      }
+    ],
+    "id": "845e63a7-0ae2-4263-996a-8c735da2ea58"
+  },
+  {
+    "kanji": "刃",
+    "hiragana": "は",
+    "meaning": "lưỡi (dao, kiếm)",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "包丁の刃を研ぐ。",
+        "vi": "Mài lưỡi dao phay."
+      },
+      {
+        "ja": "カッターの刃を替える。",
+        "vi": "Thay lưỡi dao rọc giấy."
+      },
+      {
+        "ja": "このナイフの刃は鋭い。",
+        "vi": "Lưỡi của con dao này rất sắc."
+      }
+    ],
+    "id": "d5e07d7e-51de-4551-8a73-c063cd249935"
+  },
+  {
+    "kanji": "名刺",
+    "hiragana": "めいし",
+    "meaning": "danh thiếp",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "会議の前に名刺を交換する。",
+        "vi": "Trao đổi danh thiếp trước cuộc họp."
+      },
+      {
+        "ja": "名刺を忘れてしまった。",
+        "vi": "Tôi đã quên danh thiếp mất rồi."
+      },
+      {
+        "ja": "新しい名刺を配る。",
+        "vi": "Phân phát danh thiếp mới."
+      }
+    ],
+    "id": "bcecacb7-f37e-4182-a27a-5b0ce218ef81"
+  },
+  {
+    "kanji": "免許",
+    "hiragana": "めんきょ",
+    "meaning": "giấy phép, bằng lái",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "車の免許を取る。",
+        "vi": "Lấy bằng lái xe ô tô."
+      },
+      {
+        "ja": "運転免許を更新する。",
+        "vi": "Gia hạn giấy phép lái xe."
+      },
+      {
+        "ja": "彼は免許を持っていない。",
+        "vi": "Anh ấy không có bằng lái."
+      }
+    ],
+    "id": "c1acf59e-8acc-4e41-ae2e-91de6bb474a8"
+  },
+  {
+    "kanji": "多",
+    "hiragana": "おお",
+    "meaning": "nhiều, đông",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "この町は人が多い。",
+        "vi": "Thị trấn này đông người."
+      },
+      {
+        "ja": "今日は仕事が多い。",
+        "vi": "Hôm nay có nhiều công việc."
+      },
+      {
+        "ja": "お金が多く必要だ。",
+        "vi": "Cần rất nhiều tiền."
+      }
+    ],
+    "id": "9adf8d4c-c28c-43d3-aa94-7f20d1de1bdf"
+  },
+  {
+    "kanji": "前半",
+    "hiragana": "ぜんはん",
+    "meaning": "nửa đầu",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "映画の前半はつまらなかった。",
+        "vi": "Nửa đầu của bộ phim khá nhàm chán."
+      },
+      {
+        "ja": "試合の前半が終わった。",
+        "vi": "Nửa đầu của trận đấu đã kết thúc."
+      },
+      {
+        "ja": "授業の前半は文法を学ぶ。",
+        "vi": "Nửa đầu của tiết học sẽ học ngữ pháp."
+      }
+    ],
+    "id": "b1cb80cc-7f56-4fdc-94b8-02316085c662"
+  },
+  {
+    "kanji": "後半",
+    "hiragana": "こうはん",
+    "meaning": "nửa sau",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 26,
+    "examples": [
+      {
+        "ja": "映画の後半は泣ける。",
+        "vi": "Nửa sau của bộ phim khiến tôi bật khóc."
+      },
+      {
+        "ja": "後半の試合に期待する。",
+        "vi": "Trông chờ vào trận đấu ở nửa sau."
+      },
+      {
+        "ja": "プログラムの後半が始まる。",
+        "vi": "Nửa sau của chương trình sẽ bắt đầu."
+      }
+    ],
+    "id": "445b2279-bfeb-4a6b-a2da-f769ac655814"
+  },
+  {
+    "kanji": "最高",
+    "hiragana": "さいこう",
+    "meaning": "cao nhất, tốt nhất, thực sự",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 27,
+    "examples": [
+      {
+        "ja": "今日の天気は最高だ。",
+        "vi": "Thời tiết hôm nay thực sự tuyệt vời."
+      },
+      {
+        "ja": "最高の点数を取った。",
+        "vi": "Đã đạt được điểm số cao nhất."
+      },
+      {
+        "ja": "このレストランの料理は最高だ。",
+        "vi": "Món ăn của nhà hàng này là ngon nhất."
+      }
+    ],
+    "id": "0dab9db7-52cc-4c4d-aff8-8ef8b142eefe"
+  },
+  {
+    "kanji": "最低",
+    "hiragana": "さいてい",
+    "meaning": "thấp nhất, tồi tệ nhất, ghê tởm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 27,
+    "examples": [
+      {
+        "ja": "最低の点数を取った。",
+        "vi": "Đã nhận được điểm số thấp nhất."
+      },
+      {
+        "ja": "彼の態度は最低だ。",
+        "vi": "Thái độ của anh ta thật tồi tệ."
+      },
+      {
+        "ja": "気温が最低記録を出した。",
+        "vi": "Nhiệt độ đã ghi nhận mức thấp kỷ lục."
+      }
+    ],
+    "id": "c8c8b584-1425-4918-9377-42c95ddd2180"
+  },
+  {
+    "kanji": "最初",
+    "hiragana": "さいしょ",
+    "meaning": "đầu tiên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 27,
+    "examples": [
+      {
+        "ja": "最初からやり直す。",
+        "vi": "Làm lại từ đầu."
+      },
+      {
+        "ja": "最初のページを開いてください。",
+        "vi": "Xin hãy mở trang đầu tiên."
+      },
+      {
+        "ja": "最初は難しかった。",
+        "vi": "Lúc đầu thì rất khó khăn."
+      }
+    ],
+    "id": "36a5f421-7161-40ac-83aa-6c8942a92c63"
+  },
+  {
+    "kanji": "最後",
+    "hiragana": "さいご",
+    "meaning": "cuối cùng, tận cùng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 27,
+    "examples": [
+      {
+        "ja": "最後まで諦めない。",
+        "vi": "Không bỏ cuộc cho đến tận cùng."
+      },
+      {
+        "ja": "最後の試合に勝った。",
+        "vi": "Đã chiến thắng trong trận đấu cuối cùng."
+      },
+      {
+        "ja": "これが最後のチャンスだ。",
+        "vi": "Đây là cơ hội cuối cùng."
+      }
+    ],
+    "id": "76e1e84c-385b-4968-8acd-c2cd1aa025ac"
+  },
+  {
+    "kanji": "自動",
+    "hiragana": "じどう",
+    "meaning": "tự động",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 27,
+    "examples": [
+      {
+        "ja": "このドアは自動です。",
+        "vi": "Cánh cửa này là tự động."
+      },
+      {
+        "ja": "自動販売機でジュースを買う。",
+        "vi": "Mua nước ép ở máy bán hàng tự động."
+      },
+      {
+        "ja": "電気が自動で消える。",
+        "vi": "Đèn sẽ tự động tắt."
+      }
+    ],
+    "id": "ce5c6ab0-0a8b-4866-ba11-c88ba77104d9"
+  },
+  {
+    "kanji": "種類",
+    "hiragana": "しゅるい",
+    "meaning": "loại, kiểu",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 27,
+    "examples": [
+      {
+        "ja": "色々な種類の花がある。",
+        "vi": "Có rất nhiều loại hoa khác nhau."
+      },
+      {
+        "ja": "パンの種類が豊富だ。",
+        "vi": "Các loại bánh mì rất phong phú."
+      },
+      {
+        "ja": "新しい種類の商品を開発する。",
+        "vi": "Phát triển một loại sản phẩm mới."
+      }
+    ],
+    "id": "3e3f78d4-5246-47f6-8894-c031d0457fc1"
+  },
+  {
+    "kanji": "性格",
+    "hiragana": "せいかく",
+    "meaning": "tính cách, nhân cách",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 27,
+    "examples": [
+      {
+        "ja": "彼は明るい性格だ。",
+        "vi": "Anh ấy có tính cách vui vẻ."
+      },
+      {
+        "ja": "性格が合う友達を作る。",
+        "vi": "Kết bạn với những người hợp tính."
+      },
+      {
+        "ja": "人の性格は簡単には変わらない。",
+        "vi": "Tính cách của con người không dễ thay đổi."
+      }
+    ],
+    "id": "21fef623-4797-4b15-8776-208d77ee0716"
+  },
+  {
+    "kanji": "性質",
+    "hiragana": "せいしつ",
+    "meaning": "tính chất, đặc điểm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 28,
+    "examples": [
+      {
+        "ja": "この布は燃えにくい性質がある。",
+        "vi": "Loại vải này có tính chất khó cháy."
+      },
+      {
+        "ja": "水の性質を調べる。",
+        "vi": "Nghiên cứu tính chất của nước."
+      },
+      {
+        "ja": "同じ性質のものを集める。",
+        "vi": "Thu thập những vật có cùng tính chất."
+      }
+    ],
+    "id": "0b69bd81-4978-41f1-add5-5569de97b293"
+  },
+  {
+    "kanji": "順番",
+    "hiragana": "じゅんばん",
+    "meaning": "thứ tự, trình tự",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 28,
+    "examples": [
+      {
+        "ja": "順番を守ってください。",
+        "vi": "Vui lòng giữ đúng thứ tự."
+      },
+      {
+        "ja": "名前の順番に並ぶ。",
+        "vi": "Xếp hàng theo thứ tự tên."
+      },
+      {
+        "ja": "順番が来るまで待つ。",
+        "vi": "Đợi cho đến khi đến lượt."
+      }
+    ],
+    "id": "f4a95f10-0bdd-4c82-b22e-52939c48a1dc"
+  },
+  {
+    "kanji": "番",
+    "hiragana": "ばん",
+    "meaning": "lượt, số thứ tự",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 28,
+    "examples": [
+      {
+        "ja": "次は私の番だ。",
+        "vi": "Tiếp theo là lượt của tôi."
+      },
+      {
+        "ja": "いちばん好きな食べ物は何ですか。",
+        "vi": "Món ăn bạn thích nhất là gì?"
+      },
+      {
+        "ja": "1番のバスに乗る。",
+        "vi": "Lên chiếc xe buýt số 1."
+      }
+    ],
+    "id": "cbd758c9-104b-42e7-a3e5-a4e22b3e4d3b"
+  },
+  {
+    "kanji": "方法",
+    "hiragana": "ほうほう",
+    "meaning": "phương pháp, cách thức",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 28,
+    "examples": [
+      {
+        "ja": "新しい勉強の方法を試す。",
+        "vi": "Thử nghiệm phương pháp học tập mới."
+      },
+      {
+        "ja": "問題を解決する方法を見つける。",
+        "vi": "Tìm ra phương pháp giải quyết vấn đề."
+      },
+      {
+        "ja": "他にもっと良い方法があるはずだ。",
+        "vi": "Chắc chắn phải có phương pháp khác tốt hơn."
+      }
+    ],
+    "id": "2020648a-3dce-4dce-ac02-32c085471a52"
+  },
+  {
+    "kanji": "製品",
+    "hiragana": "せいひん",
+    "meaning": "sản phẩm",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 28,
+    "examples": [
+      {
+        "ja": "新しい製品を発売する。",
+        "vi": "Bán ra sản phẩm mới."
+      },
+      {
+        "ja": "日本の電気製品は品質が良い。",
+        "vi": "Sản phẩm điện tử của Nhật Bản có chất lượng tốt."
+      },
+      {
+        "ja": "この製品は海外で作られている。",
+        "vi": "Sản phẩm này được sản xuất ở nước ngoài."
+      }
+    ],
+    "id": "0daf79a2-eead-4e45-b214-20571bd55713"
+  },
+  {
+    "kanji": "値段",
+    "hiragana": "ねだん",
+    "meaning": "giá cả, mức giá",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 28,
+    "examples": [
+      {
+        "ja": "このバッグの値段は高い。",
+        "vi": "Giá của chiếc túi này rất đắt."
+      },
+      {
+        "ja": "値段を交渉する。",
+        "vi": "Thương lượng giá cả."
+      },
+      {
+        "ja": "値段が安いスーパーで買い物をする。",
+        "vi": "Mua sắm ở siêu thị có giá rẻ."
+      }
+    ],
+    "id": "b2287289-2b26-42ed-be9e-bea062cdf376"
+  },
+  {
+    "kanji": "生",
+    "hiragana": "なま",
+    "meaning": "sống, tươi, chưa chế biến",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 28,
+    "examples": [
+      {
+        "ja": "生の魚を食べる。",
+        "vi": "Ăn cá sống."
+      },
+      {
+        "ja": "野菜を生で食べる。",
+        "vi": "Ăn rau sống."
+      },
+      {
+        "ja": "生ビールを注文する。",
+        "vi": "Gọi bia tươi."
+      }
+    ],
+    "id": "e25a7586-8a63-4b61-a4f8-1b2798d2cca0"
+  },
+  {
+    "kanji": "国",
+    "hiragana": "くに",
+    "meaning": "quốc gia",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 29,
+    "examples": [
+      {
+        "ja": "自分の国に帰る。",
+        "vi": "Trở về đất nước của mình."
+      },
+      {
+        "ja": "世界にはたくさんの国がある。",
+        "vi": "Trên thế giới có rất nhiều quốc gia."
+      },
+      {
+        "ja": "国のために働く。",
+        "vi": "Làm việc vì quốc gia."
+      }
+    ],
+    "id": "0b452f5b-fb9b-49d9-8dac-a4cf5b0baa62"
+  },
+  {
+    "kanji": "結婚",
+    "hiragana": "けっこん",
+    "meaning": "kết hôn",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 29,
+    "examples": [
+      {
+        "ja": "来月、結婚します。",
+        "vi": "Tháng sau tôi sẽ kết hôn."
+      },
+      {
+        "ja": "結婚式に参加する。",
+        "vi": "Tham gia lễ kết hôn."
+      },
+      {
+        "ja": "幸せな結婚生活を送る。",
+        "vi": "Trải qua một cuộc sống hôn nhân hạnh phúc."
+      }
+    ],
+    "id": "5374b766-9c2d-4d70-ae9b-6e595d00b32f"
+  },
+  {
+    "kanji": "する",
+    "hiragana": "する",
+    "meaning": "làm",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 29,
+    "examples": [
+      {
+        "ja": "宿題をする。",
+        "vi": "Làm bài tập về nhà."
+      },
+      {
+        "ja": "スポーツをする。",
+        "vi": "Chơi thể thao."
+      },
+      {
+        "ja": "掃除をする。",
+        "vi": "Làm vệ sinh."
+      }
+    ],
+    "id": "bbc7ce5d-cdaa-45a0-8fa8-d904ea5b9a10"
+  },
+  {
+    "kanji": "質問",
+    "hiragana": "しつもん",
+    "meaning": "câu hỏi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 29,
+    "examples": [
+      {
+        "ja": "先生に質問する。",
+        "vi": "Hỏi câu hỏi với giáo viên."
+      },
+      {
+        "ja": "質問はありますか。",
+        "vi": "Có câu hỏi nào không?"
+      },
+      {
+        "ja": "難しい質問に答える。",
+        "vi": "Trả lời một câu hỏi khó."
+      }
+    ],
+    "id": "9836a077-9e60-415b-9585-3491442fd0fe"
+  },
+  {
+    "kanji": "テレビ",
+    "hiragana": "てれび",
+    "meaning": "ti vi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 29,
+    "examples": [
+      {
+        "ja": "夜、テレビを見る。",
+        "vi": "Xem tivi vào buổi tối."
+      },
+      {
+        "ja": "新しいテレビを買う。",
+        "vi": "Mua một chiếc tivi mới."
+      },
+      {
+        "ja": "テレビのニュースを確認する。",
+        "vi": "Kiểm tra tin tức trên tivi."
+      }
+    ],
+    "id": "8fa98c7b-1738-4fbb-8c7b-e32a727a9c64"
+  },
+  {
+    "kanji": "電話",
+    "hiragana": "でんわ",
+    "meaning": "điện thoại",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 29,
+    "examples": [
+      {
+        "ja": "友達に電話をかける。",
+        "vi": "Gọi điện thoại cho bạn bè."
+      },
+      {
+        "ja": "電話が鳴っている。",
+        "vi": "Điện thoại đang reo."
+      },
+      {
+        "ja": "電話番号を教える。",
+        "vi": "Cho biết số điện thoại."
+      }
+    ],
+    "id": "05b52e28-f006-4404-8087-93bd10b1b338"
+  },
+  {
+    "kanji": "観覧車",
+    "hiragana": "かんらんしゃ",
+    "meaning": "vòng đu quay",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 29,
+    "examples": [
+      {
+        "ja": "遊園地で観覧車に乗る。",
+        "vi": "Đi vòng đu quay ở công viên giải trí."
+      },
+      {
+        "ja": "観覧車からの景色は美しい。",
+        "vi": "Cảnh nhìn từ vòng đu quay rất đẹp."
+      },
+      {
+        "ja": "観覧車がゆっくり回る。",
+        "vi": "Vòng đu quay quay chầm chậm."
+      }
+    ],
+    "id": "1e709b94-204b-4461-83b8-8b48a505e5d8"
+  },
+  {
+    "kanji": "この",
+    "hiragana": "この",
+    "meaning": "cái này",
+    "type": "adjective",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "この本は面白い。",
+        "vi": "Cuốn sách này thú vị."
+      },
+      {
+        "ja": "この道はまっすぐです。",
+        "vi": "Con đường này đi thẳng."
+      },
+      {
+        "ja": "このペンは誰のものですか。",
+        "vi": "Chiếc bút này là của ai?"
+      }
+    ],
+    "id": "737f761b-5046-4f5d-b90a-4b64145d1d0e"
+  },
+  {
+    "kanji": "ただ",
+    "hiragana": "ただ",
+    "meaning": "chỉ, đơn thuần",
+    "type": "adverb",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "ただの友達だ。",
+        "vi": "Chỉ là bạn bè đơn thuần."
+      },
+      {
+        "ja": "ただ見るだけです。",
+        "vi": "Tôi chỉ xem thôi."
+      },
+      {
+        "ja": "ただいま。",
+        "vi": "Tôi đã về đây."
+      }
+    ],
+    "id": "97d35529-bfd0-4edd-af16-b964eb6df771"
+  },
+  {
+    "kanji": "事",
+    "hiragana": "こと",
+    "meaning": "việc, điều",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "心配な事がある。",
+        "vi": "Có việc phải lo lắng."
+      },
+      {
+        "ja": "大切な事を忘れた。",
+        "vi": "Tôi đã quên một điều quan trọng."
+      },
+      {
+        "ja": "そんな事は言っていない。",
+        "vi": "Tôi không nói điều đó."
+      }
+    ],
+    "id": "4b56f717-4efc-45eb-8677-f817fb586ccd"
+  },
+  {
+    "kanji": "問題",
+    "hiragana": "もんだい",
+    "meaning": "vấn đề",
+    "type": "noun",
+    "level": "N4",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "数学の問題を解く。",
+        "vi": "Giải bài toán."
+      },
+      {
+        "ja": "環境問題について考える。",
+        "vi": "Suy nghĩ về vấn đề môi trường."
+      },
+      {
+        "ja": "問題が解決した。",
+        "vi": "Vấn đề đã được giải quyết."
+      }
+    ],
+    "id": "067c1dd8-6be1-441e-bdf2-ce494d61ba4d"
+  },
+  {
+    "kanji": "ある",
+    "hiragana": "ある",
+    "meaning": "có",
+    "type": "verb",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "机の上に本がある。",
+        "vi": "Có quyển sách trên bàn."
+      },
+      {
+        "ja": "時間がある。",
+        "vi": "Có thời gian."
+      },
+      {
+        "ja": "約束がある。",
+        "vi": "Có một cuộc hẹn."
+      }
+    ],
+    "id": "f93de77c-7aa0-498e-893c-1dab5a611587"
+  },
+  {
+    "kanji": "状況",
+    "hiragana": "じょうきょう",
+    "meaning": "tình huống",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "今の状況を説明する。",
+        "vi": "Giải thích tình huống hiện tại."
+      },
+      {
+        "ja": "危険な状況を避ける。",
+        "vi": "Tránh tình huống nguy hiểm."
+      },
+      {
+        "ja": "状況が変わった。",
+        "vi": "Tình hình đã thay đổi."
+      }
+    ],
+    "id": "25b57916-10ea-44b6-a7dc-bb0b015a4349"
+  },
+  {
+    "kanji": "うち",
+    "hiragana": "うち",
+    "meaning": "nhà, bên trong",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "うちの猫は可愛い。",
+        "vi": "Mèo nhà tôi rất dễ thương."
+      },
+      {
+        "ja": "休みの日はうちにいる。",
+        "vi": "Ngày nghỉ tôi ở nhà."
+      },
+      {
+        "ja": "明るいうちに帰る。",
+        "vi": "Tôi sẽ về khi trời còn sáng."
+      }
+    ],
+    "id": "def3f2d5-8640-4742-8b28-dad132311d4b"
+  },
+  {
+    "kanji": "",
+    "hiragana": "は",
+    "meaning": "thì, là",
+    "type": "particle",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "私は学生です。",
+        "vi": "Tôi là học sinh."
+      },
+      {
+        "ja": "今日は晴れです。",
+        "vi": "Hôm nay trời nắng."
+      },
+      {
+        "ja": "明日は休みです。",
+        "vi": "Ngày mai là ngày nghỉ."
+      }
+    ],
+    "id": "61c5699b-664e-41dd-8e8c-bd07acd55c52"
+  },
+  {
+    "kanji": "大きい",
+    "hiragana": "おおきい",
+    "meaning": "to, lớn",
+    "type": "adjective",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "大きい声で話す。",
+        "vi": "Nói với giọng lớn."
+      },
+      {
+        "ja": "大きい犬が怖い。",
+        "vi": "Tôi sợ con chó to."
+      },
+      {
+        "ja": "このシャツは大きすぎる。",
+        "vi": "Chiếc áo này quá rộng."
+      }
+    ],
+    "id": "a0c6e626-da50-4609-8e56-bea5de8d29d0"
+  },
+  {
+    "kanji": "行く",
+    "hiragana": "いく",
+    "meaning": "đi",
+    "type": "verb",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "学校に行く。",
+        "vi": "Đi đến trường."
+      },
+      {
+        "ja": "買い物に行く。",
+        "vi": "Đi mua sắm."
+      },
+      {
+        "ja": "旅行に行く予定だ。",
+        "vi": "Có dự định đi du lịch."
+      }
+    ],
+    "id": "bab2f42f-cee5-426a-9055-bbbd5e0d7584"
+  },
+  {
+    "kanji": "は",
+    "hiragana": "は",
+    "meaning": "thì, là",
+    "type": "particle",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "私は学生です。",
+        "vi": "Tôi là học sinh."
+      },
+      {
+        "ja": "今日は晴れです。",
+        "vi": "Hôm nay trời nắng."
+      },
+      {
+        "ja": "明日は休みです。",
+        "vi": "Ngày mai là ngày nghỉ."
+      }
+    ],
+    "id": "6e8e5e44-ecb1-4a6f-8bf4-5dfcfc642550"
+  },
+  {
+    "kanji": "何",
+    "hiragana": "なに",
+    "meaning": "gì",
+    "type": "pronoun",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "これは何ですか。",
+        "vi": "Đây là cái gì?"
+      },
+      {
+        "ja": "何を食べたいですか。",
+        "vi": "Bạn muốn ăn gì?"
+      },
+      {
+        "ja": "何時ですか。",
+        "vi": "Bấy giờ là mấy giờ?"
+      }
+    ],
+    "id": "1b483310-55d2-4744-8b96-651f148b6c89"
+  },
+  {
+    "kanji": "こと",
+    "hiragana": "こと",
+    "meaning": "việc, điều",
+    "type": "noun",
+    "level": "N5",
+    "source_page": 30,
+    "examples": [
+      {
+        "ja": "泳ぐことができる。",
+        "vi": "Tôi có thể bơi."
+      },
+      {
+        "ja": "面白いことを見つけた。",
+        "vi": "Tôi đã tìm thấy một điều thú vị."
+      },
+      {
+        "ja": "約束を守ることが大切だ。",
+        "vi": "Việc giữ lời hứa là rất quan trọng."
+      }
+    ],
+    "id": "6acb33c0-b3ec-46dc-8d07-c3162d9ea101"
+  },
+  {
+    "kanji": "細かい",
+    "hiragana": "こまかい",
+    "meaning": "chi tiết, nhỏ nhặt",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 31,
+    "examples": [
+      {
+        "ja": "細かいお金がない。",
+        "vi": "Tôi không có tiền lẻ."
+      },
+      {
+        "ja": "細かい文字を読む。",
+        "vi": "Đọc những dòng chữ chi tiết."
+      },
+      {
+        "ja": "細かいことに気をつける。",
+        "vi": "Chú ý đến những chi tiết nhỏ."
+      }
+    ],
+    "id": "8024cb4e-fcc7-4521-bd95-95660225a792"
+  },
+  {
+    "kanji": "年齢",
+    "hiragana": "ねんれい",
+    "meaning": "tuổi tác",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 31,
+    "examples": [
+      {
+        "ja": "年齢を聞く。",
+        "vi": "Hỏi tuổi tác."
+      },
+      {
+        "ja": "年齢制限がある。",
+        "vi": "Có giới hạn độ tuổi."
+      },
+      {
+        "ja": "年齢より若く見える。",
+        "vi": "Trông trẻ hơn so với tuổi."
+      }
+    ],
+    "id": "dd6a321d-46e5-4cf0-bb46-064b1ed8032a"
+  },
+  {
+    "kanji": "現象",
+    "hiragana": "げんしょう",
+    "meaning": "hiện tượng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 31,
+    "examples": [
+      {
+        "ja": "自然現象を観察する。",
+        "vi": "Quan sát hiện tượng tự nhiên."
+      },
+      {
+        "ja": "不思議な現象が起きる。",
+        "vi": "Có một hiện tượng kỳ lạ xảy ra."
+      },
+      {
+        "ja": "社会現象になる。",
+        "vi": "Trở thành một hiện tượng xã hội."
+      }
+    ],
+    "id": "1334c896-880f-4c90-b58a-8ff12b9e8188"
+  },
+  {
+    "kanji": "作業",
+    "hiragana": "さぎょう",
+    "meaning": "công việc, tác nghiệp",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 31,
+    "examples": [
+      {
+        "ja": "工場で作業をする。",
+        "vi": "Làm việc tại nhà máy."
+      },
+      {
+        "ja": "農作業を手伝う。",
+        "vi": "Giúp đỡ công việc đồng áng."
+      },
+      {
+        "ja": "作業が終わった。",
+        "vi": "Công việc đã hoàn thành."
+      }
+    ],
+    "id": "fec54cf5-6629-4ad3-9ffa-2c5172b25537"
+  },
+  {
+    "kanji": "金",
+    "hiragana": "きん",
+    "meaning": "tiền, vàng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 31,
+    "examples": [
+      {
+        "ja": "金メダルを取る。",
+        "vi": "Giành được huy chương vàng."
+      },
+      {
+        "ja": "金の指輪を買う。",
+        "vi": "Mua chiếc nhẫn vàng."
+      },
+      {
+        "ja": "お金を貯める。",
+        "vi": "Tiết kiệm tiền."
+      }
+    ],
+    "id": "3a7f5354-c5cd-4944-9a95-e3b133644af2"
+  },
+  {
+    "kanji": "見えない",
+    "hiragana": "みえない",
+    "meaning": "không thể nhìn thấy",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 31,
+    "examples": [
+      {
+        "ja": "遠くが見えない。",
+        "vi": "Không thể nhìn thấy ở xa."
+      },
+      {
+        "ja": "暗くて何も見えない。",
+        "vi": "Trời tối nên không nhìn thấy gì."
+      },
+      {
+        "ja": "見えない星を探す。",
+        "vi": "Tìm kiếm ngôi sao không thể nhìn thấy."
+      }
+    ],
+    "id": "4fae1bf0-6cc9-4b8f-a2e5-b2adbb3348cc"
+  },
+  {
+    "kanji": "思い出す",
+    "hiragana": "おもいだす",
+    "meaning": "nhớ lại, hồi tưởng",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 32,
+    "examples": [
+      {
+        "ja": "昔のことを思い出す。",
+        "vi": "Nhớ lại chuyện ngày xưa."
+      },
+      {
+        "ja": "名前を思い出せない。",
+        "vi": "Không thể nhớ ra tên."
+      },
+      {
+        "ja": "彼の顔を思い出す。",
+        "vi": "Tôi nhớ khuôn mặt của anh ấy."
+      }
+    ],
+    "id": "9e71d353-87d1-49c1-b5ab-70f2e2cc1143"
+  },
+  {
+    "kanji": "人",
+    "hiragana": "ひと",
+    "meaning": "người",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 32,
+    "examples": [
+      {
+        "ja": "あの人は誰ですか。",
+        "vi": "Người kia là ai?"
+      },
+      {
+        "ja": "たくさんの人が集まる。",
+        "vi": "Rất nhiều người tụ tập."
+      },
+      {
+        "ja": "いい人と結婚したい。",
+        "vi": "Tôi muốn kết hôn với một người tốt."
+      }
+    ],
+    "id": "a6e4bbb3-57e6-4c6b-b445-820a2aa9e12c"
+  },
+  {
+    "kanji": "好き",
+    "hiragana": "すき",
+    "meaning": "thích",
+    "type": "adjective",
+    "level": "N3",
+    "source_page": 32,
+    "examples": [
+      {
+        "ja": "私は猫が好きです。",
+        "vi": "Tôi thích mèo."
+      },
+      {
+        "ja": "好きな食べ物は何ですか。",
+        "vi": "Món ăn bạn thích là gì?"
+      },
+      {
+        "ja": "彼はスポーツが好きだ。",
+        "vi": "Anh ấy thích thể thao."
+      }
+    ],
+    "id": "21cc1fbd-0e5f-4018-b9f9-6109b32e9162"
+  },
+  {
+    "kanji": "選ぶ",
+    "hiragana": "えらぶ",
+    "meaning": "chọn, lựa",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 32,
+    "examples": [
+      {
+        "ja": "好きな色を選ぶ。",
+        "vi": "Chọn màu sắc yêu thích."
+      },
+      {
+        "ja": "プレゼントを選ぶ。",
+        "vi": "Chọn quà tặng."
+      },
+      {
+        "ja": "代表を選ぶ。",
+        "vi": "Bầu chọn người đại diện."
+      }
+    ],
+    "id": "3cf25ff1-4f06-412a-abaa-db96b1a2e57a"
+  },
+  {
+    "kanji": "わかる",
+    "hiragana": "わかる",
+    "meaning": "hiểu",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 32,
+    "examples": [
+      {
+        "ja": "日本語がわかる。",
+        "vi": "Tôi hiểu tiếng Nhật."
+      },
+      {
+        "ja": "理由がわかる。",
+        "vi": "Hiểu rõ lý do."
+      },
+      {
+        "ja": "彼の気持ちがわかる。",
+        "vi": "Tôi hiểu được cảm xúc của anh ấy."
+      }
+    ],
+    "id": "740be4a5-db1c-4dd0-9f0f-3e87067e527e"
+  },
+  {
+    "kanji": "渇く",
+    "hiragana": "かわく",
+    "meaning": "khát, khát nước",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 33,
+    "examples": [
+      {
+        "ja": "のどが渇いた。",
+        "vi": "Tôi khát nước rồi."
+      },
+      {
+        "ja": "空気が渇く。",
+        "vi": "Không khí khô ráo."
+      },
+      {
+        "ja": "心の中が渇く。",
+        "vi": "Trong lòng cảm thấy khao khát."
+      }
+    ],
+    "id": "60feb793-5858-4128-a906-f632c1995652"
+  },
+  {
+    "kanji": "嗅ぐ",
+    "hiragana": "かぐ",
+    "meaning": "ngửi",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 33,
+    "examples": [
+      {
+        "ja": "花の匂いを嗅ぐ。",
+        "vi": "Ngửi mùi hoa."
+      },
+      {
+        "ja": "香水が香る。",
+        "vi": "Hương nước hoa bay mùi."
+      },
+      {
+        "ja": "犬が匂いを嗅ぐ。",
+        "vi": "Con chó ngửi mùi."
+      }
+    ],
+    "id": "78059b2d-1584-4624-bf6c-79fbc27db490"
+  },
+  {
+    "kanji": "叩く",
+    "hiragana": "たたく",
+    "meaning": "đánh, gõ, vỗ",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 33,
+    "examples": [
+      {
+        "ja": "ドアを叩く。",
+        "vi": "Gõ cửa."
+      },
+      {
+        "ja": "肩を叩く。",
+        "vi": "Vỗ vai."
+      },
+      {
+        "ja": "手を叩く。",
+        "vi": "Vỗ tay."
+      }
+    ],
+    "id": "0869bc9f-68c5-44cd-8c5e-0ad712b6f89c"
+  },
+  {
+    "kanji": "殴る",
+    "hiragana": "なぐる",
+    "meaning": "đấm, đánh",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 33,
+    "examples": [
+      {
+        "ja": "顔を殴る。",
+        "vi": "Đấm vào mặt."
+      },
+      {
+        "ja": "人を殴ってはいけない。",
+        "vi": "Không được phép đánh người."
+      },
+      {
+        "ja": "怒って壁を殴った。",
+        "vi": "Tức giận nên đã đấm vào tường."
+      }
+    ],
+    "id": "458c8be5-626b-4989-8df3-e9b2bf063d69"
+  },
+  {
+    "kanji": "蹴る",
+    "hiragana": "ける",
+    "meaning": "đá",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 33,
+    "examples": [
+      {
+        "ja": "ボールを蹴る。",
+        "vi": "Đá bóng."
+      },
+      {
+        "ja": "石を蹴って歩く。",
+        "vi": "Đá hòn đá vừa đi."
+      },
+      {
+        "ja": "相手を蹴る。",
+        "vi": "Đá đối thủ."
+      }
+    ],
+    "id": "b4ef4386-a0bf-4382-b6d2-1faa13f35fd8"
+  },
+  {
+    "kanji": "抱く",
+    "hiragana": "だく",
+    "meaning": "ôm, bế",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 33,
+    "examples": [
+      {
+        "ja": "子供を抱く。",
+        "vi": "Ôm đứa trẻ."
+      },
+      {
+        "ja": "夢を抱く。",
+        "vi": "Ôm ấp giấc mơ."
+      },
+      {
+        "ja": "疑問を抱く。",
+        "vi": "Nghi ngờ."
+      }
+    ],
+    "id": "307c7845-7a61-490d-9dc8-e076cb2917e0"
+  },
+  {
+    "kanji": "倒れる",
+    "hiragana": "たおれる",
+    "meaning": "ngã, đổ",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 33,
+    "examples": [
+      {
+        "ja": "木が倒れる。",
+        "vi": "Cái cây bị đổ."
+      },
+      {
+        "ja": "病気で倒れる。",
+        "vi": "Bị ngã gục do bệnh."
+      },
+      {
+        "ja": "強風で看板が倒れた。",
+        "vi": "Bảng hiệu bị đổ do gió mạnh."
+      }
+    ],
+    "id": "3a7b060d-2d4c-4c59-beea-0ef1b3d4e7c2"
+  },
+  {
+    "kanji": "負ける",
+    "hiragana": "まける",
+    "meaning": "thua, thất bại",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 33,
+    "examples": [
+      {
+        "ja": "試合に負ける。",
+        "vi": "Thua trong trận đấu."
+      },
+      {
+        "ja": "誘惑に負ける。",
+        "vi": "Gục ngã trước cám dỗ."
+      },
+      {
+        "ja": "値段を負ける。",
+        "vi": "Giảm giá (cho khách hàng)."
+      }
+    ],
+    "id": "386700e1-a8de-4aca-91e1-94e96f8150f9"
+  },
+  {
+    "kanji": "おきる",
+    "hiragana": "おきる",
+    "meaning": "thức dậy, tỉnh dậy",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 34,
+    "examples": [
+      {
+        "ja": "朝早く起きる。",
+        "vi": "Thức dậy sớm vào buổi sáng."
+      },
+      {
+        "ja": "事故が起きる。",
+        "vi": "Xảy ra tai nạn."
+      },
+      {
+        "ja": "地震が起きた。",
+        "vi": "Động đất đã xảy ra."
+      }
+    ],
+    "id": "32d6ca3e-4079-44c9-852e-afb88b368cb7"
+  },
+  {
+    "kanji": "おこる",
+    "hiragana": "おこる",
+    "meaning": "xảy ra, xảy đến",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 34,
+    "examples": [
+      {
+        "ja": "事件が起こる。",
+        "vi": "Xảy ra một vụ việc."
+      },
+      {
+        "ja": "問題が起こる。",
+        "vi": "Phát sinh vấn đề."
+      },
+      {
+        "ja": "奇跡が起こる。",
+        "vi": "Kỳ tích xảy ra."
+      }
+    ],
+    "id": "55ffb2e7-903a-42e4-abea-de1048e486fd"
+  },
+  {
+    "kanji": "超える",
+    "hiragana": "こえる",
+    "meaning": "vượt qua",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 34,
+    "examples": [
+      {
+        "ja": "山を超えて行く。",
+        "vi": "Vượt qua ngọn núi."
+      },
+      {
+        "ja": "目標を超える。",
+        "vi": "Vượt qua mục tiêu."
+      },
+      {
+        "ja": "国境を超える。",
+        "vi": "Vượt qua biên giới."
+      }
+    ],
+    "id": "e41189f6-c107-4b5c-abc7-db81a7db6f16"
+  },
+  {
+    "kanji": "尋ねる",
+    "hiragana": "たずねる",
+    "meaning": "hỏi, tìm kiếm",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 34,
+    "examples": [
+      {
+        "ja": "警察に道を尋ねる。",
+        "vi": "Hỏi cảnh sát chỉ đường."
+      },
+      {
+        "ja": "名前を尋ねる。",
+        "vi": "Hỏi tên."
+      },
+      {
+        "ja": "理由を尋ねる。",
+        "vi": "Hỏi lý do."
+      }
+    ],
+    "id": "41fdd74f-7271-4358-98d3-13fda25ccd29"
+  },
+  {
+    "kanji": "呼ぶ",
+    "hiragana": "よぶ",
+    "meaning": "gọi, kêu",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 34,
+    "examples": [
+      {
+        "ja": "タクシーを呼ぶ。",
+        "vi": "Gọi taxi."
+      },
+      {
+        "ja": "友達をパーティーに呼ぶ。",
+        "vi": "Mời bạn bè đến bữa tiệc."
+      },
+      {
+        "ja": "大きな声で呼ぶ。",
+        "vi": "Gọi bằng giọng lớn."
+      }
+    ],
+    "id": "aed3cf3e-640e-4481-b26c-32d0a145cdef"
+  },
+  {
+    "kanji": "叫ぶ",
+    "hiragana": "さけぶ",
+    "meaning": "hét, kêu gọi",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 34,
+    "examples": [
+      {
+        "ja": "助けを求めて叫ぶ。",
+        "vi": "Kêu gào tìm kiếm sự giúp đỡ."
+      },
+      {
+        "ja": "大声で叫ぶ。",
+        "vi": "Hét lớn."
+      },
+      {
+        "ja": "喜びを叫ぶ。",
+        "vi": "Hét lên sung sướng."
+      }
+    ],
+    "id": "8f787dc9-78c4-4747-88ae-d9dc7b3d4c99"
+  },
+  {
+    "kanji": "出す",
+    "hiragana": "だす",
+    "meaning": "lấy ra, xuất ra",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 34,
+    "examples": [
+      {
+        "ja": "手紙を出す。",
+        "vi": "Gửi bức thư."
+      },
+      {
+        "ja": "カバンから本を出す。",
+        "vi": "Lấy quyển sách ra khỏi túi."
+      },
+      {
+        "ja": "アイデアを出す。",
+        "vi": "Đưa ra ý tưởng."
+      }
+    ],
+    "id": "721840b1-0bd1-4a41-9e2b-615716ea3c9d"
+  },
+  {
+    "kanji": "教える",
+    "hiragana": "おしえる",
+    "meaning": "dạy, chỉ bảo",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 34,
+    "examples": [
+      {
+        "ja": "英語を教える。",
+        "vi": "Dạy tiếng Anh."
+      },
+      {
+        "ja": "駅の行き方を教える。",
+        "vi": "Chỉ đường đến nhà ga."
+      },
+      {
+        "ja": "連絡先を教える。",
+        "vi": "Cho biết thông tin liên lạc."
+      }
+    ],
+    "id": "e5e5c233-58ed-47e5-b4c0-c37563ade0ff"
+  },
+  {
+    "kanji": "乾く",
+    "hiragana": "かわく",
+    "meaning": "khô, ráo",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "洗濯物が乾く。",
+        "vi": "Đồ giặt đã khô."
+      },
+      {
+        "ja": "喉が渇く。",
+        "vi": "Cổ họng khát nước."
+      },
+      {
+        "ja": "ペンキが乾いた。",
+        "vi": "Sơn đã khô."
+      }
+    ],
+    "id": "c3bd840b-7c5f-4c15-bd00-ba892fc40790"
+  },
+  {
+    "kanji": "乾かす",
+    "hiragana": "かわかす",
+    "meaning": "làm khô, phơi khô",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "髪をドライヤーで乾かす。",
+        "vi": "Làm khô tóc bằng máy sấy."
+      },
+      {
+        "ja": "濡れた服を乾かす。",
+        "vi": "Phơi khô bộ quần áo ướt."
+      },
+      {
+        "ja": "タオルを乾かす。",
+        "vi": "Làm khô khăn tắm."
+      }
+    ],
+    "id": "7bc7b737-7729-4bfa-bf0d-fcee2395d558"
+  },
+  {
+    "kanji": "畳む",
+    "hiragana": "たたむ",
+    "meaning": "gấp lại, xếp lại",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "服を畳む。",
+        "vi": "Gấp quần áo."
+      },
+      {
+        "ja": "傘を畳む。",
+        "vi": "Gập ô lại."
+      },
+      {
+        "ja": "布団を畳む。",
+        "vi": "Gấp chăn đệm."
+      }
+    ],
+    "id": "295ffd6a-9bcd-4a35-8648-08bf66f9c6ac"
+  },
+  {
+    "kanji": "誘う",
+    "hiragana": "さそう",
+    "meaning": "mời, rủ",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "友達を映画に誘う。",
+        "vi": "Rủ bạn bè đi xem phim."
+      },
+      {
+        "ja": "食事に誘われる。",
+        "vi": "Được mời đi ăn."
+      },
+      {
+        "ja": "デートに誘う。",
+        "vi": "Mời hẹn hò."
+      }
+    ],
+    "id": "2b9c04e0-f20f-4d62-973f-b8fe41b217fe"
+  },
+  {
+    "kanji": "おごる",
+    "hiragana": "おごる",
+    "meaning": "điều trị, đãi",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "後輩に食事をおごる。",
+        "vi": "Khao hậu bối một bữa ăn."
+      },
+      {
+        "ja": "今日は私がおごります。",
+        "vi": "Hôm nay tôi sẽ mời."
+      },
+      {
+        "ja": "お酒をおごってもらう。",
+        "vi": "Được khao rượu."
+      }
+    ],
+    "id": "94a5019d-c561-4f8c-bd1e-054ade760a28"
+  },
+  {
+    "kanji": "見積もる",
+    "hiragana": "みつもる",
+    "meaning": "ước lượng, tính toán",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "修理代を見積もる。",
+        "vi": "Ước lượng chi phí sửa chữa."
+      },
+      {
+        "ja": "費用を見積もる。",
+        "vi": "Tính toán chi phí."
+      },
+      {
+        "ja": "時間を多めに見積もる。",
+        "vi": "Ước lượng nhiều thời gian hơn."
+      }
+    ],
+    "id": "cd94d269-11a0-4f8b-aa82-06c524831a20"
+  },
+  {
+    "kanji": "預ける",
+    "hiragana": "あずける",
+    "meaning": "gửi, giao phó",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "銀行にお金を預ける。",
+        "vi": "Gửi tiền vào ngân hàng."
+      },
+      {
+        "ja": "荷物をロッカーに預ける。",
+        "vi": "Gửi đồ ở tủ khóa."
+      },
+      {
+        "ja": "子供を保育園に預ける。",
+        "vi": "Gửi con ở trường mầm non."
+      }
+    ],
+    "id": "caf3f145-3e74-4b75-8a99-fd1c40819416"
+  },
+  {
+    "kanji": "預かる",
+    "hiragana": "あずかる",
+    "meaning": "giữ, bảo quản",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "友達の犬を預かる。",
+        "vi": "Giữ hộ con chó của bạn."
+      },
+      {
+        "ja": "荷物を預かる。",
+        "vi": "Bảo quản hành lý."
+      },
+      {
+        "ja": "お金を預かる。",
+        "vi": "Giữ hộ tiền."
+      }
+    ],
+    "id": "51015469-a51d-4409-bf90-e5de7b4b9ea7"
+  },
+  {
+    "kanji": "決まる",
+    "hiragana": "きまる",
+    "meaning": "được quyết định",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "旅行の予定が決まる。",
+        "vi": "Lịch trình du lịch đã được quyết định."
+      },
+      {
+        "ja": "合格が決まる。",
+        "vi": "Việc đỗ đạt đã được chốt."
+      },
+      {
+        "ja": "ルールが決まった。",
+        "vi": "Quy định đã được thiết lập."
+      }
+    ],
+    "id": "f88460bf-5432-49c0-88f0-9c5ce34d2dc4"
+  },
+  {
+    "kanji": "決める",
+    "hiragana": "きめる",
+    "meaning": "quyết định",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 35,
+    "examples": [
+      {
+        "ja": "進学先を決める。",
+        "vi": "Quyết định nơi học tiếp lên."
+      },
+      {
+        "ja": "メニューを決める。",
+        "vi": "Quyết định thực đơn."
+      },
+      {
+        "ja": "心を決める。",
+        "vi": "Đưa ra quyết định trong lòng."
+      }
+    ],
+    "id": "577e8bd3-b8a6-491d-b2bb-8d23fbcff856"
+  },
+  {
+    "kanji": "写る",
+    "hiragana": "うつる",
+    "meaning": "chụp (ảnh), hiện ra",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 36,
+    "examples": [
+      {
+        "ja": "写真に綺麗に写る。",
+        "vi": "Chụp lên ảnh rất đẹp."
+      },
+      {
+        "ja": "鏡に自分の顔が写る。",
+        "vi": "Khuôn mặt của mình hiện ra trong gương."
+      },
+      {
+        "ja": "テレビに私が写っていた。",
+        "vi": "Tôi đã xuất hiện trên tivi."
+      }
+    ],
+    "id": "2409e1dd-d649-4b55-b4c8-e527f2513b60"
+  },
+  {
+    "kanji": "写す",
+    "hiragana": "うつす",
+    "meaning": "chụp (ảnh), sao chép",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 36,
+    "examples": [
+      {
+        "ja": "黒板の字をノートに写す。",
+        "vi": "Chép lại chữ trên bảng đen vào vở."
+      },
+      {
+        "ja": "写真を写す。",
+        "vi": "Chụp một bức ảnh."
+      },
+      {
+        "ja": "鏡に姿を写す。",
+        "vi": "Soi bóng vào gương."
+      }
+    ],
+    "id": "16b60c9a-b088-4c04-af27-ebf0097078ed"
+  },
+  {
+    "kanji": "教わる",
+    "hiragana": "おそわる",
+    "meaning": "học hỏi, được dạy",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 36,
+    "examples": [
+      {
+        "ja": "先生に日本語を教わる。",
+        "vi": "Được giáo viên dạy tiếng Nhật."
+      },
+      {
+        "ja": "母から料理を教わった。",
+        "vi": "Đã được mẹ dạy nấu ăn."
+      },
+      {
+        "ja": "先輩に仕事のやり方を教わる。",
+        "vi": "Học cách làm việc từ người đi trước."
+      }
+    ],
+    "id": "be1bc88e-7153-4df8-bcdb-4689590c9c2d"
+  },
+  {
+    "kanji": "申し込む",
+    "hiragana": "もうしこむ",
+    "meaning": "đăng ký, xin tham gia",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 36,
+    "examples": [
+      {
+        "ja": "試験に申し込む。",
+        "vi": "Đăng ký dự thi."
+      },
+      {
+        "ja": "スポーツクラブに申し込む。",
+        "vi": "Đăng ký tham gia câu lạc bộ thể thao."
+      },
+      {
+        "ja": "結婚を申し込む。",
+        "vi": "Ngỏ lời cầu hôn."
+      }
+    ],
+    "id": "77ff40f1-1b94-4dea-9a7b-7e07558fe8a4"
+  },
+  {
+    "kanji": "断る",
+    "hiragana": "ことわる",
+    "meaning": "từ chối, từ bỏ",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 36,
+    "examples": [
+      {
+        "ja": "誘いを断る。",
+        "vi": "Từ chối lời mời."
+      },
+      {
+        "ja": "仕事を断る。",
+        "vi": "Từ chối công việc."
+      },
+      {
+        "ja": "理由を言って断った。",
+        "vi": "Nói lý do và từ chối."
+      }
+    ],
+    "id": "d24be815-b71b-46d1-9a00-c17d072fdfea"
+  },
+  {
+    "kanji": "見つかる",
+    "hiragana": "みつかる",
+    "meaning": "được tìm thấy, phát hiện",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 36,
+    "examples": [
+      {
+        "ja": "失くした時計が見つかった。",
+        "vi": "Chiếc đồng hồ bị mất đã được tìm thấy."
+      },
+      {
+        "ja": "良い仕事が見つかる。",
+        "vi": "Tìm được một công việc tốt."
+      },
+      {
+        "ja": "犯人が見つかる。",
+        "vi": "Tội phạm đã bị phát hiện."
+      }
+    ],
+    "id": "e8d221e8-b529-4ade-b410-250d87fa4689"
+  },
+  {
+    "kanji": "見つける",
+    "hiragana": "みつける",
+    "meaning": "tìm thấy, phát hiện ra",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 36,
+    "examples": [
+      {
+        "ja": "新しいカフェを見つける。",
+        "vi": "Tìm thấy một quán cà phê mới."
+      },
+      {
+        "ja": "仕事を見つける。",
+        "vi": "Tìm kiếm công việc."
+      },
+      {
+        "ja": "落とし物を見つける。",
+        "vi": "Phát hiện ra đồ bị rơi."
+      }
+    ],
+    "id": "6c475b6e-4562-4a31-a165-3a666c95f43b"
+  },
+  {
+    "kanji": "捕まる",
+    "hiragana": "つかまる",
+    "meaning": "bị bắt, bị giữ lại",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 37,
+    "examples": [
+      {
+        "ja": "泥棒が警察に捕まる。",
+        "vi": "Tên trộm bị cảnh sát bắt."
+      },
+      {
+        "ja": "手すりに捕まる。",
+        "vi": "Nắm lấy tay vịn."
+      },
+      {
+        "ja": "犯人が捕まった。",
+        "vi": "Kẻ phạm tội đã bị bắt."
+      }
+    ],
+    "id": "9ae6eae8-ddf3-4cc6-b1bc-cdffc16d612c"
+  },
+  {
+    "kanji": "捕まえる",
+    "hiragana": "つかまえる",
+    "meaning": "bắt, nắm bắt",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 37,
+    "examples": [
+      {
+        "ja": "虫を捕まえる。",
+        "vi": "Bắt lấy con côn trùng."
+      },
+      {
+        "ja": "警察が泥棒を捕まえる。",
+        "vi": "Cảnh sát bắt giữ tên trộm."
+      },
+      {
+        "ja": "逃げる猫を捕まえる。",
+        "vi": "Bắt lại con mèo đang chạy trốn."
+      }
+    ],
+    "id": "2a8416d8-cc03-4a68-a8f8-d49a4652315f"
+  },
+  {
+    "kanji": "乗る",
+    "hiragana": "のる",
+    "meaning": "lên xe, cưỡi",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 37,
+    "examples": [
+      {
+        "ja": "電車に乗る。",
+        "vi": "Lên tàu điện."
+      },
+      {
+        "ja": "自転車に乗る。",
+        "vi": "Lên xe đạp."
+      },
+      {
+        "ja": "波に乗る。",
+        "vi": "Cưỡi trên những con sóng (đu trend)."
+      }
+    ],
+    "id": "e42acda5-c4b6-45d9-9338-18c7687f8e68"
+  },
+  {
+    "kanji": "乗せる",
+    "hiragana": "のせる",
+    "meaning": "cho đi nhờ, nhận",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 37,
+    "examples": [
+      {
+        "ja": "子供を車に乗せる。",
+        "vi": "Cho đứa trẻ lên xe ô tô."
+      },
+      {
+        "ja": "荷物を棚に乗せる。",
+        "vi": "Đặt hành lý lên kệ."
+      },
+      {
+        "ja": "友達を車に乗せてあげる。",
+        "vi": "Cho bạn đi nhờ xe."
+      }
+    ],
+    "id": "02584e80-71da-40d2-bb8c-3f7bb1b74c02"
+  },
+  {
+    "kanji": "降りる",
+    "hiragana": "おりる",
+    "meaning": "xuống (xe, cầu thang)",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 37,
+    "examples": [
+      {
+        "ja": "バスを降りる。",
+        "vi": "Xuống xe buýt."
+      },
+      {
+        "ja": "階段を降りる。",
+        "vi": "Đi xuống cầu thang."
+      },
+      {
+        "ja": "山を降りる。",
+        "vi": "Đi xuống núi."
+      }
+    ],
+    "id": "bca6a5c5-1afd-4f21-ba08-961429854c6d"
+  },
+  {
+    "kanji": "下がる",
+    "hiragana": "さがる",
+    "meaning": "hạ xuống, giảm",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 37,
+    "examples": [
+      {
+        "ja": "熱が下がる。",
+        "vi": "Hạ sốt."
+      },
+      {
+        "ja": "値段が下がる。",
+        "vi": "Giá cả giảm xuống."
+      },
+      {
+        "ja": "後ろに下がる。",
+        "vi": "Lùi về phía sau."
+      }
+    ],
+    "id": "7dffdb21-2a48-403e-a29b-6ac0dbd0b0f7"
+  },
+  {
+    "kanji": "下ろす",
+    "hiragana": "おろす",
+    "meaning": "hạ xuống, lấy xuống",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 37,
+    "examples": [
+      {
+        "ja": "荷物を下ろす。",
+        "vi": "Hạ hành lý xuống."
+      },
+      {
+        "ja": "銀行でお金を下ろす。",
+        "vi": "Rút tiền ở ngân hàng."
+      },
+      {
+        "ja": "ブラインドを下ろす。",
+        "vi": "Hạ rèm che cửa sổ."
+      }
+    ],
+    "id": "71269e6e-0279-4085-adcd-f0e98363cd6d"
+  },
+  {
+    "kanji": "落とす",
+    "hiragana": "おとす",
+    "meaning": "thả xuống, làm rơi",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 37,
+    "examples": [
+      {
+        "ja": "財布を落とす。",
+        "vi": "Làm rơi ví tiền."
+      },
+      {
+        "ja": "スピードを落とす。",
+        "vi": "Giảm tốc độ."
+      },
+      {
+        "ja": "試験に落とす。",
+        "vi": "Đánh trượt kỳ thi."
+      }
+    ],
+    "id": "9f770e10-d317-428a-98ca-eee1c6323f2a"
+  },
+  {
+    "kanji": "直る",
+    "hiragana": "なおる",
+    "meaning": "được sửa chữa, được khôi phục",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 38,
+    "examples": [
+      {
+        "ja": "パソコンが直る。",
+        "vi": "Máy tính đã được sửa chữa."
+      },
+      {
+        "ja": "時計が直った。",
+        "vi": "Đồng hồ đã được khôi phục."
+      },
+      {
+        "ja": "機嫌が直る。",
+        "vi": "Được làm cho nguôi giận."
+      }
+    ],
+    "id": "059c0176-8451-4887-a0c8-b3ef86b672a9"
+  },
+  {
+    "kanji": "直す",
+    "hiragana": "なおす",
+    "meaning": "sửa chữa, khôi phục",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 38,
+    "examples": [
+      {
+        "ja": "自転車を直す。",
+        "vi": "Sửa chiếc xe đạp."
+      },
+      {
+        "ja": "作文を直す。",
+        "vi": "Sửa lại bài văn."
+      },
+      {
+        "ja": "日本語を直してもらう。",
+        "vi": "Nhờ sửa tiếng Nhật."
+      }
+    ],
+    "id": "3a14279a-e624-46f5-9629-b84bf843f567"
+  },
+  {
+    "kanji": "治る",
+    "hiragana": "なおる",
+    "meaning": "khỏi bệnh, hồi phục",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 38,
+    "examples": [
+      {
+        "ja": "風邪が治る。",
+        "vi": "Khỏi bệnh cảm."
+      },
+      {
+        "ja": "傷が治る。",
+        "vi": "Vết thương đã lành."
+      },
+      {
+        "ja": "病気がすっかり治った。",
+        "vi": "Bệnh đã khỏi hoàn toàn."
+      }
+    ],
+    "id": "996bb453-4617-49d3-8b99-8b5fc3f2c5bb"
+  },
+  {
+    "kanji": "治す",
+    "hiragana": "なおす",
+    "meaning": "chữa bệnh, điều trị",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 38,
+    "examples": [
+      {
+        "ja": "虫歯を治す。",
+        "vi": "Chữa răng sâu."
+      },
+      {
+        "ja": "病気を治す。",
+        "vi": "Điều trị bệnh tật."
+      },
+      {
+        "ja": "病院で怪我を治す。",
+        "vi": "Chữa vết thương ở bệnh viện."
+      }
+    ],
+    "id": "c3b45a6c-e000-482a-9131-f5180f0a5dd9"
+  },
+  {
+    "kanji": "学校",
+    "hiragana": "がっこう",
+    "meaning": "trường học",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 38,
+    "examples": [
+      {
+        "ja": "学校へ行く。",
+        "vi": "Đi đến trường."
+      },
+      {
+        "ja": "新しい学校に慣れる。",
+        "vi": "Quen với ngôi trường mới."
+      },
+      {
+        "ja": "学校を卒業する。",
+        "vi": "Tốt nghiệp trường học."
+      }
+    ],
+    "id": "0013d2d3-c291-4267-bf64-bc5d33b7ec50"
+  },
+  {
+    "kanji": "亡くなる",
+    "hiragana": "なくなる",
+    "meaning": "chết, qua đời",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 39,
+    "examples": [
+      {
+        "ja": "祖父が亡くなる。",
+        "vi": "Ông nội đã qua đời."
+      },
+      {
+        "ja": "有名な作家が亡くなった。",
+        "vi": "Một nhà văn nổi tiếng đã mất."
+      },
+      {
+        "ja": "事故で亡くなる。",
+        "vi": "Tử vong do tai nạn."
+      }
+    ],
+    "id": "b9acda92-3a6d-4f3f-a531-a9520db6f8fa"
+  },
+  {
+    "kanji": "失くす",
+    "hiragana": "なくす",
+    "meaning": "mất, đánh mất",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 39,
+    "examples": [
+      {
+        "ja": "鍵を失くす。",
+        "vi": "Đánh mất chìa khóa."
+      },
+      {
+        "ja": "自信を失くす。",
+        "vi": "Đánh mất đi sự tự tin."
+      },
+      {
+        "ja": "大切なものを失くした。",
+        "vi": "Tôi đã làm mất một vật quan trọng."
+      }
+    ],
+    "id": "41cb3779-0480-407d-8cad-0a210a5bf8e4"
+  },
+  {
+    "kanji": "生まれる",
+    "hiragana": "うまれる",
+    "meaning": "được sinh ra, ra đời",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 39,
+    "examples": [
+      {
+        "ja": "赤ちゃんが生まれる。",
+        "vi": "Một em bé đã ra đời."
+      },
+      {
+        "ja": "新しいアイデアが生まれる。",
+        "vi": "Một ý tưởng mới được sinh ra."
+      },
+      {
+        "ja": "日本で生まれる。",
+        "vi": "Được sinh ra ở Nhật Bản."
+      }
+    ],
+    "id": "6aa97ac1-6259-4cc9-9739-59373de71798"
+  },
+  {
+    "kanji": "生む",
+    "hiragana": "うむ",
+    "meaning": "sinh, đẻ",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 39,
+    "examples": [
+      {
+        "ja": "鶏が卵を生む。",
+        "vi": "Gà đẻ trứng."
+      },
+      {
+        "ja": "利益を生む。",
+        "vi": "Sinh ra lợi nhuận."
+      },
+      {
+        "ja": "新しい価値を生む。",
+        "vi": "Tạo ra những giá trị mới."
+      }
+    ],
+    "id": "a4ac1031-cac8-4707-9744-76e302c2ca74"
+  },
+  {
+    "kanji": "出会う",
+    "hiragana": "であう",
+    "meaning": "gặp gỡ, tình cờ gặp",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 39,
+    "examples": [
+      {
+        "ja": "素敵な人に出会う。",
+        "vi": "Gặp gỡ một người tuyệt vời."
+      },
+      {
+        "ja": "偶然、友達に出会う。",
+        "vi": "Tình cờ gặp lại bạn bè."
+      },
+      {
+        "ja": "本の中で新しい世界に出会う。",
+        "vi": "Bắt gặp một thế giới mới trong sách."
+      }
+    ],
+    "id": "220cd2df-6345-4dc9-8772-3d999499ccd8"
+  },
+  {
+    "kanji": "訪れる",
+    "hiragana": "おとずれる",
+    "meaning": "thăm, ghé thăm",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 39,
+    "examples": [
+      {
+        "ja": "京都を訪れる。",
+        "vi": "Ghé thăm Kyoto."
+      },
+      {
+        "ja": "春が訪れる。",
+        "vi": "Mùa xuân ghé thăm."
+      },
+      {
+        "ja": "日本に訪れる外国人が増えている。",
+        "vi": "Người nước ngoài đến thăm Nhật Bản đang tăng."
+      }
+    ],
+    "id": "b522c8be-0a8a-40b2-8ea3-4c3b7c41c5be"
+  },
+  {
+    "kanji": "付き合う",
+    "hiragana": "つきあう",
+    "meaning": "hẹn hò, kết hợp, liên kết",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 39,
+    "examples": [
+      {
+        "ja": "彼と付き合う。",
+        "vi": "Hẹn hò với anh ấy."
+      },
+      {
+        "ja": "買い物に付き合う。",
+        "vi": "Đi mua sắm cùng."
+      },
+      {
+        "ja": "友達と長く付き合う。",
+        "vi": "Gắn bó dài lâu với bạn bè."
+      }
+    ],
+    "id": "b9b2a419-3fe8-4928-99c6-c8d523348bb3"
+  },
+  {
+    "kanji": "公務員",
+    "hiragana": "こうむいん",
+    "meaning": "công chức",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "公務員になりたい。",
+        "vi": "Tôi muốn trở thành công chức."
+      },
+      {
+        "ja": "彼は公務員として働いている。",
+        "vi": "Anh ấy đang làm việc với tư cách là một công chức."
+      },
+      {
+        "ja": "公務員の試験を受ける。",
+        "vi": "Dự thi kỳ thi tuyển công chức."
+      }
+    ],
+    "id": "e1f2b9b6-f011-4c6f-832a-2512da130300"
+  },
+  {
+    "kanji": "事務員",
+    "hiragana": "じむいん",
+    "meaning": "nhân viên văn phòng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "事務員として働く。",
+        "vi": "Làm việc với vai trò nhân viên văn phòng."
+      },
+      {
+        "ja": "会社の事務員に書類を渡す。",
+        "vi": "Đưa tài liệu cho nhân viên văn phòng của công ty."
+      },
+      {
+        "ja": "事務員が電話に出る。",
+        "vi": "Nhân viên văn phòng trả lời điện thoại."
+      }
+    ],
+    "id": "76fe63c0-4ddb-4d1e-bebc-3c9a43544174"
+  },
+  {
+    "kanji": "教師",
+    "hiragana": "きょうし",
+    "meaning": "giáo viên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "数学の教師になる。",
+        "vi": "Trở thành giáo viên môn Toán."
+      },
+      {
+        "ja": "教師の仕事は大変だ。",
+        "vi": "Công việc của giáo viên rất vất vả."
+      },
+      {
+        "ja": "素晴らしい教師に出会う。",
+        "vi": "Gặp được một giáo viên tuyệt vời."
+      }
+    ],
+    "id": "3adba5b6-bcd2-4374-966c-0dbe7efa3f75"
+  },
+  {
+    "kanji": "店員",
+    "hiragana": "てんいん",
+    "meaning": "nhân viên cửa hàng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "コンビニの店員。",
+        "vi": "Nhân viên cửa hàng tiện lợi."
+      },
+      {
+        "ja": "店員にサイズを聞く。",
+        "vi": "Hỏi nhân viên cửa hàng về kích cỡ."
+      },
+      {
+        "ja": "店員の態度が良い。",
+        "vi": "Thái độ của nhân viên bán hàng rất tốt."
+      }
+    ],
+    "id": "66b1592a-1880-40a3-91cf-0211e5f95b0b"
+  },
+  {
+    "kanji": "銀行員",
+    "hiragana": "ぎんこういん",
+    "meaning": "nhân viên ngân hàng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "兄は銀行員です。",
+        "vi": "Anh trai tôi là nhân viên ngân hàng."
+      },
+      {
+        "ja": "銀行員は計算が早い。",
+        "vi": "Nhân viên ngân hàng tính toán rất nhanh."
+      },
+      {
+        "ja": "銀行員の仕事は忙しい。",
+        "vi": "Công việc của nhân viên ngân hàng rất bận rộn."
+      }
+    ],
+    "id": "1acc91d0-f863-4d41-b77a-95a9cfdfed81"
+  },
+  {
+    "kanji": "客室乗務員",
+    "hiragana": "きゃくしつじょうむいん",
+    "meaning": "tiếp viên hàng không",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "客室乗務員の制服が可愛い。",
+        "vi": "Đồng phục của tiếp viên hàng không rất dễ thương."
+      },
+      {
+        "ja": "客室乗務員は英語が話せる。",
+        "vi": "Tiếp viên hàng không có thể nói tiếng Anh."
+      },
+      {
+        "ja": "客室乗務員を夢見る。",
+        "vi": "Mơ ước trở thành tiếp viên hàng không."
+      }
+    ],
+    "id": "24e68fc4-a60a-4adf-b85b-a89a85de6fea"
+  },
+  {
+    "kanji": "医者",
+    "hiragana": "いしゃ",
+    "meaning": "bác sĩ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "医者に診てもらう。",
+        "vi": "Được bác sĩ khám bệnh."
+      },
+      {
+        "ja": "優秀な医者になる。",
+        "vi": "Trở thành một bác sĩ ưu tú."
+      },
+      {
+        "ja": "医者が手術を行う。",
+        "vi": "Bác sĩ tiến hành phẫu thuật."
+      }
+    ],
+    "id": "dc5b257e-3816-4746-9a32-b9e785498937"
+  },
+  {
+    "kanji": "美容師",
+    "hiragana": "びようし",
+    "meaning": "thợ làm tóc",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "美容師に髪を切ってもらう。",
+        "vi": "Nhờ thợ làm tóc cắt tóc cho."
+      },
+      {
+        "ja": "有名な美容師になる。",
+        "vi": "Trở thành thợ làm tóc nổi tiếng."
+      },
+      {
+        "ja": "美容師の仕事は立ち仕事だ。",
+        "vi": "Công việc của thợ làm tóc là phải đứng nhiều."
+      }
+    ],
+    "id": "5312ebf9-7d8c-4d6c-9209-893954603c73"
+  },
+  {
+    "kanji": "漁師",
+    "hiragana": "りょうし",
+    "meaning": "ngư dân",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "漁師が海に出る。",
+        "vi": "Ngư dân ra khơi."
+      },
+      {
+        "ja": "漁師の朝は早い。",
+        "vi": "Buổi sáng của ngư dân rất sớm."
+      },
+      {
+        "ja": "新鮮な魚を漁師から買う。",
+        "vi": "Mua cá tươi từ ngư dân."
+      }
+    ],
+    "id": "77cbe6c1-5d6e-47c9-9843-63956036fcd2"
+  },
+  {
+    "kanji": "看護師",
+    "hiragana": "かんごし",
+    "meaning": "y tá",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "看護師が患者の世話をする。",
+        "vi": "Y tá chăm sóc cho bệnh nhân."
+      },
+      {
+        "ja": "優しい看護師に感謝する。",
+        "vi": "Biết ơn cô y tá hiền lành."
+      },
+      {
+        "ja": "看護師の仕事はやりがいがある。",
+        "vi": "Công việc của y tá rất đáng làm."
+      }
+    ],
+    "id": "5e619cd5-eca6-41a0-89bf-24b6a7daede5"
+  },
+  {
+    "kanji": "弁護士",
+    "hiragana": "べんごし",
+    "meaning": "luật sư",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "弁護士に相談する。",
+        "vi": "Thảo luận với luật sư."
+      },
+      {
+        "ja": "弁護士が裁判で勝つ。",
+        "vi": "Luật sư thắng kiện."
+      },
+      {
+        "ja": "優秀な弁護士を雇う。",
+        "vi": "Thuê một luật sư giỏi."
+      }
+    ],
+    "id": "947fa5d5-217f-4709-b426-d838d5382026"
+  },
+  {
+    "kanji": "介護士",
+    "hiragana": "かいごし",
+    "meaning": "người chăm sóc",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "介護士が老人ホームで働く。",
+        "vi": "Người chăm sóc làm việc tại viện dưỡng lão."
+      },
+      {
+        "ja": "介護士の需要が増えている。",
+        "vi": "Nhu cầu về người chăm sóc đang tăng lên."
+      },
+      {
+        "ja": "介護士は体力が必要だ。",
+        "vi": "Người chăm sóc cần có thể lực."
+      }
+    ],
+    "id": "d8b03df1-b428-4240-b0b4-934aecce2a96"
+  },
+  {
+    "kanji": "保育士",
+    "hiragana": "ほいくし",
+    "meaning": "giáo viên mầm non",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "保育士が子供と遊ぶ。",
+        "vi": "Giáo viên mầm non chơi đùa với trẻ em."
+      },
+      {
+        "ja": "保育士になるための試験。",
+        "vi": "Kỳ thi để trở thành giáo viên mầm non."
+      },
+      {
+        "ja": "保育士の仕事は大変だ。",
+        "vi": "Công việc giáo viên mầm non rất vất vả."
+      }
+    ],
+    "id": "14cd96a3-2791-4dbe-a980-c65f427f2159"
+  },
+  {
+    "kanji": "運転手",
+    "hiragana": "うんてんしゅ",
+    "meaning": "tài xế",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "タクシーの運転手。",
+        "vi": "Tài xế taxi."
+      },
+      {
+        "ja": "運転手に道を教える。",
+        "vi": "Chỉ đường cho tài xế."
+      },
+      {
+        "ja": "バスの運転手が安全に運転する。",
+        "vi": "Tài xế xe buýt lái xe an toàn."
+      }
+    ],
+    "id": "6c69e159-f0b8-4ca8-86f5-1fe1f96af5bc"
+  },
+  {
+    "kanji": "政治家",
+    "hiragana": "せいじか",
+    "meaning": "nhà chính trị",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "政治家が演説をする。",
+        "vi": "Nhà chính trị diễn thuyết."
+      },
+      {
+        "ja": "信頼できる政治家を選ぶ。",
+        "vi": "Bầu chọn một nhà chính trị đáng tin cậy."
+      },
+      {
+        "ja": "政治家の仕事は国を良くすることだ。",
+        "vi": "Công việc của chính trị gia là làm cho đất nước tốt hơn."
+      }
+    ],
+    "id": "9b585b69-c43c-4868-843c-afe39edc6eb6"
+  },
+  {
+    "kanji": "作家",
+    "hiragana": "さっか",
+    "meaning": "nhà văn",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "有名な作家の本を読む。",
+        "vi": "Đọc sách của một nhà văn nổi tiếng."
+      },
+      {
+        "ja": "将来は作家になりたい。",
+        "vi": "Tôi muốn trở thành nhà văn trong tương lai."
+      },
+      {
+        "ja": "作家が新しい小説を発表した。",
+        "vi": "Nhà văn đã công bố một cuốn tiểu thuyết mới."
+      }
+    ],
+    "id": "6511b1fb-19f6-41f1-a608-746c72687fc7"
+  },
+  {
+    "kanji": "画家",
+    "hiragana": "がか",
+    "meaning": "họa sĩ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "彼は有名な画家だ。",
+        "vi": "Anh ấy là một họa sĩ nổi tiếng."
+      },
+      {
+        "ja": "画家の展覧会に行く。",
+        "vi": "Đến dự buổi triển lãm của họa sĩ."
+      },
+      {
+        "ja": "風景を描く画家。",
+        "vi": "Một họa sĩ vẽ tranh phong cảnh."
+      }
+    ],
+    "id": "eba7d228-e531-4ad7-a951-21d45236adc1"
+  },
+  {
+    "kanji": "音楽家",
+    "hiragana": "おんがくか",
+    "meaning": "nhạc sĩ",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "ベートーベンは有名な音楽家だ。",
+        "vi": "Beethoven là một nhạc sĩ nổi tiếng."
+      },
+      {
+        "ja": "音楽家としてデビューする。",
+        "vi": "Ra mắt với tư cách là một nhạc sĩ."
+      },
+      {
+        "ja": "素晴らしい音楽家に出会う。",
+        "vi": "Gặp được một nhạc sĩ tuyệt vời."
+      }
+    ],
+    "id": "01ff8a39-a202-4eee-a167-de0937bd528e"
+  },
+  {
+    "kanji": "エンジニア",
+    "hiragana": "えんじにあ",
+    "meaning": "kỹ sư",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "ITのエンジニアとして働く。",
+        "vi": "Làm việc với tư cách là kỹ sư IT."
+      },
+      {
+        "ja": "エンジニアがシステムを開発する。",
+        "vi": "Kỹ sư phát triển hệ thống."
+      },
+      {
+        "ja": "優秀なエンジニアが必要だ。",
+        "vi": "Cần có một kỹ sư ưu tú."
+      }
+    ],
+    "id": "d7fd562c-b1e9-417a-aee0-0f9eb892713b"
+  },
+  {
+    "kanji": "警察官",
+    "hiragana": "けいさつかん",
+    "meaning": "cảnh sát",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "警察官が町をパトロールする。",
+        "vi": "Cảnh sát tuần tra khu phố."
+      },
+      {
+        "ja": "警察官に道を尋ねる。",
+        "vi": "Hỏi đường cảnh sát."
+      },
+      {
+        "ja": "将来は警察官になりたい。",
+        "vi": "Tương lai tôi muốn trở thành cảnh sát."
+      }
+    ],
+    "id": "3650aba2-d3fc-4690-a616-a6293618db89"
+  },
+  {
+    "kanji": "アスリート",
+    "hiragana": "あすりーと",
+    "meaning": "vận động viên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "オリンピックのアスリート。",
+        "vi": "Vận động viên Olympic."
+      },
+      {
+        "ja": "プロのアスリートとして活躍する。",
+        "vi": "Hoạt động tích cực với tư cách vận động viên chuyên nghiệp."
+      },
+      {
+        "ja": "アスリートは毎日練習する。",
+        "vi": "Vận động viên luyện tập mỗi ngày."
+      }
+    ],
+    "id": "b4351cb2-0ece-4022-bbf4-aaa0038f12cb"
+  },
+  {
+    "kanji": "",
+    "hiragana": "自営業",
+    "meaning": "tự doanh",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "父は自営業をしている。",
+        "vi": "Bố tôi kinh doanh tự do."
+      },
+      {
+        "ja": "自営業は自由だが大変だ。",
+        "vi": "Tự kinh doanh thì tự do nhưng vất vả."
+      },
+      {
+        "ja": "会社を辞めて自営業を始める。",
+        "vi": "Nghỉ việc ở công ty và bắt đầu tự kinh doanh."
+      }
+    ],
+    "id": "f5b05795-7007-460b-8d76-4b789e2531be"
+  },
+  {
+    "kanji": "",
+    "hiragana": "ジャーナリスト",
+    "meaning": "nhà báo",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "ジャーナリストが事件を取材する。",
+        "vi": "Nhà báo thu thập thông tin vụ án."
+      },
+      {
+        "ja": "有名なジャーナリストの記事を読む。",
+        "vi": "Đọc bài viết của một nhà báo nổi tiếng."
+      },
+      {
+        "ja": "真実を伝えるジャーナリスト。",
+        "vi": "Một nhà báo truyền tải sự thật."
+      }
+    ],
+    "id": "7e0330ce-c5b4-408f-823c-a6fbab19b823"
+  },
+  {
+    "kanji": "",
+    "hiragana": "写真家",
+    "meaning": "nhiếp ảnh gia",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "写真家が風景を撮る。",
+        "vi": "Nhiếp ảnh gia chụp phong cảnh."
+      },
+      {
+        "ja": "有名な写真家の展覧会。",
+        "vi": "Triển lãm của một nhiếp ảnh gia nổi tiếng."
+      },
+      {
+        "ja": "動物を専門に撮る写真家。",
+        "vi": "Một nhiếp ảnh gia chuyên chụp ảnh động vật."
+      }
+    ],
+    "id": "f6d4b96e-4b98-4d15-9cbb-9abbd8de69c0"
+  },
+  {
+    "kanji": "",
+    "hiragana": "ミュージシャン",
+    "meaning": "nhạc công",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "人気ミュージシャンのライブに行く。",
+        "vi": "Đi xem buổi diễn trực tiếp của một nhạc công nổi tiếng."
+      },
+      {
+        "ja": "ミュージシャンになりたい。",
+        "vi": "Tôi muốn trở thành một nhạc công."
+      },
+      {
+        "ja": "プロのミュージシャンとして活動する。",
+        "vi": "Hoạt động như một nhạc công chuyên nghiệp."
+      }
+    ],
+    "id": "e5dc119e-01a1-4266-a865-107ca20312c5"
+  },
+  {
+    "kanji": "",
+    "hiragana": "パイロット",
+    "meaning": "phi công",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "飛行機のパイロットになる。",
+        "vi": "Trở thành phi công máy bay."
+      },
+      {
+        "ja": "パイロットは空を飛ぶ仕事だ。",
+        "vi": "Phi công là công việc bay lượn trên bầu trời."
+      },
+      {
+        "ja": "パイロットになるための試験。",
+        "vi": "Kỳ thi để trở thành phi công."
+      }
+    ],
+    "id": "0d036437-4d93-4b52-a477-d77c37ea2078"
+  },
+  {
+    "kanji": "",
+    "hiragana": "ピアニスト",
+    "meaning": "nghệ sĩ piano",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "彼女は有名なピアニストだ。",
+        "vi": "Cô ấy là một nghệ sĩ piano nổi tiếng."
+      },
+      {
+        "ja": "ピアニストの演奏を聴く。",
+        "vi": "Lắng nghe màn trình diễn của nghệ sĩ piano."
+      },
+      {
+        "ja": "プロのピアニストを目指す。",
+        "vi": "Hướng tới trở thành một nghệ sĩ piano chuyên nghiệp."
+      }
+    ],
+    "id": "ffe6d485-b058-4b75-b597-7a3d31d7103f"
+  },
+  {
+    "kanji": "",
+    "hiragana": "デザイナー",
+    "meaning": "nhà thiết kế",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "ファッションデザイナーになる。",
+        "vi": "Trở thành nhà thiết kế thời trang."
+      },
+      {
+        "ja": "この服は有名なデザイナーが作った。",
+        "vi": "Bộ quần áo này do một nhà thiết kế nổi tiếng làm ra."
+      },
+      {
+        "ja": "ウェブデザイナーとして働く。",
+        "vi": "Làm việc với tư cách là người thiết kế web."
+      }
+    ],
+    "id": "6c15af08-8595-4259-9979-0f7b85d39504"
+  },
+  {
+    "kanji": "",
+    "hiragana": "ウェイター",
+    "meaning": "bồi bàn",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 40,
+    "examples": [
+      {
+        "ja": "レストランでウェイターを呼ぶ。",
+        "vi": "Gọi bồi bàn trong nhà hàng."
+      },
+      {
+        "ja": "ウェイターが料理を運んでくる。",
+        "vi": "Người bồi bàn đang mang thức ăn đến."
+      },
+      {
+        "ja": "ウェイターの接客が丁寧だ。",
+        "vi": "Cách phục vụ của người bồi bàn rất lịch sự."
+      }
+    ],
+    "id": "d3fea396-b994-438f-b0d3-f9a57add3621"
+  },
+  {
+    "kanji": "先",
+    "hiragana": "さき",
+    "meaning": "điểm đến, nơi đến",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 41,
+    "examples": [
+      {
+        "ja": "お先にどうぞ。",
+        "vi": "Xin mời đi trước."
+      },
+      {
+        "ja": "この先を右に曲がる。",
+        "vi": "Rẽ phải ở phía trước."
+      },
+      {
+        "ja": "先のことはわからない。",
+        "vi": "Không thể biết được chuyện tương lai."
+      }
+    ],
+    "id": "a36987af-4188-4e19-b791-3539ecccedcc"
+  },
+  {
+    "kanji": "おごってもらう",
+    "hiragana": "おごってもらう",
+    "meaning": "được đãi",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 41,
+    "examples": [
+      {
+        "ja": "先輩にご飯をおごってもらう。",
+        "vi": "Được tiền bối khao ăn một bữa."
+      },
+      {
+        "ja": "友達にジュースをおごってもらう。",
+        "vi": "Được bạn khao nước trái cây."
+      },
+      {
+        "ja": "おごってもらうのは申し訳ない。",
+        "vi": "Được đãi thì tôi thấy ngại quá."
+      }
+    ],
+    "id": "8e218ddc-03db-41be-b3c4-a0f643d8fb3f"
+  },
+  {
+    "kanji": "仕事",
+    "hiragana": "しごと",
+    "meaning": "công việc",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 41,
+    "examples": [
+      {
+        "ja": "仕事を探す。",
+        "vi": "Tìm kiếm công việc."
+      },
+      {
+        "ja": "仕事が終わったら飲みに行こう。",
+        "vi": "Sau khi kết thúc công việc hãy đi uống nhé."
+      },
+      {
+        "ja": "今日の仕事は大変だった。",
+        "vi": "Công việc hôm nay rất vất vả."
+      }
+    ],
+    "id": "3a00e0d0-23d8-4f08-9d73-45ea0b09dbb3"
+  },
+  {
+    "kanji": "言う",
+    "hiragana": "いいます",
+    "meaning": "nói (lịch sự)",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 41,
+    "examples": [
+      {
+        "ja": "ありがとうと言う。",
+        "vi": "Nói lời cảm ơn."
+      },
+      {
+        "ja": "彼は嘘を言わない。",
+        "vi": "Anh ấy không nói dối."
+      },
+      {
+        "ja": "先生が言う通りにする。",
+        "vi": "Làm theo như giáo viên nói."
+      }
+    ],
+    "id": "b5f5d5ac-3d07-4765-9fba-977071e6c705"
+  },
+  {
+    "kanji": "つく",
+    "hiragana": "つく",
+    "meaning": "đến, tới",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 41,
+    "examples": [
+      {
+        "ja": "駅に着く。",
+        "vi": "Đến nhà ga."
+      },
+      {
+        "ja": "目的地につく。",
+        "vi": "Đến đích."
+      },
+      {
+        "ja": "電気がつく。",
+        "vi": "Đèn bật sáng."
+      }
+    ],
+    "id": "46e026ea-f38e-42e5-a9d9-1d53b4c79b20"
+  },
+  {
+    "kanji": "なる",
+    "hiragana": "なる",
+    "meaning": "trở thành",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 41,
+    "examples": [
+      {
+        "ja": "大人になる。",
+        "vi": "Trở thành người lớn."
+      },
+      {
+        "ja": "春になる。",
+        "vi": "Mùa xuân đến."
+      },
+      {
+        "ja": "病気になる。",
+        "vi": "Trở nên ốm đau."
+      }
+    ],
+    "id": "eea13758-a233-4077-adad-4ff914c17fa8"
+  },
+  {
+    "kanji": "かかる",
+    "hiragana": "かかる",
+    "meaning": "tốn (thời gian, tiền bạc)",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 41,
+    "examples": [
+      {
+        "ja": "時間がかかる。",
+        "vi": "Tốn thời gian."
+      },
+      {
+        "ja": "お金がかかる。",
+        "vi": "Tốn tiền."
+      },
+      {
+        "ja": "病気にかかる。",
+        "vi": "Mắc bệnh."
+      }
+    ],
+    "id": "9bfe3686-bbf8-4d59-9837-cf6d414a7e82"
+  },
+  {
+    "kanji": "におい",
+    "hiragana": "におい",
+    "meaning": "mùi",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 42,
+    "examples": [
+      {
+        "ja": "いいにおいがする。",
+        "vi": "Có mùi thơm."
+      },
+      {
+        "ja": "においを嗅ぐ。",
+        "vi": "Ngửi mùi."
+      },
+      {
+        "ja": "焦げたにおいがする。",
+        "vi": "Có mùi cháy khét."
+      }
+    ],
+    "id": "523c7509-82a9-4d7a-9fa7-a19e23c3d7de"
+  },
+  {
+    "kanji": "病院",
+    "hiragana": "びょういん",
+    "meaning": "bệnh viện",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 42,
+    "examples": [
+      {
+        "ja": "病院へ行く。",
+        "vi": "Đi đến bệnh viện."
+      },
+      {
+        "ja": "大きな病院に入院する。",
+        "vi": "Nhập viện ở một bệnh viện lớn."
+      },
+      {
+        "ja": "病院で薬をもらう。",
+        "vi": "Nhận thuốc ở bệnh viện."
+      }
+    ],
+    "id": "b9328c26-1399-4546-bd70-b64e814ec9a4"
+  },
+  {
+    "kanji": "赤ちゃん",
+    "hiragana": "あかちゃん",
+    "meaning": "em bé",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 42,
+    "examples": [
+      {
+        "ja": "赤ちゃんが泣いている。",
+        "vi": "Em bé đang khóc."
+      },
+      {
+        "ja": "赤ちゃんが生まれた。",
+        "vi": "Em bé đã chào đời."
+      },
+      {
+        "ja": "赤ちゃんの世話をする。",
+        "vi": "Chăm sóc cho em bé."
+      }
+    ],
+    "id": "8c5ca91b-1038-4936-ad12-21584a408ebe"
+  },
+  {
+    "kanji": "ボール",
+    "hiragana": "ぼーる",
+    "meaning": "quả bóng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 42,
+    "examples": [
+      {
+        "ja": "ボールを投げる。",
+        "vi": "Ném quả bóng."
+      },
+      {
+        "ja": "ボールを蹴る。",
+        "vi": "Đá quả bóng."
+      },
+      {
+        "ja": "ボールを受け取る。",
+        "vi": "Bắt lấy quả bóng."
+      }
+    ],
+    "id": "a1b40147-aee3-44cc-ac06-9416c736f9a4"
+  },
+  {
+    "kanji": "大きさ",
+    "hiragana": "おおきさ",
+    "meaning": "kích thước",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 42,
+    "examples": [
+      {
+        "ja": "箱の大きさを測る。",
+        "vi": "Đo kích thước của chiếc hộp."
+      },
+      {
+        "ja": "ちょうどいい大きさだ。",
+        "vi": "Là một kích thước vừa vặn."
+      },
+      {
+        "ja": "大きさが違う。",
+        "vi": "Kích thước khác nhau."
+      }
+    ],
+    "id": "18cd1c37-3d4d-4f0e-85a6-b1f361744d4d"
+  },
+  {
+    "kanji": "名前",
+    "hiragana": "なまえ",
+    "meaning": "tên",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 42,
+    "examples": [
+      {
+        "ja": "名前を書く。",
+        "vi": "Viết tên."
+      },
+      {
+        "ja": "名前を呼ばれる。",
+        "vi": "Bị gọi tên."
+      },
+      {
+        "ja": "犬に名前をつける。",
+        "vi": "Đặt tên cho chó."
+      }
+    ],
+    "id": "884fc4a7-7014-401a-a702-9219f0ce2fde"
+  },
+  {
+    "kanji": "気持ち",
+    "hiragana": "きもち",
+    "meaning": "cảm xúc",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 42,
+    "examples": [
+      {
+        "ja": "気持ちを伝える。",
+        "vi": "Truyền đạt cảm xúc."
+      },
+      {
+        "ja": "気持ちが良い。",
+        "vi": "Cảm giác dễ chịu."
+      },
+      {
+        "ja": "気持ちが悪い。",
+        "vi": "Cảm giác khó chịu."
+      }
+    ],
+    "id": "bfaabd2c-da06-4fb7-b161-3cf880700898"
+  },
+  {
+    "kanji": "友達",
+    "hiragana": "ともだち",
+    "meaning": "bạn bè",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 42,
+    "examples": [
+      {
+        "ja": "友達と遊ぶ。",
+        "vi": "Chơi cùng với bạn."
+      },
+      {
+        "ja": "新しい友達ができる。",
+        "vi": "Có bạn bè mới."
+      },
+      {
+        "ja": "友達を大切にする。",
+        "vi": "Trân trọng bạn bè."
+      }
+    ],
+    "id": "b9bb1257-6218-4b0b-8fdc-6360d3af73bb"
+  },
+  {
+    "kanji": "効く",
+    "hiragana": "きく",
+    "meaning": "có hiệu quả, hoạt động tốt",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 43,
+    "examples": [
+      {
+        "ja": "薬が効く。",
+        "vi": "Thuốc có hiệu quả."
+      },
+      {
+        "ja": "ブレーキが効かない。",
+        "vi": "Phanh không ăn."
+      },
+      {
+        "ja": "クーラーが効いている。",
+        "vi": "Điều hòa đang hoạt động tốt."
+      }
+    ],
+    "id": "df519934-2f58-4995-8158-6b3adb7fddc1"
+  },
+  {
+    "kanji": "はやる",
+    "hiragana": "はやる",
+    "meaning": "trở nên phổ biến, lan truyền",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 43,
+    "examples": [
+      {
+        "ja": "風邪がはやる。",
+        "vi": "Bệnh cảm cúm đang lây lan."
+      },
+      {
+        "ja": "若者の間ではやる。",
+        "vi": "Trở nên thịnh hành trong giới trẻ."
+      },
+      {
+        "ja": "この歌がはやっている。",
+        "vi": "Bài hát này đang rất hot."
+      }
+    ],
+    "id": "db3c97d9-e34b-4944-bef2-3f12257c58ee"
+  },
+  {
+    "kanji": "経つ",
+    "hiragana": "たつ",
+    "meaning": "trôi qua, trải qua",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 43,
+    "examples": [
+      {
+        "ja": "時間が経つのは早い。",
+        "vi": "Thời gian trôi qua thật nhanh."
+      },
+      {
+        "ja": "3年が経った。",
+        "vi": "3 năm đã trôi qua."
+      },
+      {
+        "ja": "月日が経つ。",
+        "vi": "Ngày tháng trôi qua."
+      }
+    ],
+    "id": "42500061-ce87-417a-9e64-bc4e4b39f9c0"
+  },
+  {
+    "kanji": "合う",
+    "hiragana": "あう",
+    "meaning": "phù hợp, tương ứng",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 43,
+    "examples": [
+      {
+        "ja": "サイズが合う。",
+        "vi": "Kích cỡ vừa vặn."
+      },
+      {
+        "ja": "意見が合う。",
+        "vi": "Ý kiến phù hợp với nhau."
+      },
+      {
+        "ja": "洋服に合う靴を選ぶ。",
+        "vi": "Chọn đôi giày hợp với quần áo."
+      }
+    ],
+    "id": "fa92d026-9c3d-4d48-a195-040014b32c27"
+  },
+  {
+    "kanji": "かよう",
+    "hiragana": "かよう",
+    "meaning": "đi lại, thường xuyên lui tới",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 43,
+    "examples": [
+      {
+        "ja": "学校に通う。",
+        "vi": "Đi học."
+      },
+      {
+        "ja": "バスで会社に通う。",
+        "vi": "Đi làm bằng xe buýt."
+      },
+      {
+        "ja": "病院に通っている。",
+        "vi": "Đang thường xuyên đến bệnh viện."
+      }
+    ],
+    "id": "aa54a5d5-05b4-470b-9397-6e1ebb4d03fc"
+  },
+  {
+    "kanji": "込む",
+    "hiragana": "こむ",
+    "meaning": "đông đúc, chật chội",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 43,
+    "examples": [
+      {
+        "ja": "電車が込む。",
+        "vi": "Tàu điện đông đúc."
+      },
+      {
+        "ja": "道が込んでいる。",
+        "vi": "Con đường đang đông nghẹt."
+      },
+      {
+        "ja": "予定が込んでいる。",
+        "vi": "Lịch trình dày đặc."
+      }
+    ],
+    "id": "fedc1ad0-c8c2-42da-aa7c-9198b380e8d3"
+  },
+  {
+    "kanji": "すれ違う",
+    "hiragana": "すれちがう",
+    "meaning": "đi ngang qua nhau, lướt qua nhau",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 43,
+    "examples": [
+      {
+        "ja": "道で友達とすれ違う。",
+        "vi": "Lướt qua bạn bè trên đường."
+      },
+      {
+        "ja": "車とすれ違う。",
+        "vi": "Đi ngang qua chiếc xe hơi."
+      },
+      {
+        "ja": "意見がすれ違う。",
+        "vi": "Ý kiến trái ngược nhau."
+      }
+    ],
+    "id": "a3bda5d9-7f46-4aad-a14f-b834e5f4e4a1"
+  },
+  {
+    "kanji": "",
+    "hiragana": "かける",
+    "meaning": "đặt, treo, phơi",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 44,
+    "examples": [
+      {
+        "ja": "壁に絵をかける。",
+        "vi": "Treo bức tranh lên tường."
+      },
+      {
+        "ja": "服にアイロンをかける。",
+        "vi": "Ủi quần áo."
+      },
+      {
+        "ja": "時間をかける。",
+        "vi": "Dành nhiều thời gian."
+      }
+    ],
+    "id": "0d9960c7-9918-4ffe-aab9-de3b1a80af4e"
+  },
+  {
+    "kanji": "",
+    "hiragana": "うごく",
+    "meaning": "di chuyển, hoạt động",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 44,
+    "examples": [
+      {
+        "ja": "機械が動く。",
+        "vi": "Máy móc hoạt động."
+      },
+      {
+        "ja": "心が動く。",
+        "vi": "Trái tim rung động."
+      },
+      {
+        "ja": "電車が動かない。",
+        "vi": "Tàu điện không chạy."
+      }
+    ],
+    "id": "c11fd41f-b01a-48d8-84e2-e77c5738c1d6"
+  },
+  {
+    "kanji": "",
+    "hiragana": "うごかす",
+    "meaning": "làm cho di chuyển, điều khiển",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 44,
+    "examples": [
+      {
+        "ja": "机を動かす。",
+        "vi": "Di chuyển cái bàn."
+      },
+      {
+        "ja": "人を動かす。",
+        "vi": "Điều khiển con người."
+      },
+      {
+        "ja": "体を動かす。",
+        "vi": "Vận động cơ thể."
+      }
+    ],
+    "id": "534b46a3-0754-43f1-88f5-1e3476ed9156"
+  },
+  {
+    "kanji": "離れる",
+    "hiragana": "はなれる",
+    "meaning": "rời xa, tách ra",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 45,
+    "examples": [
+      {
+        "ja": "家族と離れる。",
+        "vi": "Rời xa gia đình."
+      },
+      {
+        "ja": "駅から離れる。",
+        "vi": "Cách xa nhà ga."
+      },
+      {
+        "ja": "故郷を離れる。",
+        "vi": "Rời xa quê hương."
+      }
+    ],
+    "id": "5c434b0f-b95b-4218-bae9-e3f87275ed88"
+  },
+  {
+    "kanji": "離す",
+    "hiragana": "はなす",
+    "meaning": "tách ra, buông ra",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 45,
+    "examples": [
+      {
+        "ja": "手を離す。",
+        "vi": "Buông tay ra."
+      },
+      {
+        "ja": "子供から目を離すな。",
+        "vi": "Đừng rời mắt khỏi đứa trẻ."
+      },
+      {
+        "ja": "二つの机を離す。",
+        "vi": "Tách hai cái bàn ra xa."
+      }
+    ],
+    "id": "531b34c1-57c9-4c32-b328-8e83511b691f"
+  },
+  {
+    "kanji": "ぶつかる",
+    "hiragana": "ぶつかる",
+    "meaning": "va chạm, xung đột",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 45,
+    "examples": [
+      {
+        "ja": "車が壁にぶつかる。",
+        "vi": "Xe hơi đâm vào bức tường."
+      },
+      {
+        "ja": "人にぶつかる。",
+        "vi": "Va vào người khác."
+      },
+      {
+        "ja": "意見がぶつかる。",
+        "vi": "Ý kiến xung đột."
+      }
+    ],
+    "id": "41deb90b-c1a4-4ac9-bbd0-0b5f27280466"
+  },
+  {
+    "kanji": "ぶつける",
+    "hiragana": "ぶつける",
+    "meaning": "đâm vào, va vào",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 45,
+    "examples": [
+      {
+        "ja": "頭をドアにぶつける。",
+        "vi": "Đập đầu vào cửa."
+      },
+      {
+        "ja": "車を壁にぶつける。",
+        "vi": "Đâm xe vào tường."
+      },
+      {
+        "ja": "怒りをぶつける。",
+        "vi": "Trút sự tức giận."
+      }
+    ],
+    "id": "20b20bb2-61fa-4ca8-9597-6ca80a76f53d"
+  },
+  {
+    "kanji": "こぼれる",
+    "hiragana": "こぼれる",
+    "meaning": "tràn ra, đổ ra",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 45,
+    "examples": [
+      {
+        "ja": "水がこぼれる。",
+        "vi": "Nước tràn ra."
+      },
+      {
+        "ja": "涙がこぼれる。",
+        "vi": "Nước mắt tuôn rơi."
+      },
+      {
+        "ja": "笑顔がこぼれる。",
+        "vi": "Nở nụ cười."
+      }
+    ],
+    "id": "e4a68ffb-4863-4d8e-9456-f3be76680273"
+  },
+  {
+    "kanji": "こす",
+    "hiragana": "こす",
+    "meaning": "cọ, chà",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 45,
+    "examples": [
+      {
+        "ja": "目をこす。",
+        "vi": "Dụi mắt."
+      },
+      {
+        "ja": "汚れた鍋をこする。",
+        "vi": "Chà sát cái nồi bị bẩn."
+      },
+      {
+        "ja": "マッチをこする。",
+        "vi": "Quẹt diêm."
+      }
+    ],
+    "id": "a32961ab-dd7b-4622-8f60-1f6e121f24b1"
+  },
+  {
+    "kanji": "拭く",
+    "hiragana": "ふく",
+    "meaning": "lau, chùi",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 45,
+    "examples": [
+      {
+        "ja": "机をタオルで拭く。",
+        "vi": "Lau bàn bằng khăn."
+      },
+      {
+        "ja": "汗を拭く。",
+        "vi": "Lau mồ hôi."
+      },
+      {
+        "ja": "窓を拭く。",
+        "vi": "Lau cửa sổ."
+      }
+    ],
+    "id": "42e9274f-7ce3-49b4-b718-3a0d77c9be10"
+  },
+  {
+    "kanji": "片付ける",
+    "hiragana": "かたづける",
+    "meaning": "dọn dẹp, sắp xếp",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 45,
+    "examples": [
+      {
+        "ja": "部屋を片付ける。",
+        "vi": "Dọn dẹp phòng."
+      },
+      {
+        "ja": "おもちゃを片付ける。",
+        "vi": "Dọn dẹp đồ chơi."
+      },
+      {
+        "ja": "仕事を片付ける。",
+        "vi": "Hoàn tất công việc."
+      }
+    ],
+    "id": "8299ea74-8014-4f2a-8a0b-d4b456d1b114"
+  },
+  {
+    "kanji": "片付く",
+    "hiragana": "かたづく",
+    "meaning": "được dọn dẹp, được sắp xếp",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 45,
+    "examples": [
+      {
+        "ja": "部屋が片付く。",
+        "vi": "Căn phòng đã được dọn dẹp."
+      },
+      {
+        "ja": "仕事が片付く。",
+        "vi": "Công việc đã được sắp xếp xong."
+      },
+      {
+        "ja": "問題が片付いた。",
+        "vi": "Vấn đề đã được giải quyết."
+      }
+    ],
+    "id": "a3fd610f-64e1-4e9d-916f-c8fb6f3149e4"
+  },
+  {
+    "kanji": "包む",
+    "hiragana": "つつむ",
+    "meaning": "gói, bọc lại",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 46,
+    "examples": [
+      {
+        "ja": "プレゼントを紙で包む。",
+        "vi": "Gói quà bằng giấy."
+      },
+      {
+        "ja": "お弁当を包む。",
+        "vi": "Gói hộp cơm bento."
+      },
+      {
+        "ja": "優しさで包む。",
+        "vi": "Bao bọc bằng sự dịu dàng."
+      }
+    ],
+    "id": "cd7f51d9-cca4-4036-92df-7ab8a0eef835"
+  },
+  {
+    "kanji": "貼る",
+    "hiragana": "はる",
+    "meaning": "dán, gắn",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 46,
+    "examples": [
+      {
+        "ja": "壁にポスターを貼る。",
+        "vi": "Dán áp phích lên tường."
+      },
+      {
+        "ja": "切手を貼る。",
+        "vi": "Dán tem."
+      },
+      {
+        "ja": "メモを貼る。",
+        "vi": "Dán giấy nhớ."
+      }
+    ],
+    "id": "b7046bd9-11a2-46f7-bebc-70399d2ceb1e"
+  },
+  {
+    "kanji": "無くなる",
+    "hiragana": "なくなる",
+    "meaning": "biến mất, không còn",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 46,
+    "examples": [
+      {
+        "ja": "お金が無くなる。",
+        "vi": "Hết tiền."
+      },
+      {
+        "ja": "自信が無くなる。",
+        "vi": "Đánh mất tự tin."
+      },
+      {
+        "ja": "痛みが無くなる。",
+        "vi": "Hết đau."
+      }
+    ],
+    "id": "c4c3867a-7e5e-42a9-892c-d334d1f80726"
+  },
+  {
+    "kanji": "無くす",
+    "hiragana": "なくす",
+    "meaning": "làm mất, đánh mất",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 46,
+    "examples": [
+      {
+        "ja": "財布を無くす。",
+        "vi": "Đánh mất ví."
+      },
+      {
+        "ja": "やる気を無くす。",
+        "vi": "Đánh mất động lực."
+      },
+      {
+        "ja": "信用を無くす。",
+        "vi": "Đánh mất lòng tin."
+      }
+    ],
+    "id": "56b534b9-4884-4b01-a82a-fa6b95cfd739"
+  },
+  {
+    "kanji": "足りる",
+    "hiragana": "たりる",
+    "meaning": "đủ, đủ dùng",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 46,
+    "examples": [
+      {
+        "ja": "お金が足りる。",
+        "vi": "Tiền đủ dùng."
+      },
+      {
+        "ja": "時間が足りない。",
+        "vi": "Không đủ thời gian."
+      },
+      {
+        "ja": "それで十分足りる。",
+        "vi": "Như vậy là đủ rồi."
+      }
+    ],
+    "id": "da8b880b-9ba2-49fb-a2e4-9c606433b05b"
+  },
+  {
+    "kanji": "残る",
+    "hiragana": "のこる",
+    "meaning": "còn lại, sót lại",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 46,
+    "examples": [
+      {
+        "ja": "ご飯が残る。",
+        "vi": "Cơm còn thừa lại."
+      },
+      {
+        "ja": "心に残る。",
+        "vi": "Đọng lại trong tim."
+      },
+      {
+        "ja": "記憶に残る。",
+        "vi": "Còn lưu lại trong ký ức."
+      }
+    ],
+    "id": "1dfc3d47-b5f8-4240-93ca-fdfd47067bb1"
+  },
+  {
+    "kanji": "残す",
+    "hiragana": "のこす",
+    "meaning": "để lại, bỏ lại",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 46,
+    "examples": [
+      {
+        "ja": "ご飯を残す。",
+        "vi": "Để thừa cơm."
+      },
+      {
+        "ja": "メッセージを残す。",
+        "vi": "Để lại tin nhắn."
+      },
+      {
+        "ja": "記録を残す。",
+        "vi": "Để lại kỷ lục."
+      }
+    ],
+    "id": "e513d465-11e5-423c-90a7-b7b056da5957"
+  },
+  {
+    "kanji": "困る",
+    "hiragana": "こまる",
+    "meaning": "khó khăn, rắc rối",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 46,
+    "examples": [
+      {
+        "ja": "お金がなくて困る。",
+        "vi": "Tôi gặp rắc rối vì không có tiền."
+      },
+      {
+        "ja": "返事に困る。",
+        "vi": "Khó xử không biết trả lời thế nào."
+      },
+      {
+        "ja": "道に迷って困る。",
+        "vi": "Khó khăn vì bị lạc đường."
+      }
+    ],
+    "id": "3f459bd6-b485-4208-9d9e-fb8513df1817"
+  },
+  {
+    "kanji": "むける",
+    "hiragana": "むける",
+    "meaning": "bóc ra, lột ra",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "みかんの皮がむける。",
+        "vi": "Vỏ quýt bị bóc ra."
+      },
+      {
+        "ja": "日焼けして皮がむけた。",
+        "vi": "Bị cháy nắng nên bong da."
+      },
+      {
+        "ja": "顔を向ける。",
+        "vi": "Hướng khuôn mặt về phía đó."
+      }
+    ],
+    "id": "891f588c-d201-49a7-9e46-609c5fd7756a"
+  },
+  {
+    "kanji": "がむける",
+    "hiragana": "がむける",
+    "meaning": "bị lột ra",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "皮がむける。",
+        "vi": "Vỏ bị bong ra."
+      },
+      {
+        "ja": "傷口の皮がむける。",
+        "vi": "Lớp da ở miệng vết thương bong ra."
+      },
+      {
+        "ja": "ペンキがむける。",
+        "vi": "Lớp sơn bị tróc."
+      }
+    ],
+    "id": "a23533be-5c69-488c-905c-b3bbb5c63787"
+  },
+  {
+    "kanji": "む",
+    "hiragana": "む",
+    "meaning": "cạo, gọt",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "りんごの皮をむく。",
+        "vi": "Gọt vỏ quả táo."
+      },
+      {
+        "ja": "ジャガイモの皮をむく。",
+        "vi": "Gọt vỏ khoai tây."
+      },
+      {
+        "ja": "歯をむく。",
+        "vi": "Nhe răng."
+      }
+    ],
+    "id": "cedbd209-d1e1-4a02-8dba-2de240d6adf0"
+  },
+  {
+    "kanji": "すく",
+    "hiragana": "すく",
+    "meaning": "múc, xúc",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "お腹がすく。",
+        "vi": "Bụng đói."
+      },
+      {
+        "ja": "電車がすいている。",
+        "vi": "Tàu điện đang vắng người."
+      },
+      {
+        "ja": "水たまりの水をすくう。",
+        "vi": "Múc nước từ vũng nước."
+      }
+    ],
+    "id": "9c3e04d7-ad6b-4e44-99d7-9e3655afbe25"
+  },
+  {
+    "kanji": "すべる",
+    "hiragana": "すべる",
+    "meaning": "trượt, trơn",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "雪道ですべる。",
+        "vi": "Trượt ngã trên đường tuyết."
+      },
+      {
+        "ja": "手がすべる。",
+        "vi": "Trượt tay."
+      },
+      {
+        "ja": "口がすべる。",
+        "vi": "Lỡ lời."
+      }
+    ],
+    "id": "2e43e6e7-5635-42d5-bd8a-bb29729290c6"
+  },
+  {
+    "kanji": "が滑る",
+    "hiragana": "がすべる",
+    "meaning": "bị trượt",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "氷の上を滑る。",
+        "vi": "Trượt trên mặt băng."
+      },
+      {
+        "ja": "足が滑る。",
+        "vi": "Trượt chân."
+      },
+      {
+        "ja": "試験に滑る。",
+        "vi": "Thi trượt."
+      }
+    ],
+    "id": "b5b36077-5865-4a44-b5b4-9ee9f1a8b216"
+  },
+  {
+    "kanji": "つまる",
+    "hiragana": "つまる",
+    "meaning": "tích tụ, đầy",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "鼻がつまる。",
+        "vi": "Bị nghẹt mũi."
+      },
+      {
+        "ja": "トイレがつまる。",
+        "vi": "Bồn cầu bị tắc."
+      },
+      {
+        "ja": "予定がつまる。",
+        "vi": "Lịch trình kín mít."
+      }
+    ],
+    "id": "a11d175f-3f53-4b20-8d26-cc5cd8602b17"
+  },
+  {
+    "kanji": "が積もる",
+    "hiragana": "がつもる",
+    "meaning": "bị tích tụ",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "雪が積もる。",
+        "vi": "Tuyết chất đống."
+      },
+      {
+        "ja": "ほこりが積もる。",
+        "vi": "Bụi tích tụ."
+      },
+      {
+        "ja": "経験が積もる。",
+        "vi": "Kinh nghiệm tích lũy."
+      }
+    ],
+    "id": "5bdfa1ea-4a98-4c7b-aba6-3eae3ce8f3a1"
+  },
+  {
+    "kanji": "つ",
+    "hiragana": "つ",
+    "meaning": "chồng chất, chất đống",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "嘘をつく。",
+        "vi": "Nói dối."
+      },
+      {
+        "ja": "ため息をつく。",
+        "vi": "Thở dài."
+      },
+      {
+        "ja": "杖をついて歩く。",
+        "vi": "Chống gậy để đi bộ."
+      }
+    ],
+    "id": "6b41953f-236d-40f8-a288-394a6b103b6c"
+  },
+  {
+    "kanji": "はらう",
+    "hiragana": "はらう",
+    "meaning": "quét, dọn",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "お金を払う。",
+        "vi": "Trả tiền."
+      },
+      {
+        "ja": "注意を払う。",
+        "vi": "Trả sự chú ý."
+      },
+      {
+        "ja": "ほこりを払う。",
+        "vi": "Quét bụi."
+      }
+    ],
+    "id": "0fe36883-f20e-49e3-9910-c85f173394b0"
+  },
+  {
+    "kanji": "あく",
+    "hiragana": "あく",
+    "meaning": "trống, rỗng",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "ドアが開く。",
+        "vi": "Cánh cửa mở."
+      },
+      {
+        "ja": "席が空く。",
+        "vi": "Chỗ ngồi trống."
+      },
+      {
+        "ja": "時間が空く。",
+        "vi": "Thời gian rảnh rỗi."
+      }
+    ],
+    "id": "da8301e9-0aa7-483b-82d2-3e8cdbd189b7"
+  },
+  {
+    "kanji": "が空く",
+    "hiragana": "があく",
+    "meaning": "bị trống, bị rỗng",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "id": "e9d85b33-21ed-4e1b-a5c8-95dc62f25c9c"
+  },
+  {
+    "kanji": "あける",
+    "hiragana": "あける",
+    "meaning": "mở, khai mở",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "examples": [
+      {
+        "ja": "ドアを開ける。",
+        "vi": "Mở cửa."
+      },
+      {
+        "ja": "窓を開ける。",
+        "vi": "Mở cửa sổ."
+      },
+      {
+        "ja": "予定を空ける。",
+        "vi": "Để dành thời gian rảnh."
+      }
+    ],
+    "id": "497f05e2-16ea-48d9-95b2-84b6cc336c44"
+  },
+  {
+    "kanji": "が空ける",
+    "hiragana": "があける",
+    "meaning": "bị mở, bị khai mở",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 47,
+    "id": "d5a06c14-f56c-4e2d-b4e5-589aaa967de0"
+  },
+  {
+    "kanji": "",
+    "hiragana": "あがる",
+    "meaning": "tăng lên, lên",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 48,
+    "examples": [
+      {
+        "ja": "階段を上がる。",
+        "vi": "Lên cầu thang."
+      },
+      {
+        "ja": "値段が上がる。",
+        "vi": "Giá cả tăng lên."
+      },
+      {
+        "ja": "雨が上がる。",
+        "vi": "Mưa tạnh."
+      }
+    ],
+    "id": "811c4673-a537-45ad-b3f7-87fafc2011b7"
+  },
+  {
+    "kanji": "下げる",
+    "hiragana": "さげる",
+    "meaning": "hạ xuống, giảm bớt",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 48,
+    "examples": [
+      {
+        "ja": "頭を下げる。",
+        "vi": "Cúi đầu."
+      },
+      {
+        "ja": "音量を下げる。",
+        "vi": "Giảm âm lượng."
+      },
+      {
+        "ja": "熱を下げる。",
+        "vi": "Hạ sốt."
+      }
+    ],
+    "id": "51d1c60b-fe07-4392-8340-f0b3c2f3c262"
+  },
+  {
+    "kanji": "",
+    "hiragana": "ひえる",
+    "meaning": "lạnh đi, cảm thấy lạnh",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 48,
+    "examples": [
+      {
+        "ja": "体が冷える。",
+        "vi": "Cơ thể bị lạnh."
+      },
+      {
+        "ja": "ビールが冷える。",
+        "vi": "Bia lạnh."
+      },
+      {
+        "ja": "関係が冷える。",
+        "vi": "Mối quan hệ trở nên lạnh nhạt."
+      }
+    ],
+    "id": "bf48be18-81ab-4847-83b5-c6e23927c348"
+  },
+  {
+    "kanji": "冷える",
+    "hiragana": "ひえる",
+    "meaning": "trở nên lạnh",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 48,
+    "examples": [
+      {
+        "ja": "足元が冷える。",
+        "vi": "Dưới chân cảm thấy lạnh."
+      },
+      {
+        "ja": "スープが冷える。",
+        "vi": "Món súp bị nguội."
+      },
+      {
+        "ja": "よく冷えたビール。",
+        "vi": "Bia đã được ướp lạnh."
+      }
+    ],
+    "id": "0db4b821-a9aa-4e67-a69e-5fe85dd9f307"
+  },
+  {
+    "kanji": "冷やす",
+    "hiragana": "ひやす",
+    "meaning": "làm lạnh, làm mát",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 48,
+    "examples": [
+      {
+        "ja": "スイカを冷やす。",
+        "vi": "Làm lạnh quả dưa hấu."
+      },
+      {
+        "ja": "頭を冷やす。",
+        "vi": "Bình tĩnh lại (Làm mát đầu)."
+      },
+      {
+        "ja": "氷で冷やす。",
+        "vi": "Làm lạnh bằng đá."
+      }
+    ],
+    "id": "7f5b6978-a230-4cec-9131-1f824d2db4ee"
+  },
+  {
+    "kanji": "冷める",
+    "hiragana": "さめる",
+    "meaning": "trở nên lạnh, mất đi đam mê",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "お茶が冷める。",
+        "vi": "Trà bị nguội."
+      },
+      {
+        "ja": "愛が冷める。",
+        "vi": "Tình yêu phai nhạt."
+      },
+      {
+        "ja": "情熱が冷める。",
+        "vi": "Đam mê nguội lạnh."
+      }
+    ],
+    "id": "b4543afd-4fed-48b4-863e-26f450555b79"
+  },
+  {
+    "kanji": "燃える",
+    "hiragana": "もえる",
+    "meaning": "bùng cháy, đam mê",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "家が燃える。",
+        "vi": "Ngôi nhà bị cháy."
+      },
+      {
+        "ja": "希望に燃える。",
+        "vi": "Bùng cháy hy vọng."
+      },
+      {
+        "ja": "山が燃えるように紅葉する。",
+        "vi": "Lá đỏ rực như ngọn núi đang cháy."
+      }
+    ],
+    "id": "36bd6421-7256-4d40-804c-05e27a490e7b"
+  },
+  {
+    "kanji": "焼く",
+    "hiragana": "やく",
+    "meaning": "nướng, đốt",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "肉を焼く。",
+        "vi": "Nướng thịt."
+      },
+      {
+        "ja": "パンを焼く。",
+        "vi": "Nướng bánh mì."
+      },
+      {
+        "ja": "写真を焼く。",
+        "vi": "Rửa ảnh."
+      }
+    ],
+    "id": "814f3e14-56b7-4aaf-a73e-38d245654ad9"
+  },
+  {
+    "kanji": "沸く",
+    "hiragana": "わく",
+    "meaning": "sôi, trở nên phấn khích",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "お湯が沸く。",
+        "vi": "Nước đã sôi."
+      },
+      {
+        "ja": "会場が沸く。",
+        "vi": "Hội trường trở nên náo nhiệt."
+      },
+      {
+        "ja": "アイデアが沸く。",
+        "vi": "Ý tưởng nảy sinh."
+      }
+    ],
+    "id": "6e469954-e778-44bb-bded-47efc9df707f"
+  },
+  {
+    "kanji": "沸かす",
+    "hiragana": "わかす",
+    "meaning": "đun sôi, chuẩn bị bồn tắm",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "お湯を沸かす。",
+        "vi": "Đun sôi nước."
+      },
+      {
+        "ja": "お風呂を沸かす。",
+        "vi": "Chuẩn bị bồn tắm nước nóng."
+      },
+      {
+        "ja": "観客を沸かす。",
+        "vi": "Làm cho khán giả náo nhiệt."
+      }
+    ],
+    "id": "7b386948-f0b2-4a47-bdc6-120b23f6343c"
+  },
+  {
+    "kanji": "鳴る",
+    "hiragana": "なる",
+    "meaning": "kêu, rung",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "電話が鳴る。",
+        "vi": "Điện thoại reo."
+      },
+      {
+        "ja": "雷が鳴る。",
+        "vi": "Sấm chớp kêu."
+      },
+      {
+        "ja": "お腹が鳴る。",
+        "vi": "Bụng sôi (kêu)."
+      }
+    ],
+    "id": "58fc98be-84b8-491f-a242-bc288c712e82"
+  },
+  {
+    "kanji": "",
+    "hiragana": "なり",
+    "meaning": "tiếng kêu, tiếng vang",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "雷の鳴りが大きい。",
+        "vi": "Tiếng sấm rất to."
+      },
+      {
+        "ja": "サイレンの鳴りが聞こえる。",
+        "vi": "Nghe thấy tiếng còi hú."
+      },
+      {
+        "ja": "ベルの鳴りが止まった。",
+        "vi": "Tiếng chuông đã ngừng."
+      }
+    ],
+    "id": "66d310c9-6a22-4aa0-97f4-a2b771732f6e"
+  },
+  {
+    "kanji": "役立つ",
+    "hiragana": "やくだつ",
+    "meaning": "hữu ích, có ích",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "生活に役立つ情報。",
+        "vi": "Thông tin hữu ích cho cuộc sống."
+      },
+      {
+        "ja": "外国語は仕事に役立つ。",
+        "vi": "Ngoại ngữ rất hữu ích cho công việc."
+      },
+      {
+        "ja": "この道具はとても役立つ。",
+        "vi": "Dụng cụ này rất có ích."
+      }
+    ],
+    "id": "32c4adfc-bae7-48a2-985a-03658e5bd40b"
+  },
+  {
+    "kanji": "役に立つ",
+    "hiragana": "やくにたつ",
+    "meaning": "hữu ích, có ích",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "辞書は勉強の役に立つ。",
+        "vi": "Từ điển rất có ích cho việc học."
+      },
+      {
+        "ja": "困っている人の役に立つ。",
+        "vi": "Giúp ích cho những người đang gặp khó khăn."
+      },
+      {
+        "ja": "あまり役に立たない。",
+        "vi": "Không có ích cho lắm."
+      }
+    ],
+    "id": "5ae5d4aa-ec7b-4994-b760-a416667ab3f5"
+  },
+  {
+    "kanji": "",
+    "hiragana": "やく",
+    "meaning": "đặt vai trò, đảm nhận",
+    "type": "verb",
+    "level": "N3",
+    "source_page": 49,
+    "examples": [
+      {
+        "ja": "重要な役を任される。",
+        "vi": "Được giao phó một vai trò quan trọng."
+      },
+      {
+        "ja": "主役を演じる。",
+        "vi": "Đóng vai chính."
+      },
+      {
+        "ja": "役に立つ。",
+        "vi": "Có ích."
+      }
+    ],
+    "id": "a8f3520b-7cdd-4c15-b325-2c58b227d8b9"
+  },
+  {
+    "kanji": "目",
+    "hiragana": "め",
+    "meaning": "mắt",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "目が痛い。",
+        "vi": "Đau mắt."
+      },
+      {
+        "ja": "目が覚める。",
+        "vi": "Tỉnh giấc."
+      },
+      {
+        "ja": "目を閉じる。",
+        "vi": "Nhắm mắt lại."
+      }
+    ],
+    "id": "d91ade48-a8ff-4340-b7a8-7433a508516a"
+  },
+  {
+    "kanji": "口",
+    "hiragana": "くち",
+    "meaning": "miệng",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "口を開ける。",
+        "vi": "Há miệng."
+      },
+      {
+        "ja": "口に合わない。",
+        "vi": "Không hợp khẩu vị."
+      },
+      {
+        "ja": "口が堅い。",
+        "vi": "Kín miệng."
+      }
+    ],
+    "id": "6045c3c2-d228-469e-a36c-c51c83a928fa"
+  },
+  {
+    "kanji": "耳",
+    "hiragana": "みみ",
+    "meaning": "tai",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "耳が遠い。",
+        "vi": "Lãng tai."
+      },
+      {
+        "ja": "音楽を耳で聴く。",
+        "vi": "Nghe nhạc bằng tai."
+      },
+      {
+        "ja": "耳をすませる。",
+        "vi": "Lắng tai nghe."
+      }
+    ],
+    "id": "0a56f91c-00e0-4298-b468-76d5b58cd9a1"
+  },
+  {
+    "kanji": "手",
+    "hiragana": "て",
+    "meaning": "tay",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "手を洗う。",
+        "vi": "Rửa tay."
+      },
+      {
+        "ja": "手を繋ぐ。",
+        "vi": "Nắm tay."
+      },
+      {
+        "ja": "手が空く。",
+        "vi": "Rảnh rỗi (trống tay)."
+      }
+    ],
+    "id": "48b3cc00-554b-4e8a-b893-ffde6099bc5d"
+  },
+  {
+    "kanji": "足",
+    "hiragana": "あし",
+    "meaning": "chân",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "足が速い。",
+        "vi": "Chạy nhanh."
+      },
+      {
+        "ja": "足を組む。",
+        "vi": "Bắt chéo chân."
+      },
+      {
+        "ja": "足が痛い。",
+        "vi": "Đau chân."
+      }
+    ],
+    "id": "13fbd734-930f-4a47-ad9e-cf57dcf966fb"
+  },
+  {
+    "kanji": "頭",
+    "hiragana": "あたま",
+    "meaning": "đầu",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "頭が痛い。",
+        "vi": "Đau đầu."
+      },
+      {
+        "ja": "頭が良い。",
+        "vi": "Thông minh."
+      },
+      {
+        "ja": "頭を下げる。",
+        "vi": "Cúi đầu."
+      }
+    ],
+    "id": "de8cab28-84bd-4d3c-a69d-c0dd6e4215fc"
+  },
+  {
+    "kanji": "顔",
+    "hiragana": "かお",
+    "meaning": "mặt",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "顔を洗う。",
+        "vi": "Rửa mặt."
+      },
+      {
+        "ja": "顔が赤い。",
+        "vi": "Mặt đỏ."
+      },
+      {
+        "ja": "笑顔がいい。",
+        "vi": "Nụ cười rất đẹp."
+      }
+    ],
+    "id": "398f2686-97c7-43fd-a6ba-9c19316da402"
+  },
+  {
+    "kanji": "指",
+    "hiragana": "ゆび",
+    "meaning": "ngón tay",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "指を切る。",
+        "vi": "Cắt vào ngón tay."
+      },
+      {
+        "ja": "指輪をつける。",
+        "vi": "Đeo nhẫn."
+      },
+      {
+        "ja": "指を差す。",
+        "vi": "Chỉ tay."
+      }
+    ],
+    "id": "b4e56b18-42e7-4eea-bae8-4e9400666fdf"
+  },
+  {
+    "kanji": "膝",
+    "hiragana": "ひざ",
+    "meaning": "đầu gối",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "膝が痛い。",
+        "vi": "Đau đầu gối."
+      },
+      {
+        "ja": "膝をつく。",
+        "vi": "Quỳ gối."
+      },
+      {
+        "ja": "膝を曲げる。",
+        "vi": "Gập đầu gối."
+      }
+    ],
+    "id": "33a7a06d-1f18-48f3-a393-1848ba637be7"
+  },
+  {
+    "kanji": "腰",
+    "hiragana": "こし",
+    "meaning": "eo",
+    "type": "noun",
+    "level": "N3",
+    "source_page": 50,
+    "examples": [
+      {
+        "ja": "腰が痛い。",
+        "vi": "Đau eo."
+      },
+      {
+        "ja": "腰を下ろす。",
+        "vi": "Ngồi xuống."
+      },
+      {
+        "ja": "腰を曲げる。",
+        "vi": "Cúi gập eo."
+      }
+    ],
+    "id": "2100ffab-c644-434f-9cae-63ac15dbe6d9"
+  }
+]
