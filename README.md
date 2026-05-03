@@ -6,6 +6,7 @@ Dự án này được xây dựng trên nền tảng Next.js, React, PostgreSQL
 
 1. **Japanese Learning System (SRS):** Hệ thống học thuật Tiếng Nhật khắc nghiệt, ứng dụng thuật toán lặp lại ngắt quãng (Spaced Repetition - SM2) kết hợp với thiết kế giao diện Terminal Brutalist siêu ngầu.
 2. **Mervyn Pomodoro Timer:** Ứng dụng quản lý thời gian làm việc tối giản với hệ thống Web Audio tự tạo tiếng ồn trắng (White/Brown noise) giúp tăng cường sự tập trung tuyệt đối.
+3. **Mervyn Dev Task Terminal:** Hệ thống Todo-List dạng Kanban Brutalist dành riêng cho lập trình viên quản lý dự án nội bộ, vận hành 100% trên LocalStorage.
 
 ---
 
@@ -16,6 +17,7 @@ Dự án này được xây dựng trên nền tảng Next.js, React, PostgreSQL
 Toàn bộ triết lý thiết kế và luồng thuật toán của các ứng dụng được tách riêng để đảm bảo tính module:
 - [MASTER_LEARNING_METHODOLOGY.md](./MASTER_LEARNING_METHODOLOGY.md): Triết lý học tập, hệ thống luân chuyển thẻ bài (Flashcard) và thuật toán Spaced Repetition của ứng dụng Tiếng Nhật.
 - [MERVYN_TIMER_SPECIFICATIONS.md](./MERVYN_TIMER_SPECIFICATIONS.md): Triết lý thiết kế Brutalism và cấu trúc xử lý Web Audio của ứng dụng Pomodoro.
+- [MERVYN_TODO_SPECIFICATIONS.md](./MERVYN_TODO_SPECIFICATIONS.md): Hướng dẫn kiến trúc Kanban ưu tiên và LocalStorage Sandbox của ứng dụng Quản lý dự án.
 
 ---
 
@@ -77,5 +79,6 @@ npm run dev
 ### 🌐 Truy cập các Modules:
 - **Hệ thống học Tiếng Nhật (Spaced Repetition):** [http://localhost:3000/learning-japanese/goals](http://localhost:3000/learning-japanese/goals)
 - **Mervyn Pomodoro Timer:** [http://localhost:3000/timmer](http://localhost:3000/timmer)
+- **Mervyn Dev Task Terminal (Todo-List):** [http://localhost:3000/todo-list](http://localhost:3000/todo-list)
 
 > **Lưu ý trong quá trình phát triển tiếp:** Nếu cần nâng cấp tính năng Music, hãy tương tác với file `route.js` và cập nhật lại mảng dữ liệu trả về cho Frontend. Khi làm việc với Web Audio API trên trình duyệt hiện đại, đảm bảo người dùng đã có tương tác (click play) trước khi gọi hàm `.play()` để tránh bị block autoplay.
