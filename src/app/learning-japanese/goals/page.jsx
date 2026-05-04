@@ -43,7 +43,9 @@ export default function GoalsTerminalPage() {
     scheduleNote: ''
   });
 
-  useEffect(() => {
+  const [isSyncingSRS, setIsSyncingSRS] = useState(false);
+
+  const fetchData = () => {
     fetch('/api/goals')
       .then(res => res.json())
       .then(data => {
@@ -108,7 +110,33 @@ export default function GoalsTerminalPage() {
         }
       })
       .catch(err => console.error("Failed to load goals", err));
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
+
+  const handleSyncSRS = async () => {
+    setIsSyncingSRS(true);
+    try {
+      const res = await fetch('/api/sync/dynamic-plan', { method: 'POST' });
+      const data = await res.json();
+      if (data.success) {
+         if (data.newTasks && data.newTasks.length > 0) {
+             showAlert(`Generated ${data.newTasks.length} review tasks.`, "SUCCESS");
+         } else {
+             showAlert("No items due for review today.", "SUCCESS");
+         }
+         fetchData();
+      } else {
+         showAlert(`Sync Error: ${data.error}`, "CRITICAL_ERROR");
+      }
+    } catch(err) {
+      showAlert("Network Error.", "CRITICAL_ERROR");
+    } finally {
+      setIsSyncingSRS(false);
+    }
+  };
 
   useEffect(() => {
     if (goals.length > 0 && activeGoalId) {
@@ -545,12 +573,23 @@ export default function GoalsTerminalPage() {
                     {activeGoal.status}
                   </span>
                   {activeGoal.status !== 'DELETED' && (
-                    <button
-                      onClick={() => requestDeleteGoal(activeGoal.id)}
-                      className="shrink-0 text-[10px] md:text-xs px-2 py-0.5 uppercase bg-rose-500/10 text-rose-500 border border-rose-500/30 hover:bg-rose-500 hover:text-black transition-colors font-bold"
-                    >
-                      {t('goals.destroy')}
-                    </button>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={handleSyncSRS}
+                        disabled={isSyncingSRS}
+                        className="shrink-0 text-[10px] md:text-xs px-2 py-0.5 uppercase bg-blue-500/10 text-blue-400 border border-blue-500/30 hover:bg-blue-500 hover:text-white transition-colors font-bold flex items-center gap-1"
+                        title="Auto-generate Dynamic Plan for SRS due items"
+                      >
+                        <RefreshCw size={12} className={isSyncingSRS ? "animate-spin" : ""} />
+                        SYNC SRS
+                      </button>
+                      <button
+                        onClick={() => requestDeleteGoal(activeGoal.id)}
+                        className="shrink-0 text-[10px] md:text-xs px-2 py-0.5 uppercase bg-rose-500/10 text-rose-500 border border-rose-500/30 hover:bg-rose-500 hover:text-black transition-colors font-bold"
+                      >
+                        {t('goals.destroy')}
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>
