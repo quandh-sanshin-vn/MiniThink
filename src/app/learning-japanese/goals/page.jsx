@@ -963,6 +963,7 @@ export default function GoalsTerminalPage() {
                   const d = new Date(dateStr);
                   const isSelected = selectedScheduleDate === dateStr;
                   const isWeekend = d.getDay() === 0 || d.getDay() === 6;
+                  const isToday = dateStr === new Date().toISOString().split('T')[0];
 
                   return (
                     <button
@@ -975,7 +976,7 @@ export default function GoalsTerminalPage() {
                     >
                       <div className="flex justify-between items-center">
                         <span>{dateStr}</span>
-                        {i === 0 && <span className="text-[10px] bg-emerald-500/20 text-emerald-500 px-1 border border-emerald-500/30 uppercase">Today</span>}
+                        {isToday && <span className="text-[10px] bg-emerald-500/20 text-emerald-500 px-1 border border-emerald-500/30 uppercase">Today</span>}
                       </div>
                     </button>
                   );
