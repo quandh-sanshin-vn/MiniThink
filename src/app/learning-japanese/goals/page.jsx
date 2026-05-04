@@ -114,25 +114,37 @@ export default function GoalsTerminalPage() {
 
   useEffect(() => {
     fetchData();
+    
+    // Lazy Cron: Tự động chạy Sync SRS 1 lần mỗi ngày khi mở trang
+    const lastSync = localStorage.getItem('minithink_last_srs_sync');
+    const today = new Date().toISOString().split('T')[0];
+    if (lastSync !== today) {
+       // Delay một chút để UI load xong rồi mới chạy ngầm
+       setTimeout(() => {
+         handleSyncSRS(true).then(() => {
+            localStorage.setItem('minithink_last_srs_sync', today);
+         });
+       }, 1000);
+    }
   }, []);
 
-  const handleSyncSRS = async () => {
+  const handleSyncSRS = async (isAuto = false) => {
     setIsSyncingSRS(true);
     try {
       const res = await fetch('/api/sync/dynamic-plan', { method: 'POST' });
       const data = await res.json();
       if (data.success) {
          if (data.newTasks && data.newTasks.length > 0) {
-             showAlert(`Generated ${data.newTasks.length} review tasks.`, "SUCCESS");
+             showAlert(`[AUTO-SYNC] Generated ${data.newTasks.length} review tasks for today.`, "SUCCESS");
+             fetchData();
          } else {
-             showAlert("No items due for review today.", "SUCCESS");
+             if (!isAuto) showAlert("No items due for review today.", "SUCCESS");
          }
-         fetchData();
       } else {
-         showAlert(`Sync Error: ${data.error}`, "CRITICAL_ERROR");
+         if (!isAuto) showAlert(`Sync Error: ${data.error}`, "CRITICAL_ERROR");
       }
     } catch(err) {
-      showAlert("Network Error.", "CRITICAL_ERROR");
+      if (!isAuto) showAlert("Network Error.", "CRITICAL_ERROR");
     } finally {
       setIsSyncingSRS(false);
     }
