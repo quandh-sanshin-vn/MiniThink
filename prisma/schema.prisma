@@ -198,7 +198,7 @@ model IntegrationConfig {
   projects       SyncProject[]
   tasks          SyncTask[]
 
-  @@unique([userId, platform])
+  @@unique([userId, platform, domain])
   @@map("integration_configs")
 }
 
