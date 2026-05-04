@@ -86,12 +86,15 @@ export async function POST() {
             const parentChunks = chunkArray(parentIdArray, 20);
             
             for (const chunk of parentChunks) {
-               // Fetch Parents
-               const parentParams = chunk.map(id => `issueId[]=${id}`).join('&');
-               const parentRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/issues?apiKey=${BACKLOG_API_KEY}&${parentParams}`);
-               const parents = await parentRes.json();
-               if (Array.isArray(parents)) {
-                   parentIssues.push(...parents);
+               // Fetch Parents Individually (API doesn't support id[] in list endpoint)
+               const parentPromises = chunk.map(id => fetch(`https://${BACKLOG_DOMAIN}/api/v2/issues/${id}?apiKey=${BACKLOG_API_KEY}`));
+               const parentResponses = await Promise.all(parentPromises);
+               
+               for (const res of parentResponses) {
+                  if (res.ok) {
+                      const parent = await res.json();
+                      parentIssues.push(parent);
+                  }
                }
                
                // Fetch Siblings
