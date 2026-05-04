@@ -583,27 +583,27 @@ export default function TodoListPage() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 bg-slate-900/50 backdrop-blur-sm">
             <div className="bg-[#09090b] border border-blue-500 w-full max-w-lg p-6 shadow-2xl flex flex-col gap-6">
               <h2 className="text-xl font-bold text-blue-500 uppercase tracking-widest border-b border-blue-500/30 pb-4 flex justify-between">
-                <span>SYSTEM INTEGRATION CONFIG</span>
+                <span>{t('todo.config.title')}</span>
                 <button onClick={() => setShowConfig(false)} className="text-neutral-500 hover:text-blue-500"><X size={20} /></button>
               </h2>
 
               <form onSubmit={saveConfig} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-neutral-500 uppercase">Platform</label>
+                  <label className="text-[10px] text-neutral-500 uppercase">{t('todo.config.platform')}</label>
                   <input type="text" value="BACKLOG" disabled className="w-full bg-neutral-900 border border-neutral-800 p-3 text-sm text-neutral-500 font-mono" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-blue-500 uppercase">Domain (ex: sanshinbts.backlog.com)</label>
+                  <label className="text-[10px] text-blue-500 uppercase">{t('todo.config.domain')}</label>
                   <input type="text" value={configData.domain} onChange={e => setConfigData({ ...configData, domain: e.target.value })} placeholder="your-space.backlog.com" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 text-slate-800 focus:outline-none focus:border-blue-500 font-mono" required />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-blue-500 uppercase">API Key</label>
+                  <label className="text-[10px] text-blue-500 uppercase">{t('todo.config.api_key')}</label>
                   <input type="password" value={configData.apiKey} onChange={e => setConfigData({ ...configData, apiKey: e.target.value })} placeholder="********************" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 text-slate-800 focus:outline-none focus:border-blue-500 font-mono" required />
                 </div>
 
                 <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
                   <button type="submit" disabled={isSyncing} className="w-full py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
-                    {isSyncing ? <RefreshCw size={14} className="animate-spin" /> : 'SAVE & FULL SYNC'}
+                    {isSyncing ? <RefreshCw size={14} className="animate-spin" /> : t('todo.config.save_sync')}
                   </button>
                 </div>
               </form>

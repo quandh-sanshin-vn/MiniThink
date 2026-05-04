@@ -151,7 +151,12 @@ export const dictionaries = {
     'todo.status.todo': 'CHƯA LÀM',
     'todo.status.in_progress': 'ĐANG LÀM',
     'todo.status.done': 'ĐÃ XONG',
-    'todo.queue': 'HÀNG_ĐỢI_TASK'
+    'todo.queue': 'HÀNG_ĐỢI_TASK',
+    'todo.config.title': 'CẤU HÌNH TÍCH HỢP HỆ THỐNG',
+    'todo.config.platform': 'Nền tảng (Platform)',
+    'todo.config.domain': 'Tên miền (vd: sanshinbts.backlog.com)',
+    'todo.config.api_key': 'Khóa API (API Key)',
+    'todo.config.save_sync': 'LƯU & ĐỒNG BỘ TOÀN BỘ'
   },
   en: {
     // Layout
@@ -305,7 +310,12 @@ export const dictionaries = {
     'todo.status.todo': 'TODO',
     'todo.status.in_progress': 'IN_PROGRESS',
     'todo.status.done': 'DONE',
-    'todo.queue': 'TASK_QUEUE'
+    'todo.queue': 'TASK_QUEUE',
+    'todo.config.title': 'SYSTEM INTEGRATION CONFIG',
+    'todo.config.platform': 'Platform',
+    'todo.config.domain': 'Domain (ex: sanshinbts.backlog.com)',
+    'todo.config.api_key': 'API Key',
+    'todo.config.save_sync': 'SAVE & FULL SYNC'
   },
   ja: {
     // Layout
@@ -459,6 +469,11 @@ export const dictionaries = {
     'todo.status.todo': '未着手',
     'todo.status.in_progress': '進行中',
     'todo.status.done': '完了',
-    'todo.queue': 'タスク_キュー'
+    'todo.queue': 'タスク_キュー',
+    'todo.config.title': 'システム統合設定',
+    'todo.config.platform': 'プラットフォーム',
+    'todo.config.domain': 'ドメイン (例: sanshinbts.backlog.com)',
+    'todo.config.api_key': 'APIキー',
+    'todo.config.save_sync': '保存してフル同期'
   }
 };
