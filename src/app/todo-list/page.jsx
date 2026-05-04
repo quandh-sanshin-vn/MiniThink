@@ -59,9 +59,14 @@ const SelectDropdown = ({ value, options, onChange, placeholder, className = "" 
 
 const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
   const [copied, setCopied] = useState(false);
+  const [showMySubtasksOnly, setShowMySubtasksOnly] = useState(false);
   const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
   const isMyTask = currentUserName && task.assigneeName === currentUserName;
-  
+  const subtasks = task.children || [];
+  const displaySubtasks = showMySubtasksOnly 
+      ? subtasks.filter(child => child.assigneeName === currentUserName)
+      : subtasks;
+
   // Status Colors
   let statusBorder = 'border-blue-500/30';
   let statusBg = 'bg-blue-500/10';
@@ -76,6 +81,19 @@ const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
     statusBg = 'bg-amber-500/10';
     statusText = 'text-amber-500';
   }
+
+  // Theme support
+  const bgClass = depth > 0 
+    ? 'bg-slate-100 dark:bg-[#0f172a]/80' 
+    : (isMyTask ? 'bg-emerald-50 dark:bg-[#061224]' : 'bg-white dark:bg-[#061224]');
+    
+  const borderClass = depth > 0 
+    ? 'border-slate-300 dark:border-slate-800' 
+    : (isMyTask ? 'border-emerald-500/50' : 'border-slate-200 dark:border-neutral-800');
+
+  const textClass = depth > 0 
+    ? 'text-slate-700 dark:text-slate-300' 
+    : (task.status === 'DONE' ? 'text-slate-500 dark:text-neutral-500' : 'text-slate-800 dark:text-blue-100');
 
   const handleCopy = async (e) => {
     e.stopPropagation();
@@ -97,71 +115,83 @@ const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
   };
   
   return (
-    <div className={`flex flex-col gap-1.5 ${depth > 0 ? 'ml-6 border-l border-neutral-800 pl-3 mt-1.5' : ''}`}>
+    <div className={`flex flex-col gap-1.5 ${depth > 0 ? 'ml-6 border-l-2 border-slate-300 dark:border-neutral-800 pl-3 mt-1.5' : ''}`}>
       <div className={`
         relative overflow-hidden cursor-pointer
-        border ${depth > 0 ? 'border-neutral-800/50 bg-[#061224]/30' : (isMyTask ? 'border-emerald-500/50 bg-[#061224]' : 'border-neutral-800 bg-[#061224]')}
-        p-3 group hover:border-blue-400 hover:shadow-[0_0_10px_rgba(59,130,246,0.1)] 
+        border ${borderClass} ${bgClass}
+        p-2 group hover:border-blue-400 hover:shadow-[0_0_10px_rgba(59,130,246,0.1)] 
         transition-all duration-200
-        flex flex-col md:flex-row justify-between items-start md:items-center gap-3
+        flex flex-col md:flex-row justify-between items-start md:items-center gap-2
         ${isMyTask ? 'hover:border-emerald-400' : 'hover:border-blue-400'}
       `}>
         {/* Glow effect on hover */}
         <div className="absolute inset-0 bg-blue-500/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
 
-        <div className="relative z-10 flex-1 flex flex-col gap-1.5 w-full">
-          <div className="flex gap-2 items-center flex-wrap">
+        <div className="relative z-10 flex-1 flex flex-wrap items-center gap-2 w-full">
             <a href={task.url} target="_blank" rel="noopener noreferrer" 
-               className="text-[10px] text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-1 font-bold">
+               className="text-[10px] text-blue-600 dark:text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-1 font-bold shrink-0">
               {task.id} <ExternalLink size={10} />
             </a>
-            <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold`}>
+            
+            <p className={`text-[13px] leading-tight transition-colors font-medium mr-2 ${textClass} group-hover:text-blue-600 dark:group-hover:text-blue-300`}>
+              {task.title}
+            </p>
+
+            <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold shrink-0`}>
               {priority.id}
             </span>
-            <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${statusBorder} ${statusBg} ${statusText} font-bold`}>
+            <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${statusBorder} ${statusBg} ${statusText} font-bold shrink-0`}>
               {task.statusText || task.status}
             </span>
-            <span className="text-[9px] text-neutral-500 border border-neutral-800 bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px]" title={task.projectName}>
+            <span className="text-[9px] text-slate-600 dark:text-neutral-500 border border-slate-300 dark:border-neutral-800 bg-slate-100 dark:bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px] shrink-0" title={task.projectName}>
               {task.projectName || task.module}
             </span>
             {task.issueType && (
-              <span className="text-[9px] text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase">
+              <span className="text-[9px] text-purple-600 dark:text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase shrink-0">
                 {task.issueType}
               </span>
             )}
-          </div>
-          <p className={`text-[13px] leading-tight transition-colors ${task.status === 'DONE' ? 'text-neutral-500 line-through' : 'text-blue-100 group-hover:text-blue-300'}`}>
-            {task.title}
-          </p>
         </div>
         
-        <div className="flex items-center gap-2 relative z-10 shrink-0">
+        <div className="flex items-center gap-2 relative z-10 shrink-0 mt-2 md:mt-0">
           {task.assigneeName && (
-             <div className={`text-[9px] flex items-center gap-1 uppercase border px-1.5 py-0.5 ${isMyTask ? 'text-emerald-400 border-emerald-500/50 bg-emerald-500/10 font-bold' : 'text-neutral-500 border-neutral-800 bg-neutral-900/50'}`}>
-               <span className={`w-1 h-1 rounded-full ${isMyTask ? 'bg-emerald-400 animate-pulse' : 'bg-neutral-500'}`}></span>
+             <div className={`text-[9px] flex items-center gap-1 uppercase border px-1.5 py-0.5 ${isMyTask ? 'text-emerald-600 dark:text-emerald-400 border-emerald-500/50 bg-emerald-500/10 font-bold' : 'text-slate-600 dark:text-neutral-500 border-slate-300 dark:border-neutral-800 bg-slate-100 dark:bg-neutral-900/50'}`}>
+               <span className={`w-1 h-1 rounded-full ${isMyTask ? 'bg-emerald-500 dark:bg-emerald-400 animate-pulse' : 'bg-slate-400 dark:bg-neutral-500'}`}></span>
                {task.assigneeName}
              </div>
           )}
+          
           <button 
              onClick={handleCopy}
              title="Copy task with link"
-             className={`text-[9px] uppercase font-bold border px-1.5 py-0.5 flex items-center gap-1 transition-colors ${copied ? 'border-emerald-500 text-emerald-500 bg-emerald-500/10' : 'border-neutral-700 text-neutral-400 hover:border-blue-400 hover:text-blue-400'}`}
+             className={`text-[9px] uppercase font-bold border px-1.5 py-0.5 flex items-center gap-1 transition-colors ${copied ? 'border-emerald-500 text-emerald-600 dark:text-emerald-500 bg-emerald-500/10' : 'border-slate-300 dark:border-neutral-700 text-slate-600 dark:text-neutral-400 hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400'}`}
           >
              <Copy size={10} /> {copied ? 'COPIED' : 'COPY'}
           </button>
-          <button 
-             onClick={(e) => { e.stopPropagation(); onQaClick(task); }}
-             className="text-[9px] uppercase font-bold border border-blue-500/50 text-blue-400 hover:bg-blue-500 hover:text-white transition-colors px-1.5 py-0.5 flex items-center gap-1"
-          >
-             + QA
-          </button>
+          
+          {subtasks.length > 0 && (
+            <button 
+               onClick={(e) => { e.stopPropagation(); setShowMySubtasksOnly(!showMySubtasksOnly); }}
+               className={`text-[9px] uppercase font-bold border px-1.5 py-0.5 flex items-center gap-1 transition-colors ${showMySubtasksOnly ? 'border-amber-500 text-amber-600 dark:text-amber-500 bg-amber-500/10' : 'border-slate-300 dark:border-neutral-700 text-slate-600 dark:text-neutral-400 hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400'}`}
+            >
+               {showMySubtasksOnly ? 'ALL SUBTASKS' : 'MY SUBTASKS'}
+            </button>
+          )}
+
+          {!task.parentIssueId && (
+            <button 
+               onClick={(e) => { e.stopPropagation(); onQaClick(task); }}
+               className="text-[9px] uppercase font-bold border border-blue-500/50 text-blue-500 dark:text-blue-400 hover:bg-blue-500 hover:text-white transition-colors px-1.5 py-0.5 flex items-center gap-1"
+            >
+               + QA
+            </button>
+          )}
         </div>
       </div>
       
-      {/* Đệ quy render các task con */}
-      {task.children && task.children.length > 0 && (
-        <div className="flex flex-col gap-2">
-           {task.children.map(child => (
+      {displaySubtasks.length > 0 && (
+        <div className="flex flex-col gap-1.5">
+           {displaySubtasks.map(child => (
              <TaskItem key={child.id} task={child} depth={depth + 1} onQaClick={onQaClick} currentUserName={currentUserName} />
            ))}
         </div>
