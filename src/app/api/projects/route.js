@@ -19,7 +19,8 @@ export async function GET() {
       workspaces[domain].push({
         id: p.id,
         key: p.projectKey,
-        name: p.name
+        name: p.name,
+        statuses: p.statuses || []
       });
     });
 

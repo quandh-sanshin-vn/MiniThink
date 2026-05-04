@@ -136,7 +136,7 @@ export default function TodoListPage() {
 
   // Filters
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeWorkspace, setActiveWorkspace] = useState('ALL');
+  const [activeWorkspace, setActiveWorkspace] = useState('');
   const [filterProject, setFilterProject] = useState('ALL');
   const [filterStatus, setFilterStatus] = useState('ALL');
 
@@ -171,7 +171,12 @@ export default function TodoListPage() {
       const res = await fetch('/api/projects');
       if (res.ok) {
         const data = await res.json();
-        setWorkspaces(data.workspaces || {});
+        const w = data.workspaces || {};
+        setWorkspaces(w);
+        const domains = Object.keys(w);
+        if (domains.length > 0) {
+          setActiveWorkspace(domains[0]);
+        }
       }
     } catch (e) { }
   };
@@ -243,9 +248,11 @@ export default function TodoListPage() {
     setShowCreateModal(true);
   };
 
+  const allProjectsList = activeWorkspace ? (workspaces[activeWorkspace] || []) : [];
+
   // Lọc task
   const filteredTasks = tasks.filter(task => {
-    const matchesWorkspace = activeWorkspace === 'ALL' || task.domain === activeWorkspace;
+    const matchesWorkspace = !activeWorkspace || task.domain === activeWorkspace;
     const matchesSearch = searchQuery === '' || 
       task.id.toLowerCase().includes(searchQuery.toLowerCase()) || 
       task.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -293,12 +300,6 @@ export default function TodoListPage() {
              <span className="text-neutral-500 uppercase tracking-widest flex items-center gap-1 hidden md:flex">
                <FolderSync size={14} /> {t('todo.connected')}
              </span>
-             <button 
-                onClick={() => { setActiveWorkspace('ALL'); setFilterProject('ALL'); }}
-                className={`uppercase transition-colors pb-0.5 border-b ${activeWorkspace === 'ALL' ? 'text-emerald-400 border-emerald-500' : 'text-neutral-500 border-transparent hover:text-neutral-300'}`}
-             >
-                ALL
-             </button>
              {Object.keys(workspaces).map(ws => (
                <button 
                   key={ws} 
@@ -342,7 +343,22 @@ export default function TodoListPage() {
               onChange={setFilterStatus}
               options={[
                 { value: 'ALL', label: t('todo.all_statuses') },
-                ...Array.from(new Set(tasks.map(t => t.statusText || t.status))).filter(Boolean).map(s => ({ value: s, label: s }))
+                ...(() => {
+                  let availableStatuses = [];
+                  if (filterProject === 'ALL') {
+                    const allProjStatuses = allProjectsList.flatMap(p => p.statuses || []);
+                    availableStatuses = [...new Set(allProjStatuses.map(s => s.name))];
+                  } else {
+                    const selectedProj = allProjectsList.find(p => p.key === filterProject);
+                    if (selectedProj) {
+                      availableStatuses = (selectedProj.statuses || []).map(s => s.name);
+                    }
+                  }
+                  if (availableStatuses.length === 0) {
+                    availableStatuses = [...new Set(tasks.map(t => t.statusText || t.status))].filter(Boolean);
+                  }
+                  return availableStatuses.map(s => ({ value: s, label: s }));
+                })()
               ]}
             />
           </div>

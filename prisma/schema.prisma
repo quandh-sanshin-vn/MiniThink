@@ -209,6 +209,7 @@ model SyncProject {
   
   projectKey     String   // VD: "XAI_SHINKO"
   name           String   // Tên dự án kéo từ Backlog
+  statuses       Json     @default("[]") // Lưu danh sách các trạng thái của dự án
   
   tasks          SyncTask[]
 

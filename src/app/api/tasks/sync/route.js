@@ -30,12 +30,19 @@ export async function POST() {
         
         if (Array.isArray(apiProjects)) {
            for (const proj of apiProjects) {
+              // Fetch project statuses
+              const statusRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/projects/${proj.projectKey}/statuses?apiKey=${BACKLOG_API_KEY}`);
+              let statuses = [];
+              if (statusRes.ok) {
+                 statuses = await statusRes.json();
+              }
+
               await prisma.syncProject.upsert({
                  where: {
                     configId_projectKey: { configId: config.id, projectKey: proj.projectKey }
                  },
-                 update: { name: proj.name },
-                 create: { configId: config.id, projectKey: proj.projectKey, name: proj.name }
+                 update: { name: proj.name, statuses },
+                 create: { configId: config.id, projectKey: proj.projectKey, name: proj.name, statuses }
               });
            }
         }
