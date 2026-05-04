@@ -452,11 +452,11 @@ export default function TodoListPage() {
   const taskTree = buildTree(filteredTasks);
 
 
-  if (!isLoaded) return <div className="min-h-screen bg-[#09090b] flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
+  if (!isLoaded) return <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col">
-      <div className="flex flex-col md:flex-row justify-between md:items-center bg-black border-b border-neutral-800 pr-4">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-slate-300 font-mono flex flex-col">
+      <div className="flex flex-col md:flex-row justify-between md:items-center bg-white dark:bg-black border-b border-slate-200 dark:border-neutral-800 pr-4">
         <ModuleHeader title={t('todo.title')} />
 
         {/* WORKSPACE INDICATOR IN HEADER */}
@@ -480,7 +480,7 @@ export default function TodoListPage() {
 
       <div className="flex-1 p-4 lg:p-4 flex flex-col">
         {/* ACTION BAR */}
-        <div className="mb-2 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 bg-black border border-neutral-800 p-4">
+        <div className="mb-2 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 bg-white dark:bg-black border border-slate-200 dark:border-neutral-800 p-4">
 
           {/* Filters */}
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
@@ -489,7 +489,7 @@ export default function TodoListPage() {
               placeholder={t('todo.search')}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-48 placeholder:text-neutral-600"
+              className="bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 p-2 px-3 text-xs text-slate-900 dark:text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-48 placeholder:text-slate-400 dark:placeholder:text-neutral-600"
             />
 
             <SelectDropdown
@@ -537,11 +537,11 @@ export default function TodoListPage() {
         </div>
 
         {/* BOARD (SINGLE LIST) */}
-        <div className="flex-1 overflow-y-auto bg-black border border-neutral-800 p-4 relative">
-          <div className="flex justify-between items-center mb-6 sticky top-0 bg-black py-2 z-20 border-b border-neutral-800">
-            <h2 className="text-xl font-bold tracking-widest text-slate-300 flex items-center gap-2">
+        <div className="flex-1 overflow-y-auto bg-white dark:bg-black border border-slate-200 dark:border-neutral-800 p-4 relative">
+          <div className="flex justify-between items-center mb-6 sticky top-0 bg-white dark:bg-black py-2 z-20 border-b border-slate-200 dark:border-neutral-800">
+            <h2 className="text-xl font-bold tracking-widest text-slate-900 dark:text-slate-300 flex items-center gap-2">
               <Terminal size={20} className="text-emerald-500" /> {t('todo.queue')}
-              <span className="text-xs bg-neutral-900 text-neutral-500 px-2 py-0.5 font-normal ml-2">{filteredTasks.length}</span>
+              <span className="text-xs bg-slate-100 dark:bg-neutral-900 text-slate-500 dark:text-neutral-500 px-2 py-0.5 font-normal ml-2">{filteredTasks.length}</span>
             </h2>
             <div className="flex gap-4 items-center">
               {isSyncing && <span className="text-xs text-blue-500 animate-pulse uppercase tracking-widest hidden md:inline">{t('todo.syncing')}</span>}
@@ -570,7 +570,7 @@ export default function TodoListPage() {
             ))}
 
             {taskTree.length === 0 && (
-              <div className="text-center flex flex-col items-center justify-center text-neutral-400 text-xs py-16 uppercase tracking-widest border border-dashed border-neutral-800 gap-4">
+              <div className="text-center flex flex-col items-center justify-center text-slate-400 dark:text-neutral-400 text-xs py-16 uppercase tracking-widest border border-dashed border-slate-300 dark:border-neutral-800 gap-4">
                 <Terminal size={32} className="opacity-20" />
                 <p>{t('todo.empty_status') || 'NO TASKS IN QUEUE. SYNC BACKLOG OR CREATE NEW TASK.'}</p>
               </div>
@@ -580,8 +580,8 @@ export default function TodoListPage() {
 
         {/* SYS CONFIG MODAL */}
         {showConfig && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 bg-slate-900/50 backdrop-blur-sm">
-            <div className="bg-[#09090b] border border-blue-500 w-full max-w-lg p-6 shadow-2xl flex flex-col gap-6">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+            <div className="bg-white dark:bg-[#09090b] border border-blue-500 w-full max-w-lg p-6 shadow-2xl flex flex-col gap-6">
               <h2 className="text-xl font-bold text-blue-500 uppercase tracking-widest border-b border-blue-500/30 pb-4 flex justify-between">
                 <span>{t('todo.config.title')}</span>
                 <button onClick={() => setShowConfig(false)} className="text-neutral-500 hover:text-blue-500"><X size={20} /></button>
@@ -589,20 +589,20 @@ export default function TodoListPage() {
 
               <form onSubmit={saveConfig} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-neutral-500 uppercase">{t('todo.config.platform')}</label>
-                  <input type="text" value="BACKLOG" disabled className="w-full bg-neutral-900 border border-neutral-800 p-3 text-sm text-neutral-500 font-mono" />
+                  <label className="text-[10px] text-slate-500 dark:text-neutral-500 uppercase">{t('todo.config.platform')}</label>
+                  <input type="text" value="BACKLOG" disabled className="w-full bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 p-3 text-sm text-slate-500 dark:text-neutral-500 font-mono" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-blue-500 uppercase">{t('todo.config.domain')}</label>
-                  <input type="text" value={configData.domain} onChange={e => setConfigData({ ...configData, domain: e.target.value })} placeholder="your-space.backlog.com" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 text-slate-800 focus:outline-none focus:border-blue-500 font-mono" required />
+                  <label className="text-[10px] text-blue-600 dark:text-blue-500 uppercase">{t('todo.config.domain')}</label>
+                  <input type="text" value={configData.domain} onChange={e => setConfigData({ ...configData, domain: e.target.value })} placeholder="your-space.backlog.com" className="w-full bg-slate-50 dark:bg-black border border-blue-500/50 p-3 text-sm text-slate-900 dark:text-blue-100 focus:outline-none focus:border-blue-500 font-mono" required />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-blue-500 uppercase">{t('todo.config.api_key')}</label>
-                  <input type="password" value={configData.apiKey} onChange={e => setConfigData({ ...configData, apiKey: e.target.value })} placeholder="********************" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 text-slate-800 focus:outline-none focus:border-blue-500 font-mono" required />
+                  <label className="text-[10px] text-blue-600 dark:text-blue-500 uppercase">{t('todo.config.api_key')}</label>
+                  <input type="password" value={configData.apiKey} onChange={e => setConfigData({ ...configData, apiKey: e.target.value })} placeholder="********************" className="w-full bg-slate-50 dark:bg-black border border-blue-500/50 p-3 text-sm text-slate-900 dark:text-blue-100 focus:outline-none focus:border-blue-500 font-mono" required />
                 </div>
 
-                <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
-                  <button type="submit" disabled={isSyncing} className="w-full py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
+                <div className="flex gap-4 mt-4 pt-4 border-t border-slate-200 dark:border-neutral-800">
+                  <button type="submit" disabled={isSyncing} className="w-full py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-600 dark:text-blue-500 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
                     {isSyncing ? <RefreshCw size={14} className="animate-spin" /> : t('todo.config.save_sync')}
                   </button>
                 </div>
@@ -614,21 +614,21 @@ export default function TodoListPage() {
         {/* CREATE TASK MODAL */}
         {showCreateModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-            <div className="bg-[#09090b] border border-emerald-500 w-full max-w-xl p-6 shadow-2xl flex flex-col gap-6">
-              <h2 className="text-xl font-bold text-emerald-500 uppercase tracking-widest border-b border-emerald-500/30 pb-4 flex justify-between">
+            <div className="bg-white dark:bg-[#09090b] border border-emerald-500 w-full max-w-xl p-6 shadow-2xl flex flex-col gap-6">
+              <h2 className="text-xl font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-widest border-b border-emerald-500/30 pb-4 flex justify-between">
                 <span>{t('todo.deploy_task')}</span>
-                <button onClick={() => setShowCreateModal(false)} className="text-neutral-500 hover:text-emerald-500"><X size={20} /></button>
+                <button onClick={() => setShowCreateModal(false)} className="text-slate-500 dark:text-neutral-500 hover:text-emerald-500"><X size={20} /></button>
               </h2>
 
               <form onSubmit={handleCreateTask} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-emerald-500 uppercase">{t('todo.task_title')}</label>
-                  <input type="text" value={newTask.title} onChange={e => setNewTask({ ...newTask, title: e.target.value })} placeholder={t('todo.task_summary')} className="w-full bg-black border border-emerald-500/50 p-3 text-sm text-emerald-100 focus:outline-none focus:border-emerald-500 font-mono" autoFocus required />
+                  <label className="text-[10px] text-emerald-600 dark:text-emerald-500 uppercase">{t('todo.task_title')}</label>
+                  <input type="text" value={newTask.title} onChange={e => setNewTask({ ...newTask, title: e.target.value })} placeholder={t('todo.task_summary')} className="w-full bg-slate-50 dark:bg-black border border-emerald-500/50 p-3 text-sm text-emerald-600 dark:text-emerald-100 focus:outline-none focus:border-emerald-500 font-mono" autoFocus required />
                 </div>
 
                 <div className="flex gap-4">
                   <div className="flex flex-col gap-2 flex-1">
-                    <label className="text-[10px] text-neutral-500 uppercase">{t('todo.target_ws')}</label>
+                    <label className="text-[10px] text-slate-500 dark:text-neutral-500 uppercase">{t('todo.target_ws')}</label>
                     <SelectDropdown
                       value={newTask.domain}
                       onChange={(newDomain) => {
@@ -649,8 +649,8 @@ export default function TodoListPage() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
-                  <button type="submit" className="w-full py-3 px-4 bg-emerald-500/10 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
+                <div className="flex gap-4 mt-4 pt-4 border-t border-slate-200 dark:border-neutral-800">
+                  <button type="submit" className="w-full py-3 px-4 bg-emerald-500/10 border border-emerald-500 text-emerald-600 dark:text-emerald-500 hover:bg-emerald-600 dark:hover:bg-emerald-500 hover:text-white dark:hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
                     <Plus size={14} /> {t('todo.deploy_task')}
                   </button>
                 </div>
@@ -662,30 +662,30 @@ export default function TodoListPage() {
         {/* QUICK QA MODAL */}
         {showQaModal && qaTaskInfo && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-            <div className="bg-[#09090b] border border-blue-500 shadow-2xl w-full max-w-md p-6 font-mono relative">
-              <button onClick={() => setShowQaModal(false)} className="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors">
+            <div className="bg-white dark:bg-[#09090b] border border-blue-500 shadow-2xl w-full max-w-md p-6 font-mono relative">
+              <button onClick={() => setShowQaModal(false)} className="absolute top-4 right-4 text-slate-500 dark:text-neutral-500 hover:text-slate-900 dark:hover:text-white transition-colors">
                 <X size={20} />
               </button>
-              <h2 className="text-xl font-bold text-blue-400 mb-6 uppercase flex items-center gap-2">
+              <h2 className="text-xl font-bold text-blue-600 dark:text-blue-400 mb-6 uppercase flex items-center gap-2">
                 {t('todo.qa.title')}
               </h2>
-              <div className="text-xs text-neutral-500 mb-4 bg-blue-500/10 border-l-2 border-blue-500 p-2">
-                {t('todo.qa.subtitle')} <span className="font-bold text-blue-400">{qaTaskInfo.id}</span>
+              <div className="text-xs text-slate-600 dark:text-neutral-500 mb-4 bg-blue-500/10 border-l-2 border-blue-500 p-2">
+                {t('todo.qa.subtitle')} <span className="font-bold text-blue-600 dark:text-blue-400">{qaTaskInfo.id}</span>
               </div>
 
               <form onSubmit={handleCreateQaSubmit} className="flex flex-col gap-4">
                 <div>
-                  <label className="block text-xs uppercase text-neutral-500 mb-1">{t('todo.qa.feature')}</label>
-                  <input required type="text" value={qaForm.featureName} onChange={e => setQaForm({ ...qaForm, featureName: e.target.value })} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder={t('todo.qa.ph_feature')} />
+                  <label className="block text-xs uppercase text-slate-500 dark:text-neutral-500 mb-1">{t('todo.qa.feature')}</label>
+                  <input required type="text" value={qaForm.featureName} onChange={e => setQaForm({ ...qaForm, featureName: e.target.value })} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-neutral-800 p-2 text-sm text-slate-900 dark:text-slate-300 focus:outline-none focus:border-blue-500" placeholder={t('todo.qa.ph_feature')} />
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase text-neutral-500 mb-1">{t('todo.qa.issue')}</label>
-                  <input required type="text" value={qaForm.shortDesc} onChange={e => setQaForm({ ...qaForm, shortDesc: e.target.value })} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder={t('todo.qa.ph_issue')} />
+                  <label className="block text-xs uppercase text-slate-500 dark:text-neutral-500 mb-1">{t('todo.qa.issue')}</label>
+                  <input required type="text" value={qaForm.shortDesc} onChange={e => setQaForm({ ...qaForm, shortDesc: e.target.value })} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-neutral-800 p-2 text-sm text-slate-900 dark:text-slate-300 focus:outline-none focus:border-blue-500" placeholder={t('todo.qa.ph_issue')} />
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase text-neutral-500 mb-1">{t('todo.qa.assignee')}</label>
+                  <label className="block text-xs uppercase text-slate-500 dark:text-neutral-500 mb-1">{t('todo.qa.assignee')}</label>
                   <SelectDropdown
                     value={qaForm.assigneeId}
                     onChange={val => setQaForm({ ...qaForm, assigneeId: val })}
@@ -698,7 +698,7 @@ export default function TodoListPage() {
                 </div>
 
                 <div className="flex gap-4 mt-4">
-                  <button type="button" onClick={() => setShowQaModal(false)} className="flex-1 border border-neutral-800 text-neutral-500 p-3 text-xs font-bold uppercase hover:bg-neutral-900 transition-colors">
+                  <button type="button" onClick={() => setShowQaModal(false)} className="flex-1 border border-slate-300 dark:border-neutral-800 text-slate-600 dark:text-neutral-500 p-3 text-xs font-bold uppercase hover:bg-slate-100 dark:hover:bg-neutral-900 transition-colors">
                     {t('todo.qa.cancel')}
                   </button>
                   <button disabled={isCreatingQa} type="submit" className="flex-1 bg-blue-600 hover:bg-blue-500 text-white p-3 text-xs font-bold uppercase transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
