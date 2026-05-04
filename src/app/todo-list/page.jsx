@@ -57,7 +57,7 @@ const SelectDropdown = ({ value, options, onChange, placeholder, className = "" 
   );
 };
 
-const TaskItem = ({ task, depth = 0 }) => {
+const TaskItem = ({ task, depth = 0, onQaClick }) => {
   const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
   
   return (
@@ -105,13 +105,19 @@ const TaskItem = ({ task, depth = 0 }) => {
              {task.assigneeName}
            </div>
         )}
+        <button 
+           onClick={(e) => { e.stopPropagation(); onQaClick(task); }}
+           className="relative z-10 text-[10px] uppercase font-bold border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors px-2 py-1 flex items-center gap-1"
+        >
+           + QA
+        </button>
       </div>
       
       {/* Đệ quy render các task con */}
       {task.children && task.children.length > 0 && (
         <div className="flex flex-col gap-2">
            {task.children.map(child => (
-             <TaskItem key={child.id} task={child} depth={depth + 1} />
+             <TaskItem key={child.id} task={child} depth={depth + 1} onQaClick={onQaClick} />
            ))}
         </div>
       )}
@@ -133,6 +139,12 @@ export default function TodoListPage() {
 
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [newTask, setNewTask] = useState({ title: '', description: '', priority: 'P2', projectKey: '', domain: '' });
+
+  const [showQaModal, setShowQaModal] = useState(false);
+  const [qaTaskInfo, setQaTaskInfo] = useState(null);
+  const [qaForm, setQaForm] = useState({ featureName: '', shortDesc: '', assigneeId: '' });
+  const [qaMembers, setQaMembers] = useState([]);
+  const [isCreatingQa, setIsCreatingQa] = useState(false);
 
   // Filters
   const [searchQuery, setSearchQuery] = useState('');
@@ -246,6 +258,59 @@ export default function TodoListPage() {
     const defaultProject = workspaces[defaultDomain]?.[0]?.key || '';
     setNewTask({ ...newTask, domain: defaultDomain, projectKey: defaultProject });
     setShowCreateModal(true);
+  };
+
+  const handleOpenQaModal = async (task) => {
+    setQaTaskInfo(task);
+    setQaForm({ featureName: task.title, shortDesc: '', assigneeId: '' });
+    setShowQaModal(true);
+    setQaMembers([]);
+    
+    try {
+      const res = await fetch(`/api/projects/members?domain=${task.domain}&projectKey=${task.module}`);
+      if (res.ok) {
+        const data = await res.json();
+        setQaMembers(data.members || []);
+        if (data.currentUser && data.currentUser.id) {
+           setQaForm(prev => ({ ...prev, assigneeId: data.currentUser.id.toString() }));
+        }
+      }
+    } catch (error) {
+      console.error('Failed to load members', error);
+    }
+  };
+
+  const handleCreateQaSubmit = async (e) => {
+    e.preventDefault();
+    if (!qaForm.featureName || !qaForm.shortDesc) return;
+    
+    setIsCreatingQa(true);
+    try {
+      const res = await fetch('/api/tasks/qa', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          parentIssueExternalId: qaTaskInfo.externalId,
+          parentIssueKey: qaTaskInfo.id,
+          projectKey: qaTaskInfo.module,
+          domain: qaTaskInfo.domain,
+          featureName: qaForm.featureName,
+          shortDesc: qaForm.shortDesc,
+          assigneeId: qaForm.assigneeId
+        })
+      });
+      const data = await res.json();
+      if (data.success && data.url) {
+        window.open(data.url, '_blank');
+        setShowQaModal(false);
+      } else {
+        alert("Lỗi: " + (data.error || "Không thể tạo QA task"));
+      }
+    } catch (e) {
+      alert("Lỗi kết nối");
+    } finally {
+      setIsCreatingQa(false);
+    }
   };
 
   const allProjectsList = activeWorkspace ? (workspaces[activeWorkspace] || []) : [];
@@ -397,7 +462,7 @@ export default function TodoListPage() {
 
           <div className="flex flex-col gap-3">
             {taskTree.map(task => (
-              <TaskItem key={task.id} task={task} />
+              <TaskItem key={task.id} task={task} onQaClick={handleOpenQaModal} />
             ))}
 
             {taskTree.length === 0 && (
@@ -444,7 +509,7 @@ export default function TodoListPage() {
 
         {/* CREATE TASK MODAL */}
         {showCreateModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 bg-slate-900/50 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
             <div className="bg-[#09090b] border border-emerald-500 w-full max-w-xl p-6 shadow-2xl flex flex-col gap-6">
               <h2 className="text-xl font-bold text-emerald-500 uppercase tracking-widest border-b border-emerald-500/30 pb-4 flex justify-between">
                 <span>{t('todo.deploy_task')}</span>
@@ -453,7 +518,7 @@ export default function TodoListPage() {
 
               <form onSubmit={handleCreateTask} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-emerald-600 text-emerald-500 uppercase">{t('todo.task_title')}</label>
+                  <label className="text-[10px] text-emerald-500 uppercase">{t('todo.task_title')}</label>
                   <input type="text" value={newTask.title} onChange={e => setNewTask({ ...newTask, title: e.target.value })} placeholder={t('todo.task_summary')} className="w-full bg-black border border-emerald-500/50 p-3 text-sm text-emerald-100 focus:outline-none focus:border-emerald-500 font-mono" autoFocus required />
                 </div>
 
@@ -481,7 +546,7 @@ export default function TodoListPage() {
                 </div>
 
                 <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
-                  <button type="submit" className="w-full py-3 px-4 bg-emerald-500/10 border border-emerald-500 text-emerald-600 text-emerald-500 hover:bg-emerald-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
+                  <button type="submit" className="w-full py-3 px-4 bg-emerald-500/10 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
                     <Plus size={14} /> {t('todo.deploy_task')}
                   </button>
                 </div>
@@ -490,6 +555,56 @@ export default function TodoListPage() {
           </div>
         )}
 
+        {/* QUICK QA MODAL */}
+        {showQaModal && qaTaskInfo && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+            <div className="bg-[#09090b] border border-blue-500 shadow-2xl w-full max-w-md p-6 font-mono relative">
+              <button onClick={() => setShowQaModal(false)} className="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors">
+                <X size={20} />
+              </button>
+              <h2 className="text-xl font-bold text-blue-400 mb-6 uppercase flex items-center gap-2">
+                [ QUICK QA SHELL ]
+              </h2>
+              <div className="text-xs text-neutral-500 mb-4 bg-blue-500/10 border-l-2 border-blue-500 p-2">
+                Tạo nhanh sub-task QA cho: <span className="font-bold text-blue-400">{qaTaskInfo.id}</span>
+              </div>
+              
+              <form onSubmit={handleCreateQaSubmit} className="flex flex-col gap-4">
+                <div>
+                  <label className="block text-xs uppercase text-neutral-500 mb-1">Tên Feature</label>
+                  <input required type="text" value={qaForm.featureName} onChange={e => setQaForm({...qaForm, featureName: e.target.value})} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder="VD: Login Form" />
+                </div>
+                
+                <div>
+                  <label className="block text-xs uppercase text-neutral-500 mb-1">Mô tả tóm tắt (Issue)</label>
+                  <input required type="text" value={qaForm.shortDesc} onChange={e => setQaForm({...qaForm, shortDesc: e.target.value})} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder="VD: Lỗi hiển thị nút bấm" />
+                </div>
+
+                <div>
+                  <label className="block text-xs uppercase text-neutral-500 mb-1">Assignee</label>
+                  <SelectDropdown 
+                    value={qaForm.assigneeId}
+                    onChange={val => setQaForm({...qaForm, assigneeId: val})}
+                    options={[
+                      { value: '', label: 'UNASSIGNED' },
+                      ...qaMembers.map(m => ({ value: m.id.toString(), label: m.name }))
+                    ]}
+                    placeholder={qaMembers.length > 0 ? "Chọn người phụ trách" : "Đang tải..."}
+                  />
+                </div>
+
+                <div className="flex gap-4 mt-4">
+                  <button type="button" onClick={() => setShowQaModal(false)} className="flex-1 border border-neutral-800 text-neutral-500 p-3 text-xs font-bold uppercase hover:bg-neutral-900 transition-colors">
+                    [ CANCEL ]
+                  </button>
+                  <button disabled={isCreatingQa} type="submit" className="flex-1 bg-blue-600 hover:bg-blue-500 text-white p-3 text-xs font-bold uppercase transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+                    {isCreatingQa ? <span className="animate-pulse">PROCESSING...</span> : '[ INITIATE QA ]'}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
