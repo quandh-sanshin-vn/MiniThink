@@ -40,12 +40,22 @@ Không dùng file tải ngoài để tránh lỗi 404 (Link rot). Ứng dụng d
 - **Hết giờ làm:** 3 tiếng bíp sắc gọn (Sóng Sine) để đánh thức sự chú ý.
 - **Hết giờ nghỉ:** 2 tiếng chuông ngân nga êm dịu (Sóng Triangle) để gọi người dùng quay lại bàn làm việc.
 
+### 5. Kỷ Luật & Cảnh Báo Toàn Cục (Global Lock & Discipline)
+- **Cảnh báo liên hệ thống (Global Alert):** Khi hết giờ làm việc, cảnh báo sẽ hiển thị chèn lên toàn bộ ứng dụng (cho dù người dùng đang ở module Todo, Japanese SRS hay Home).
+- **Luồng Bỏ qua (Skip):** Nếu người dùng chọn "Skip" để tiếp tục công việc, thời gian Pomodoro mới sẽ bắt đầu đếm ngược ngay lập tức, và bản nhạc đang phát sẽ tiếp tục chạy một cách liền mạch, không bị đứt đoạn.
+- **Khóa Màn Hình Nghỉ Ngơi (Screen Lock):** Nếu chọn "Bắt Đầu Nghỉ Ngơi", màn hình sẽ bị khóa (Đen 100%) kèm bộ đếm ngược, buộc người dùng rời mắt khỏi màn hình để bảo vệ sức khỏe.
+- **Hình phạt Cố chấp:** Hệ thống theo dõi số lần Skip trong ngày (reset mỗi ngày). Nều cố tình Skip 3 lần liên tiếp, thời gian nghỉ lần tiếp theo sẽ bị nhân đôi và KHÔNG THỂ Skip.
+- **Bắt buộc Nghỉ Dài (Mandatory Long Break):** Cứ sau mỗi 5 vòng làm việc (Sessions), người dùng bắt buộc phải vào kỳ Nghỉ Dài, và tuyệt đối không có tùy chọn Skip ở vòng này.
+
+### 6. Trải nghiệm Âm thanh Liền mạch (Audio Persistence)
+- **Lưu trữ Vị trí Audio:** Hệ thống tự động theo dõi vị trí mili-giây của bản nhạc đang phát và ghi chú trực tiếp vào Sandbox (LocalStorage). Khi người dùng reload (F5) hoặc tắt trang mở lại, bản nhạc sẽ được phát tiếp ở đúng giây đã dừng lại thay vì phát lại từ đầu.
+
 ---
 
 ## 📁 Cấu trúc Thư mục Quan trọng
 
-- `src/app/timmer/page.jsx`: Logic chính của Mervyn Timer (Quản lý trạng thái, phát nhạc, Web Audio API, UI).
-- `src/app/timmer/timmer.css`: File CSS thiết kế giao diện Minimalist.
+- `src/components/TimerContext.jsx`: Logic chính của Mervyn Timer (Quản lý trạng thái, phát nhạc, Web Audio API, Global Lock overlay, Audio Persistence).
+- `src/app/timmer/page.jsx`: File UI thiết kế giao diện Minimalist và bảng điều khiển Timer.
 - `src/app/api/music/route.js`: API Backend để quyét và gửi danh sách tên file nhạc từ thư mục `public/music`.
 - `public/music/porodomo/`: Thư mục thả nhạc nền lúc làm việc.
 - `public/music/break-time/`: Thư mục thả nhạc nền lúc nghỉ ngơi.
