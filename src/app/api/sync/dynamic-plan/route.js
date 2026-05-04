@@ -13,15 +13,16 @@ export async function POST(request) {
     if (!goal) throw new Error("Active goal not found");
 
     const now = new Date();
-    // Chuyển sang định dạng YYYY-MM-DD an toàn để tránh bị trừ lùi giờ (Timezone Offset)
+    // Chuyển sang định dạng YYYY-MM-DD an toàn, nhưng phải bao phủ TỚI CUỐI NGÀY HÔM NAY (23:59:59.999Z)
+    // Nếu chỉ set T00:00:00, hệ thống sẽ bỏ sót toàn bộ các từ vựng có giờ hẹn ôn tập nằm rải rác trong ngày hôm nay!
     const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-    const today = new Date(`${todayStr}T00:00:00.000Z`);
+    const endOfToday = new Date(`${todayStr}T23:59:59.999Z`);
 
-    // 1. Quét toàn bộ kiến thức cũ đã đến hạn ôn tập (nextReviewDate <= hôm nay)
+    // 1. Quét toàn bộ kiến thức cũ đã đến hạn ôn tập (nextReviewDate <= endOfToday)
     const dueItems = await prisma.learningProgress.findMany({
       where: {
         userId: user.id,
-        nextReviewDate: { lte: today }
+        nextReviewDate: { lte: endOfToday }
       }
     });
 
