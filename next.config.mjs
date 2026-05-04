@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  // Allow local network IP for HMR
+  allowedDevOrigins: ['192.168.0.109']
 };
 
 export default nextConfig;

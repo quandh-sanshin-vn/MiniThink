@@ -234,11 +234,17 @@ export default function TodoListPage() {
 
   const fetchInitialData = async () => {
     setIsLoaded(false);
-    await Promise.all([
+    
+    // Thêm timeout 5s để tránh việc API bị treo dẫn đến load mãi
+    const fetchPromises = Promise.all([
       fetchTasksFromDB(),
       fetchWorkspaces(),
       fetchConfig()
     ]);
+    
+    const timeoutPromise = new Promise(resolve => setTimeout(resolve, 5000));
+    await Promise.race([fetchPromises, timeoutPromise]);
+    
     setIsLoaded(true);
   };
 
@@ -453,6 +459,57 @@ export default function TodoListPage() {
 
 
   if (!isLoaded) return <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
+
+  const isWorkspaceConnected = Object.keys(workspaces).length > 0 || configData?.domain;
+
+  if (!isWorkspaceConnected) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] flex flex-col items-center justify-center font-mono">
+        <div className="text-slate-400 dark:text-neutral-500 mb-6 uppercase tracking-widest text-sm flex flex-col items-center gap-4">
+          <Terminal size={48} className="opacity-20" />
+          <p>NO WORKSPACE CONNECTED</p>
+        </div>
+        <button 
+          onClick={() => setShowConfig(true)}
+          className="bg-blue-500/10 border border-blue-500 text-blue-600 dark:text-blue-500 px-6 py-3 uppercase text-xs font-bold hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-2"
+        >
+          <Settings size={16} /> CONFIGURE WORKSPACE
+        </button>
+
+        {showConfig && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm text-left">
+            <div className="bg-white dark:bg-[#09090b] border border-blue-500 w-full max-w-lg p-6 shadow-2xl flex flex-col gap-6">
+              <h2 className="text-xl font-bold text-blue-500 uppercase tracking-widest border-b border-blue-500/30 pb-4 flex justify-between">
+                <span>{t('todo.config.title') || 'SYSTEM CONFIGURATION'}</span>
+                <button onClick={() => setShowConfig(false)} className="text-neutral-500 hover:text-blue-500"><X size={20} /></button>
+              </h2>
+
+              <form onSubmit={saveConfig} className="flex flex-col gap-4">
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] text-slate-500 dark:text-neutral-500 uppercase">{t('todo.config.platform') || 'PLATFORM'}</label>
+                  <input type="text" value="BACKLOG" disabled className="w-full bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 p-3 text-sm text-slate-500 dark:text-neutral-500 font-mono" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] text-blue-600 dark:text-blue-500 uppercase">{t('todo.config.domain') || 'DOMAIN'}</label>
+                  <input type="text" value={configData.domain} onChange={e => setConfigData({ ...configData, domain: e.target.value })} placeholder="your-space.backlog.com" className="w-full bg-slate-50 dark:bg-black border border-blue-500/50 p-3 text-sm text-slate-900 dark:text-blue-100 focus:outline-none focus:border-blue-500 font-mono" required />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] text-blue-600 dark:text-blue-500 uppercase">{t('todo.config.api_key') || 'API KEY'}</label>
+                  <input type="password" value={configData.apiKey} onChange={e => setConfigData({ ...configData, apiKey: e.target.value })} placeholder="********************" className="w-full bg-slate-50 dark:bg-black border border-blue-500/50 p-3 text-sm text-slate-900 dark:text-blue-100 focus:outline-none focus:border-blue-500 font-mono" required />
+                </div>
+
+                <div className="flex gap-4 mt-4 pt-4 border-t border-slate-200 dark:border-neutral-800">
+                  <button type="submit" disabled={isSyncing} className="w-full py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-600 dark:text-blue-500 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
+                    {isSyncing ? <RefreshCw size={14} className="animate-spin" /> : (t('todo.config.save_sync') || 'SAVE & SYNC')}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-slate-300 font-mono flex flex-col">

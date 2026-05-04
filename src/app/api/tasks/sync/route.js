@@ -21,30 +21,30 @@ export async function POST() {
         // 1. Lấy thông tin user hiện tại
         const userRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/users/myself?apiKey=${BACKLOG_API_KEY}`);
         const userData = await userRes.json();
-        
+
         if (!userData.id) continue;
 
         // 2. Fetch tất cả project
         const projectsRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/projects?apiKey=${BACKLOG_API_KEY}`);
         const apiProjects = await projectsRes.json();
-        
-        if (Array.isArray(apiProjects)) {
-           for (const proj of apiProjects) {
-              // Fetch project statuses
-              const statusRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/projects/${proj.projectKey}/statuses?apiKey=${BACKLOG_API_KEY}`);
-              let statuses = [];
-              if (statusRes.ok) {
-                 statuses = await statusRes.json();
-              }
 
-              await prisma.syncProject.upsert({
-                 where: {
-                    configId_projectKey: { configId: config.id, projectKey: proj.projectKey }
-                 },
-                 update: { name: proj.name, statuses },
-                 create: { configId: config.id, projectKey: proj.projectKey, name: proj.name, statuses }
-              });
-           }
+        if (Array.isArray(apiProjects)) {
+          for (const proj of apiProjects) {
+            // Fetch project statuses
+            const statusRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/projects/${proj.projectKey}/statuses?apiKey=${BACKLOG_API_KEY}`);
+            let statuses = [];
+            if (statusRes.ok) {
+              statuses = await statusRes.json();
+            }
+
+            await prisma.syncProject.upsert({
+              where: {
+                configId_projectKey: { configId: config.id, projectKey: proj.projectKey }
+              },
+              update: { name: proj.name, statuses },
+              create: { configId: config.id, projectKey: proj.projectKey, name: proj.name, statuses }
+            });
+          }
         }
 
         // 3. Fetch issue của mình
@@ -57,26 +57,26 @@ export async function POST() {
         const myIssueIds = myIssues.map(i => i.id);
         const childIssues = [];
         if (myIssueIds.length > 0) {
-            // Chia nhỏ mảng để url không quá dài (tối đa 20 id một lần)
-            const chunkArray = (arr, size) => arr.length ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)] : [];
-            const chunks = chunkArray(myIssueIds, 20);
-            
-            for (const chunk of chunks) {
-               const params = chunk.map(id => `parentIssueId[]=${id}`).join('&');
-               const childRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/issues?apiKey=${BACKLOG_API_KEY}&${params}&statusId[]=1&statusId[]=2&statusId[]=3`);
-               const children = await childRes.json();
-               if (Array.isArray(children)) {
-                   childIssues.push(...children);
-               }
+          // Chia nhỏ mảng để url không quá dài (tối đa 20 id một lần)
+          const chunkArray = (arr, size) => arr.length ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)] : [];
+          const chunks = chunkArray(myIssueIds, 20);
+
+          for (const chunk of chunks) {
+            const params = chunk.map(id => `parentIssueId[]=${id}`).join('&');
+            const childRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/issues?apiKey=${BACKLOG_API_KEY}&${params}&statusId[]=1&statusId[]=2&statusId[]=3`);
+            const children = await childRes.json();
+            if (Array.isArray(children)) {
+              childIssues.push(...children);
             }
+          }
         }
 
         // 3.2. Fetch Parent issues & Siblings
         const missingParentIds = new Set();
         myIssues.forEach(i => {
-           if (i.parentIssueId) missingParentIds.add(i.parentIssueId);
+          if (i.parentIssueId) missingParentIds.add(i.parentIssueId);
         });
-        
+
         const parentIssues = [];
         const siblingIssues = [];
 
@@ -113,7 +113,7 @@ export async function POST() {
         childIssues.forEach(i => allIssuesMap.set(i.id, i));
         parentIssues.forEach(i => allIssuesMap.set(i.id, i));
         siblingIssues.forEach(i => allIssuesMap.set(i.id, i));
-        
+
         const issues = Array.from(allIssuesMap.values());
         totalIssues += issues.length;
 
@@ -127,7 +127,7 @@ export async function POST() {
           let localPriority = 'P2';
           if (issue.priority.id === 2) localPriority = 'P1';
           else if (issue.priority.id === 4) localPriority = 'P3';
-          
+
           let localStatus = 'TODO';
           if (issue.status.id === 2) localStatus = 'IN_PROGRESS';
           if (issue.status.id === 3 || issue.status.id === 4) localStatus = 'DONE';
@@ -159,8 +159,8 @@ export async function POST() {
           });
         }
       } catch (err) {
-         console.error(`Failed to sync workspace ${BACKLOG_DOMAIN}`, err);
-         // Tiếp tục với workspace khác nếu lỗi
+        console.error(`Failed to sync workspace ${BACKLOG_DOMAIN}`, err);
+        // Tiếp tục với workspace khác nếu lỗi
       }
     }
 
