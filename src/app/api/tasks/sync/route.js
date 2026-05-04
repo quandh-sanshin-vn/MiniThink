@@ -99,6 +99,7 @@ export async function POST() {
             description: issue.description || '',
             priority: localPriority,
             status: localStatus,
+            statusText: issue.status.name,
             url: `https://${BACKLOG_DOMAIN}/view/${issue.issueKey}`,
             issueType: issue.issueType ? issue.issueType.name : null,
             assigneeName: issue.assignee ? issue.assignee.name : null,

@@ -22,6 +22,7 @@ export async function GET() {
       priority: t.priority,
       module: t.project?.projectKey || 'UNKNOWN',
       status: t.status,
+      statusText: t.statusText,
       source: 'BACKLOG',
       url: t.url,
       projectName: t.project?.name,

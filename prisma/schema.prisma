@@ -231,6 +231,7 @@ model SyncTask {
   description    String?  @db.Text
   priority       String   // Đã map chuẩn: "P0", "P1", "P2", "P3"
   status         String   // Đã map chuẩn: "TODO", "IN_PROGRESS", "DONE"
+  statusText     String?  // Tên status thực tế từ Backlog (kể cả custom status)
   url            String   // Link trực tiếp tới ticket
   
   // Extra data from backlog payload

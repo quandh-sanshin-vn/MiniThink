@@ -86,7 +86,7 @@ const TaskItem = ({ task, depth = 0 }) => {
               {task.projectName || task.module}
             </span>
             <span className={`text-[10px] px-1.5 py-0.5 uppercase border border-neutral-300 border-neutral-700 ${task.status === 'DONE' ? 'text-emerald-600 text-emerald-500 border-emerald-500/30 bg-emerald-500/10' : 'text-neutral-500 text-neutral-400'}`}>
-              {task.status}
+              {task.statusText || task.status}
             </span>
             {task.issueType && (
               <span className="text-[10px] text-purple-600 text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase">
@@ -250,7 +250,8 @@ export default function TodoListPage() {
       task.id.toLowerCase().includes(searchQuery.toLowerCase()) || 
       task.title.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesProject = filterProject === 'ALL' || task.module === filterProject;
-    const matchesStatus = filterStatus === 'ALL' || task.status === filterStatus;
+    const taskCurrentStatus = task.statusText || task.status;
+    const matchesStatus = filterStatus === 'ALL' || taskCurrentStatus === filterStatus;
 
     return matchesWorkspace && matchesSearch && matchesProject && matchesStatus;
   });
@@ -341,9 +342,7 @@ export default function TodoListPage() {
               onChange={setFilterStatus}
               options={[
                 { value: 'ALL', label: t('todo.all_statuses') },
-                { value: 'TODO', label: t('todo.status.todo') },
-                { value: 'IN_PROGRESS', label: t('todo.status.in_progress') },
-                { value: 'DONE', label: t('todo.status.done') }
+                ...Array.from(new Set(tasks.map(t => t.statusText || t.status))).filter(Boolean).map(s => ({ value: s, label: s }))
               ]}
             />
           </div>
