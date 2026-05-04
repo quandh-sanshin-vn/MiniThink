@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Terminal, Plus, Settings, RefreshCw, ExternalLink, X, FolderSync, ChevronDown } from 'lucide-react';
+import { Terminal, Plus, Settings, RefreshCw, ExternalLink, X, FolderSync, ChevronDown, Copy } from 'lucide-react';
 import ModuleHeader from '@/components/ModuleHeader';
 import { useLanguage } from '@/i18n/LanguageContext';
 
@@ -58,60 +58,104 @@ const SelectDropdown = ({ value, options, onChange, placeholder, className = "" 
 };
 
 const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
+  const [copied, setCopied] = useState(false);
   const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
   const isMyTask = currentUserName && task.assigneeName === currentUserName;
   
+  // Status Colors
+  let statusBorder = 'border-blue-500/30';
+  let statusBg = 'bg-blue-500/10';
+  let statusText = 'text-blue-500';
+  
+  if (task.status === 'DONE') {
+    statusBorder = 'border-emerald-500/30';
+    statusBg = 'bg-emerald-500/10';
+    statusText = 'text-emerald-500';
+  } else if (task.status === 'IN_PROGRESS') {
+    statusBorder = 'border-amber-500/30';
+    statusBg = 'bg-amber-500/10';
+    statusText = 'text-amber-500';
+  }
+
+  const handleCopy = async (e) => {
+    e.stopPropagation();
+    const htmlText = `<a href="${task.url}">${task.id}</a> ${task.title}`;
+    const plainText = `${task.id} ${task.title}`;
+    try {
+      const blobHtml = new Blob([htmlText], { type: "text/html" });
+      const blobPlain = new Blob([plainText], { type: "text/plain" });
+      const data = [new window.ClipboardItem({
+          "text/plain": blobPlain,
+          "text/html": blobHtml
+      })];
+      await navigator.clipboard.write(data);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
+  
   return (
-    <div className={`flex flex-col gap-2 ${depth > 0 ? 'ml-6 border-l-2 border-neutral-800 pl-4 mt-2' : ''}`}>
+    <div className={`flex flex-col gap-1.5 ${depth > 0 ? 'ml-6 border-l border-neutral-800 pl-3 mt-1.5' : ''}`}>
       <div className={`
         relative overflow-hidden cursor-pointer
-        border ${depth > 0 ? 'border-neutral-800/50 bg-[#061224]/30' : (isMyTask ? 'border-emerald-500/50 bg-[#061224]' : 'border-blue-500/30 bg-[#061224]')}
-        p-4 group hover:border-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] 
-        transition-all duration-300 transform hover:-translate-y-0.5
-        flex flex-col md:flex-row justify-between items-start md:items-center gap-4
-        bg-[#061224] ${isMyTask ? 'hover:border-emerald-400' : 'hover:border-blue-400'}
+        border ${depth > 0 ? 'border-neutral-800/50 bg-[#061224]/30' : (isMyTask ? 'border-emerald-500/50 bg-[#061224]' : 'border-neutral-800 bg-[#061224]')}
+        p-3 group hover:border-blue-400 hover:shadow-[0_0_10px_rgba(59,130,246,0.1)] 
+        transition-all duration-200
+        flex flex-col md:flex-row justify-between items-start md:items-center gap-3
+        ${isMyTask ? 'hover:border-emerald-400' : 'hover:border-blue-400'}
       `}>
         {/* Glow effect on hover */}
         <div className="absolute inset-0 bg-blue-500/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
 
-        <div className="relative z-10 flex-1 flex flex-col gap-2 w-full">
+        <div className="relative z-10 flex-1 flex flex-col gap-1.5 w-full">
           <div className="flex gap-2 items-center flex-wrap">
             <a href={task.url} target="_blank" rel="noopener noreferrer" 
-               className="text-[10px] text-blue-500 text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-1 font-bold">
+               className="text-[10px] text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-1 font-bold">
               {task.id} <ExternalLink size={10} />
             </a>
-            <span className={`text-[10px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold`}>
+            <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold`}>
               {priority.id}
             </span>
-            <span className="text-[10px] text-neutral-600 text-neutral-500 border border-neutral-300 border-neutral-800 bg-neutral-100 bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px]" title={task.projectName}>
-              {task.projectName || task.module}
-            </span>
-            <span className={`text-[10px] px-1.5 py-0.5 uppercase border border-neutral-300 border-neutral-700 ${task.status === 'DONE' ? 'text-emerald-600 text-emerald-500 border-emerald-500/30 bg-emerald-500/10' : 'text-neutral-500 text-neutral-400'}`}>
+            <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${statusBorder} ${statusBg} ${statusText} font-bold`}>
               {task.statusText || task.status}
             </span>
+            <span className="text-[9px] text-neutral-500 border border-neutral-800 bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px]" title={task.projectName}>
+              {task.projectName || task.module}
+            </span>
             {task.issueType && (
-              <span className="text-[10px] text-purple-600 text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase">
+              <span className="text-[9px] text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase">
                 {task.issueType}
               </span>
             )}
           </div>
-          <p className={`text-sm transition-colors ${task.status === 'DONE' ? 'text-neutral-400 text-neutral-500 line-through' : 'text-slate-800 text-blue-100 group-hover:text-blue-600 group-hover:text-blue-300'}`}>
+          <p className={`text-[13px] leading-tight transition-colors ${task.status === 'DONE' ? 'text-neutral-500 line-through' : 'text-blue-100 group-hover:text-blue-300'}`}>
             {task.title}
           </p>
         </div>
         
-        {task.assigneeName && (
-           <div className={`relative z-10 text-[10px] flex items-center gap-1 uppercase border px-2 py-1 ${isMyTask ? 'text-emerald-400 border-emerald-500/50 bg-emerald-500/10 font-bold' : 'text-neutral-500 border-neutral-200 border-neutral-800 bg-neutral-50 bg-neutral-900/50'}`}>
-             <span className={`w-1.5 h-1.5 rounded-full ${isMyTask ? 'bg-emerald-400 animate-pulse' : 'bg-neutral-500'}`}></span>
-             {task.assigneeName}
-           </div>
-        )}
-        <button 
-           onClick={(e) => { e.stopPropagation(); onQaClick(task); }}
-           className="relative z-10 text-[10px] uppercase font-bold border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors px-2 py-1 flex items-center gap-1"
-        >
-           + QA
-        </button>
+        <div className="flex items-center gap-2 relative z-10 shrink-0">
+          {task.assigneeName && (
+             <div className={`text-[9px] flex items-center gap-1 uppercase border px-1.5 py-0.5 ${isMyTask ? 'text-emerald-400 border-emerald-500/50 bg-emerald-500/10 font-bold' : 'text-neutral-500 border-neutral-800 bg-neutral-900/50'}`}>
+               <span className={`w-1 h-1 rounded-full ${isMyTask ? 'bg-emerald-400 animate-pulse' : 'bg-neutral-500'}`}></span>
+               {task.assigneeName}
+             </div>
+          )}
+          <button 
+             onClick={handleCopy}
+             title="Copy task with link"
+             className={`text-[9px] uppercase font-bold border px-1.5 py-0.5 flex items-center gap-1 transition-colors ${copied ? 'border-emerald-500 text-emerald-500 bg-emerald-500/10' : 'border-neutral-700 text-neutral-400 hover:border-blue-400 hover:text-blue-400'}`}
+          >
+             <Copy size={10} /> {copied ? 'COPIED' : 'COPY'}
+          </button>
+          <button 
+             onClick={(e) => { e.stopPropagation(); onQaClick(task); }}
+             className="text-[9px] uppercase font-bold border border-blue-500/50 text-blue-400 hover:bg-blue-500 hover:text-white transition-colors px-1.5 py-0.5 flex items-center gap-1"
+          >
+             + QA
+          </button>
+        </div>
       </div>
       
       {/* Đệ quy render các task con */}
