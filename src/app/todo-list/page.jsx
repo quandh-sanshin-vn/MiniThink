@@ -282,10 +282,6 @@ export default function TodoListPage() {
 
   const taskTree = buildTree(filteredTasks);
 
-  // Tạo danh sách project dùng cho filter dropdown
-  const allProjectsList = activeWorkspace === 'ALL' 
-      ? Object.values(workspaces).flat() 
-      : (workspaces[activeWorkspace] || []);
 
   if (!isLoaded) return <div className="min-h-screen bg-[#09090b] flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
 
