@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Terminal, Plus, ArrowRight, Check, Trash2, Edit3, MoveRight, MoveLeft } from 'lucide-react';
 import Link from 'next/link';
 import ModuleHeader from '@/components/ModuleHeader';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const STATUSES = ['TODO', 'IN_PROGRESS', 'DONE'];
 const PRIORITIES = [
@@ -16,6 +17,7 @@ const PRIORITIES = [
 const MODULES = ['CORE', 'UI', 'SRS', 'TIMER', 'TODO', 'OTHER'];
 
 export default function TodoListPage() {
+  const { t } = useLanguage();
   const [tasks, setTasks] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [newTask, setNewTask] = useState({ title: '', priority: 'P2', module: 'CORE' });
@@ -78,30 +80,30 @@ export default function TodoListPage() {
 
   return (
     <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col">
-      <ModuleHeader title="DEV_TASK_TERMINAL" />
+      <ModuleHeader title={t('todo.title')} />
       
       <div className="flex-1 p-4 lg:p-8 flex flex-col">
         <div className="mb-8">
-          <p className="text-xs text-neutral-500 uppercase tracking-widest border-l-2 border-emerald-500 pl-3">Sandbox Mode • LocalStorage Persistence</p>
+          <p className="text-xs text-neutral-500 uppercase tracking-widest border-l-2 border-emerald-500 pl-3">{t('todo.subtitle')}</p>
         </div>
 
       {/* ADD TASK FORM */}
       <div className="mb-8 bg-black border border-neutral-800 p-4">
         <form onSubmit={addTask} className="flex flex-col md:flex-row gap-4 items-end">
           <div className="flex-1 w-full flex flex-col gap-2">
-            <label className="text-[10px] text-neutral-500 uppercase">Task Title</label>
+            <label className="text-[10px] text-neutral-500 uppercase">{t('todo.task_title')}</label>
             <input 
               type="text" 
               value={newTask.title}
               onChange={e => setNewTask({...newTask, title: e.target.value})}
-              placeholder="Enter task description..."
+              placeholder={t('todo.placeholder')}
               className="w-full bg-neutral-900 border border-neutral-800 p-2 text-sm text-emerald-400 focus:outline-none focus:border-emerald-500/50 font-mono placeholder:text-neutral-700"
               autoFocus
             />
           </div>
           <div className="w-full md:w-auto flex gap-4">
             <div className="flex flex-col gap-2 w-1/2 md:w-auto">
-              <label className="text-[10px] text-neutral-500 uppercase">Module</label>
+              <label className="text-[10px] text-neutral-500 uppercase">{t('todo.module')}</label>
               <select 
                 value={newTask.module}
                 onChange={e => setNewTask({...newTask, module: e.target.value})}
@@ -111,7 +113,7 @@ export default function TodoListPage() {
               </select>
             </div>
             <div className="flex flex-col gap-2 w-1/2 md:w-auto">
-              <label className="text-[10px] text-neutral-500 uppercase">Priority</label>
+              <label className="text-[10px] text-neutral-500 uppercase">{t('todo.priority')}</label>
               <select 
                 value={newTask.priority}
                 onChange={e => setNewTask({...newTask, priority: e.target.value})}
@@ -126,7 +128,7 @@ export default function TodoListPage() {
             disabled={!newTask.title.trim()}
             className="w-full md:w-auto bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 p-2 px-6 hover:bg-emerald-500 hover:text-black transition-colors flex items-center justify-center gap-2 uppercase text-sm font-bold disabled:opacity-50 disabled:cursor-not-allowed h-[38px]"
           >
-            <Plus size={16} /> Execute
+            <Plus size={16} /> {t('todo.add_btn')}
           </button>
         </form>
       </div>
@@ -191,7 +193,7 @@ export default function TodoListPage() {
               })}
               {tasks.filter(t => t.status === status).length === 0 && (
                 <div className="text-center text-neutral-700 text-xs py-8 uppercase tracking-widest border border-dashed border-neutral-800">
-                  Empty
+                  {t('todo.empty_status')}
                 </div>
               )}
             </div>

@@ -4,10 +4,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Play, Pause, RotateCcw, Settings, Info, X, Volume2, VolumeX, Music, Terminal, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 import ModuleHeader from '@/components/ModuleHeader';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 import { useTimer, PROFILES } from '@/components/TimerContext';
 
 export default function PomodoroTimer() {
+  const { t } = useLanguage();
   const {
     settings, setSettings,
     soundEnabled, setSoundEnabled,
@@ -42,7 +44,7 @@ export default function PomodoroTimer() {
 
   return (
     <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col selection:bg-emerald-500/30">
-      <ModuleHeader title="MERVYN_TIMER" />
+      <ModuleHeader title={t('timer.title')} />
       
       <div className="flex-1 w-full max-w-6xl mx-auto flex flex-col items-center justify-center p-4 md:p-8">
         
@@ -115,7 +117,7 @@ export default function PomodoroTimer() {
 
           {sessions > 0 && (
             <div className="mt-8 text-xs text-neutral-600 border border-neutral-800 px-4 py-1 uppercase tracking-widest">
-              Completed_Cycles: <span className="text-emerald-500 font-bold">{sessions}</span>
+              {t('timer.cycles')} <span className="text-emerald-500 font-bold">{sessions}</span>
             </div>
           )}
         </div>
@@ -129,17 +131,17 @@ export default function PomodoroTimer() {
               <X size={20} />
             </button>
             <h3 className="text-sm font-bold text-slate-200 uppercase tracking-widest mb-6 border-b border-neutral-800 pb-2 flex items-center gap-2">
-              <Music size={16} /> Audio_Interface
+              <Music size={16} /> {t('timer.audio_interface')}
             </h3>
             
             <div className="overflow-y-auto max-h-[60vh] custom-scrollbar pr-2 space-y-6">
               <div>
                 <div className="text-[10px] text-emerald-500 uppercase tracking-widest mb-3 border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 inline-block">
-                  &gt; Pomodoro_Tracks
+                  &gt; {t('timer.pomodoro_tracks')}
                 </div>
                 <div className="flex flex-col gap-2">
                   {pomodoroPlaylist.length === 0 ? (
-                    <p className="text-xs text-neutral-600 italic border border-dashed border-neutral-800 p-4 text-center">Directory empty: /music/porodomo/</p>
+                    <p className="text-xs text-neutral-600 italic border border-dashed border-neutral-800 p-4 text-center">{t('timer.empty_dir')} /music/porodomo/</p>
                   ) : (
                     pomodoroPlaylist.map((song, index) => {
                       const isActive = currentModeId === 'pomodoro' && currentPomodoroSongIndex === index;
@@ -151,7 +153,7 @@ export default function PomodoroTimer() {
                         >
                           <Music size={14} className={isActive ? 'text-emerald-500' : 'text-neutral-600'} />
                           <span className="truncate flex-1 uppercase">{song.replace(/\.[^/.]+$/, "")}</span>
-                          {isActive && isRunning && <span className="text-[10px] text-emerald-500 animate-pulse">PLAYING</span>}
+                          {isActive && isRunning && <span className="text-[10px] text-emerald-500 animate-pulse">{t('timer.playing')}</span>}
                         </button>
                       );
                     })
@@ -161,11 +163,11 @@ export default function PomodoroTimer() {
 
               <div>
                 <div className="text-[10px] text-blue-500 uppercase tracking-widest mb-3 border border-blue-500/30 bg-blue-500/10 px-2 py-1 inline-block">
-                  &gt; Break_Tracks
+                  &gt; {t('timer.break_tracks')}
                 </div>
                 <div className="flex flex-col gap-2">
                   {breakPlaylist.length === 0 ? (
-                    <p className="text-xs text-neutral-600 italic border border-dashed border-neutral-800 p-4 text-center">Directory empty: /music/break-time/</p>
+                    <p className="text-xs text-neutral-600 italic border border-dashed border-neutral-800 p-4 text-center">{t('timer.empty_dir')} /music/break-time/</p>
                   ) : (
                     breakPlaylist.map((song, index) => {
                       const isActive = currentModeId !== 'pomodoro' && currentBreakSongIndex === index;
@@ -177,7 +179,7 @@ export default function PomodoroTimer() {
                         >
                           <Music size={14} className={isActive ? 'text-blue-500' : 'text-neutral-600'} />
                           <span className="truncate flex-1 uppercase">{song.replace(/\.[^/.]+$/, "")}</span>
-                          {isActive && isRunning && <span className="text-[10px] text-blue-500 animate-pulse">PLAYING</span>}
+                          {isActive && isRunning && <span className="text-[10px] text-blue-500 animate-pulse">{t('timer.playing')}</span>}
                         </button>
                       );
                     })
@@ -197,7 +199,7 @@ export default function PomodoroTimer() {
               <X size={20} />
             </button>
             <h3 className="text-sm font-bold text-slate-200 uppercase tracking-widest mb-6 border-b border-neutral-800 pb-2 flex items-center gap-2">
-              <Settings size={16} /> System_Config
+              <Settings size={16} /> {t('timer.settings')}
             </h3>
             
             <div className="grid grid-cols-3 gap-4 mb-8">
@@ -212,7 +214,7 @@ export default function PomodoroTimer() {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] text-amber-500 uppercase tracking-widest">Short_Break</label>
+                <label className="text-[10px] text-amber-500 uppercase tracking-widest">{t('timer.short_break')}</label>
                 <input 
                   type="number" 
                   value={settings.shortBreak}
@@ -222,7 +224,7 @@ export default function PomodoroTimer() {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] text-blue-500 uppercase tracking-widest">Long_Break</label>
+                <label className="text-[10px] text-blue-500 uppercase tracking-widest">{t('timer.long_break')}</label>
                 <input 
                   type="number" 
                   value={settings.longBreak}
@@ -234,7 +236,7 @@ export default function PomodoroTimer() {
             </div>
 
             <div>
-              <h4 className="text-[10px] text-neutral-500 uppercase tracking-widest mb-3">&gt; Quick_Profiles</h4>
+              <h4 className="text-[10px] text-neutral-500 uppercase tracking-widest mb-3">&gt; {t('timer.quick_profiles')}</h4>
               <div className="flex flex-col gap-2">
                 {PROFILES.map(profile => (
                   <button 

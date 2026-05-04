@@ -1,8 +1,13 @@
+"use client";
+
 import Link from 'next/link';
 import { Terminal, Clock, CheckSquare, ChevronRight } from 'lucide-react';
 import ModuleHeader from '@/components/ModuleHeader';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col">
       <ModuleHeader />
@@ -14,12 +19,12 @@ export default function Home() {
           <div className="inline-flex items-center justify-center gap-3 border border-emerald-500/30 bg-emerald-500/5 px-6 py-2 mb-6">
             <Terminal className="text-emerald-500" size={24} />
             <h1 className="text-3xl md:text-5xl font-black text-white tracking-widest uppercase">
-              Mervyn MiniThink
+              {t('home.title')}
             </h1>
           </div>
           <p className="text-neutral-400 text-sm md:text-base uppercase tracking-widest max-w-2xl text-center leading-relaxed">
-            Hệ sinh thái ứng dụng năng suất & học tập được thiết kế theo ngôn ngữ Brutalism. 
-            <br className="hidden md:block"/>Tối giản. Thiết thực. Tinh tế.
+            {t('home.subtitle')}
+            <br className="hidden md:block"/>{t('home.slogan')}
           </p>
         </div>
 
@@ -35,13 +40,13 @@ export default function Home() {
               <Terminal size={20} className="text-neutral-600 group-hover:text-emerald-500 transition-colors" />
             </div>
             <h2 className="text-xl font-bold text-white mb-2 uppercase group-hover:text-emerald-400 transition-colors">
-              Japanese SRS
+              {t('home.module1')}
             </h2>
             <p className="text-sm text-neutral-500 flex-1 mb-6 leading-relaxed">
-              Hệ thống học thuật khắc nghiệt dành cho Tiếng Nhật. Ứng dụng thuật toán lặp lại ngắt quãng (SM-2) kết hợp chẩn đoán trí nhớ thời gian thực.
+              {t('home.module1_desc')}
             </p>
             <div className="flex items-center text-xs text-neutral-600 group-hover:text-emerald-500 uppercase tracking-widest transition-colors mt-auto">
-              [ Boot System ] <ChevronRight size={14} className="ml-1" />
+              {t('home.boot')} <ChevronRight size={14} className="ml-1" />
             </div>
           </Link>
 
@@ -54,13 +59,13 @@ export default function Home() {
               <Clock size={20} className="text-neutral-600 group-hover:text-blue-500 transition-colors" />
             </div>
             <h2 className="text-xl font-bold text-white mb-2 uppercase group-hover:text-blue-400 transition-colors">
-              Pomodoro Timer
+              {t('home.module2')}
             </h2>
             <p className="text-sm text-neutral-500 flex-1 mb-6 leading-relaxed">
-              Trạm điều khiển thời gian làm việc tối giản. Hỗ trợ hệ thống âm thanh Web Audio tự tổng hợp sóng nhiễu (White noise) giúp tăng độ tập trung.
+              {t('home.module2_desc')}
             </p>
             <div className="flex items-center text-xs text-neutral-600 group-hover:text-blue-500 uppercase tracking-widest transition-colors mt-auto">
-              [ Boot System ] <ChevronRight size={14} className="ml-1" />
+              {t('home.boot')} <ChevronRight size={14} className="ml-1" />
             </div>
           </Link>
 
@@ -73,13 +78,13 @@ export default function Home() {
               <CheckSquare size={20} className="text-neutral-600 group-hover:text-amber-500 transition-colors" />
             </div>
             <h2 className="text-xl font-bold text-white mb-2 uppercase group-hover:text-amber-400 transition-colors">
-              Dev Task Terminal
+              {t('home.module3')}
             </h2>
             <p className="text-sm text-neutral-500 flex-1 mb-6 leading-relaxed">
-              Bảng Kanban quản lý công việc và dự án. Vận hành ở chế độ Sandbox 100% bằng LocalStorage, bảo mật dữ liệu trên máy trạm.
+              {t('home.module3_desc')}
             </p>
             <div className="flex items-center text-xs text-neutral-600 group-hover:text-amber-500 uppercase tracking-widest transition-colors mt-auto">
-              [ Boot System ] <ChevronRight size={14} className="ml-1" />
+              {t('home.boot')} <ChevronRight size={14} className="ml-1" />
             </div>
           </Link>
 

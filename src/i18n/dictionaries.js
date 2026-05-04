@@ -91,6 +91,43 @@ export const dictionaries = {
     'study.complete.desc': 'Đã ôn tập thành công',
     'study.complete.items': 'từ vựng.',
     'study.complete.return': '[ TRỞ_VỀ_TERMINAL ]',
+
+    // Home Page
+    'home.title': 'Mervyn MiniThink',
+    'home.subtitle': 'Hệ sinh thái ứng dụng năng suất & học tập được thiết kế theo ngôn ngữ Brutalism.',
+    'home.slogan': 'Tối giản. Thiết thực. Tinh tế.',
+    'home.module1': 'Japanese SRS',
+    'home.module1_desc': 'Hệ thống học thuật khắc nghiệt dành cho Tiếng Nhật. Ứng dụng thuật toán lặp lại ngắt quãng (SM-2) kết hợp chẩn đoán trí nhớ thời gian thực.',
+    'home.boot': '[ Boot System ]',
+    'home.module2': 'Pomodoro Timer',
+    'home.module2_desc': 'Trạm điều khiển thời gian làm việc tối giản. Hỗ trợ hệ thống âm thanh Web Audio tự tổng hợp sóng nhiễu (White noise) giúp tăng độ tập trung.',
+    'home.module3': 'Dev Task Terminal',
+    'home.module3_desc': 'Bảng Kanban quản lý công việc và dự án. Vận hành ở chế độ Sandbox 100% bằng LocalStorage, bảo mật dữ liệu trên máy trạm.',
+
+    // Timer
+    'timer.title': 'MERVYN_TIMER',
+    'timer.cycles': 'Chu_Kỳ_Hoàn_Thành:',
+    'timer.audio_interface': 'Giao_Diện_Âm_Thanh',
+    'timer.pomodoro_tracks': 'Nhạc_Tập_Trung',
+    'timer.break_tracks': 'Nhạc_Thư_Giãn',
+    'timer.empty_dir': 'Thư mục trống:',
+    'timer.playing': 'ĐANG_PHÁT',
+    'timer.settings': 'Tham_Số_Hệ_Thống',
+    'timer.work_duration': 'Thời_Gian_Làm_(Phút)',
+    'timer.short_break': 'Nghỉ_Ngắn_(Phút)',
+    'timer.long_break': 'Nghỉ_Dài_(Phút)',
+    'timer.apply': 'Áp_Dụng_Thay_Đổi',
+    'timer.quick_profiles': 'Cấu_Hình_Nhanh',
+
+    // Todo
+    'todo.title': 'Dev_Task_Terminal',
+    'todo.subtitle': 'Chế độ Sandbox • Lưu trữ trên LocalStorage',
+    'todo.task_title': 'Tiêu Đề Task',
+    'todo.placeholder': 'Nhập mô tả công việc...',
+    'todo.priority': 'Mức_Độ',
+    'todo.module': 'Phân_Hệ',
+    'todo.add_btn': '[ THÊM_TASK ]',
+    'todo.empty_status': 'Trống'
   },
   en: {
     // Layout
@@ -184,6 +221,43 @@ export const dictionaries = {
     'study.complete.desc': 'Successfully reviewed',
     'study.complete.items': 'items.',
     'study.complete.return': '[ RETURN_TO_TERMINAL ]',
+
+    // Home Page
+    'home.title': 'Mervyn MiniThink',
+    'home.subtitle': 'Productivity & learning ecosystem designed with Brutalism language.',
+    'home.slogan': 'Minimal. Practical. Refined.',
+    'home.module1': 'Japanese SRS',
+    'home.module1_desc': 'Strict academic system for Japanese. Utilizes Spaced Repetition (SM-2) combined with real-time memory diagnostics.',
+    'home.boot': '[ Boot System ]',
+    'home.module2': 'Pomodoro Timer',
+    'home.module2_desc': 'Minimalist time control station. Features Web Audio synthesized white noise to boost concentration.',
+    'home.module3': 'Dev Task Terminal',
+    'home.module3_desc': 'Kanban board for task management. Runs 100% in Sandbox mode using LocalStorage for maximum privacy.',
+
+    // Timer
+    'timer.title': 'MERVYN_TIMER',
+    'timer.cycles': 'Completed_Cycles:',
+    'timer.audio_interface': 'Audio_Interface',
+    'timer.pomodoro_tracks': 'Pomodoro_Tracks',
+    'timer.break_tracks': 'Break_Tracks',
+    'timer.empty_dir': 'Directory empty:',
+    'timer.playing': 'PLAYING',
+    'timer.settings': 'System_Parameters',
+    'timer.work_duration': 'Work_Duration_Min',
+    'timer.short_break': 'Short_Break_Min',
+    'timer.long_break': 'Long_Break_Min',
+    'timer.apply': 'Apply_Settings',
+    'timer.quick_profiles': 'Quick_Profiles',
+
+    // Todo
+    'todo.title': 'Dev_Task_Terminal',
+    'todo.subtitle': 'Sandbox Mode • LocalStorage Persistence',
+    'todo.task_title': 'Task Title',
+    'todo.placeholder': 'Enter task description...',
+    'todo.priority': 'Priority',
+    'todo.module': 'Module',
+    'todo.add_btn': '[ EXECUTE_ADD ]',
+    'todo.empty_status': 'Empty'
   },
   ja: {
     // Layout
@@ -274,8 +348,45 @@ export const dictionaries = {
     'study.btn.bad': '[4] 悪い',
 
     'study.complete.title': 'セッション_完了',
-    'study.complete.desc': '復習が正常に完了しました:',
-    'study.complete.items': 'アイテム。',
+    'study.complete.desc': '復習を完了しました',
+    'study.complete.items': '項目。',
     'study.complete.return': '[ ターミナルへ戻る ]',
+
+    // Home Page
+    'home.title': 'Mervyn MiniThink',
+    'home.subtitle': 'ブルータリズム言語で設計された生産性と学習のシステム。',
+    'home.slogan': 'ミニマル。実用的。洗練。',
+    'home.module1': '日本語 SRS',
+    'home.module1_desc': '厳密な日本語学習システム。間隔反復アルゴリズム（SM-2）とリアルタイムの記憶診断を使用します。',
+    'home.boot': '[ システム起動 ]',
+    'home.module2': 'ポモドーロ タイマー',
+    'home.module2_desc': 'ミニマルな時間管理ステーション。Web Audioで合成されたホワイトノイズを使用して集中力を高めます。',
+    'home.module3': 'Dev タスク ターミナル',
+    'home.module3_desc': 'タスク管理用のカンバンボード。LocalStorageを使用して100%サンドボックスモードで動作します。',
+
+    // Timer
+    'timer.title': 'MERVYN_TIMER',
+    'timer.cycles': '完了サイクル:',
+    'timer.audio_interface': 'オーディオインターフェース',
+    'timer.pomodoro_tracks': '集中_トラック',
+    'timer.break_tracks': '休憩_トラック',
+    'timer.empty_dir': '空のディレクトリ:',
+    'timer.playing': '再生中',
+    'timer.settings': 'システム_パラメータ',
+    'timer.work_duration': '作業時間_(分)',
+    'timer.short_break': '短い休憩_(分)',
+    'timer.long_break': '長い休憩_(分)',
+    'timer.apply': '変更を適用',
+    'timer.quick_profiles': 'クイック_プロファイル',
+
+    // Todo
+    'todo.title': 'Dev_タスク_ターミナル',
+    'todo.subtitle': 'サンドボックスモード • LocalStorage 保存',
+    'todo.task_title': 'タスクのタイトル',
+    'todo.placeholder': 'タスクの説明を入力...',
+    'todo.priority': '優先度',
+    'todo.module': 'モジュール',
+    'todo.add_btn': '[ 追加を実行 ]',
+    'todo.empty_status': '空'
   }
 };
