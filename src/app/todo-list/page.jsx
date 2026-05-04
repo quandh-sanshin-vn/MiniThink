@@ -329,7 +329,7 @@ export default function TodoListPage() {
   const allProjectsList = activeWorkspace ? (workspaces[activeWorkspace] || []) : [];
 
   // Lọc task
-  const filteredTasks = tasks.filter(task => {
+  const baseFilteredTasks = tasks.filter(task => {
     const matchesWorkspace = !activeWorkspace || task.domain === activeWorkspace;
     const matchesSearch = searchQuery === '' || 
       task.id.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -340,6 +340,23 @@ export default function TodoListPage() {
 
     return matchesWorkspace && matchesSearch && matchesProject && matchesStatus;
   });
+
+  // Bổ sung Task Cha nếu Task Con thỏa mãn điều kiện lọc
+  const filteredTaskIds = new Set(baseFilteredTasks.map(t => t.externalId));
+  let hasMissingParents = true;
+  while(hasMissingParents) {
+    hasMissingParents = false;
+    const currentIds = Array.from(filteredTaskIds);
+    for (const id of currentIds) {
+      const task = tasks.find(t => t.externalId === id);
+      if (task && task.parentIssueId && !filteredTaskIds.has(task.parentIssueId)) {
+        filteredTaskIds.add(task.parentIssueId);
+        hasMissingParents = true;
+      }
+    }
+  }
+
+  const filteredTasks = tasks.filter(t => filteredTaskIds.has(t.externalId));
 
   // Build tree from filtered tasks
   const buildTree = (taskList) => {
