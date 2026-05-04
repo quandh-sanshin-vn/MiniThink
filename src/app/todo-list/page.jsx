@@ -33,20 +33,20 @@ const SelectDropdown = ({ value, options, onChange, placeholder, className = "" 
       <button 
         type="button"
         onClick={() => setIsOpen(!isOpen)} 
-        className="dark:bg-neutral-900 bg-white dark:border-neutral-800 border-neutral-300 p-2 px-3 text-xs dark:text-slate-300 text-slate-800 hover:border-blue-500 font-mono w-full flex justify-between items-center uppercase transition-colors"
+        className="bg-neutral-900 border-neutral-800 p-2 px-3 text-xs text-slate-300 hover:border-blue-500 font-mono w-full flex justify-between items-center uppercase transition-colors"
       >
         <span className="truncate pr-2">{selected?.label || placeholder}</span>
         <ChevronDown size={14} className={`transition-transform shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       
       {isOpen && (
-        <div className="absolute top-full left-0 mt-1 w-full dark:bg-[#09090b] bg-white dark:border-blue-500/50 border-blue-500/30 shadow-2xl z-50 max-h-60 overflow-y-auto custom-scrollbar">
+        <div className="absolute top-full left-0 mt-1 w-full bg-[#09090b] border-blue-500/50 shadow-2xl z-50 max-h-60 overflow-y-auto custom-scrollbar">
           {options.map(opt => (
               <button
               key={opt.value}
               type="button"
               onClick={() => { onChange(opt.value); setIsOpen(false); }}
-              className={`w-full text-left px-3 py-2 text-[11px] uppercase font-mono hover:bg-blue-500/20 transition-colors flex items-center ${value === opt.value ? 'dark:text-blue-400 text-blue-600 font-bold dark:bg-blue-500/10 bg-blue-50 border-l-2 border-blue-500' : 'dark:text-neutral-400 text-neutral-600 border-l-2 border-transparent'}`}
+              className={`w-full text-left px-3 py-2 text-[11px] uppercase font-mono hover:bg-blue-500/20 transition-colors flex items-center ${value === opt.value ? 'text-blue-400 font-bold bg-blue-500/10 border-l-2 border-blue-500' : 'text-neutral-400 border-l-2 border-transparent'}`}
             >
               <span className="truncate">{opt.label}</span>
             </button>
@@ -68,7 +68,7 @@ const TaskItem = ({ task, depth = 0 }) => {
         p-4 group hover:border-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] 
         transition-all duration-300 transform hover:-translate-y-0.5
         flex flex-col md:flex-row justify-between items-start md:items-center gap-4
-        dark:bg-[#061224] dark:hover:border-blue-400 bg-white hover:border-blue-500
+        bg-[#061224] hover:border-blue-400
       `}>
         {/* Glow effect on hover */}
         <div className="absolute inset-0 bg-blue-500/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
@@ -76,31 +76,31 @@ const TaskItem = ({ task, depth = 0 }) => {
         <div className="relative z-10 flex-1 flex flex-col gap-2 w-full">
           <div className="flex gap-2 items-center flex-wrap">
             <a href={task.url} target="_blank" rel="noopener noreferrer" 
-               className="text-[10px] text-blue-500 dark:text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-1 font-bold">
+               className="text-[10px] text-blue-500 text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-1 font-bold">
               {task.id} <ExternalLink size={10} />
             </a>
             <span className={`text-[10px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold`}>
               {priority.id}
             </span>
-            <span className="text-[10px] text-neutral-600 dark:text-neutral-500 border border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px]" title={task.projectName}>
+            <span className="text-[10px] text-neutral-600 text-neutral-500 border border-neutral-300 border-neutral-800 bg-neutral-100 bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px]" title={task.projectName}>
               {task.projectName || task.module}
             </span>
-            <span className={`text-[10px] px-1.5 py-0.5 uppercase border border-neutral-300 dark:border-neutral-700 ${task.status === 'DONE' ? 'text-emerald-600 dark:text-emerald-500 border-emerald-500/30 bg-emerald-500/10' : 'text-neutral-500 dark:text-neutral-400'}`}>
+            <span className={`text-[10px] px-1.5 py-0.5 uppercase border border-neutral-300 border-neutral-700 ${task.status === 'DONE' ? 'text-emerald-600 text-emerald-500 border-emerald-500/30 bg-emerald-500/10' : 'text-neutral-500 text-neutral-400'}`}>
               {task.status}
             </span>
             {task.issueType && (
-              <span className="text-[10px] text-purple-600 dark:text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase">
+              <span className="text-[10px] text-purple-600 text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase">
                 {task.issueType}
               </span>
             )}
           </div>
-          <p className={`text-sm transition-colors ${task.status === 'DONE' ? 'text-neutral-400 dark:text-neutral-500 line-through' : 'text-slate-800 dark:text-blue-100 group-hover:text-blue-600 dark:group-hover:text-blue-300'}`}>
+          <p className={`text-sm transition-colors ${task.status === 'DONE' ? 'text-neutral-400 text-neutral-500 line-through' : 'text-slate-800 text-blue-100 group-hover:text-blue-600 group-hover:text-blue-300'}`}>
             {task.title}
           </p>
         </div>
         
         {task.assigneeName && (
-           <div className="relative z-10 text-[10px] text-neutral-500 flex items-center gap-1 uppercase border border-neutral-200 dark:border-neutral-800 px-2 py-1 bg-neutral-50 dark:bg-neutral-900/50">
+           <div className="relative z-10 text-[10px] text-neutral-500 flex items-center gap-1 uppercase border border-neutral-200 border-neutral-800 px-2 py-1 bg-neutral-50 bg-neutral-900/50">
              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
              {task.assigneeName}
            </div>
@@ -279,11 +279,11 @@ export default function TodoListPage() {
       ? Object.values(workspaces).flat() 
       : (workspaces[activeWorkspace] || []);
 
-  if (!isLoaded) return <div className="min-h-screen dark:bg-[#09090b] bg-slate-50 flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
+  if (!isLoaded) return <div className="min-h-screen bg-[#09090b] flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
 
   return (
-    <div className="min-h-screen dark:bg-[#09090b] bg-slate-50 text-slate-800 dark:text-slate-300 font-mono flex flex-col">
-      <div className="flex flex-col md:flex-row justify-between md:items-center dark:bg-black bg-white border-b dark:border-neutral-800 border-neutral-200 pr-4">
+    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col">
+      <div className="flex flex-col md:flex-row justify-between md:items-center bg-black border-b border-neutral-800 pr-4">
          <ModuleHeader title={t('todo.title')} />
          
          {/* WORKSPACE INDICATOR IN HEADER */}
@@ -313,7 +313,7 @@ export default function TodoListPage() {
 
       <div className="flex-1 p-4 lg:p-8 flex flex-col">
         {/* ACTION BAR */}
-        <div className="mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 dark:bg-black bg-white border dark:border-neutral-800 border-neutral-200 p-4">
+        <div className="mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 bg-black border border-neutral-800 p-4">
           
           {/* Filters */}
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
@@ -322,7 +322,7 @@ export default function TodoListPage() {
               placeholder={t('todo.search')}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="dark:bg-neutral-900 bg-white border dark:border-neutral-800 border-neutral-300 p-2 px-3 text-xs dark:text-slate-300 text-slate-800 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-48 dark:placeholder:text-neutral-600 placeholder:text-neutral-400"
+              className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-48 placeholder:text-neutral-600"
             />
             
             <SelectDropdown 
@@ -357,11 +357,11 @@ export default function TodoListPage() {
         </div>
 
         {/* BOARD (SINGLE LIST) */}
-        <div className="flex-1 overflow-y-auto dark:bg-black bg-white border dark:border-neutral-800 border-neutral-200 p-4 relative">
-          <div className="flex justify-between items-center mb-6 sticky top-0 dark:bg-black bg-white py-2 z-20 border-b dark:border-neutral-800 border-neutral-200">
-            <h2 className="text-xl font-bold tracking-widest dark:text-slate-300 text-slate-800 flex items-center gap-2">
+        <div className="flex-1 overflow-y-auto bg-black border border-neutral-800 p-4 relative">
+          <div className="flex justify-between items-center mb-6 sticky top-0 bg-black py-2 z-20 border-b border-neutral-800">
+            <h2 className="text-xl font-bold tracking-widest text-slate-300 flex items-center gap-2">
               <Terminal size={20} className="text-emerald-500" /> {t('todo.queue')}
-              <span className="text-xs dark:bg-neutral-900 bg-neutral-100 text-neutral-500 px-2 py-0.5 font-normal ml-2">{filteredTasks.length}</span>
+              <span className="text-xs bg-neutral-900 text-neutral-500 px-2 py-0.5 font-normal ml-2">{filteredTasks.length}</span>
             </h2>
             <div className="flex gap-4 items-center">
               {isSyncing && <span className="text-xs text-blue-500 animate-pulse uppercase tracking-widest hidden md:inline">{t('todo.syncing')}</span>}
@@ -390,7 +390,7 @@ export default function TodoListPage() {
             ))}
 
             {taskTree.length === 0 && (
-              <div className="text-center flex flex-col items-center justify-center text-neutral-400 text-xs py-16 uppercase tracking-widest border border-dashed dark:border-neutral-800 border-neutral-300 gap-4">
+              <div className="text-center flex flex-col items-center justify-center text-neutral-400 text-xs py-16 uppercase tracking-widest border border-dashed border-neutral-800 gap-4">
                 <Terminal size={32} className="opacity-20" />
                 <p>{t('todo.empty_status') || 'NO TASKS IN QUEUE. SYNC BACKLOG OR CREATE NEW TASK.'}</p>
               </div>
@@ -400,8 +400,8 @@ export default function TodoListPage() {
 
         {/* SYS CONFIG MODAL */}
         {showConfig && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 dark:bg-black/90 bg-slate-900/50 backdrop-blur-sm">
-            <div className="dark:bg-[#09090b] bg-white border border-blue-500 w-full max-w-lg p-6 shadow-2xl flex flex-col gap-6">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 bg-slate-900/50 backdrop-blur-sm">
+            <div className="bg-[#09090b] border border-blue-500 w-full max-w-lg p-6 shadow-2xl flex flex-col gap-6">
               <h2 className="text-xl font-bold text-blue-500 uppercase tracking-widest border-b border-blue-500/30 pb-4 flex justify-between">
                 <span>SYSTEM INTEGRATION CONFIG</span>
                 <button onClick={() => setShowConfig(false)} className="text-neutral-500 hover:text-blue-500"><X size={20} /></button>
@@ -410,19 +410,19 @@ export default function TodoListPage() {
               <form onSubmit={saveConfig} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
                   <label className="text-[10px] text-neutral-500 uppercase">Platform</label>
-                  <input type="text" value="BACKLOG" disabled className="w-full dark:bg-neutral-900 bg-neutral-100 border dark:border-neutral-800 border-neutral-300 p-3 text-sm text-neutral-500 font-mono" />
+                  <input type="text" value="BACKLOG" disabled className="w-full bg-neutral-900 border border-neutral-800 p-3 text-sm text-neutral-500 font-mono" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[10px] text-blue-500 uppercase">Domain (ex: sanshinbts.backlog.com)</label>
-                  <input type="text" value={configData.domain} onChange={e => setConfigData({ ...configData, domain: e.target.value })} placeholder="your-space.backlog.com" className="w-full dark:bg-black bg-white border dark:border-blue-500/50 border-blue-500/30 p-3 text-sm dark:text-blue-100 text-slate-800 focus:outline-none focus:border-blue-500 font-mono" required />
+                  <input type="text" value={configData.domain} onChange={e => setConfigData({ ...configData, domain: e.target.value })} placeholder="your-space.backlog.com" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 text-slate-800 focus:outline-none focus:border-blue-500 font-mono" required />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[10px] text-blue-500 uppercase">API Key</label>
-                  <input type="password" value={configData.apiKey} onChange={e => setConfigData({ ...configData, apiKey: e.target.value })} placeholder="********************" className="w-full dark:bg-black bg-white border dark:border-blue-500/50 border-blue-500/30 p-3 text-sm dark:text-blue-100 text-slate-800 focus:outline-none focus:border-blue-500 font-mono" required />
+                  <input type="password" value={configData.apiKey} onChange={e => setConfigData({ ...configData, apiKey: e.target.value })} placeholder="********************" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 text-slate-800 focus:outline-none focus:border-blue-500 font-mono" required />
                 </div>
 
-                <div className="flex gap-4 mt-4 pt-4 border-t dark:border-neutral-800 border-neutral-200">
-                  <button type="submit" disabled={isSyncing} className="w-full py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-600 dark:text-blue-500 hover:bg-blue-500 hover:text-white dark:hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
+                <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
+                  <button type="submit" disabled={isSyncing} className="w-full py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
                     {isSyncing ? <RefreshCw size={14} className="animate-spin" /> : 'SAVE & FULL SYNC'}
                   </button>
                 </div>
@@ -433,8 +433,8 @@ export default function TodoListPage() {
 
         {/* CREATE TASK MODAL */}
         {showCreateModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 dark:bg-black/90 bg-slate-900/50 backdrop-blur-sm">
-            <div className="dark:bg-[#09090b] bg-white border border-emerald-500 w-full max-w-xl p-6 shadow-2xl flex flex-col gap-6">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 bg-slate-900/50 backdrop-blur-sm">
+            <div className="bg-[#09090b] border border-emerald-500 w-full max-w-xl p-6 shadow-2xl flex flex-col gap-6">
               <h2 className="text-xl font-bold text-emerald-500 uppercase tracking-widest border-b border-emerald-500/30 pb-4 flex justify-between">
                 <span>{t('todo.deploy_task')}</span>
                 <button onClick={() => setShowCreateModal(false)} className="text-neutral-500 hover:text-emerald-500"><X size={20} /></button>
@@ -442,8 +442,8 @@ export default function TodoListPage() {
 
               <form onSubmit={handleCreateTask} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-emerald-600 dark:text-emerald-500 uppercase">{t('todo.task_title')}</label>
-                  <input type="text" value={newTask.title} onChange={e => setNewTask({ ...newTask, title: e.target.value })} placeholder={t('todo.task_summary')} className="w-full dark:bg-black bg-white border dark:border-emerald-500/50 border-emerald-500/30 p-3 text-sm dark:text-emerald-100 text-slate-800 focus:outline-none focus:border-emerald-500 font-mono" autoFocus required />
+                  <label className="text-[10px] text-emerald-600 text-emerald-500 uppercase">{t('todo.task_title')}</label>
+                  <input type="text" value={newTask.title} onChange={e => setNewTask({ ...newTask, title: e.target.value })} placeholder={t('todo.task_summary')} className="w-full bg-black border border-emerald-500/50 p-3 text-sm text-emerald-100 focus:outline-none focus:border-emerald-500 font-mono" autoFocus required />
                 </div>
 
                 <div className="flex gap-4">
@@ -469,8 +469,8 @@ export default function TodoListPage() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 mt-4 pt-4 border-t dark:border-neutral-800 border-neutral-200">
-                  <button type="submit" className="w-full py-3 px-4 bg-emerald-500/10 border border-emerald-500 text-emerald-600 dark:text-emerald-500 hover:bg-emerald-500 hover:text-white dark:hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
+                <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
+                  <button type="submit" className="w-full py-3 px-4 bg-emerald-500/10 border border-emerald-500 text-emerald-600 text-emerald-500 hover:bg-emerald-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
                     <Plus size={14} /> {t('todo.deploy_task')}
                   </button>
                 </div>

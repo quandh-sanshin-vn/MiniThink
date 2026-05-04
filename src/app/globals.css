@@ -70,3 +70,19 @@ body {
   background-color: rgba(16, 185, 129, 0.3);
   color: #000000;
 }
+
+/* Additional Brutalist Overrides for Todo List */
+:root[data-theme='light'] .bg-\[\#061224\] { background-color: #ffffff !important; }
+:root[data-theme='light'] .bg-\[\#061224\]\/30 { background-color: #f8fafc !important; }
+:root[data-theme='light'] .border-blue-500\/50 { border-color: #bfdbfe !important; }
+:root[data-theme='light'] .border-blue-500\/30 { border-color: #dbeafe !important; }
+:root[data-theme='light'] .border-emerald-500\/50 { border-color: #a7f3d0 !important; }
+:root[data-theme='light'] .border-emerald-500\/30 { border-color: #d1fae5 !important; }
+:root[data-theme='light'] .text-blue-100 { color: #1e293b !important; }
+:root[data-theme='light'] .text-emerald-100 { color: #064e3b !important; }
+:root[data-theme='light'] .bg-black\/90 { background-color: rgba(15, 23, 42, 0.5) !important; }
+:root[data-theme='light'] .text-blue-400 { color: #2563eb !important; }
+:root[data-theme='light'] .bg-blue-500\/10 { background-color: #eff6ff !important; }
+:root[data-theme='light'] .text-emerald-500 { color: #059669 !important; }
+:root[data-theme='light'] .text-emerald-400 { color: #10b981 !important; }
+:root[data-theme='light'] .placeholder\:text-neutral-600::placeholder { color: #a1a1aa !important; }
