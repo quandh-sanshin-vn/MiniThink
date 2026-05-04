@@ -30,19 +30,19 @@ const SelectDropdown = ({ value, options, onChange, placeholder, className = "" 
 
   return (
     <div className={`relative ${className}`} ref={dropdownRef}>
-      <button 
+      <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)} 
+        onClick={() => setIsOpen(!isOpen)}
         className="bg-neutral-900 border-neutral-800 p-2 px-3 text-xs text-slate-300 hover:border-blue-500 font-mono w-full flex justify-between items-center uppercase transition-colors"
       >
         <span className="truncate pr-2">{selected?.label || placeholder}</span>
         <ChevronDown size={14} className={`transition-transform shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      
+
       {isOpen && (
         <div className="absolute top-full left-0 mt-1 w-full bg-[#09090b] border-blue-500/50 shadow-2xl z-50 max-h-60 overflow-y-auto custom-scrollbar">
           {options.map(opt => (
-              <button
+            <button
               key={opt.value}
               type="button"
               onClick={() => { onChange(opt.value); setIsOpen(false); }}
@@ -63,15 +63,15 @@ const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
   const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
   const isMyTask = currentUserName && task.assigneeName === currentUserName;
   const subtasks = task.children || [];
-  const displaySubtasks = showMySubtasksOnly 
-      ? subtasks.filter(child => child.assigneeName === currentUserName)
-      : subtasks;
+  const displaySubtasks = showMySubtasksOnly
+    ? subtasks.filter(child => child.assigneeName === currentUserName)
+    : subtasks;
 
   // Status Colors
   let statusBorder = 'border-blue-500/30';
   let statusBg = 'bg-blue-500/10';
   let statusText = 'text-blue-500';
-  
+
   if (task.status === 'DONE') {
     statusBorder = 'border-emerald-500/30';
     statusBg = 'bg-emerald-500/10';
@@ -83,16 +83,16 @@ const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
   }
 
   // Theme support
-  const bgClass = depth > 0 
-    ? 'bg-slate-100 dark:bg-[#0f172a]/80' 
+  const bgClass = depth > 0
+    ? 'bg-slate-100 dark:bg-[#0f172a]/80'
     : (isMyTask ? 'bg-emerald-50 dark:bg-[#061224]' : 'bg-white dark:bg-[#061224]');
-    
-  const borderClass = depth > 0 
-    ? 'border-slate-300 dark:border-slate-800' 
+
+  const borderClass = depth > 0
+    ? 'border-slate-300 dark:border-slate-800'
     : (isMyTask ? 'border-emerald-500/50' : 'border-slate-200 dark:border-neutral-800');
 
-  const textClass = depth > 0 
-    ? 'text-slate-700 dark:text-slate-300' 
+  const textClass = depth > 0
+    ? 'text-slate-700 dark:text-slate-300'
     : (task.status === 'DONE' ? 'text-slate-500 dark:text-neutral-500' : 'text-slate-800 dark:text-blue-100');
 
   const handleCopy = async (e) => {
@@ -103,8 +103,8 @@ const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
       const blobHtml = new Blob([htmlText], { type: "text/html" });
       const blobPlain = new Blob([plainText], { type: "text/plain" });
       const data = [new window.ClipboardItem({
-          "text/plain": blobPlain,
-          "text/html": blobHtml
+        "text/plain": blobPlain,
+        "text/html": blobHtml
       })];
       await navigator.clipboard.write(data);
       setCopied(true);
@@ -113,7 +113,7 @@ const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
       console.error("Failed to copy:", err);
     }
   };
-  
+
   return (
     <div className={`flex flex-col gap-1.5 ${depth > 0 ? 'ml-6 border-l-2 border-slate-300 dark:border-neutral-800 pl-3 mt-1.5' : ''}`}>
       <div className={`
@@ -128,72 +128,72 @@ const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
         <div className="absolute inset-0 bg-blue-500/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
 
         <div className="relative z-10 flex-1 flex flex-wrap items-center gap-2 w-full">
-            <a href={task.url} target="_blank" rel="noopener noreferrer" 
-               className="text-[10px] text-blue-600 dark:text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-1 font-bold shrink-0">
-              {task.id} <ExternalLink size={10} />
-            </a>
-            
-            <p className={`text-[13px] leading-tight transition-colors font-medium mr-2 ${textClass} group-hover:text-blue-600 dark:group-hover:text-blue-300`}>
-              {task.title}
-            </p>
+          <a href={task.url} target="_blank" rel="noopener noreferrer"
+            className="text-[10px] text-blue-600 dark:text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-1 font-bold shrink-0">
+            {task.id} <ExternalLink size={10} />
+          </a>
 
-            <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold shrink-0`}>
-              {priority.id}
+          <p className={`text-[13px] leading-tight transition-colors font-medium mr-2 ${textClass} group-hover:text-blue-600 dark:group-hover:text-blue-300`}>
+            {task.title}
+          </p>
+
+          <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold shrink-0`}>
+            {priority.label}
+          </span>
+          <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${statusBorder} ${statusBg} ${statusText} font-bold shrink-0`}>
+            {task.statusText || task.status}
+          </span>
+          <span className="text-[9px] text-slate-600 dark:text-neutral-500 border border-slate-300 dark:border-neutral-800 bg-slate-100 dark:bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px] shrink-0" title={task.projectName}>
+            {task.projectName || task.module}
+          </span>
+          {task.issueType && (
+            <span className="text-[9px] text-purple-600 dark:text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase shrink-0">
+              {task.issueType}
             </span>
-            <span className={`text-[9px] px-1.5 py-0.5 uppercase border ${statusBorder} ${statusBg} ${statusText} font-bold shrink-0`}>
-              {task.statusText || task.status}
-            </span>
-            <span className="text-[9px] text-slate-600 dark:text-neutral-500 border border-slate-300 dark:border-neutral-800 bg-slate-100 dark:bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px] shrink-0" title={task.projectName}>
-              {task.projectName || task.module}
-            </span>
-            {task.issueType && (
-              <span className="text-[9px] text-purple-600 dark:text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase shrink-0">
-                {task.issueType}
-              </span>
-            )}
+          )}
         </div>
-        
+
         <div className="flex items-center gap-2 relative z-10 shrink-0 mt-2 md:mt-0">
           {task.assigneeName && (
-             <div className={`text-[9px] flex items-center gap-1 uppercase border px-1.5 py-0.5 ${isMyTask ? 'text-emerald-600 dark:text-emerald-400 border-emerald-500/50 bg-emerald-500/10 font-bold' : 'text-slate-600 dark:text-neutral-500 border-slate-300 dark:border-neutral-800 bg-slate-100 dark:bg-neutral-900/50'}`}>
-               <span className={`w-1 h-1 rounded-full ${isMyTask ? 'bg-emerald-500 dark:bg-emerald-400 animate-pulse' : 'bg-slate-400 dark:bg-neutral-500'}`}></span>
-               {task.assigneeName}
-             </div>
+            <div className={`text-[9px] flex items-center gap-1 uppercase border px-1.5 py-0.5 ${isMyTask ? 'text-emerald-600 dark:text-emerald-400 border-emerald-500/50 bg-emerald-500/10 font-bold' : 'text-slate-600 dark:text-neutral-500 border-slate-300 dark:border-neutral-800 bg-slate-100 dark:bg-neutral-900/50'}`}>
+              <span className={`w-1 h-1 rounded-full ${isMyTask ? 'bg-emerald-500 dark:bg-emerald-400 animate-pulse' : 'bg-slate-400 dark:bg-neutral-500'}`}></span>
+              {task.assigneeName}
+            </div>
           )}
-          
-          <button 
-             onClick={handleCopy}
-             title="Copy task with link"
-             className={`text-[9px] uppercase font-bold border px-1.5 py-0.5 flex items-center gap-1 transition-colors ${copied ? 'border-emerald-500 text-emerald-600 dark:text-emerald-500 bg-emerald-500/10' : 'border-slate-300 dark:border-neutral-700 text-slate-600 dark:text-neutral-400 hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400'}`}
+
+          <button
+            onClick={handleCopy}
+            title="Copy task with link"
+            className={`text-[9px] uppercase font-bold border px-1.5 py-0.5 flex items-center gap-1 transition-colors ${copied ? 'border-emerald-500 text-emerald-600 dark:text-emerald-500 bg-emerald-500/10' : 'border-slate-300 dark:border-neutral-700 text-slate-600 dark:text-neutral-400 hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400'}`}
           >
-             <Copy size={10} /> {copied ? 'COPIED' : 'COPY'}
+            <Copy size={10} /> {copied ? 'COPIED' : 'COPY'}
           </button>
-          
+
           {subtasks.length > 0 && (
-            <button 
-               onClick={(e) => { e.stopPropagation(); setShowMySubtasksOnly(!showMySubtasksOnly); }}
-               className={`text-[9px] uppercase font-bold border px-1.5 py-0.5 flex items-center gap-1 transition-colors ${showMySubtasksOnly ? 'border-amber-500 text-amber-600 dark:text-amber-500 bg-amber-500/10' : 'border-slate-300 dark:border-neutral-700 text-slate-600 dark:text-neutral-400 hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400'}`}
+            <button
+              onClick={(e) => { e.stopPropagation(); setShowMySubtasksOnly(!showMySubtasksOnly); }}
+              className={`text-[9px] uppercase font-bold border px-1.5 py-0.5 flex items-center gap-1 transition-colors ${showMySubtasksOnly ? 'border-amber-500 text-amber-600 dark:text-amber-500 bg-amber-500/10' : 'border-slate-300 dark:border-neutral-700 text-slate-600 dark:text-neutral-400 hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400'}`}
             >
-               {showMySubtasksOnly ? 'ALL SUBTASKS' : 'MY SUBTASKS'}
+              {showMySubtasksOnly ? 'ALL SUBTASKS' : 'MY SUBTASKS'}
             </button>
           )}
 
           {!task.parentIssueId && (
-            <button 
-               onClick={(e) => { e.stopPropagation(); onQaClick(task); }}
-               className="text-[9px] uppercase font-bold border border-blue-500/50 text-blue-500 dark:text-blue-400 hover:bg-blue-500 hover:text-white transition-colors px-1.5 py-0.5 flex items-center gap-1"
+            <button
+              onClick={(e) => { e.stopPropagation(); onQaClick(task); }}
+              className="text-[9px] uppercase font-bold border border-blue-500/50 text-blue-500 dark:text-blue-400 hover:bg-blue-500 hover:text-white transition-colors px-1.5 py-0.5 flex items-center gap-1"
             >
-               + QA
+              + QA
             </button>
           )}
         </div>
       </div>
-      
+
       {displaySubtasks.length > 0 && (
         <div className="flex flex-col gap-1.5">
-           {displaySubtasks.map(child => (
-             <TaskItem key={child.id} task={child} depth={depth + 1} onQaClick={onQaClick} currentUserName={currentUserName} />
-           ))}
+          {displaySubtasks.map(child => (
+            <TaskItem key={child.id} task={child} depth={depth + 1} onQaClick={onQaClick} currentUserName={currentUserName} />
+          ))}
         </div>
       )}
     </div>
@@ -347,19 +347,19 @@ export default function TodoListPage() {
         targetTask = parentTask;
       }
     }
-    
+
     setQaTaskInfo(targetTask);
     setQaForm({ featureName: targetTask.title, shortDesc: '', assigneeId: '' });
     setShowQaModal(true);
     setQaMembers([]);
-    
+
     try {
       const res = await fetch(`/api/projects/members?domain=${task.domain}&projectKey=${task.module}`);
       if (res.ok) {
         const data = await res.json();
         setQaMembers(data.members || []);
         if (data.currentUser && data.currentUser.id) {
-           setQaForm(prev => ({ ...prev, assigneeId: data.currentUser.id.toString() }));
+          setQaForm(prev => ({ ...prev, assigneeId: data.currentUser.id.toString() }));
         }
       }
     } catch (error) {
@@ -370,7 +370,7 @@ export default function TodoListPage() {
   const handleCreateQaSubmit = async (e) => {
     e.preventDefault();
     if (!qaForm.featureName || !qaForm.shortDesc) return;
-    
+
     setIsCreatingQa(true);
     try {
       const res = await fetch('/api/tasks/qa', {
@@ -405,8 +405,8 @@ export default function TodoListPage() {
   // Lọc task
   const baseFilteredTasks = tasks.filter(task => {
     const matchesWorkspace = !activeWorkspace || task.domain === activeWorkspace;
-    const matchesSearch = searchQuery === '' || 
-      task.id.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    const matchesSearch = searchQuery === '' ||
+      task.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
       task.title.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesProject = filterProject === 'ALL' || task.module === filterProject;
     const taskCurrentStatus = task.statusText || task.status;
@@ -418,7 +418,7 @@ export default function TodoListPage() {
   // Bổ sung Task Cha nếu Task Con thỏa mãn điều kiện lọc
   const filteredTaskIds = new Set(baseFilteredTasks.map(t => t.externalId));
   let hasMissingParents = true;
-  while(hasMissingParents) {
+  while (hasMissingParents) {
     hasMissingParents = false;
     const currentIds = Array.from(filteredTaskIds);
     for (const id of currentIds) {
@@ -437,7 +437,7 @@ export default function TodoListPage() {
     const map = {};
     const roots = [];
     taskList.forEach(t => map[t.externalId] = { ...t, children: [] });
-    
+
     taskList.forEach(t => {
       // Nếu task có parent và parent cũng nằm trong danh sách đang được render
       if (t.parentIssueId && map[t.parentIssueId]) {
@@ -457,42 +457,42 @@ export default function TodoListPage() {
   return (
     <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col">
       <div className="flex flex-col md:flex-row justify-between md:items-center bg-black border-b border-neutral-800 pr-4">
-         <ModuleHeader title={t('todo.title')} />
-         
-         {/* WORKSPACE INDICATOR IN HEADER */}
-         {Object.keys(workspaces).length > 0 && (
-           <div className="flex gap-4 text-xs pb-4 md:pb-0 px-4 md:px-0">
-             <span className="text-neutral-500 uppercase tracking-widest flex items-center gap-1 hidden md:flex">
-               <FolderSync size={14} /> {t('todo.connected')}
-             </span>
-             {Object.keys(workspaces).map(ws => (
-               <button 
-                  key={ws} 
-                  onClick={() => { setActiveWorkspace(ws); setFilterProject('ALL'); }}
-                  className={`transition-colors pb-0.5 border-b ${activeWorkspace === ws ? 'text-blue-400 border-blue-500' : 'text-neutral-500 border-transparent hover:text-blue-300'}`}
-               >
-                  {ws}
-               </button>
-             ))}
-           </div>
-         )}
+        <ModuleHeader title={t('todo.title')} />
+
+        {/* WORKSPACE INDICATOR IN HEADER */}
+        {Object.keys(workspaces).length > 0 && (
+          <div className="flex gap-4 text-xs pb-4 md:pb-0 px-4 md:px-0">
+            <span className="text-neutral-500 uppercase tracking-widest flex items-center gap-1 hidden md:flex">
+              <FolderSync size={14} /> {t('todo.connected')}
+            </span>
+            {Object.keys(workspaces).map(ws => (
+              <button
+                key={ws}
+                onClick={() => { setActiveWorkspace(ws); setFilterProject('ALL'); }}
+                className={`transition-colors pb-0.5 border-b ${activeWorkspace === ws ? 'text-blue-400 border-blue-500' : 'text-neutral-500 border-transparent hover:text-blue-300'}`}
+              >
+                {ws}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
-      <div className="flex-1 p-4 lg:p-8 flex flex-col">
+      <div className="flex-1 p-4 lg:p-4 flex flex-col">
         {/* ACTION BAR */}
-        <div className="mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 bg-black border border-neutral-800 p-4">
-          
+        <div className="mb-2 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 bg-black border border-neutral-800 p-4">
+
           {/* Filters */}
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-            <input 
+            <input
               type="text"
               placeholder={t('todo.search')}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-48 placeholder:text-neutral-600"
             />
-            
-            <SelectDropdown 
+
+            <SelectDropdown
               className="w-full sm:w-48"
               value={filterProject}
               onChange={setFilterProject}
@@ -502,7 +502,7 @@ export default function TodoListPage() {
               ]}
             />
 
-            <SelectDropdown 
+            <SelectDropdown
               className="w-full sm:w-48"
               value={filterStatus}
               onChange={setFilterStatus}
@@ -629,7 +629,7 @@ export default function TodoListPage() {
                 <div className="flex gap-4">
                   <div className="flex flex-col gap-2 flex-1">
                     <label className="text-[10px] text-neutral-500 uppercase">{t('todo.target_ws')}</label>
-                    <SelectDropdown 
+                    <SelectDropdown
                       value={newTask.domain}
                       onChange={(newDomain) => {
                         const newProject = workspaces[newDomain]?.[0]?.key || '';
@@ -641,7 +641,7 @@ export default function TodoListPage() {
 
                   <div className="flex flex-col gap-2 flex-1">
                     <label className="text-[10px] text-neutral-500 uppercase">{t('todo.target_prj')}</label>
-                    <SelectDropdown 
+                    <SelectDropdown
                       value={newTask.projectKey}
                       onChange={(newProject) => setNewTask({ ...newTask, projectKey: newProject })}
                       options={workspaces[newTask.domain]?.map(p => ({ value: p.key, label: `[${p.key}] ${p.name}` })) || []}
@@ -672,23 +672,23 @@ export default function TodoListPage() {
               <div className="text-xs text-neutral-500 mb-4 bg-blue-500/10 border-l-2 border-blue-500 p-2">
                 Tạo nhanh sub-task QA cho: <span className="font-bold text-blue-400">{qaTaskInfo.id}</span>
               </div>
-              
+
               <form onSubmit={handleCreateQaSubmit} className="flex flex-col gap-4">
                 <div>
                   <label className="block text-xs uppercase text-neutral-500 mb-1">Tên Feature</label>
-                  <input required type="text" value={qaForm.featureName} onChange={e => setQaForm({...qaForm, featureName: e.target.value})} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder="VD: Login Form" />
+                  <input required type="text" value={qaForm.featureName} onChange={e => setQaForm({ ...qaForm, featureName: e.target.value })} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder="VD: Login Form" />
                 </div>
-                
+
                 <div>
                   <label className="block text-xs uppercase text-neutral-500 mb-1">Mô tả tóm tắt (Issue)</label>
-                  <input required type="text" value={qaForm.shortDesc} onChange={e => setQaForm({...qaForm, shortDesc: e.target.value})} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder="VD: Lỗi hiển thị nút bấm" />
+                  <input required type="text" value={qaForm.shortDesc} onChange={e => setQaForm({ ...qaForm, shortDesc: e.target.value })} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder="VD: Lỗi hiển thị nút bấm" />
                 </div>
 
                 <div>
                   <label className="block text-xs uppercase text-neutral-500 mb-1">Assignee</label>
-                  <SelectDropdown 
+                  <SelectDropdown
                     value={qaForm.assigneeId}
-                    onChange={val => setQaForm({...qaForm, assigneeId: val})}
+                    onChange={val => setQaForm({ ...qaForm, assigneeId: val })}
                     options={[
                       { value: '', label: 'UNASSIGNED' },
                       ...qaMembers.map(m => ({ value: m.id.toString(), label: m.name }))
