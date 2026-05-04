@@ -65,6 +65,7 @@ export async function POST(request) {
 
       const nextReviewDate = new Date();
       nextReviewDate.setDate(nextReviewDate.getDate() + newI);
+      nextReviewDate.setHours(0, 0, 0, 0);
 
       await prisma.learningProgress.update({
         where: { id: progress.id },
