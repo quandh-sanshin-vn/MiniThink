@@ -130,13 +130,28 @@ export const dictionaries = {
 
     // Todo
     'todo.title': 'Dev_Task_Terminal',
-    'todo.subtitle': 'Chế độ Sandbox • Lưu trữ trên LocalStorage',
+    'todo.subtitle': 'Chế độ DB cục bộ • Tốc độ cao',
     'todo.task_title': 'Tiêu Đề Task',
     'todo.placeholder': 'Nhập mô tả công việc...',
     'todo.priority': 'Mức_Độ',
     'todo.module': 'Phân_Hệ',
     'todo.add_btn': '[ THÊM_TASK ]',
-    'todo.empty_status': 'Trống'
+    'todo.empty_status': 'KHÔNG CÓ TASK NÀO TRONG HÀNG ĐỢI. HÃY SYNC TỪ CLOUD HOẶC TẠO TASK MỚI.',
+    'todo.connected': 'ĐÃ_KẾT_NỐI:',
+    'todo.search': 'Tìm mã ID, tiêu đề...',
+    'todo.all_projects': 'TẤT CẢ DỰ ÁN',
+    'todo.all_statuses': 'TẤT CẢ TRẠNG THÁI',
+    'todo.new_task': 'TASK_MỚI',
+    'todo.sys_config': 'CẤU_HÌNH_HỆ_THỐNG',
+    'todo.syncing': '[ĐANG_ĐỒNG_BỘ...]',
+    'todo.deploy_task': 'TRIỂN KHAI TASK',
+    'todo.task_summary': 'Tóm tắt công việc...',
+    'todo.target_ws': 'Workspace đích',
+    'todo.target_prj': 'Project đích',
+    'todo.status.todo': 'CHƯA LÀM',
+    'todo.status.in_progress': 'ĐANG LÀM',
+    'todo.status.done': 'ĐÃ XONG',
+    'todo.queue': 'HÀNG_ĐỢI_TASK'
   },
   en: {
     // Layout
@@ -269,13 +284,28 @@ export const dictionaries = {
 
     // Todo
     'todo.title': 'Dev_Task_Terminal',
-    'todo.subtitle': 'Sandbox Mode • LocalStorage Persistence',
+    'todo.subtitle': 'Local DB Mode • High Speed',
     'todo.task_title': 'Task Title',
     'todo.placeholder': 'Enter task description...',
     'todo.priority': 'Priority',
     'todo.module': 'Module',
     'todo.add_btn': '[ EXECUTE_ADD ]',
-    'todo.empty_status': 'Empty'
+    'todo.empty_status': 'NO TASKS IN QUEUE. SYNC BACKLOG OR CREATE NEW TASK.',
+    'todo.connected': 'CONNECTED:',
+    'todo.search': 'Search ID, Title...',
+    'todo.all_projects': 'ALL PROJECTS',
+    'todo.all_statuses': 'ALL STATUSES',
+    'todo.new_task': 'NEW_TASK',
+    'todo.sys_config': 'SYS_CONFIG',
+    'todo.syncing': '[SYNCING_CLOUD...]',
+    'todo.deploy_task': 'DEPLOY NEW TASK',
+    'todo.task_summary': 'Task summary...',
+    'todo.target_ws': 'Target Workspace',
+    'todo.target_prj': 'Target Project',
+    'todo.status.todo': 'TODO',
+    'todo.status.in_progress': 'IN_PROGRESS',
+    'todo.status.done': 'DONE',
+    'todo.queue': 'TASK_QUEUE'
   },
   ja: {
     // Layout
@@ -408,12 +438,27 @@ export const dictionaries = {
 
     // Todo
     'todo.title': 'Dev_タスク_ターミナル',
-    'todo.subtitle': 'サンドボックスモード • LocalStorage 保存',
+    'todo.subtitle': 'ローカルDBモード • 高速',
     'todo.task_title': 'タスクのタイトル',
     'todo.placeholder': 'タスクの説明を入力...',
     'todo.priority': '優先度',
     'todo.module': 'モジュール',
     'todo.add_btn': '[ 追加を実行 ]',
-    'todo.empty_status': '空'
+    'todo.empty_status': 'キューにタスクがありません。クラウド同期するか作成してください。',
+    'todo.connected': '接続済み:',
+    'todo.search': 'ID、タイトルを検索...',
+    'todo.all_projects': 'すべてのプロジェクト',
+    'todo.all_statuses': 'すべてのステータス',
+    'todo.new_task': '新規タスク',
+    'todo.sys_config': 'システム設定',
+    'todo.syncing': '[同期中...]',
+    'todo.deploy_task': 'タスクのデプロイ',
+    'todo.task_summary': 'タスクの概要...',
+    'todo.target_ws': 'ターゲットワークスペース',
+    'todo.target_prj': 'ターゲットプロジェクト',
+    'todo.status.todo': '未着手',
+    'todo.status.in_progress': '進行中',
+    'todo.status.done': '完了',
+    'todo.queue': 'タスク_キュー'
   }
 };

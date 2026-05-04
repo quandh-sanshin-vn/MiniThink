@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Terminal, Plus, Settings, RefreshCw, ExternalLink, X, FolderSync } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Terminal, Plus, Settings, RefreshCw, ExternalLink, X, FolderSync, ChevronDown } from 'lucide-react';
 import ModuleHeader from '@/components/ModuleHeader';
 import { useLanguage } from '@/i18n/LanguageContext';
 
@@ -11,6 +11,51 @@ const PRIORITIES = [
   { id: 'P2', label: 'NORMAL', color: 'text-blue-500', bg: 'bg-blue-500/10', border: 'border-blue-500/30' },
   { id: 'P3', label: 'LOW', color: 'text-neutral-500', bg: 'bg-neutral-800', border: 'border-neutral-700' },
 ];
+
+const SelectDropdown = ({ value, options, onChange, placeholder, className = "" }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const selected = options.find(o => o.value === value) || options[0];
+
+  return (
+    <div className={`relative ${className}`} ref={dropdownRef}>
+      <button 
+        type="button"
+        onClick={() => setIsOpen(!isOpen)} 
+        className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 hover:border-blue-500 font-mono w-full flex justify-between items-center uppercase transition-colors"
+      >
+        <span className="truncate pr-2">{selected?.label || placeholder}</span>
+        <ChevronDown size={14} className={`transition-transform shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+      
+      {isOpen && (
+        <div className="absolute top-full left-0 mt-1 w-full bg-[#09090b] border border-blue-500/50 shadow-2xl z-50 max-h-60 overflow-y-auto custom-scrollbar">
+          {options.map(opt => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => { onChange(opt.value); setIsOpen(false); }}
+              className={`w-full text-left px-3 py-2 text-[11px] uppercase font-mono hover:bg-blue-500/20 transition-colors flex items-center ${value === opt.value ? 'text-blue-400 font-bold bg-blue-500/10 border-l-2 border-blue-500' : 'text-neutral-400 border-l-2 border-transparent'}`}
+            >
+              <span className="truncate">{opt.label}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const TaskItem = ({ task, depth = 0 }) => {
   const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
@@ -245,7 +290,7 @@ export default function TodoListPage() {
          {Object.keys(workspaces).length > 0 && (
            <div className="flex gap-4 text-xs pb-4 md:pb-0 px-4 md:px-0">
              <span className="text-neutral-500 uppercase tracking-widest flex items-center gap-1 hidden md:flex">
-               <FolderSync size={14} /> CONNECTED:
+               <FolderSync size={14} /> {t('todo.connected')}
              </span>
              <button 
                 onClick={() => { setActiveWorkspace('ALL'); setFilterProject('ALL'); }}
@@ -274,40 +319,40 @@ export default function TodoListPage() {
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
             <input 
               type="text"
-              placeholder="Search ID, Title..."
+              placeholder={t('todo.search')}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-48 placeholder:text-neutral-600"
             />
             
-            <select 
+            <SelectDropdown 
+              className="w-full sm:w-48"
               value={filterProject}
-              onChange={e => setFilterProject(e.target.value)}
-              className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-40 uppercase"
-            >
-              <option value="ALL">ALL PROJECTS</option>
-              {allProjectsList.map(p => (
-                <option key={p.key} value={p.key}>[{p.key}]</option>
-              ))}
-            </select>
+              onChange={setFilterProject}
+              options={[
+                { value: 'ALL', label: t('todo.all_projects') },
+                ...allProjectsList.map(p => ({ value: p.key, label: `[${p.key}] ${p.name}` }))
+              ]}
+            />
 
-            <select 
+            <SelectDropdown 
+              className="w-full sm:w-48"
               value={filterStatus}
-              onChange={e => setFilterStatus(e.target.value)}
-              className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-40 uppercase"
-            >
-              <option value="ALL">ALL STATUSES</option>
-              <option value="TODO">TODO</option>
-              <option value="IN_PROGRESS">IN_PROGRESS</option>
-              <option value="DONE">DONE</option>
-            </select>
+              onChange={setFilterStatus}
+              options={[
+                { value: 'ALL', label: t('todo.all_statuses') },
+                { value: 'TODO', label: t('todo.status.todo') },
+                { value: 'IN_PROGRESS', label: t('todo.status.in_progress') },
+                { value: 'DONE', label: t('todo.status.done') }
+              ]}
+            />
           </div>
 
           <button
             onClick={openCreateModal}
             className="w-full lg:w-auto bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 p-2 px-6 hover:bg-emerald-500 hover:text-black transition-colors flex items-center justify-center gap-2 uppercase text-sm font-bold shrink-0"
           >
-            <Plus size={16} /> NEW_TASK
+            <Plus size={16} /> {t('todo.new_task')}
           </button>
         </div>
 
@@ -315,11 +360,11 @@ export default function TodoListPage() {
         <div className="flex-1 overflow-y-auto dark:bg-black bg-white border dark:border-neutral-800 border-neutral-200 p-4 relative">
           <div className="flex justify-between items-center mb-6 sticky top-0 dark:bg-black bg-white py-2 z-20 border-b dark:border-neutral-800 border-neutral-200">
             <h2 className="text-xl font-bold tracking-widest dark:text-slate-300 text-slate-800 flex items-center gap-2">
-              <Terminal size={20} className="text-emerald-500" /> TASK_QUEUE
+              <Terminal size={20} className="text-emerald-500" /> {t('todo.queue')}
               <span className="text-xs dark:bg-neutral-900 bg-neutral-100 text-neutral-500 px-2 py-0.5 font-normal ml-2">{filteredTasks.length}</span>
             </h2>
             <div className="flex gap-4 items-center">
-              {isSyncing && <span className="text-xs text-blue-500 animate-pulse uppercase tracking-widest hidden md:inline">[SYNCING_CLOUD...]</span>}
+              {isSyncing && <span className="text-xs text-blue-500 animate-pulse uppercase tracking-widest hidden md:inline">{t('todo.syncing')}</span>}
               {syncError && <span className="text-xs text-rose-500 uppercase tracking-widest">[{syncError}]</span>}
               <button
                 onClick={syncBacklogTasks}
@@ -334,7 +379,7 @@ export default function TodoListPage() {
                 className="text-neutral-400 hover:text-blue-500 transition-colors p-1 flex items-center gap-2"
                 title="System Config"
               >
-                <Settings size={16} /> <span className="text-xs uppercase hidden sm:inline">SYS_CONFIG</span>
+                <Settings size={16} /> <span className="text-xs uppercase hidden sm:inline">{t('todo.sys_config')}</span>
               </button>
             </div>
           </div>
@@ -391,53 +436,42 @@ export default function TodoListPage() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
             <div className="bg-[#09090b] border border-emerald-500 w-full max-w-xl p-6 shadow-2xl flex flex-col gap-6">
               <h2 className="text-xl font-bold text-emerald-500 uppercase tracking-widest border-b border-emerald-500/30 pb-4 flex justify-between">
-                <span>DEPLOY NEW TASK</span>
+                <span>{t('todo.deploy_task')}</span>
                 <button onClick={() => setShowCreateModal(false)} className="text-neutral-500 hover:text-white"><X size={20} /></button>
               </h2>
 
               <form onSubmit={handleCreateTask} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] text-emerald-500 uppercase">Task Summary</label>
-                  <input type="text" value={newTask.title} onChange={e => setNewTask({ ...newTask, title: e.target.value })} placeholder="Task summary..." className="w-full bg-black border border-emerald-500/50 p-3 text-sm text-emerald-100 focus:outline-none focus:border-emerald-500 font-mono" autoFocus required />
+                  <label className="text-[10px] text-emerald-500 uppercase">{t('todo.task_title')}</label>
+                  <input type="text" value={newTask.title} onChange={e => setNewTask({ ...newTask, title: e.target.value })} placeholder={t('todo.task_summary')} className="w-full bg-black border border-emerald-500/50 p-3 text-sm text-emerald-100 focus:outline-none focus:border-emerald-500 font-mono" autoFocus required />
                 </div>
 
                 <div className="flex gap-4">
                   <div className="flex flex-col gap-2 flex-1">
-                    <label className="text-[10px] text-neutral-500 uppercase">Target Workspace</label>
-                    <select
+                    <label className="text-[10px] text-neutral-500 uppercase">{t('todo.target_ws')}</label>
+                    <SelectDropdown 
                       value={newTask.domain}
-                      onChange={e => {
-                        const newDomain = e.target.value;
+                      onChange={(newDomain) => {
                         const newProject = workspaces[newDomain]?.[0]?.key || '';
                         setNewTask({ ...newTask, domain: newDomain, projectKey: newProject })
                       }}
-                      className="w-full bg-black border border-neutral-700 p-3 text-sm text-slate-300 focus:outline-none focus:border-emerald-500 font-mono"
-                    >
-                      {Object.keys(workspaces).length === 0 && <option value="">No workspace synced</option>}
-                      {Object.keys(workspaces).map(ws => (
-                        <option key={ws} value={ws}>{ws}</option>
-                      ))}
-                    </select>
+                      options={Object.keys(workspaces).map(ws => ({ value: ws, label: ws }))}
+                    />
                   </div>
 
                   <div className="flex flex-col gap-2 flex-1">
-                    <label className="text-[10px] text-neutral-500 uppercase">Target Project</label>
-                    <select
+                    <label className="text-[10px] text-neutral-500 uppercase">{t('todo.target_prj')}</label>
+                    <SelectDropdown 
                       value={newTask.projectKey}
-                      onChange={e => setNewTask({ ...newTask, projectKey: e.target.value })}
-                      className="w-full bg-black border border-neutral-700 p-3 text-sm text-slate-300 focus:outline-none focus:border-emerald-500 font-mono"
-                    >
-                      {(!workspaces[newTask.domain] || workspaces[newTask.domain].length === 0) && <option value="">No projects found</option>}
-                      {workspaces[newTask.domain]?.map(p => (
-                        <option key={p.key} value={p.key}>[{p.key}] {p.name}</option>
-                      ))}
-                    </select>
+                      onChange={(newProject) => setNewTask({ ...newTask, projectKey: newProject })}
+                      options={workspaces[newTask.domain]?.map(p => ({ value: p.key, label: `[${p.key}] ${p.name}` })) || []}
+                    />
                   </div>
                 </div>
 
                 <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
                   <button type="submit" className="w-full py-3 px-4 bg-emerald-500/10 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
-                    <Plus size={14} /> DEPLOY TASK TO CLOUD
+                    <Plus size={14} /> {t('todo.deploy_task')}
                   </button>
                 </div>
               </form>
