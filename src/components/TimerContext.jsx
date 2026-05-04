@@ -135,6 +135,7 @@ const toggleBgNoise = (play, volume) => {
 };
 
 export function TimerProvider({ children }) {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const [soundEnabled, setSoundEnabled] = useState(true);
   
@@ -143,6 +144,12 @@ export function TimerProvider({ children }) {
   const [breakPlaylist, setBreakPlaylist] = useState([]);
   const [currentPomodoroSongIndex, setCurrentPomodoroSongIndex] = useState(0);
   const [currentBreakSongIndex, setCurrentBreakSongIndex] = useState(0);
+
+  const [currentModeId, setCurrentModeId] = useState('pomodoro');
+  const [timeLeft, setTimeLeft] = useState(DEFAULT_SETTINGS.pomodoro * 60);
+  const [isRunning, setIsRunning] = useState(false);
+  const [sessions, setSessions] = useState(0);
+  const [targetEndTime, setTargetEndTime] = useState(null);
 
   // Fetch playlist on mount
   useEffect(() => {
@@ -189,23 +196,85 @@ export function TimerProvider({ children }) {
     },
   };
 
-  const [currentModeId, setCurrentModeId] = useState('pomodoro');
-  const currentMode = Object.values(MODES).find(m => m.id === currentModeId);
-  
-  const [timeLeft, setTimeLeft] = useState(settings.pomodoro * 60);
-  const [isRunning, setIsRunning] = useState(false);
-  const [sessions, setSessions] = useState(0);
+  const currentMode = Object.values(MODES).find(m => m.id === currentModeId) || MODES.POMODORO;
   
   const timerRef = useRef(null);
   const pomodoroAudioRef = useRef(null);
   const breakAudioRef = useRef(null);
 
+  // Initialize from LocalStorage
+  useEffect(() => {
+    const savedStr = localStorage.getItem('mervyn_timer_state');
+    if (savedStr) {
+      try {
+        const saved = JSON.parse(savedStr);
+        if (saved.settings) setSettings(saved.settings);
+        if (saved.soundEnabled !== undefined) setSoundEnabled(saved.soundEnabled);
+        if (saved.currentModeId) setCurrentModeId(saved.currentModeId);
+        if (saved.sessions) setSessions(saved.sessions);
+        if (saved.currentPomodoroSongIndex !== undefined) setCurrentPomodoroSongIndex(saved.currentPomodoroSongIndex);
+        if (saved.currentBreakSongIndex !== undefined) setCurrentBreakSongIndex(saved.currentBreakSongIndex);
+        
+        let newTimeLeft = saved.timeLeft;
+        let newIsRunning = saved.isRunning;
+        let newTargetEndTime = saved.targetEndTime;
+
+        // If it was running, calculate how much time has passed
+        if (saved.isRunning && saved.targetEndTime) {
+          const remaining = Math.round((saved.targetEndTime - Date.now()) / 1000);
+          if (remaining > 0) {
+            newTimeLeft = remaining;
+          } else {
+            // It finished while we were away
+            newTimeLeft = 0;
+            newIsRunning = false;
+            newTargetEndTime = null;
+            // NOTE: We do not trigger handleTimerComplete sound here as it could be hours later.
+            if (saved.currentModeId === 'pomodoro') {
+              setSessions(s => saved.sessions ? saved.sessions + 1 : 1);
+            }
+          }
+        } else {
+           // Not running, just restore timeLeft or use default if invalid
+           if (saved.timeLeft === undefined || saved.timeLeft < 0) {
+              const modeMinutes = saved.settings ? saved.settings[saved.currentModeId] : DEFAULT_SETTINGS.pomodoro;
+              newTimeLeft = modeMinutes * 60;
+           }
+        }
+        
+        setTimeLeft(newTimeLeft);
+        setIsRunning(newIsRunning);
+        setTargetEndTime(newTargetEndTime);
+      } catch (e) {
+        console.error('Failed to parse timer state:', e);
+      }
+    }
+    setIsLoaded(true);
+  }, []);
+
+  // Save state to LocalStorage whenever important things change
+  useEffect(() => {
+    if (!isLoaded) return;
+    const stateToSave = {
+      settings,
+      soundEnabled,
+      currentModeId,
+      timeLeft,
+      isRunning,
+      sessions,
+      targetEndTime,
+      currentPomodoroSongIndex,
+      currentBreakSongIndex
+    };
+    localStorage.setItem('mervyn_timer_state', JSON.stringify(stateToSave));
+  }, [settings, soundEnabled, currentModeId, timeLeft, isRunning, sessions, targetEndTime, currentPomodoroSongIndex, currentBreakSongIndex, isLoaded]);
+
   // Sync timeLeft when settings change (if not currently running)
   useEffect(() => {
-    if (!isRunning) {
+    if (isLoaded && !isRunning) {
       setTimeLeft(currentMode.minutes * 60);
     }
-  }, [settings, currentModeId]);
+  }, [settings, currentModeId, isLoaded]);
 
   // Handle Background Audio Transitions
   useEffect(() => {
@@ -245,23 +314,25 @@ export function TimerProvider({ children }) {
   }, [isRunning, currentModeId, soundEnabled, currentPomodoroSongIndex, currentBreakSongIndex]);
 
   useEffect(() => {
-    if (isRunning) {
+    if (isRunning && targetEndTime) {
       timerRef.current = setInterval(() => {
-        setTimeLeft((prevTime) => {
-          if (prevTime <= 1) {
-            clearInterval(timerRef.current);
-            setIsRunning(false);
-            handleTimerComplete();
-            return 0;
-          }
-          return prevTime - 1;
-        });
-      }, 1000);
+        const remaining = Math.round((targetEndTime - Date.now()) / 1000);
+        
+        if (remaining <= 0) {
+          clearInterval(timerRef.current);
+          setTimeLeft(0);
+          setIsRunning(false);
+          setTargetEndTime(null);
+          handleTimerComplete();
+        } else {
+          setTimeLeft(remaining);
+        }
+      }, 500); // 500ms interval for more responsive update
     } else {
       clearInterval(timerRef.current);
     }
     return () => clearInterval(timerRef.current);
-  }, [isRunning, currentModeId]);
+  }, [isRunning, targetEndTime, currentModeId]);
 
   const handleTimerComplete = () => {
     // Play alert sound locally generated
@@ -279,16 +350,26 @@ export function TimerProvider({ children }) {
   const switchMode = (modeId) => {
     setCurrentModeId(modeId);
     setIsRunning(false);
+    setTargetEndTime(null);
   };
 
   const toggleTimer = () => {
     if (timeLeft > 0) {
-      setIsRunning(!isRunning);
+      if (!isRunning) {
+        // Starting
+        setTargetEndTime(Date.now() + timeLeft * 1000);
+        setIsRunning(true);
+      } else {
+        // Pausing
+        setIsRunning(false);
+        setTargetEndTime(null);
+      }
     }
   };
 
   const resetTimer = () => {
     setIsRunning(false);
+    setTargetEndTime(null);
     setTimeLeft(currentMode.minutes * 60);
     if (currentModeId === 'pomodoro' && pomodoroAudioRef.current) {
       pomodoroAudioRef.current.currentTime = 0; 
