@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Terminal, Plus, ArrowRight, Check, Trash2, Edit3, MoveRight, MoveLeft } from 'lucide-react';
-import Link from 'next/link';
+import { Terminal, Plus, Trash2, Settings, RefreshCw, ExternalLink } from 'lucide-react';
 import ModuleHeader from '@/components/ModuleHeader';
 import { useLanguage } from '@/i18n/LanguageContext';
 
@@ -19,23 +18,80 @@ const MODULES = ['CORE', 'UI', 'SRS', 'TIMER', 'TODO', 'OTHER'];
 export default function TodoListPage() {
   const { t } = useLanguage();
   const [tasks, setTasks] = useState([]);
+  const [backlogTasks, setBacklogTasks] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [newTask, setNewTask] = useState({ title: '', priority: 'P2', module: 'CORE' });
+  const [showConfig, setShowConfig] = useState(false);
+  const [configData, setConfigData] = useState({ domain: '', apiKey: '' });
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [syncError, setSyncError] = useState('');
 
-  // Load from local storage
+  // Load from local storage and DB config
   useEffect(() => {
     const saved = localStorage.getItem('minithink_dev_tasks');
     if (saved) {
-      try {
-        setTasks(JSON.parse(saved));
-      } catch (e) {
-        console.error("Failed to parse tasks");
-      }
+      try { setTasks(JSON.parse(saved)); } catch (e) {}
     }
+    
+    // Fetch config and tasks
+    fetchConfigAndTasks();
     setIsLoaded(true);
   }, []);
 
-  // Save to local storage
+  const fetchConfigAndTasks = async () => {
+    setIsSyncing(true);
+    setSyncError('');
+    try {
+      // Get Config
+      const confRes = await fetch('/api/config');
+      if (confRes.ok) {
+        const conf = await confRes.json();
+        if (conf.domain) {
+           setConfigData({ domain: conf.domain, apiKey: conf.apiKey });
+        }
+      }
+      
+      // Get Tasks
+      const res = await fetch('/api/tasks');
+      if (res.ok) {
+        const data = await res.json();
+        if (data.tasks) {
+          setBacklogTasks(data.tasks);
+        }
+      } else {
+        const err = await res.json();
+        if (res.status !== 400) setSyncError(err.error || 'Sync failed'); // Ignore 400 not configured
+      }
+    } catch (e) {
+      setSyncError('Network Error');
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
+  const saveConfig = async (e) => {
+    e.preventDefault();
+    setIsSyncing(true);
+    try {
+      const res = await fetch('/api/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(configData)
+      });
+      if (res.ok) {
+        setShowConfig(false);
+        fetchConfigAndTasks();
+      } else {
+        setSyncError('Failed to save config');
+      }
+    } catch (e) {
+      setSyncError('Network Error');
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
+  // Save local tasks
   useEffect(() => {
     if (isLoaded) {
       localStorage.setItem('minithink_dev_tasks', JSON.stringify(tasks));
@@ -52,14 +108,15 @@ export default function TodoListPage() {
       priority: newTask.priority,
       module: newTask.module,
       status: 'TODO',
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
+      source: 'LOCAL'
     };
 
     setTasks([...tasks, task]);
-    setNewTask({ ...newTask, title: '' }); // keep last selected priority/module
+    setNewTask({ ...newTask, title: '' });
   };
 
-  const deleteTask = (id) => {
+  const deleteLocalTask = (id) => {
     setTasks(tasks.filter(t => t.id !== id));
   };
 
@@ -134,72 +191,149 @@ export default function TodoListPage() {
       </div>
 
       {/* BOARD */}
-      <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 min-h-0">
-        {STATUSES.map(status => (
-          <div key={status} className="flex flex-col h-full bg-black border border-neutral-800">
-            <div className={`p-3 border-b border-neutral-800 font-bold text-sm tracking-widest flex justify-between items-center ${status === 'DONE' ? 'text-emerald-500' : 'text-slate-400'}`}>
-              <span>// {status}</span>
-              <span className="text-xs bg-neutral-900 px-2 py-0.5">{tasks.filter(t => t.status === status).length}</span>
+      <div className="flex-1 overflow-y-auto bg-black border border-neutral-800 p-4">
+         <div className="flex justify-between items-center mb-6">
+            <h2 className="text-xl font-bold tracking-widest text-slate-300 flex items-center gap-2">
+              <Terminal size={20} className="text-emerald-500"/> TASK_QUEUE
+            </h2>
+            <div className="flex gap-4 items-center">
+              {isSyncing && <span className="text-xs text-blue-400 animate-pulse uppercase tracking-widest">[SYNCING...]</span>}
+              {syncError && <span className="text-xs text-rose-500 uppercase tracking-widest">[{syncError}]</span>}
+              <button 
+                onClick={fetchConfigAndTasks}
+                disabled={isSyncing}
+                className="text-neutral-500 hover:text-emerald-500 transition-colors p-1"
+                title="Sync Backlog"
+              >
+                <RefreshCw size={16} className={isSyncing ? "animate-spin" : ""} />
+              </button>
+              <button 
+                onClick={() => setShowConfig(true)}
+                className="text-neutral-500 hover:text-emerald-500 transition-colors p-1 flex items-center gap-2"
+                title="System Config"
+              >
+                <Settings size={16} /> <span className="text-xs uppercase hidden sm:inline">SYS_CONFIG</span>
+              </button>
             </div>
-            <div className="p-4 flex-1 overflow-y-auto flex flex-col gap-3">
-              {tasks.filter(t => t.status === status).sort((a, b) => a.priority.localeCompare(b.priority)).map(task => {
-                const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
-                
-                return (
-                  <div key={task.id} className="border border-neutral-800 bg-[#0c0c0e] p-3 group hover:border-neutral-600 transition-colors">
-                    <div className="flex justify-between items-start mb-2">
-                      <span className={`text-[10px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg}`}>
-                        {priority.id}
-                      </span>
-                      <span className="text-[10px] text-neutral-500 border border-neutral-800 px-1 uppercase">
-                        {task.module}
-                      </span>
-                    </div>
-                    
-                    <p className={`text-sm mb-4 ${status === 'DONE' ? 'text-neutral-500 line-through' : 'text-slate-300'}`}>
-                      {task.title}
-                    </p>
-                    
-                    <div className="flex justify-between items-center pt-2 border-t border-neutral-800/50 opacity-20 group-hover:opacity-100 transition-opacity">
-                      <button 
-                        onClick={() => deleteTask(task.id)}
-                        className="text-neutral-500 hover:text-rose-500 transition-colors p-1"
-                        title="Destroy Task"
-                      >
-                        <Trash2 size={14} />
-                      </button>
-                      
-                      <div className="flex gap-2">
-                        {status !== 'TODO' && (
-                          <button 
-                            onClick={() => moveTask(task.id, -1)}
-                            className="text-neutral-500 hover:text-emerald-400 transition-colors p-1"
-                          >
-                            <MoveLeft size={14} />
-                          </button>
+         </div>
+
+         <div className="flex flex-col gap-3">
+            {[...backlogTasks, ...tasks]
+               .sort((a, b) => a.priority.localeCompare(b.priority))
+               .map(task => {
+              const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
+              const isBacklog = task.source === 'BACKLOG';
+              
+              return (
+                <div key={task.id} className={`border ${isBacklog ? 'border-blue-500/30 bg-[#061224]' : 'border-neutral-800 bg-[#0c0c0e]'} p-4 group hover:border-neutral-600 transition-colors flex flex-col md:flex-row justify-between items-start md:items-center gap-4`}>
+                  
+                  <div className="flex-1 flex flex-col gap-2 w-full">
+                     <div className="flex gap-2 items-center flex-wrap">
+                        {isBacklog && (
+                           <a href={task.url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500/20 transition-colors flex items-center gap-1 font-bold">
+                              {task.id} <ExternalLink size={10} />
+                           </a>
                         )}
-                        {status !== 'DONE' && (
-                          <button 
-                            onClick={() => moveTask(task.id, 1)}
-                            className="text-neutral-500 hover:text-emerald-400 transition-colors p-1"
-                          >
-                            <MoveRight size={14} />
-                          </button>
-                        )}
-                      </div>
-                    </div>
+                        <span className={`text-[10px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold`}>
+                           {priority.id}
+                        </span>
+                        <span className="text-[10px] text-neutral-500 border border-neutral-800 px-1.5 py-0.5 uppercase">
+                           {task.module}
+                        </span>
+                        <span className={`text-[10px] px-1.5 py-0.5 uppercase border border-neutral-700 ${task.status === 'DONE' ? 'text-emerald-500 border-emerald-500/30' : 'text-neutral-400'}`}>
+                           {task.status}
+                        </span>
+                     </div>
+                     <p className={`text-sm ${task.status === 'DONE' ? 'text-neutral-500 line-through' : (isBacklog ? 'text-blue-100' : 'text-slate-300')}`}>
+                        {task.title}
+                     </p>
                   </div>
-                );
-              })}
-              {tasks.filter(t => t.status === status).length === 0 && (
-                <div className="text-center text-neutral-700 text-xs py-8 uppercase tracking-widest border border-dashed border-neutral-800">
-                  {t('todo.empty_status')}
+                  
+                  {!isBacklog && (
+                     <button 
+                       onClick={() => deleteLocalTask(task.id)}
+                       className="text-neutral-500 hover:text-rose-500 transition-colors p-2 md:opacity-0 md:group-hover:opacity-100 shrink-0 border border-transparent hover:border-rose-500/30"
+                       title="Destroy Task"
+                     >
+                       <Trash2 size={16} />
+                     </button>
+                  )}
                 </div>
-              )}
-            </div>
-          </div>
-        ))}
+              );
+            })}
+            
+            {tasks.length === 0 && backlogTasks.length === 0 && (
+              <div className="text-center text-neutral-700 text-xs py-12 uppercase tracking-widest border border-dashed border-neutral-800">
+                {t('todo.empty_status') || 'NO TASKS IN QUEUE'}
+              </div>
+            )}
+         </div>
       </div>
+
+      {/* SYS CONFIG MODAL */}
+      {showConfig && (
+         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+            <div className="bg-[#09090b] border border-blue-500 w-full max-w-lg p-6 shadow-2xl flex flex-col gap-6">
+               <h2 className="text-xl font-bold text-blue-500 uppercase tracking-widest border-b border-blue-500/30 pb-4">
+                  SYSTEM INTEGRATION CONFIG
+               </h2>
+               
+               <form onSubmit={saveConfig} className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-2">
+                     <label className="text-[10px] text-neutral-500 uppercase">Platform</label>
+                     <input 
+                       type="text" 
+                       value="BACKLOG"
+                       disabled
+                       className="w-full bg-neutral-900 border border-neutral-800 p-3 text-sm text-neutral-500 font-mono"
+                     />
+                  </div>
+                  
+                  <div className="flex flex-col gap-2">
+                     <label className="text-[10px] text-blue-400 uppercase">Domain (ex: sanshinbts.backlog.com)</label>
+                     <input 
+                       type="text" 
+                       value={configData.domain}
+                       onChange={e => setConfigData({...configData, domain: e.target.value})}
+                       placeholder="your-space.backlog.com"
+                       className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 focus:outline-none focus:border-blue-500 font-mono"
+                       required
+                     />
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                     <label className="text-[10px] text-blue-400 uppercase">API Key</label>
+                     <input 
+                       type="password" 
+                       value={configData.apiKey}
+                       onChange={e => setConfigData({...configData, apiKey: e.target.value})}
+                       placeholder="********************"
+                       className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 focus:outline-none focus:border-blue-500 font-mono"
+                       required
+                     />
+                     <p className="text-[10px] text-neutral-500">Go to Personal Settings {'>'} API to generate a new key.</p>
+                  </div>
+
+                  <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
+                     <button 
+                       type="button"
+                       onClick={() => setShowConfig(false)}
+                       className="flex-1 py-3 px-4 border border-neutral-700 text-neutral-400 hover:text-white transition-colors uppercase font-bold text-xs"
+                     >
+                       CANCEL
+                     </button>
+                     <button 
+                       type="submit"
+                       disabled={isSyncing}
+                       className="flex-1 py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2"
+                     >
+                       {isSyncing ? <RefreshCw size={14} className="animate-spin" /> : 'SAVE & SYNC'}
+                     </button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      )}
 
       </div>
     </div>
