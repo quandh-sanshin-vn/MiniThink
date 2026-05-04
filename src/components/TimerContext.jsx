@@ -462,12 +462,25 @@ export function TimerProvider({ children }) {
     currentPomodoroSongIndex, currentBreakSongIndex,
     currentModeId, currentMode, MODES,
     timeLeft, isRunning, sessions,
-    switchMode, toggleTimer, resetTimer, applyProfile, selectSong, formatTime
+    switchMode, toggleTimer, resetTimer, applyProfile, selectSong, formatTime,
+    autoplayFailed
   };
 
   return (
     <TimerContext.Provider value={value}>
       {children}
+      
+      {/* Global Indicator for Blocked Autoplay */}
+      {autoplayFailed && isRunning && soundEnabled && (
+        <div className="fixed bottom-4 right-4 bg-amber-500/10 border border-amber-500 text-amber-500 px-4 py-3 text-xs font-mono z-[9999] shadow-lg flex items-center gap-3">
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+          </span>
+          &gt; TRÌNH DUYỆT CHẶN PHÁT NHẠC. CLICK CHUỘT ĐỂ TIẾP TỤC.
+        </div>
+      )}
+
       {/* Global Audio Elements */}
       <audio ref={pomodoroAudioRef} src={pomodoroSrc} onEnded={playNextPomodoroSong} />
       <audio ref={breakAudioRef} src={breakSrc} onEnded={playRandomBreakSong} />
