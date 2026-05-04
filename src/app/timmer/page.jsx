@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, RotateCcw, Settings, Info, X, Volume2, VolumeX, Music } from 'lucide-react';
-import './timmer.css';
+import { Play, Pause, RotateCcw, Settings, Info, X, Volume2, VolumeX, Music, Terminal, ChevronLeft } from 'lucide-react';
+import Link from 'next/link';
 
 const DEFAULT_SETTINGS = {
   pomodoro: 25,
@@ -171,25 +171,22 @@ export default function PomodoroTimer() {
       id: 'pomodoro', 
       label: 'Pomodoro', 
       minutes: settings.pomodoro, 
-      color: '#2563eb', /* Blue */
-      colorAlpha: 'rgba(37, 99, 235, 0.2)', 
-      desc: pomodoroPlaylist.length > 0 ? `Đang phát: ${currentPomodoroSongName}` : 'Tập trung hoàn toàn.',
+      color: '#10b981', /* Emerald */
+      desc: pomodoroPlaylist.length > 0 ? `[PLAYING] ${currentPomodoroSongName}` : '> TẬP TRUNG HOÀN TOÀN',
     },
     SHORT_BREAK: { 
       id: 'shortBreak', 
       label: 'Short Break', 
       minutes: settings.shortBreak, 
-      color: '#64748b', /* Gray */
-      colorAlpha: 'rgba(100, 116, 139, 0.2)', 
-      desc: breakPlaylist.length > 0 ? `Đang phát: ${currentBreakSongName}` : 'Tiếng gió biển. Thư giãn mắt.',
+      color: '#f59e0b', /* Amber */
+      desc: breakPlaylist.length > 0 ? `[PLAYING] ${currentBreakSongName}` : '> NGHỈ NGẮN. THƯ GIÃN MẮT.',
     },
     LONG_BREAK: { 
       id: 'longBreak', 
       label: 'Long Break', 
       minutes: settings.longBreak, 
-      color: '#0f172a', /* Black */
-      colorAlpha: 'rgba(15, 23, 42, 0.2)', 
-      desc: breakPlaylist.length > 0 ? `Đang phát: ${currentBreakSongName}` : 'Nghỉ ngơi tự do. Đi dạo 1 chút.',
+      color: '#3b82f6', /* Blue */
+      desc: breakPlaylist.length > 0 ? `[PLAYING] ${currentBreakSongName}` : '> NGHỈ DÀI. ĐI DẠO.',
     },
   };
 
@@ -210,11 +207,6 @@ export default function PomodoroTimer() {
       setTimeLeft(currentMode.minutes * 60);
     }
   }, [settings, currentModeId]);
-
-  useEffect(() => {
-    document.documentElement.style.setProperty('--active-color', currentMode.color);
-    document.documentElement.style.setProperty('--active-color-alpha', currentMode.colorAlpha);
-  }, [currentMode]);
 
   // Handle Background Audio Transitions
   useEffect(() => {
@@ -357,200 +349,235 @@ export default function PomodoroTimer() {
     ? `/music/break-time/${encodeURIComponent(breakPlaylist[currentBreakSongIndex])}` 
     : '';
 
+  const getColorClasses = (id, isActive) => {
+    if (!isActive) return "border-neutral-800 bg-[#09090b] text-neutral-500 hover:border-neutral-600 hover:text-slate-300";
+    if (id === 'pomodoro') return "border-emerald-500 bg-emerald-500/10 text-emerald-500";
+    if (id === 'shortBreak') return "border-amber-500 bg-amber-500/10 text-amber-500";
+    if (id === 'longBreak') return "border-blue-500 bg-blue-500/10 text-blue-500";
+  };
+
+  const getActiveColorHex = (id) => {
+    if (id === 'pomodoro') return '#10b981';
+    if (id === 'shortBreak') return '#f59e0b';
+    if (id === 'longBreak') return '#3b82f6';
+    return '#10b981';
+  };
+
   return (
-    <div className="timmer-container">
+    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col p-4 md:p-8 selection:bg-emerald-500/30">
       {/* Local Audio Elements */}
-      <audio 
-        ref={pomodoroAudioRef} 
-        src={pomodoroSrc} 
-        onEnded={playNextPomodoroSong} 
-      />
-      <audio 
-        ref={breakAudioRef} 
-        src={breakSrc} 
-        onEnded={playRandomBreakSong} 
-      />
+      <audio ref={pomodoroAudioRef} src={pomodoroSrc} onEnded={playNextPomodoroSong} />
+      <audio ref={breakAudioRef} src={breakSrc} onEnded={playRandomBreakSong} />
 
-      <div className="timer-card" style={{ '--active-color': currentMode.color, '--active-color-alpha': currentMode.colorAlpha }}>
+      <div className="w-full max-w-6xl mx-auto flex flex-col h-full items-center justify-center">
         
-        <div className="header-info">
-          <h2>Mervyn Timer</h2>
-          <span className="subtitle">Minimalist & Focus</span>
+        {/* Navigation */}
+        <div className="w-full flex justify-between items-center mb-8">
+          <Link href="/" className="flex items-center gap-2 text-neutral-500 hover:text-emerald-400 transition-colors uppercase text-xs tracking-widest border border-neutral-800 bg-black px-4 py-2 hover:border-emerald-500/50">
+            <ChevronLeft size={16} /> [ RETURN_HOME ]
+          </Link>
+          <div className="flex items-center gap-2 text-emerald-500">
+            <Terminal size={18} />
+            <h1 className="text-sm font-bold uppercase tracking-widest">SYS.MERVYN_TIMER</h1>
+          </div>
         </div>
 
-        <div className="mode-selector">
-          {Object.values(MODES).map((mode) => (
-            <button
-              key={mode.id}
-              className={`mode-btn ${currentModeId === mode.id ? 'active' : ''}`}
-              onClick={() => switchMode(mode.id)}
-            >
-              {mode.label}
+        {/* Main Timer UI */}
+        <div className="w-full max-w-md bg-black border border-neutral-800 p-8 shadow-2xl flex flex-col items-center">
+          
+          <div className="w-full flex gap-2 mb-6">
+            {Object.values(MODES).map((mode) => (
+              <button
+                key={mode.id}
+                className={`flex-1 py-2 text-[10px] sm:text-xs uppercase font-bold border transition-colors ${getColorClasses(mode.id, currentModeId === mode.id)}`}
+                onClick={() => switchMode(mode.id)}
+              >
+                {mode.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="w-full bg-[#09090b] border border-neutral-800 p-3 mb-8 flex items-center justify-between text-[10px] text-neutral-400 uppercase tracking-widest">
+            <div className="flex items-center gap-2">
+              <Info size={14} className="text-neutral-600" />
+              <span className="truncate max-w-[200px]" title={currentMode.desc}>{currentMode.desc}</span>
+            </div>
+            {isRunning && <span className="text-emerald-500 animate-pulse">[ ACTIVE ]</span>}
+          </div>
+
+          <div className="relative w-64 h-64 mb-10 flex items-center justify-center">
+            <svg className="absolute top-0 left-0 w-full h-full -rotate-90" viewBox="0 0 240 240">
+              <circle cx="120" cy="120" r={radius} fill="none" strokeWidth="2" className="stroke-neutral-900" />
+              <circle
+                cx="120" cy="120" r={radius}
+                fill="none"
+                strokeWidth="4"
+                strokeDasharray={circumference}
+                strokeDashoffset={progress}
+                className="transition-all duration-1000 ease-linear"
+                stroke={getActiveColorHex(currentModeId)}
+                strokeLinecap="square"
+              />
+            </svg>
+            <div className="text-6xl font-light tracking-tighter text-slate-200 z-10 font-mono">
+              {formatTime(timeLeft)}
+            </div>
+          </div>
+
+          <div className="flex gap-4 items-center">
+            <button className="p-3 border border-neutral-800 bg-[#09090b] text-neutral-400 hover:text-slate-200 hover:border-neutral-600 transition-colors" onClick={() => setShowSettings(true)} title="Settings">
+               <Settings size={20} />
             </button>
-          ))}
-        </div>
 
-        <div className="mode-desc">
-          <Info size={14} className="info-icon" />
-          <span className="truncate-text" title={currentMode.desc}>{currentMode.desc}</span>
-        </div>
+            <button className="p-3 border border-neutral-800 bg-[#09090b] text-neutral-400 hover:text-slate-200 hover:border-neutral-600 transition-colors" onClick={() => setShowMusicMenu(true)} title="Music">
+               <Music size={20} />
+            </button>
+            
+            <button 
+              className={`p-4 border font-bold flex items-center justify-center transition-colors ${isRunning ? 'border-amber-500/50 bg-amber-500/10 text-amber-500 hover:bg-amber-500 hover:text-black' : 'border-emerald-500/50 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black'}`}
+              onClick={toggleTimer}
+            >
+              {isRunning ? <Pause size={24} /> : <Play size={24} className="ml-1" />}
+            </button>
+            
+            <button className="p-3 border border-neutral-800 bg-[#09090b] text-neutral-400 hover:text-rose-400 hover:border-rose-500/50 transition-colors" onClick={resetTimer} title="Reset">
+              <RotateCcw size={20} />
+            </button>
 
-        <div className={`timer-display ${isRunning ? 'running' : ''}`}>
-          <svg className="timer-circle" viewBox="0 0 240 240">
-            <circle className="bg" cx="120" cy="120" r={radius} />
-            <circle
-              className="progress"
-              cx="120" cy="120" r={radius}
-              strokeDasharray={circumference}
-              strokeDashoffset={progress}
-            />
-          </svg>
-          <div className="time-text">
-            {formatTime(timeLeft)}
+            <button className={`p-3 border transition-colors ${soundEnabled ? 'border-neutral-800 bg-[#09090b] text-neutral-400 hover:text-slate-200 hover:border-neutral-600' : 'border-rose-500/30 bg-rose-500/5 text-rose-500'}`} onClick={() => setSoundEnabled(!soundEnabled)} title="Sound Toggle">
+              {soundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+            </button>
           </div>
+
+          {sessions > 0 && (
+            <div className="mt-8 text-xs text-neutral-600 border border-neutral-800 px-4 py-1 uppercase tracking-widest">
+              Completed_Cycles: <span className="text-emerald-500 font-bold">{sessions}</span>
+            </div>
+          )}
         </div>
-
-        <div className="controls">
-          <button className="control-btn secondary" onClick={() => setShowSettings(true)} title="Cài đặt">
-             <Settings />
-             <span className="tooltip-text">Cài đặt</span>
-          </button>
-
-          <button className="control-btn secondary" onClick={() => setShowMusicMenu(true)} title="Chọn nhạc nền">
-             <Music />
-             <span className="tooltip-text">Nhạc nền</span>
-          </button>
-          
-          <button className="control-btn play-pause" onClick={toggleTimer} title={isRunning ? 'Tạm dừng' : 'Bắt đầu'}>
-            {isRunning ? <Pause /> : <Play style={{ marginLeft: '4px' }} />}
-            <span className="tooltip-text">{isRunning ? 'Tạm dừng' : 'Bắt đầu'}</span>
-          </button>
-          
-          <button className="control-btn secondary" onClick={resetTimer} title="Làm mới lại">
-            <RotateCcw />
-            <span className="tooltip-text">Làm mới</span>
-          </button>
-
-          <button className={`control-btn secondary ${!soundEnabled ? 'muted' : ''}`} onClick={() => setSoundEnabled(!soundEnabled)} title="Âm thanh">
-            {soundEnabled ? <Volume2 /> : <VolumeX />}
-            <span className="tooltip-text">{soundEnabled ? 'Tắt âm' : 'Bật âm'}</span>
-          </button>
-        </div>
-
-        {sessions > 0 && (
-          <div className="session-info">
-            Số chu kỳ hoàn thành: {sessions}
-          </div>
-        )}
       </div>
 
       {/* Music Playlist Modal */}
       {showMusicMenu && (
-        <div className="modal-overlay">
-          <div className="modal-content music-modal">
-            <button className="close-btn" onClick={() => setShowMusicMenu(false)}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="bg-[#09090b] border border-neutral-700 w-full max-w-md p-6 flex flex-col shadow-2xl relative">
+            <button className="absolute top-4 right-4 text-neutral-500 hover:text-rose-500 transition-colors" onClick={() => setShowMusicMenu(false)}>
               <X size={20} />
             </button>
-            <h3>Danh sách bài hát</h3>
+            <h3 className="text-sm font-bold text-slate-200 uppercase tracking-widest mb-6 border-b border-neutral-800 pb-2 flex items-center gap-2">
+              <Music size={16} /> Audio_Interface
+            </h3>
             
-            <div className="music-list-container">
-              {/* Pomodoro Music Section */}
-              <div className="music-section-title">Nhạc Pomodoro (Phát tuần tự)</div>
-              <div className="music-list">
-                {pomodoroPlaylist.length === 0 ? (
-                  <p className="empty-music">Chưa có nhạc trong public/music/porodomo.</p>
-                ) : (
-                  pomodoroPlaylist.map((song, index) => (
-                    <button 
-                      key={`pom-${index}`} 
-                      className={`music-item-btn ${currentModeId === 'pomodoro' && currentPomodoroSongIndex === index ? 'active' : ''}`}
-                      onClick={() => selectSong('pomodoro', index)}
-                    >
-                      <Music size={14} className="music-icon" />
-                      <span className="song-name">{song.replace(/\.[^/.]+$/, "")}</span>
-                      {currentModeId === 'pomodoro' && currentPomodoroSongIndex === index && isRunning && (
-                        <div className="playing-indicator">
-                          <span className="bar"></span><span className="bar"></span><span className="bar"></span>
-                        </div>
-                      )}
-                    </button>
-                  ))
-                )}
+            <div className="overflow-y-auto max-h-[60vh] custom-scrollbar pr-2 space-y-6">
+              <div>
+                <div className="text-[10px] text-emerald-500 uppercase tracking-widest mb-3 border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 inline-block">
+                  > Pomodoro_Tracks
+                </div>
+                <div className="flex flex-col gap-2">
+                  {pomodoroPlaylist.length === 0 ? (
+                    <p className="text-xs text-neutral-600 italic border border-dashed border-neutral-800 p-4 text-center">Directory empty: /music/porodomo/</p>
+                  ) : (
+                    pomodoroPlaylist.map((song, index) => {
+                      const isActive = currentModeId === 'pomodoro' && currentPomodoroSongIndex === index;
+                      return (
+                        <button 
+                          key={`pom-${index}`} 
+                          className={`flex items-center gap-3 p-3 text-xs border transition-colors text-left ${isActive ? 'border-emerald-500/50 bg-emerald-500/5 text-emerald-400 font-bold' : 'border-neutral-800 bg-black text-slate-400 hover:border-neutral-600 hover:text-slate-200'}`}
+                          onClick={() => selectSong('pomodoro', index)}
+                        >
+                          <Music size={14} className={isActive ? 'text-emerald-500' : 'text-neutral-600'} />
+                          <span className="truncate flex-1 uppercase">{song.replace(/\.[^/.]+$/, "")}</span>
+                          {isActive && isRunning && <span className="text-[10px] text-emerald-500 animate-pulse">PLAYING</span>}
+                        </button>
+                      );
+                    })
+                  )}
+                </div>
               </div>
 
-              {/* Break Music Section */}
-              <div className="music-section-title" style={{ marginTop: '1.5rem' }}>Nhạc Break (Phát ngẫu nhiên)</div>
-              <div className="music-list">
-                {breakPlaylist.length === 0 ? (
-                  <p className="empty-music">Chưa có nhạc trong public/music/break-time.</p>
-                ) : (
-                  breakPlaylist.map((song, index) => (
-                    <button 
-                      key={`brk-${index}`} 
-                      className={`music-item-btn ${currentModeId !== 'pomodoro' && currentBreakSongIndex === index ? 'active' : ''}`}
-                      onClick={() => selectSong('break', index)}
-                    >
-                      <Music size={14} className="music-icon" />
-                      <span className="song-name">{song.replace(/\.[^/.]+$/, "")}</span>
-                      {currentModeId !== 'pomodoro' && currentBreakSongIndex === index && isRunning && (
-                        <div className="playing-indicator">
-                          <span className="bar"></span><span className="bar"></span><span className="bar"></span>
-                        </div>
-                      )}
-                    </button>
-                  ))
-                )}
+              <div>
+                <div className="text-[10px] text-blue-500 uppercase tracking-widest mb-3 border border-blue-500/30 bg-blue-500/10 px-2 py-1 inline-block">
+                  > Break_Tracks
+                </div>
+                <div className="flex flex-col gap-2">
+                  {breakPlaylist.length === 0 ? (
+                    <p className="text-xs text-neutral-600 italic border border-dashed border-neutral-800 p-4 text-center">Directory empty: /music/break-time/</p>
+                  ) : (
+                    breakPlaylist.map((song, index) => {
+                      const isActive = currentModeId !== 'pomodoro' && currentBreakSongIndex === index;
+                      return (
+                        <button 
+                          key={`brk-${index}`} 
+                          className={`flex items-center gap-3 p-3 text-xs border transition-colors text-left ${isActive ? 'border-blue-500/50 bg-blue-500/5 text-blue-400 font-bold' : 'border-neutral-800 bg-black text-slate-400 hover:border-neutral-600 hover:text-slate-200'}`}
+                          onClick={() => selectSong('break', index)}
+                        >
+                          <Music size={14} className={isActive ? 'text-blue-500' : 'text-neutral-600'} />
+                          <span className="truncate flex-1 uppercase">{song.replace(/\.[^/.]+$/, "")}</span>
+                          {isActive && isRunning && <span className="text-[10px] text-blue-500 animate-pulse">PLAYING</span>}
+                        </button>
+                      );
+                    })
+                  )}
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       )}
 
       {/* Settings Modal */}
       {showSettings && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <button className="close-btn" onClick={() => setShowSettings(false)}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="bg-[#09090b] border border-neutral-700 w-full max-w-md p-6 flex flex-col shadow-2xl relative">
+            <button className="absolute top-4 right-4 text-neutral-500 hover:text-rose-500 transition-colors" onClick={() => setShowSettings(false)}>
               <X size={20} />
             </button>
-            <h3>Cài đặt Thời gian (Phút)</h3>
+            <h3 className="text-sm font-bold text-slate-200 uppercase tracking-widest mb-6 border-b border-neutral-800 pb-2 flex items-center gap-2">
+              <Settings size={16} /> System_Config
+            </h3>
             
-            <div className="settings-grid">
-              <div className="setting-item">
-                <label>Pomodoro</label>
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] text-emerald-500 uppercase tracking-widest">Pomodoro</label>
                 <input 
                   type="number" 
                   value={settings.pomodoro}
                   onChange={(e) => setSettings({...settings, pomodoro: parseInt(e.target.value) || 1})}
                   min="1"
+                  className="bg-black border border-neutral-800 text-slate-200 p-2 focus:outline-none focus:border-emerald-500 font-mono text-center"
                 />
               </div>
-              <div className="setting-item">
-                <label>Short Break</label>
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] text-amber-500 uppercase tracking-widest">Short_Break</label>
                 <input 
                   type="number" 
                   value={settings.shortBreak}
                   onChange={(e) => setSettings({...settings, shortBreak: parseInt(e.target.value) || 1})}
                   min="1"
+                  className="bg-black border border-neutral-800 text-slate-200 p-2 focus:outline-none focus:border-amber-500 font-mono text-center"
                 />
               </div>
-              <div className="setting-item">
-                <label>Long Break</label>
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] text-blue-500 uppercase tracking-widest">Long_Break</label>
                 <input 
                   type="number" 
                   value={settings.longBreak}
                   onChange={(e) => setSettings({...settings, longBreak: parseInt(e.target.value) || 1})}
                   min="1"
+                  className="bg-black border border-neutral-800 text-slate-200 p-2 focus:outline-none focus:border-blue-500 font-mono text-center"
                 />
               </div>
             </div>
 
-            <div className="profiles-section">
-              <h4>Profiles Nhanh</h4>
-              <div className="profile-buttons">
+            <div>
+              <h4 className="text-[10px] text-neutral-500 uppercase tracking-widest mb-3">> Quick_Profiles</h4>
+              <div className="flex flex-col gap-2">
                 {PROFILES.map(profile => (
-                  <button key={profile.id} className="profile-btn" onClick={() => applyProfile(profile)}>
+                  <button 
+                    key={profile.id} 
+                    className="p-3 text-xs bg-black border border-neutral-800 text-slate-400 hover:text-slate-200 hover:border-neutral-500 transition-colors text-left uppercase" 
+                    onClick={() => applyProfile(profile)}
+                  >
                     {profile.name}
                   </button>
                 ))}
