@@ -669,7 +669,8 @@ export default function GoalsTerminalPage() {
                           )}
                         </div>
                       </Link>
-                    ))
+                    );
+                  })
                   )}
                 </div>
               </div>
