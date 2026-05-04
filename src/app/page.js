@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { Terminal, Clock, CheckSquare, ChevronRight } from 'lucide-react';
+import ModuleHeader from '@/components/ModuleHeader';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono p-6 flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col">
+      <ModuleHeader />
+      <div className="flex-1 p-6 flex flex-col items-center justify-center">
       
       <div className="w-full max-w-4xl flex flex-col items-center">
         {/* HEADER */}
@@ -88,6 +91,7 @@ export default function Home() {
         </div>
       </div>
 
+      </div>
     </div>
   );
 }

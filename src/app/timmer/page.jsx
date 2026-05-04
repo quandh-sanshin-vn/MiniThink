@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Pause, RotateCcw, Settings, Info, X, Volume2, VolumeX, Music, Terminal, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
+import ModuleHeader from '@/components/ModuleHeader';
 
 import { useTimer, PROFILES } from '@/components/TimerContext';
 
@@ -40,20 +41,11 @@ export default function PomodoroTimer() {
   };
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col p-4 md:p-8 selection:bg-emerald-500/30">
-      <div className="w-full max-w-6xl mx-auto flex flex-col h-full items-center justify-center">
+    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col selection:bg-emerald-500/30">
+      <ModuleHeader title="MERVYN_TIMER" />
+      
+      <div className="flex-1 w-full max-w-6xl mx-auto flex flex-col items-center justify-center p-4 md:p-8">
         
-        {/* Navigation */}
-        <div className="w-full flex justify-between items-center mb-8">
-          <Link href="/" className="flex items-center gap-2 text-neutral-500 hover:text-emerald-400 transition-colors uppercase text-xs tracking-widest border border-neutral-800 bg-black px-4 py-2 hover:border-emerald-500/50">
-            <ChevronLeft size={16} /> [ RETURN_HOME ]
-          </Link>
-          <div className="flex items-center gap-2 text-emerald-500">
-            <Terminal size={18} />
-            <h1 className="text-sm font-bold uppercase tracking-widest">SYS.MERVYN_TIMER</h1>
-          </div>
-        </div>
-
         {/* Main Timer UI */}
         <div className="w-full max-w-md bg-black border border-neutral-800 p-8 shadow-2xl flex flex-col items-center">
           

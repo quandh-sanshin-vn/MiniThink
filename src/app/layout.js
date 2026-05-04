@@ -18,6 +18,7 @@ export const metadata = {
 
 import { ThemeProvider } from '@/components/ThemeContext';
 import { TimerProvider } from '@/components/TimerContext';
+import { LanguageProvider } from '@/i18n/LanguageContext';
 
 export default function RootLayout({ children }) {
   return (
@@ -27,9 +28,11 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col font-sans">
         <ThemeProvider>
-          <TimerProvider>
-            {children}
-          </TimerProvider>
+          <LanguageProvider>
+            <TimerProvider>
+              {children}
+            </TimerProvider>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

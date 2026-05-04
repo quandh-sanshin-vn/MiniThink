@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Terminal, Plus, ArrowRight, Check, Trash2, Edit3, MoveRight, MoveLeft } from 'lucide-react';
 import Link from 'next/link';
+import ModuleHeader from '@/components/ModuleHeader';
 
 const STATUSES = ['TODO', 'IN_PROGRESS', 'DONE'];
 const PRIORITIES = [
@@ -76,21 +77,13 @@ export default function TodoListPage() {
   if (!isLoaded) return <div className="min-h-screen bg-[#09090b] flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono p-4 lg:p-8 flex flex-col">
+    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col">
+      <ModuleHeader title="DEV_TASK_TERMINAL" />
       
-      {/* HEADER */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b border-neutral-800 pb-4">
-        <div>
-          <div className="flex items-center gap-2 text-emerald-500 mb-1">
-            <Terminal size={20} />
-            <h1 className="text-xl font-bold uppercase tracking-widest">Dev_Task_Terminal</h1>
-          </div>
-          <p className="text-xs text-neutral-500 uppercase tracking-widest">Sandbox Mode • LocalStorage Persistence</p>
+      <div className="flex-1 p-4 lg:p-8 flex flex-col">
+        <div className="mb-8">
+          <p className="text-xs text-neutral-500 uppercase tracking-widest border-l-2 border-emerald-500 pl-3">Sandbox Mode • LocalStorage Persistence</p>
         </div>
-        <Link href="/" className="mt-4 md:mt-0 px-4 py-2 border border-neutral-800 text-neutral-400 hover:text-emerald-400 hover:border-emerald-500/50 transition-colors text-xs uppercase">
-          [ Return_Home ]
-        </Link>
-      </div>
 
       {/* ADD TASK FORM */}
       <div className="mb-8 bg-black border border-neutral-800 p-4">
@@ -206,6 +199,7 @@ export default function TodoListPage() {
         ))}
       </div>
 
+      </div>
     </div>
   );
 }
