@@ -29,6 +29,7 @@ export default function TodoListPage() {
 
   // Filters
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeWorkspace, setActiveWorkspace] = useState('ALL');
   const [filterProject, setFilterProject] = useState('ALL');
   const [filterStatus, setFilterStatus] = useState('ALL');
 
@@ -137,6 +138,9 @@ export default function TodoListPage() {
 
   // Lọc task
   const filteredTasks = tasks.filter(task => {
+    // Lọc theo Workspace (domain)
+    const matchesWorkspace = activeWorkspace === 'ALL' || task.domain === activeWorkspace;
+
     // Lọc theo search (ID hoặc title)
     const matchesSearch = searchQuery === '' || 
       task.id.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -148,11 +152,13 @@ export default function TodoListPage() {
     // Lọc theo Status
     const matchesStatus = filterStatus === 'ALL' || task.status === filterStatus;
 
-    return matchesSearch && matchesProject && matchesStatus;
+    return matchesWorkspace && matchesSearch && matchesProject && matchesStatus;
   });
 
-  // Tạo danh sách project dùng cho filter dropdown
-  const allProjectsList = Object.values(workspaces).flat();
+  // Tạo danh sách project dùng cho filter dropdown (chỉ hiện project của workspace hiện tại)
+  const allProjectsList = activeWorkspace === 'ALL' 
+      ? Object.values(workspaces).flat() 
+      : (workspaces[activeWorkspace] || []);
 
   if (!isLoaded) return <div className="min-h-screen bg-[#09090b] flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
 
@@ -167,8 +173,20 @@ export default function TodoListPage() {
              <span className="text-neutral-500 uppercase tracking-widest flex items-center gap-1 hidden md:flex">
                <FolderSync size={14} /> CONNECTED:
              </span>
+             <button 
+                onClick={() => { setActiveWorkspace('ALL'); setFilterProject('ALL'); }}
+                className={`uppercase transition-colors pb-0.5 border-b ${activeWorkspace === 'ALL' ? 'text-emerald-400 border-emerald-500' : 'text-neutral-500 border-transparent hover:text-neutral-300'}`}
+             >
+                ALL
+             </button>
              {Object.keys(workspaces).map(ws => (
-               <span key={ws} className="text-blue-400 border-b border-blue-500/30 pb-0.5">{ws}</span>
+               <button 
+                  key={ws} 
+                  onClick={() => { setActiveWorkspace(ws); setFilterProject('ALL'); }}
+                  className={`transition-colors pb-0.5 border-b ${activeWorkspace === ws ? 'text-blue-400 border-blue-500' : 'text-neutral-500 border-transparent hover:text-blue-300'}`}
+               >
+                  {ws}
+               </button>
              ))}
            </div>
          )}
