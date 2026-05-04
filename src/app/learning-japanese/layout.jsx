@@ -1,12 +1,14 @@
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BookOpen, Terminal, Globe } from 'lucide-react';
+import { BookOpen, Terminal, Globe, Sun, Moon } from 'lucide-react';
 import { TerminalModalProvider } from '@/components/TerminalModalContext';
 import { LanguageProvider, useLanguage } from '@/i18n/LanguageContext';
+import { useTheme } from '@/components/ThemeContext';
 
 function NavContent({ pathname }) {
   const { t, lang, setLang } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   
   const isStudyRoom = pathname.includes('/study/');
   
@@ -39,6 +41,12 @@ function NavContent({ pathname }) {
           <button onClick={() => setLang('en')} className={`transition-colors ${lang === 'en' ? 'text-emerald-500' : 'text-neutral-600 hover:text-emerald-400'}`}>EN</button>
           <span className="text-neutral-800">|</span>
           <button onClick={() => setLang('ja')} className={`transition-colors ${lang === 'ja' ? 'text-emerald-500' : 'text-neutral-600 hover:text-emerald-400'}`}>JA</button>
+          
+          <div className="border-l border-neutral-800 pl-4 ml-2 flex items-center">
+            <button onClick={toggleTheme} className="text-neutral-500 hover:text-amber-400 transition-colors" title="Toggle Theme">
+              {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+          </div>
         </div>
       </div>
     </nav>

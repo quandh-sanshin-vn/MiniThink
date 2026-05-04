@@ -24,3 +24,47 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 
+ * BRUTALIST LIGHT THEME OVERRIDES
+ * To maintain the Brutalist aesthetic without rewriting all hardcoded Tailwind utility classes
+ * across the entire app, we use CSS overrides tied to the data-theme attribute.
+ */
+
+:root[data-theme='light'] .bg-\[\#09090b\] { background-color: #f4f4f5 !important; }
+:root[data-theme='light'] .bg-\[\#0c0c0e\] { background-color: #ffffff !important; }
+:root[data-theme='light'] .bg-black { background-color: #ffffff !important; }
+:root[data-theme='light'] .bg-neutral-900 { background-color: #e4e4e7 !important; }
+:root[data-theme='light'] .bg-neutral-900\/50 { background-color: rgba(228, 228, 231, 0.5) !important; }
+:root[data-theme='light'] .bg-neutral-900\/30 { background-color: rgba(228, 228, 231, 0.3) !important; }
+:root[data-theme='light'] .bg-neutral-800 { background-color: #d4d4d8 !important; }
+
+:root[data-theme='light'] .text-slate-300 { color: #18181b !important; }
+:root[data-theme='light'] .text-slate-200 { color: #000000 !important; }
+:root[data-theme='light'] .text-white { color: #000000 !important; }
+:root[data-theme='light'] .text-neutral-500 { color: #52525b !important; }
+:root[data-theme='light'] .text-neutral-400 { color: #52525b !important; }
+:root[data-theme='light'] .text-neutral-600 { color: #71717a !important; }
+
+:root[data-theme='light'] .border-neutral-800 { border-color: #d4d4d8 !important; }
+:root[data-theme='light'] .border-neutral-700 { border-color: #a1a1aa !important; }
+:root[data-theme='light'] .border-neutral-600 { border-color: #71717a !important; }
+
+:root[data-theme='light'] .text-slate-400 { color: #3f3f46 !important; }
+
+/* Custom Scrollbar overrides for light mode */
+:root[data-theme='light'] .custom-scrollbar::-webkit-scrollbar-track {
+  background: #f4f4f5 !important;
+}
+:root[data-theme='light'] .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #d4d4d8 !important;
+}
+:root[data-theme='light'] .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #10b981 !important;
+}
+
+/* Fix text contrast in selection */
+:root[data-theme='light'] ::selection {
+  background-color: rgba(16, 185, 129, 0.3);
+  color: #000000;
+}
