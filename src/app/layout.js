@@ -17,6 +17,7 @@ export const metadata = {
 };
 
 import { ThemeProvider } from '@/components/ThemeContext';
+import { TimerProvider } from '@/components/TimerContext';
 
 export default function RootLayout({ children }) {
   return (
@@ -26,7 +27,9 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col font-sans">
         <ThemeProvider>
-          {children}
+          <TimerProvider>
+            {children}
+          </TimerProvider>
         </ThemeProvider>
       </body>
     </html>

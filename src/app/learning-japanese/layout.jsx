@@ -16,7 +16,7 @@ function NavContent({ pathname }) {
 
   return (
     <nav className="flex-none flex items-center justify-between px-6 py-4 bg-black border-b border-neutral-800">
-      <Link href="/learning-japanese/goals" className="text-emerald-500 text-sm font-bold uppercase flex items-center gap-2 hover:text-emerald-400 transition-colors tracking-widest">
+      <Link href="/" className="text-emerald-500 text-sm font-bold uppercase flex items-center gap-2 hover:text-emerald-400 transition-colors tracking-widest">
         <Terminal size={18} />
         <span>sys.mervyn_os</span>
       </Link>
