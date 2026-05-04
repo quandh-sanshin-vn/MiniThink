@@ -615,34 +615,41 @@ export default function GoalsTerminalPage() {
                   {dailyPlan.length === 0 ? (
                     <div className="text-neutral-500 text-sm mt-4 text-center">{t('goals.no_tasks_today')}</div>
                   ) : (
-                    dailyPlan.map(task => (
-                      <Link
-                        key={task.id}
-                        href={task.type === 'grammar'
-                          ? `/learning-japanese/grammar/study/${task.id}${task.status === 'COMPLETED' ? '?mode=practice' : ''}`
-                          : task.type === 'consolidate'
-                            ? `/learning-japanese/consolidate/study/${task.id}${task.status === 'COMPLETED' ? '?mode=practice' : ''}`
-                            : `/learning-japanese/study/${task.id}${task.status === 'COMPLETED' ? '?mode=practice' : ''}`
-                        }
-                        className="flex items-center justify-between p-3 border border-neutral-800 hover:border-emerald-500 cursor-pointer bg-[#09090b] transition-colors group"
-                      >
-                        <div className="flex items-center gap-3">
-                          {task.status === 'COMPLETED' ? (
-                            <CheckSquare size={16} className="text-emerald-500 shrink-0" />
-                          ) : (
-                            <div className="w-4 h-4 shrink-0 border border-neutral-600 group-hover:border-emerald-500 transition-colors"></div>
-                          )}
-                          <div className="flex flex-col items-start">
-                            <span className={`text-sm ${task.status === 'COMPLETED' ? 'text-neutral-500 group-hover:text-emerald-400 font-bold transition-colors' : 'text-slate-200 group-hover:text-emerald-400 font-bold transition-colors'}`}>
-                              {task.title}
-                            </span>
-                            <div
-                              className="flex items-center gap-1 mt-1 text-[9px] text-neutral-600 hover:text-emerald-400 transition-colors"
-                              onClick={(e) => handleCopyId(e, task.id)}
-                            >
-                              <Copy size={10} />
-                              <span className="uppercase">
-                                {copiedId === task.id ? 'COPIED!' : `ID: ${task.id}`}
+                    dailyPlan.map(task => {
+                      const isPast = new Date(task.scheduledDate) < new Date(new Date().toDateString());
+                      const isCompleted = task.status === 'COMPLETED';
+                      const isMissed = !isCompleted && isPast;
+
+                      return (
+                        <Link
+                          key={task.id}
+                          href={task.type === 'grammar'
+                            ? `/learning-japanese/grammar/study/${task.id}${isCompleted ? '?mode=practice' : ''}`
+                            : task.type === 'consolidate'
+                              ? `/learning-japanese/consolidate/study/${task.id}${isCompleted ? '?mode=practice' : ''}`
+                              : `/learning-japanese/study/${task.id}${isCompleted ? '?mode=practice' : ''}`
+                          }
+                          className={`flex items-center justify-between p-3 border cursor-pointer transition-colors group ${isCompleted ? 'border-neutral-800 bg-[#09090b] hover:border-emerald-500' : isMissed ? 'border-rose-500/30 bg-rose-500/5 hover:border-rose-500' : 'border-neutral-800 bg-[#09090b] hover:border-emerald-500'}`}
+                        >
+                          <div className="flex items-center gap-3">
+                            {isCompleted ? (
+                              <CheckSquare size={16} className="text-emerald-500 shrink-0" />
+                            ) : isMissed ? (
+                              <XSquare size={16} className="text-rose-500 shrink-0 group-hover:text-rose-400 transition-colors" />
+                            ) : (
+                              <div className="w-4 h-4 shrink-0 border border-neutral-600 group-hover:border-emerald-500 transition-colors"></div>
+                            )}
+                            <div className="flex flex-col items-start">
+                              <span className={`text-sm font-bold transition-colors ${isCompleted ? 'text-neutral-500 group-hover:text-emerald-400' : isMissed ? 'text-rose-500 group-hover:text-rose-400' : 'text-slate-200 group-hover:text-emerald-400'}`}>
+                                {task.title}
+                              </span>
+                              <div
+                                className={`flex items-center gap-1 mt-1 text-[9px] transition-colors ${isMissed ? 'text-rose-500/50 hover:text-rose-400' : 'text-neutral-600 hover:text-emerald-400'}`}
+                                onClick={(e) => handleCopyId(e, task.id)}
+                              >
+                                <Copy size={10} />
+                                <span className="uppercase">
+                                  {copiedId === task.id ? 'COPIED!' : `ID: ${task.id}`}
                               </span>
                             </div>
                           </div>
@@ -1001,17 +1008,31 @@ export default function GoalsTerminalPage() {
                 </div>
 
                 <div className="space-y-3">
-                  {dailyPlan.map(task => (
-                    <div key={task.id} className="flex items-center justify-between p-4 border border-neutral-800 bg-neutral-900/30">
-                      <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 border border-neutral-600"></div>
-                        <span className="text-slate-200">{task.title}</span>
+                  {dailyPlan.map(task => {
+                    const isPast = new Date(task.scheduledDate) < new Date(new Date().toDateString());
+                    const isCompleted = task.status === 'COMPLETED';
+                    const isMissed = !isCompleted && isPast;
+
+                    return (
+                      <div key={task.id} className={`flex items-center justify-between p-4 border ${isCompleted ? 'border-emerald-500/30 bg-emerald-500/5' : isMissed ? 'border-rose-500/30 bg-rose-500/5' : 'border-neutral-800 bg-neutral-900/30'}`}>
+                        <div className="flex items-center gap-3">
+                          {isCompleted ? (
+                            <CheckSquare size={16} className="text-emerald-500 shrink-0" />
+                          ) : isMissed ? (
+                            <XSquare size={16} className="text-rose-500 shrink-0" />
+                          ) : (
+                            <div className="w-4 h-4 shrink-0 border border-neutral-600"></div>
+                          )}
+                          <span className={`${isCompleted ? 'text-emerald-500 opacity-70' : isMissed ? 'text-rose-400 opacity-70' : 'text-slate-200'}`}>
+                            {task.title}
+                          </span>
+                        </div>
+                        <span className={`text-[10px] uppercase px-1 border ${isCompleted ? 'text-emerald-500 border-emerald-500/30' : isMissed ? 'text-rose-500 border-rose-500/30' : 'text-neutral-500 border-neutral-800'}`}>
+                          {task.type}
+                        </span>
                       </div>
-                      <span className="text-[10px] uppercase text-neutral-500 px-1 border border-neutral-800">
-                        {task.type}
-                      </span>
-                    </div>
-                  ))}
+                    );
+                  })}
 
                   {dailyPlan.length === 0 && (
                     <div className="text-neutral-500 text-sm text-center py-10 border border-dashed border-neutral-800">
