@@ -118,6 +118,14 @@ export const dictionaries = {
     'timer.long_break': 'Nghỉ_Dài_(Phút)',
     'timer.apply': 'Áp_Dụng_Thay_Đổi',
     'timer.quick_profiles': 'Cấu_Hình_Nhanh',
+    'timer.break_alert': 'Phiên Tập Trung Đã Kết Thúc',
+    'timer.break_skip_warn': 'Bạn đã skip nghỉ ngơi 3 lần liên tiếp. Thời gian nghỉ lần này sẽ bị khóa và nhân đôi để bảo vệ sức khỏe của bạn!',
+    'timer.break_prompt': 'Bạn có muốn bắt đầu thời gian nghỉ ngơi không?',
+    'timer.skip_btn': 'Skip',
+    'timer.start_lock_btn': 'Bắt Đầu Khóa Màn Hình',
+    'timer.start_break_btn': 'Bắt Đầu Nghỉ Ngơi',
+    'timer.locked_title': 'SYSTEM_LOCKED // BREAK_TIME',
+    'timer.locked_desc': 'Hãy rời mắt khỏi màn hình và thư giãn.',
 
     // Todo
     'todo.title': 'Dev_Task_Terminal',
@@ -248,6 +256,14 @@ export const dictionaries = {
     'timer.long_break': 'Long_Break_Min',
     'timer.apply': 'Apply_Settings',
     'timer.quick_profiles': 'Quick_Profiles',
+    'timer.break_alert': 'Focus Session Complete',
+    'timer.break_skip_warn': 'You have skipped break 3 times in a row. This break duration is doubled and locked to protect your health!',
+    'timer.break_prompt': 'Do you want to start your break time now?',
+    'timer.skip_btn': 'Skip',
+    'timer.start_lock_btn': 'Start Screen Lock',
+    'timer.start_break_btn': 'Start Break',
+    'timer.locked_title': 'SYSTEM_LOCKED // BREAK_TIME',
+    'timer.locked_desc': 'Please step away from the screen and relax.',
 
     // Todo
     'todo.title': 'Dev_Task_Terminal',
@@ -378,6 +394,14 @@ export const dictionaries = {
     'timer.long_break': '長い休憩_(分)',
     'timer.apply': '変更を適用',
     'timer.quick_profiles': 'クイック_プロファイル',
+    'timer.break_alert': '集中セッション完了',
+    'timer.break_skip_warn': '連続して3回休憩をスキップしました。健康を守るため、今回の休憩時間は2倍になり、画面がロックされます！',
+    'timer.break_prompt': '今すぐ休憩を開始しますか？',
+    'timer.skip_btn': 'スキップ',
+    'timer.start_lock_btn': '画面ロックを開始',
+    'timer.start_break_btn': '休憩を開始',
+    'timer.locked_title': 'SYSTEM_LOCKED // BREAK_TIME',
+    'timer.locked_desc': '画面から目を離してリラックスしてください。',
 
     // Todo
     'todo.title': 'Dev_タスク_ターミナル',

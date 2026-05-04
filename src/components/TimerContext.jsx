@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const TimerContext = createContext(null);
 
@@ -135,6 +136,7 @@ const toggleBgNoise = (play, volume) => {
 };
 
 export function TimerProvider({ children }) {
+  const { t } = useLanguage();
   const [isLoaded, setIsLoaded] = useState(false);
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -152,6 +154,13 @@ export function TimerProvider({ children }) {
   const [targetEndTime, setTargetEndTime] = useState(null);
   
   const [autoplayFailed, setAutoplayFailed] = useState(false);
+
+  const [showBreakAlert, setShowBreakAlert] = useState(false);
+  const [isBreakLocked, setIsBreakLocked] = useState(false);
+  const [skipData, setSkipData] = useState({ count: 0, date: new Date().toLocaleDateString() });
+
+  const pomodoroAudioTimeRef = useRef(0);
+  const breakAudioTimeRef = useRef(0);
 
   // Fetch playlist on mount
   useEffect(() => {
@@ -217,6 +226,17 @@ export function TimerProvider({ children }) {
         if (saved.currentPomodoroSongIndex !== undefined) setCurrentPomodoroSongIndex(saved.currentPomodoroSongIndex);
         if (saved.currentBreakSongIndex !== undefined) setCurrentBreakSongIndex(saved.currentBreakSongIndex);
         
+        if (saved.skipData) {
+          if (saved.skipData.date === new Date().toLocaleDateString()) {
+            setSkipData(saved.skipData);
+          }
+        }
+        if (saved.isBreakLocked) setIsBreakLocked(saved.isBreakLocked);
+        if (saved.showBreakAlert) setShowBreakAlert(saved.showBreakAlert);
+
+        if (saved.pomodoroAudioTime) pomodoroAudioTimeRef.current = saved.pomodoroAudioTime;
+        if (saved.breakAudioTime) breakAudioTimeRef.current = saved.breakAudioTime;
+
         let newTimeLeft = saved.timeLeft;
         let newIsRunning = saved.isRunning;
         let newTargetEndTime = saved.targetEndTime;
@@ -234,6 +254,10 @@ export function TimerProvider({ children }) {
             // NOTE: We do not trigger handleTimerComplete sound here as it could be hours later.
             if (saved.currentModeId === 'pomodoro') {
               setSessions(s => saved.sessions ? saved.sessions + 1 : 1);
+              setShowBreakAlert(true);
+            } else {
+              setIsBreakLocked(false);
+              setCurrentModeId('pomodoro');
             }
           }
         } else {
@@ -266,10 +290,15 @@ export function TimerProvider({ children }) {
       sessions,
       targetEndTime,
       currentPomodoroSongIndex,
-      currentBreakSongIndex
+      currentBreakSongIndex,
+      skipData,
+      isBreakLocked,
+      showBreakAlert,
+      pomodoroAudioTime: pomodoroAudioRef.current ? pomodoroAudioRef.current.currentTime : 0,
+      breakAudioTime: breakAudioRef.current ? breakAudioRef.current.currentTime : 0
     };
     localStorage.setItem('mervyn_timer_state', JSON.stringify(stateToSave));
-  }, [settings, soundEnabled, currentModeId, timeLeft, isRunning, sessions, targetEndTime, currentPomodoroSongIndex, currentBreakSongIndex, isLoaded]);
+  }, [settings, soundEnabled, currentModeId, timeLeft, isRunning, sessions, targetEndTime, currentPomodoroSongIndex, currentBreakSongIndex, skipData, isBreakLocked, showBreakAlert, isLoaded]);
 
   // Sync timeLeft when settings change (if not currently running)
   useEffect(() => {
@@ -378,10 +407,42 @@ export function TimerProvider({ children }) {
     }
     
     if (currentModeId === 'pomodoro') {
-      setSessions(s => s + 1);
+      const newSessions = sessions + 1;
+      setSessions(newSessions);
       // Auto switch to random break song when starting next time
       playRandomBreakSong();
+      setShowBreakAlert(true);
+    } else {
+      setIsBreakLocked(false);
+      switchMode('pomodoro');
     }
+  };
+
+  const acceptBreak = () => {
+    setShowBreakAlert(false);
+    setIsBreakLocked(true);
+    
+    const nextMode = (sessions > 0 && sessions % 4 === 0) ? 'longBreak' : 'shortBreak';
+    let breakMinutes = settings[nextMode];
+    
+    if (skipData.count >= 3) {
+      breakMinutes *= 2;
+      setSkipData({ count: 0, date: new Date().toLocaleDateString() });
+    }
+    
+    setCurrentModeId(nextMode);
+    setTimeLeft(breakMinutes * 60);
+    setTargetEndTime(Date.now() + breakMinutes * 60 * 1000);
+    setIsRunning(true);
+  };
+
+  const skipBreak = () => {
+    setShowBreakAlert(false);
+    setSkipData(prev => ({
+      count: prev.count + 1,
+      date: new Date().toLocaleDateString()
+    }));
+    switchMode('pomodoro');
   };
 
   const switchMode = (modeId) => {
@@ -492,9 +553,88 @@ export function TimerProvider({ children }) {
         </div>
       )}
 
+      {/* Break Alert Modal */}
+      {showBreakAlert && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm pointer-events-auto">
+          <div className="bg-[#09090b] border border-blue-500 p-8 shadow-2xl flex flex-col items-center gap-6 max-w-md w-full">
+            <h2 className="text-xl font-bold text-blue-500 uppercase tracking-widest text-center">
+              {t('timer.break_alert')}
+            </h2>
+            
+            {skipData.count >= 3 ? (
+              <p className="text-sm font-mono text-slate-300 text-center leading-relaxed text-rose-400">
+                {t('timer.break_skip_warn')}
+              </p>
+            ) : (
+              <p className="text-sm font-mono text-slate-300 text-center leading-relaxed">
+                {t('timer.break_prompt')}
+              </p>
+            )}
+
+            <div className="flex gap-4 w-full mt-4">
+              {skipData.count < 3 && (
+                <button 
+                  onClick={skipBreak}
+                  className="flex-1 py-3 px-4 border border-neutral-600 text-neutral-400 hover:text-white hover:border-white transition-colors uppercase font-bold text-xs"
+                >
+                  {t('timer.skip_btn')}
+                </button>
+              )}
+              <button 
+                onClick={acceptBreak}
+                className="flex-1 py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-colors uppercase font-bold text-xs"
+              >
+                {skipData.count >= 3 ? t('timer.start_lock_btn') : t('timer.start_break_btn')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Full Screen Lock Overlay */}
+      {isBreakLocked && (
+        <div className="fixed inset-0 z-[99999] bg-black/95 flex flex-col items-center justify-center pointer-events-auto backdrop-blur-md">
+          <div className="text-center flex flex-col items-center">
+            <div className="flex items-center gap-4 text-blue-500 font-bold uppercase tracking-widest text-2xl mb-8">
+              <span className="relative flex h-4 w-4">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-4 w-4 bg-blue-500"></span>
+              </span>
+              {t('timer.locked_title')}
+            </div>
+            <div className="text-8xl md:text-9xl font-light tracking-tighter text-slate-200 font-mono mb-8 drop-shadow-2xl">
+              {formatTime(timeLeft)}
+            </div>
+            <p className="text-neutral-400 uppercase tracking-widest text-sm md:text-base border border-dashed border-neutral-700 px-6 py-3">
+              {t('timer.locked_desc')}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Global Audio Elements */}
-      <audio ref={pomodoroAudioRef} src={pomodoroSrc} onEnded={playNextPomodoroSong} />
-      <audio ref={breakAudioRef} src={breakSrc} onEnded={playRandomBreakSong} />
+      <audio 
+        ref={pomodoroAudioRef} 
+        src={pomodoroSrc} 
+        onEnded={playNextPomodoroSong} 
+        onLoadedMetadata={(e) => {
+          if (pomodoroAudioTimeRef.current > 0) {
+             e.target.currentTime = pomodoroAudioTimeRef.current;
+             pomodoroAudioTimeRef.current = 0; // only apply once
+          }
+        }}
+      />
+      <audio 
+        ref={breakAudioRef} 
+        src={breakSrc} 
+        onEnded={playRandomBreakSong} 
+        onLoadedMetadata={(e) => {
+          if (breakAudioTimeRef.current > 0) {
+             e.target.currentTime = breakAudioTimeRef.current;
+             breakAudioTimeRef.current = 0; // only apply once
+          }
+        }}
+      />
     </TimerContext.Provider>
   );
 }
