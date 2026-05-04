@@ -19,6 +19,9 @@ model User {
   planModificationLogs  PlanModificationLog[]
   userGrammars          UserGrammar[]
 
+  integrationConfigs    IntegrationConfig[]
+  syncTasks             SyncTask[]
+
   @@map("users")
 }
 
@@ -173,4 +176,71 @@ model GrammarExample {
   createdAt         DateTime @default(now())
 
   @@map("grammar_examples")
+}
+
+// ==========================================
+// 5. DEV TASK TERMINAL & BACKLOG SYNC
+// ==========================================
+
+model IntegrationConfig {
+  id             String   @id @default(uuid()) @db.Uuid
+  userId         String?  @db.Uuid
+  user           User?    @relation(fields: [userId], references: [id])
+  
+  platform       String   @default("BACKLOG") // "BACKLOG", "JIRA", "GITHUB"
+  domain         String   // e.g. "sanshinbts.backlog.com"
+  apiKey         String   // Token truy cập API
+  isActive       Boolean  @default(true)
+  
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  projects       SyncProject[]
+  tasks          SyncTask[]
+
+  @@unique([userId, platform])
+  @@map("integration_configs")
+}
+
+model SyncProject {
+  id             String   @id @default(uuid()) @db.Uuid
+  configId       String   @db.Uuid
+  config         IntegrationConfig @relation(fields: [configId], references: [id], onDelete: Cascade)
+  
+  projectKey     String   // VD: "XAI_SHINKO"
+  name           String   // Tên dự án kéo từ Backlog
+  
+  tasks          SyncTask[]
+
+  @@unique([configId, projectKey])
+  @@map("sync_projects")
+}
+
+model SyncTask {
+  id             String   @id @default(uuid()) @db.Uuid
+  userId         String?  @db.Uuid
+  user           User?    @relation(fields: [userId], references: [id])
+  configId       String   @db.Uuid
+  config         IntegrationConfig @relation(fields: [configId], references: [id])
+  projectId      String?  @db.Uuid
+  project        SyncProject? @relation(fields: [projectId], references: [id])
+  
+  externalId     String   // Issue ID nội bộ của hệ thống Backlog (từ integer)
+  issueKey       String   // VD: "XAI_SHINKO-47"
+  title          String
+  description    String?  @db.Text
+  priority       String   // Đã map chuẩn: "P0", "P1", "P2", "P3"
+  status         String   // Đã map chuẩn: "TODO", "IN_PROGRESS", "DONE"
+  url            String   // Link trực tiếp tới ticket
+  
+  // Extra data from backlog payload
+  issueType      String?
+  assigneeName   String?
+  
+  lastSyncedAt   DateTime @default(now()) // Thời điểm pull data cuối cùng
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@unique([configId, issueKey])
+  @@map("sync_tasks")
 }
