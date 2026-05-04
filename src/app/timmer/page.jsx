@@ -471,7 +471,7 @@ export default function PomodoroTimer() {
             <div className="overflow-y-auto max-h-[60vh] custom-scrollbar pr-2 space-y-6">
               <div>
                 <div className="text-[10px] text-emerald-500 uppercase tracking-widest mb-3 border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 inline-block">
-                  > Pomodoro_Tracks
+                  &gt; Pomodoro_Tracks
                 </div>
                 <div className="flex flex-col gap-2">
                   {pomodoroPlaylist.length === 0 ? (
@@ -497,7 +497,7 @@ export default function PomodoroTimer() {
 
               <div>
                 <div className="text-[10px] text-blue-500 uppercase tracking-widest mb-3 border border-blue-500/30 bg-blue-500/10 px-2 py-1 inline-block">
-                  > Break_Tracks
+                  &gt; Break_Tracks
                 </div>
                 <div className="flex flex-col gap-2">
                   {breakPlaylist.length === 0 ? (
@@ -570,7 +570,7 @@ export default function PomodoroTimer() {
             </div>
 
             <div>
-              <h4 className="text-[10px] text-neutral-500 uppercase tracking-widest mb-3">> Quick_Profiles</h4>
+              <h4 className="text-[10px] text-neutral-500 uppercase tracking-widest mb-3">&gt; Quick_Profiles</h4>
               <div className="flex flex-col gap-2">
                 {PROFILES.map(profile => (
                   <button 
