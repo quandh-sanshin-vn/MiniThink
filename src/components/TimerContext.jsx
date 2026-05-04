@@ -472,12 +472,23 @@ export function TimerProvider({ children }) {
       
       {/* Global Indicator for Blocked Autoplay */}
       {autoplayFailed && isRunning && soundEnabled && (
-        <div className="fixed bottom-4 right-4 bg-amber-500/10 border border-amber-500 text-amber-500 px-4 py-3 text-xs font-mono z-[9999] shadow-lg flex items-center gap-3">
-          <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
-          </span>
-          &gt; TRÌNH DUYỆT CHẶN PHÁT NHẠC. CLICK CHUỘT ĐỂ TIẾP TỤC.
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm pointer-events-none">
+          <div className="bg-[#09090b] border border-amber-500 p-8 shadow-2xl flex flex-col items-center gap-6 max-w-md w-full">
+            <div className="flex items-center gap-4 text-amber-500 font-bold uppercase tracking-widest text-base">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+              </span>
+              SYS.AUTOPLAY_BLOCKED
+            </div>
+            <p className="text-xs sm:text-sm font-mono text-slate-300 text-center leading-relaxed">
+              Trình duyệt đã chặn tính năng tự động phát âm thanh do bạn vừa tải lại trang.
+              <br/><br/>
+              <span className="text-amber-500 font-bold bg-amber-500/10 px-3 py-2 inline-block border border-amber-500/30">
+                &gt; CLICK VÀO BẤT KỲ ĐÂU ĐỂ TIẾP TỤC PHÁT
+              </span>
+            </p>
+          </div>
         </div>
       )}
 
