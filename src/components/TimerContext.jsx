@@ -150,6 +150,8 @@ export function TimerProvider({ children }) {
   const [isRunning, setIsRunning] = useState(false);
   const [sessions, setSessions] = useState(0);
   const [targetEndTime, setTargetEndTime] = useState(null);
+  
+  const [autoplayFailed, setAutoplayFailed] = useState(false);
 
   // Fetch playlist on mount
   useEffect(() => {
@@ -278,6 +280,13 @@ export function TimerProvider({ children }) {
 
   // Handle Background Audio Transitions
   useEffect(() => {
+    if (!isLoaded) return;
+    
+    const handleAutoplayError = (e) => {
+      console.warn('Autoplay blocked. Waiting for user interaction:', e);
+      setAutoplayFailed(true);
+    };
+
     if (isRunning && soundEnabled) {
       if (currentModeId === 'pomodoro') {
         // Pause Break sounds
@@ -287,7 +296,10 @@ export function TimerProvider({ children }) {
         // Play Pomodoro Music
         if (pomodoroAudioRef.current) {
           pomodoroAudioRef.current.volume = 0.5;
-          pomodoroAudioRef.current.play().catch(e => console.warn('Autoplay blocked:', e));
+          const playPromise = pomodoroAudioRef.current.play();
+          if (playPromise !== undefined) {
+             playPromise.catch(handleAutoplayError);
+          }
         }
       } else {
         // Pause Pomodoro sound
@@ -298,7 +310,10 @@ export function TimerProvider({ children }) {
           toggleBgNoise(false); // Make sure synth noise is off
           if (breakAudioRef.current) {
             breakAudioRef.current.volume = 0.5;
-            breakAudioRef.current.play().catch(e => console.warn('Autoplay blocked:', e));
+            const playPromise = breakAudioRef.current.play();
+            if (playPromise !== undefined) {
+               playPromise.catch(handleAutoplayError);
+            }
           }
         } else {
           // Fallback to synth pink noise if no break music folder exists/has files
@@ -311,7 +326,29 @@ export function TimerProvider({ children }) {
       if (breakAudioRef.current) breakAudioRef.current.pause();
       toggleBgNoise(false);
     }
-  }, [isRunning, currentModeId, soundEnabled, currentPomodoroSongIndex, currentBreakSongIndex]);
+  }, [isRunning, currentModeId, soundEnabled, currentPomodoroSongIndex, currentBreakSongIndex, isLoaded]);
+
+  // Attempt to recover from blocked autoplay on first user interaction
+  useEffect(() => {
+    if (!autoplayFailed || !isRunning || !soundEnabled) return;
+
+    const resumeAudio = () => {
+      setAutoplayFailed(false);
+      if (currentModeId === 'pomodoro' && pomodoroAudioRef.current) {
+        pomodoroAudioRef.current.play().catch(()=>{});
+      } else if (currentModeId !== 'pomodoro' && breakAudioRef.current) {
+        breakAudioRef.current.play().catch(()=>{});
+      }
+    };
+
+    window.addEventListener('click', resumeAudio, { once: true });
+    window.addEventListener('keydown', resumeAudio, { once: true });
+
+    return () => {
+      window.removeEventListener('click', resumeAudio);
+      window.removeEventListener('keydown', resumeAudio);
+    };
+  }, [autoplayFailed, isRunning, soundEnabled, currentModeId]);
 
   useEffect(() => {
     if (isRunning && targetEndTime) {
