@@ -965,17 +965,59 @@ export default function GoalsTerminalPage() {
                   const isWeekend = d.getDay() === 0 || d.getDay() === 6;
                   const isToday = dateStr === new Date().toISOString().split('T')[0];
 
+                  const tasksForDate = activeGoal.dailyTasks?.filter(t => t.scheduledDate === dateStr) || [];
+                  const totalTasks = tasksForDate.length;
+                  
+                  let completionStatus = null;
+                  let progressPercent = 0;
+                  const isPast = new Date(dateStr) < new Date(new Date().toDateString());
+
+                  if (totalTasks > 0 && isPast) {
+                    const completedTasks = tasksForDate.filter(t => t.status === 'COMPLETED').length;
+                    progressPercent = Math.round((completedTasks / totalTasks) * 100);
+                    
+                    if (progressPercent === 100) {
+                      completionStatus = 'PERFECT';
+                    } else if (progressPercent >= 90) {
+                      completionStatus = 'MINOR_MISS';
+                    } else if (progressPercent >= 50) {
+                      completionStatus = 'MAJOR_MISS';
+                    } else {
+                      completionStatus = 'CRITICAL_MISS';
+                    }
+                  }
+
+                  let statusIndicator = null;
+                  let textColor = 'text-slate-400';
+
+                  if (completionStatus === 'PERFECT') {
+                    statusIndicator = <span className="text-[9px] text-emerald-500 bg-emerald-500/10 px-1 ml-2 border border-emerald-500/30">{progressPercent}%</span>;
+                    if (!isSelected) textColor = 'text-emerald-500/80';
+                  } else if (completionStatus === 'MINOR_MISS') {
+                    statusIndicator = <span className="text-[9px] text-blue-500 bg-blue-500/10 px-1 ml-2 border border-blue-500/30">{progressPercent}%</span>;
+                    if (!isSelected) textColor = 'text-blue-500/80';
+                  } else if (completionStatus === 'MAJOR_MISS') {
+                    statusIndicator = <span className="text-[9px] text-amber-500 bg-amber-500/10 px-1 ml-2 border border-amber-500/30">{progressPercent}%</span>;
+                    if (!isSelected) textColor = 'text-amber-500/80';
+                  } else if (completionStatus === 'CRITICAL_MISS') {
+                    statusIndicator = <span className="text-[9px] text-rose-500 bg-rose-500/10 px-1 ml-2 border border-rose-500/30">{progressPercent}%</span>;
+                    if (!isSelected) textColor = 'text-rose-500/80';
+                  }
+
                   return (
                     <button
                       key={dateStr}
                       onClick={() => setSelectedScheduleDate(dateStr)}
                       className={`w-full text-left p-3 text-sm font-mono border transition-colors ${isSelected
                         ? 'bg-emerald-500/20 border-emerald-500 text-emerald-400'
-                        : 'bg-neutral-900/30 border-transparent hover:border-neutral-700 text-slate-400'
-                        } ${isWeekend ? 'opacity-50' : ''}`}
+                        : `bg-neutral-900/30 border-transparent hover:border-neutral-700 ${textColor}`
+                        } ${(isWeekend && !completionStatus) ? 'opacity-50' : ''}`}
                     >
                       <div className="flex justify-between items-center">
-                        <span>{dateStr}</span>
+                        <div className="flex items-center">
+                          <span>{dateStr}</span>
+                          {statusIndicator}
+                        </div>
                         {isToday && <span className="text-[10px] bg-emerald-500/20 text-emerald-500 px-1 border border-emerald-500/30 uppercase">Today</span>}
                       </div>
                     </button>
