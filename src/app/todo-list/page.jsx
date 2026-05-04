@@ -33,20 +33,20 @@ const SelectDropdown = ({ value, options, onChange, placeholder, className = "" 
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-neutral-900 border-neutral-800 p-2 px-3 text-xs text-slate-300 hover:border-blue-500 font-mono w-full flex justify-between items-center uppercase transition-colors"
+        className="bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 p-2 px-3 text-xs text-slate-900 dark:text-slate-300 hover:border-blue-500 font-mono w-full flex justify-between items-center uppercase transition-colors"
       >
         <span className="truncate pr-2">{selected?.label || placeholder}</span>
         <ChevronDown size={14} className={`transition-transform shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-1 w-full bg-[#09090b] border-blue-500/50 shadow-2xl z-50 max-h-60 overflow-y-auto custom-scrollbar">
+        <div className="absolute top-full left-0 mt-1 w-full bg-white dark:bg-[#09090b] border border-slate-200 dark:border-blue-500/50 shadow-2xl z-50 max-h-60 overflow-y-auto custom-scrollbar">
           {options.map(opt => (
             <button
               key={opt.value}
               type="button"
               onClick={() => { onChange(opt.value); setIsOpen(false); }}
-              className={`w-full text-left px-3 py-2 text-[11px] uppercase font-mono hover:bg-blue-500/20 transition-colors flex items-center ${value === opt.value ? 'text-blue-400 font-bold bg-blue-500/10 border-l-2 border-blue-500' : 'text-neutral-400 border-l-2 border-transparent'}`}
+              className={`w-full text-left px-3 py-2 text-[11px] uppercase font-mono hover:bg-slate-100 dark:hover:bg-blue-500/20 transition-colors flex items-center ${value === opt.value ? 'text-blue-600 dark:text-blue-400 font-bold bg-blue-50 dark:bg-blue-500/10 border-l-2 border-blue-500' : 'text-slate-600 dark:text-neutral-400 border-l-2 border-transparent'}`}
             >
               <span className="truncate">{opt.label}</span>
             </button>
@@ -469,7 +469,7 @@ export default function TodoListPage() {
               <button
                 key={ws}
                 onClick={() => { setActiveWorkspace(ws); setFilterProject('ALL'); }}
-                className={`transition-colors pb-0.5 border-b ${activeWorkspace === ws ? 'text-blue-400 border-blue-500' : 'text-neutral-500 border-transparent hover:text-blue-300'}`}
+                className={`transition-colors pb-0.5 border-b ${activeWorkspace === ws ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-500' : 'text-slate-500 dark:text-neutral-500 border-transparent hover:text-blue-600 dark:hover:text-blue-300'}`}
               >
                 {ws}
               </button>
@@ -530,7 +530,7 @@ export default function TodoListPage() {
 
           <button
             onClick={openCreateModal}
-            className="w-full lg:w-auto bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 p-2 px-6 hover:bg-emerald-500 hover:text-black transition-colors flex items-center justify-center gap-2 uppercase text-sm font-bold shrink-0"
+            className="w-full lg:w-auto bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 text-slate-500 dark:text-neutral-400 p-2 hover:bg-slate-200 dark:hover:bg-neutral-800 hover:text-slate-900 dark:hover:text-white transition-colors flex justify-center items-center gap-2 uppercase text-sm font-bold shrink-0"
           >
             <Plus size={16} /> {t('todo.new_task')}
           </button>
@@ -549,7 +549,7 @@ export default function TodoListPage() {
               <button
                 onClick={syncBacklogTasks}
                 disabled={isSyncing}
-                className="text-neutral-400 hover:text-blue-500 transition-colors p-1"
+                className="text-slate-500 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors p-1"
                 title="Force Cloud Sync"
               >
                 <RefreshCw size={16} className={isSyncing ? "animate-spin text-blue-500" : ""} />
@@ -640,7 +640,7 @@ export default function TodoListPage() {
                   </div>
 
                   <div className="flex flex-col gap-2 flex-1">
-                    <label className="text-[10px] text-neutral-500 uppercase">{t('todo.target_prj')}</label>
+                    <label className="text-[10px] text-slate-500 dark:text-neutral-500 uppercase">{t('todo.target_prj')}</label>
                     <SelectDropdown
                       value={newTask.projectKey}
                       onChange={(newProject) => setNewTask({ ...newTask, projectKey: newProject })}
