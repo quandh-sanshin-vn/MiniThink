@@ -20,7 +20,32 @@ export async function POST() {
     
     if (!userData.id) throw new Error('Cannot fetch user ID from Backlog');
 
-    // 2. Fetch các issue được assign cho bản thân và chưa hoàn thành
+    // 2. Fetch tất cả các project mà user tham gia để lưu vào danh sách
+    const projectsRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/projects?apiKey=${BACKLOG_API_KEY}`);
+    const apiProjects = await projectsRes.json();
+    
+    if (Array.isArray(apiProjects)) {
+       for (const proj of apiProjects) {
+          const projectData = {
+             configId: config.id,
+             projectKey: proj.projectKey,
+             name: proj.name
+          };
+          
+          await prisma.syncProject.upsert({
+             where: {
+                configId_projectKey: {
+                   configId: config.id,
+                   projectKey: proj.projectKey
+                }
+             },
+             update: { name: proj.name },
+             create: projectData
+          });
+       }
+    }
+
+    // 3. Fetch các issue được assign cho bản thân và chưa hoàn thành
     const issuesRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/issues?apiKey=${BACKLOG_API_KEY}&assigneeId[]=${userData.id}&statusId[]=1&statusId[]=2&statusId[]=3`);
     const issues = await issuesRes.json();
 
@@ -28,7 +53,14 @@ export async function POST() {
        throw new Error('Invalid response from Backlog API');
     }
 
-    // 3. Chuẩn hóa format và lưu vào DB
+    // Lấy lại danh sách project từ DB ra một map để dễ lookup
+    const allProjects = await prisma.syncProject.findMany({
+       where: { configId: config.id }
+    });
+    const projectMap = {};
+    allProjects.forEach(p => projectMap[p.projectKey] = p.id);
+
+    // 4. Chuẩn hóa format và lưu vào DB
     for (const issue of issues) {
       let localPriority = 'P2';
       if (issue.priority.id === 2) localPriority = 'P1';
@@ -39,23 +71,11 @@ export async function POST() {
       if (issue.status.id === 3 || issue.status.id === 4) localStatus = 'DONE';
 
       const projectKey = issue.issueKey.split('-')[0];
-      
-      // Đảm bảo project tồn tại trong DB
-      let project = await prisma.syncProject.findFirst({
-         where: { configId: config.id, projectKey }
-      });
-      if (!project) {
-         // Thử lấy thêm thông tin project từ api để lưu name (chưa tối ưu lắm do gọi loop, nhưng OK cho scope nhỏ)
-         const projRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/projects/${projectKey}?apiKey=${BACKLOG_API_KEY}`);
-         const projData = await projRes.json();
-         project = await prisma.syncProject.create({
-            data: { configId: config.id, projectKey, name: projData.name || projectKey }
-         });
-      }
+      const projectId = projectMap[projectKey];
 
       const taskData = {
         configId: config.id,
-        projectId: project.id,
+        projectId: projectId || null,
         externalId: issue.id.toString(),
         issueKey: issue.issueKey,
         title: issue.summary,
