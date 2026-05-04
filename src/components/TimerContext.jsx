@@ -422,10 +422,10 @@ export function TimerProvider({ children }) {
     setShowBreakAlert(false);
     setIsBreakLocked(true);
     
-    const nextMode = (sessions > 0 && sessions % 4 === 0) ? 'longBreak' : 'shortBreak';
+    const nextMode = (sessions > 0 && sessions % 5 === 0) ? 'longBreak' : 'shortBreak';
     let breakMinutes = settings[nextMode];
     
-    if (skipData.count >= 3) {
+    if (skipData.count >= 3 && nextMode !== 'longBreak') {
       breakMinutes *= 2;
       setSkipData({ count: 0, date: new Date().toLocaleDateString() });
     }
@@ -442,7 +442,11 @@ export function TimerProvider({ children }) {
       count: prev.count + 1,
       date: new Date().toLocaleDateString()
     }));
-    switchMode('pomodoro');
+    
+    setCurrentModeId('pomodoro');
+    setTimeLeft(settings.pomodoro * 60);
+    setTargetEndTime(Date.now() + settings.pomodoro * 60 * 1000);
+    setIsRunning(true);
   };
 
   const switchMode = (modeId) => {
@@ -527,6 +531,9 @@ export function TimerProvider({ children }) {
     autoplayFailed
   };
 
+  const isLongBreakNext = sessions > 0 && sessions % 5 === 0;
+  const forceLock = skipData.count >= 3 || isLongBreakNext;
+
   return (
     <TimerContext.Provider value={value}>
       {children}
@@ -561,7 +568,11 @@ export function TimerProvider({ children }) {
               {t('timer.break_alert')}
             </h2>
             
-            {skipData.count >= 3 ? (
+            {isLongBreakNext ? (
+              <p className="text-sm font-mono text-slate-300 text-center leading-relaxed text-blue-400">
+                {t('timer.long_break_warn')}
+              </p>
+            ) : skipData.count >= 3 ? (
               <p className="text-sm font-mono text-slate-300 text-center leading-relaxed text-rose-400">
                 {t('timer.break_skip_warn')}
               </p>
@@ -572,7 +583,7 @@ export function TimerProvider({ children }) {
             )}
 
             <div className="flex gap-4 w-full mt-4">
-              {skipData.count < 3 && (
+              {!forceLock && (
                 <button 
                   onClick={skipBreak}
                   className="flex-1 py-3 px-4 border border-neutral-600 text-neutral-400 hover:text-white hover:border-white transition-colors uppercase font-bold text-xs"
@@ -584,7 +595,7 @@ export function TimerProvider({ children }) {
                 onClick={acceptBreak}
                 className="flex-1 py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-colors uppercase font-bold text-xs"
               >
-                {skipData.count >= 3 ? t('timer.start_lock_btn') : t('timer.start_break_btn')}
+                {forceLock ? t('timer.start_lock_btn') : t('timer.start_break_btn')}
               </button>
             </div>
           </div>
