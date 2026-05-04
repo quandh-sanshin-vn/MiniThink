@@ -71,10 +71,45 @@ export async function POST() {
             }
         }
 
+        // 3.2. Fetch Parent issues & Siblings
+        const missingParentIds = new Set();
+        myIssues.forEach(i => {
+           if (i.parentIssueId) missingParentIds.add(i.parentIssueId);
+        });
+        
+        const parentIssues = [];
+        const siblingIssues = [];
+
+        if (missingParentIds.size > 0) {
+            const parentIdArray = Array.from(missingParentIds);
+            const chunkArray = (arr, size) => arr.length ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)] : [];
+            const parentChunks = chunkArray(parentIdArray, 20);
+            
+            for (const chunk of parentChunks) {
+               // Fetch Parents
+               const parentParams = chunk.map(id => `issueId[]=${id}`).join('&');
+               const parentRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/issues?apiKey=${BACKLOG_API_KEY}&${parentParams}`);
+               const parents = await parentRes.json();
+               if (Array.isArray(parents)) {
+                   parentIssues.push(...parents);
+               }
+               
+               // Fetch Siblings
+               const siblingParams = chunk.map(id => `parentIssueId[]=${id}`).join('&');
+               const siblingRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/issues?apiKey=${BACKLOG_API_KEY}&${siblingParams}&statusId[]=1&statusId[]=2&statusId[]=3`);
+               const siblings = await siblingRes.json();
+               if (Array.isArray(siblings)) {
+                   siblingIssues.push(...siblings);
+               }
+            }
+        }
+
         // Gộp issues và lọc trùng lặp
         const allIssuesMap = new Map();
         myIssues.forEach(i => allIssuesMap.set(i.id, i));
         childIssues.forEach(i => allIssuesMap.set(i.id, i));
+        parentIssues.forEach(i => allIssuesMap.set(i.id, i));
+        siblingIssues.forEach(i => allIssuesMap.set(i.id, i));
         
         const issues = Array.from(allIssuesMap.values());
         totalIssues += issues.length;

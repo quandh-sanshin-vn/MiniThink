@@ -6,7 +6,19 @@ export async function GET() {
     const config = await prisma.integrationConfig.findFirst({
       where: { platform: 'BACKLOG' }
     });
-    return NextResponse.json(config || {});
+    
+    let currentUserName = null;
+    if (config && config.domain && config.apiKey) {
+       try {
+         const userRes = await fetch(`https://${config.domain}/api/v2/users/myself?apiKey=${config.apiKey}`);
+         if (userRes.ok) {
+            const user = await userRes.json();
+            currentUserName = user.name;
+         }
+       } catch (e) {}
+    }
+
+    return NextResponse.json({ ...(config || {}), currentUserName });
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

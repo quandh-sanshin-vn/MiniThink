@@ -57,18 +57,19 @@ const SelectDropdown = ({ value, options, onChange, placeholder, className = "" 
   );
 };
 
-const TaskItem = ({ task, depth = 0, onQaClick }) => {
+const TaskItem = ({ task, depth = 0, onQaClick, currentUserName }) => {
   const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
+  const isMyTask = currentUserName && task.assigneeName === currentUserName;
   
   return (
     <div className={`flex flex-col gap-2 ${depth > 0 ? 'ml-6 border-l-2 border-neutral-800 pl-4 mt-2' : ''}`}>
       <div className={`
         relative overflow-hidden cursor-pointer
-        border ${depth > 0 ? 'border-neutral-800/50 bg-[#061224]/30' : 'border-blue-500/30 bg-[#061224]'}
+        border ${depth > 0 ? 'border-neutral-800/50 bg-[#061224]/30' : (isMyTask ? 'border-emerald-500/50 bg-[#061224]' : 'border-blue-500/30 bg-[#061224]')}
         p-4 group hover:border-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] 
         transition-all duration-300 transform hover:-translate-y-0.5
         flex flex-col md:flex-row justify-between items-start md:items-center gap-4
-        bg-[#061224] hover:border-blue-400
+        bg-[#061224] ${isMyTask ? 'hover:border-emerald-400' : 'hover:border-blue-400'}
       `}>
         {/* Glow effect on hover */}
         <div className="absolute inset-0 bg-blue-500/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
@@ -100,8 +101,8 @@ const TaskItem = ({ task, depth = 0, onQaClick }) => {
         </div>
         
         {task.assigneeName && (
-           <div className="relative z-10 text-[10px] text-neutral-500 flex items-center gap-1 uppercase border border-neutral-200 border-neutral-800 px-2 py-1 bg-neutral-50 bg-neutral-900/50">
-             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+           <div className={`relative z-10 text-[10px] flex items-center gap-1 uppercase border px-2 py-1 ${isMyTask ? 'text-emerald-400 border-emerald-500/50 bg-emerald-500/10 font-bold' : 'text-neutral-500 border-neutral-200 border-neutral-800 bg-neutral-50 bg-neutral-900/50'}`}>
+             <span className={`w-1.5 h-1.5 rounded-full ${isMyTask ? 'bg-emerald-400 animate-pulse' : 'bg-neutral-500'}`}></span>
              {task.assigneeName}
            </div>
         )}
@@ -117,7 +118,7 @@ const TaskItem = ({ task, depth = 0, onQaClick }) => {
       {task.children && task.children.length > 0 && (
         <div className="flex flex-col gap-2">
            {task.children.map(child => (
-             <TaskItem key={child.id} task={child} depth={depth + 1} onQaClick={onQaClick} />
+             <TaskItem key={child.id} task={child} depth={depth + 1} onQaClick={onQaClick} currentUserName={currentUserName} />
            ))}
         </div>
       )}
@@ -145,6 +146,7 @@ export default function TodoListPage() {
   const [qaForm, setQaForm] = useState({ featureName: '', shortDesc: '', assigneeId: '' });
   const [qaMembers, setQaMembers] = useState([]);
   const [isCreatingQa, setIsCreatingQa] = useState(false);
+  const [currentUserName, setCurrentUserName] = useState('');
 
   // Filters
   const [searchQuery, setSearchQuery] = useState('');
@@ -200,6 +202,9 @@ export default function TodoListPage() {
         const conf = await res.json();
         if (conf.domain) {
           setConfigData({ domain: conf.domain, apiKey: conf.apiKey });
+        }
+        if (conf.currentUserName) {
+          setCurrentUserName(conf.currentUserName);
         }
       }
     } catch (e) { }
@@ -261,8 +266,16 @@ export default function TodoListPage() {
   };
 
   const handleOpenQaModal = async (task) => {
-    setQaTaskInfo(task);
-    setQaForm({ featureName: task.title, shortDesc: '', assigneeId: '' });
+    let targetTask = task;
+    if (task.parentIssueId) {
+      const parentTask = tasks.find(t => t.externalId === task.parentIssueId);
+      if (parentTask) {
+        targetTask = parentTask;
+      }
+    }
+    
+    setQaTaskInfo(targetTask);
+    setQaForm({ featureName: targetTask.title, shortDesc: '', assigneeId: '' });
     setShowQaModal(true);
     setQaMembers([]);
     
@@ -462,7 +475,7 @@ export default function TodoListPage() {
 
           <div className="flex flex-col gap-3">
             {taskTree.map(task => (
-              <TaskItem key={task.id} task={task} onQaClick={handleOpenQaModal} />
+              <TaskItem key={task.id} task={task} onQaClick={handleOpenQaModal} currentUserName={currentUserName} />
             ))}
 
             {taskTree.length === 0 && (
