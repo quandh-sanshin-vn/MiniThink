@@ -667,42 +667,42 @@ export default function TodoListPage() {
                 <X size={20} />
               </button>
               <h2 className="text-xl font-bold text-blue-400 mb-6 uppercase flex items-center gap-2">
-                [ QUICK QA SHELL ]
+                {t('todo.qa.title')}
               </h2>
               <div className="text-xs text-neutral-500 mb-4 bg-blue-500/10 border-l-2 border-blue-500 p-2">
-                Tạo nhanh sub-task QA cho: <span className="font-bold text-blue-400">{qaTaskInfo.id}</span>
+                {t('todo.qa.subtitle')} <span className="font-bold text-blue-400">{qaTaskInfo.id}</span>
               </div>
 
               <form onSubmit={handleCreateQaSubmit} className="flex flex-col gap-4">
                 <div>
-                  <label className="block text-xs uppercase text-neutral-500 mb-1">Tên Feature</label>
-                  <input required type="text" value={qaForm.featureName} onChange={e => setQaForm({ ...qaForm, featureName: e.target.value })} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder="VD: Login Form" />
+                  <label className="block text-xs uppercase text-neutral-500 mb-1">{t('todo.qa.feature')}</label>
+                  <input required type="text" value={qaForm.featureName} onChange={e => setQaForm({ ...qaForm, featureName: e.target.value })} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder={t('todo.qa.ph_feature')} />
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase text-neutral-500 mb-1">Mô tả tóm tắt (Issue)</label>
-                  <input required type="text" value={qaForm.shortDesc} onChange={e => setQaForm({ ...qaForm, shortDesc: e.target.value })} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder="VD: Lỗi hiển thị nút bấm" />
+                  <label className="block text-xs uppercase text-neutral-500 mb-1">{t('todo.qa.issue')}</label>
+                  <input required type="text" value={qaForm.shortDesc} onChange={e => setQaForm({ ...qaForm, shortDesc: e.target.value })} className="w-full bg-black border border-neutral-800 p-2 text-sm text-slate-300 focus:outline-none focus:border-blue-500" placeholder={t('todo.qa.ph_issue')} />
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase text-neutral-500 mb-1">Assignee</label>
+                  <label className="block text-xs uppercase text-neutral-500 mb-1">{t('todo.qa.assignee')}</label>
                   <SelectDropdown
                     value={qaForm.assigneeId}
                     onChange={val => setQaForm({ ...qaForm, assigneeId: val })}
                     options={[
-                      { value: '', label: 'UNASSIGNED' },
+                      { value: '', label: t('todo.qa.unassigned') },
                       ...qaMembers.map(m => ({ value: m.id.toString(), label: m.name }))
                     ]}
-                    placeholder={qaMembers.length > 0 ? "Chọn người phụ trách" : "Đang tải..."}
+                    placeholder={qaMembers.length > 0 ? t('todo.qa.select_assignee') : t('todo.qa.loading')}
                   />
                 </div>
 
                 <div className="flex gap-4 mt-4">
                   <button type="button" onClick={() => setShowQaModal(false)} className="flex-1 border border-neutral-800 text-neutral-500 p-3 text-xs font-bold uppercase hover:bg-neutral-900 transition-colors">
-                    [ CANCEL ]
+                    {t('todo.qa.cancel')}
                   </button>
                   <button disabled={isCreatingQa} type="submit" className="flex-1 bg-blue-600 hover:bg-blue-500 text-white p-3 text-xs font-bold uppercase transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
-                    {isCreatingQa ? <span className="animate-pulse">PROCESSING...</span> : '[ INITIATE QA ]'}
+                    {isCreatingQa ? <span className="animate-pulse">{t('todo.qa.processing')}</span> : t('todo.qa.initiate')}
                   </button>
                 </div>
               </form>

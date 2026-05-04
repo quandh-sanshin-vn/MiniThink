@@ -156,7 +156,20 @@ export const dictionaries = {
     'todo.config.platform': 'Nền tảng (Platform)',
     'todo.config.domain': 'Tên miền (vd: sanshinbts.backlog.com)',
     'todo.config.api_key': 'Khóa API (API Key)',
-    'todo.config.save_sync': 'LƯU & ĐỒNG BỘ TOÀN BỘ'
+    'todo.config.save_sync': 'LƯU & ĐỒNG BỘ TOÀN BỘ',
+    'todo.qa.title': '[ QUICK QA SHELL ]',
+    'todo.qa.subtitle': 'Tạo nhanh sub-task QA cho:',
+    'todo.qa.feature': 'Tên Feature',
+    'todo.qa.issue': 'Mô tả tóm tắt (Issue)',
+    'todo.qa.assignee': 'Assignee',
+    'todo.qa.unassigned': 'UNASSIGNED',
+    'todo.qa.select_assignee': 'Chọn người phụ trách',
+    'todo.qa.loading': 'Đang tải...',
+    'todo.qa.cancel': '[ CANCEL ]',
+    'todo.qa.initiate': '[ INITIATE QA ]',
+    'todo.qa.processing': 'PROCESSING...',
+    'todo.qa.ph_feature': 'VD: Login Form',
+    'todo.qa.ph_issue': 'VD: Lỗi hiển thị nút bấm'
   },
   en: {
     // Layout
@@ -315,7 +328,20 @@ export const dictionaries = {
     'todo.config.platform': 'Platform',
     'todo.config.domain': 'Domain (ex: sanshinbts.backlog.com)',
     'todo.config.api_key': 'API Key',
-    'todo.config.save_sync': 'SAVE & FULL SYNC'
+    'todo.config.save_sync': 'SAVE & FULL SYNC',
+    'todo.qa.title': '[ QUICK QA SHELL ]',
+    'todo.qa.subtitle': 'Quick create QA sub-task for:',
+    'todo.qa.feature': 'Feature Name',
+    'todo.qa.issue': 'Issue Description',
+    'todo.qa.assignee': 'Assignee',
+    'todo.qa.unassigned': 'UNASSIGNED',
+    'todo.qa.select_assignee': 'Select assignee',
+    'todo.qa.loading': 'Loading...',
+    'todo.qa.cancel': '[ CANCEL ]',
+    'todo.qa.initiate': '[ INITIATE QA ]',
+    'todo.qa.processing': 'PROCESSING...',
+    'todo.qa.ph_feature': 'Ex: Login Form',
+    'todo.qa.ph_issue': 'Ex: Button display error'
   },
   ja: {
     // Layout
@@ -474,6 +500,19 @@ export const dictionaries = {
     'todo.config.platform': 'プラットフォーム',
     'todo.config.domain': 'ドメイン (例: sanshinbts.backlog.com)',
     'todo.config.api_key': 'APIキー',
-    'todo.config.save_sync': '保存してフル同期'
+    'todo.config.save_sync': '保存してフル同期',
+    'todo.qa.title': '[ QUICK QA SHELL ]',
+    'todo.qa.subtitle': 'QAサブタスクのクイック作成:',
+    'todo.qa.feature': '機能名',
+    'todo.qa.issue': '問題の概要',
+    'todo.qa.assignee': '担当者',
+    'todo.qa.unassigned': '未割り当て',
+    'todo.qa.select_assignee': '担当者を選択',
+    'todo.qa.loading': '読み込み中...',
+    'todo.qa.cancel': '[ キャンセル ]',
+    'todo.qa.initiate': '[ QA作成開始 ]',
+    'todo.qa.processing': '処理中...',
+    'todo.qa.ph_feature': '例: ログインフォーム',
+    'todo.qa.ph_issue': '例: ボタン表示エラー'
   }
 };
