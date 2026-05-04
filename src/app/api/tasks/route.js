@@ -25,7 +25,10 @@ export async function GET() {
       source: 'BACKLOG',
       url: t.url,
       projectName: t.project?.name,
-      domain: t.config?.domain
+      domain: t.config?.domain,
+      parentIssueId: t.parentIssueId,
+      externalId: t.externalId,
+      assigneeName: t.assigneeName
     }));
 
     return NextResponse.json({ tasks: formattedTasks });

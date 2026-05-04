@@ -236,6 +236,7 @@ model SyncTask {
   // Extra data from backlog payload
   issueType      String?
   assigneeName   String?
+  parentIssueId  String?
   
   lastSyncedAt   DateTime @default(now()) // Thời điểm pull data cuối cùng
   createdAt      DateTime @default(now())

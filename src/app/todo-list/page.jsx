@@ -12,6 +12,68 @@ const PRIORITIES = [
   { id: 'P3', label: 'LOW', color: 'text-neutral-500', bg: 'bg-neutral-800', border: 'border-neutral-700' },
 ];
 
+const TaskItem = ({ task, depth = 0 }) => {
+  const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
+  
+  return (
+    <div className={`flex flex-col gap-2 ${depth > 0 ? 'ml-6 border-l-2 border-neutral-800 pl-4 mt-2' : ''}`}>
+      <div className={`
+        relative overflow-hidden cursor-pointer
+        border ${depth > 0 ? 'border-neutral-800/50 bg-[#061224]/30' : 'border-blue-500/30 bg-[#061224]'}
+        p-4 group hover:border-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] 
+        transition-all duration-300 transform hover:-translate-y-0.5
+        flex flex-col md:flex-row justify-between items-start md:items-center gap-4
+        dark:bg-[#061224] dark:hover:border-blue-400 bg-white hover:border-blue-500
+      `}>
+        {/* Glow effect on hover */}
+        <div className="absolute inset-0 bg-blue-500/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+
+        <div className="relative z-10 flex-1 flex flex-col gap-2 w-full">
+          <div className="flex gap-2 items-center flex-wrap">
+            <a href={task.url} target="_blank" rel="noopener noreferrer" 
+               className="text-[10px] text-blue-500 dark:text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-1 font-bold">
+              {task.id} <ExternalLink size={10} />
+            </a>
+            <span className={`text-[10px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold`}>
+              {priority.id}
+            </span>
+            <span className="text-[10px] text-neutral-600 dark:text-neutral-500 border border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px]" title={task.projectName}>
+              {task.projectName || task.module}
+            </span>
+            <span className={`text-[10px] px-1.5 py-0.5 uppercase border border-neutral-300 dark:border-neutral-700 ${task.status === 'DONE' ? 'text-emerald-600 dark:text-emerald-500 border-emerald-500/30 bg-emerald-500/10' : 'text-neutral-500 dark:text-neutral-400'}`}>
+              {task.status}
+            </span>
+            {task.issueType && (
+              <span className="text-[10px] text-purple-600 dark:text-purple-400 border border-purple-500/30 px-1.5 py-0.5 uppercase">
+                {task.issueType}
+              </span>
+            )}
+          </div>
+          <p className={`text-sm transition-colors ${task.status === 'DONE' ? 'text-neutral-400 dark:text-neutral-500 line-through' : 'text-slate-800 dark:text-blue-100 group-hover:text-blue-600 dark:group-hover:text-blue-300'}`}>
+            {task.title}
+          </p>
+        </div>
+        
+        {task.assigneeName && (
+           <div className="relative z-10 text-[10px] text-neutral-500 flex items-center gap-1 uppercase border border-neutral-200 dark:border-neutral-800 px-2 py-1 bg-neutral-50 dark:bg-neutral-900/50">
+             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+             {task.assigneeName}
+           </div>
+        )}
+      </div>
+      
+      {/* Đệ quy render các task con */}
+      {task.children && task.children.length > 0 && (
+        <div className="flex flex-col gap-2">
+           {task.children.map(child => (
+             <TaskItem key={child.id} task={child} depth={depth + 1} />
+           ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default function TodoListPage() {
   const { t } = useLanguage();
   const [tasks, setTasks] = useState([]);
@@ -138,33 +200,45 @@ export default function TodoListPage() {
 
   // Lọc task
   const filteredTasks = tasks.filter(task => {
-    // Lọc theo Workspace (domain)
     const matchesWorkspace = activeWorkspace === 'ALL' || task.domain === activeWorkspace;
-
-    // Lọc theo search (ID hoặc title)
     const matchesSearch = searchQuery === '' || 
       task.id.toLowerCase().includes(searchQuery.toLowerCase()) || 
       task.title.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    // Lọc theo Project
     const matchesProject = filterProject === 'ALL' || task.module === filterProject;
-    
-    // Lọc theo Status
     const matchesStatus = filterStatus === 'ALL' || task.status === filterStatus;
 
     return matchesWorkspace && matchesSearch && matchesProject && matchesStatus;
   });
 
-  // Tạo danh sách project dùng cho filter dropdown (chỉ hiện project của workspace hiện tại)
+  // Build tree from filtered tasks
+  const buildTree = (taskList) => {
+    const map = {};
+    const roots = [];
+    taskList.forEach(t => map[t.externalId] = { ...t, children: [] });
+    
+    taskList.forEach(t => {
+      // Nếu task có parent và parent cũng nằm trong danh sách đang được render
+      if (t.parentIssueId && map[t.parentIssueId]) {
+        map[t.parentIssueId].children.push(map[t.externalId]);
+      } else {
+        roots.push(map[t.externalId]);
+      }
+    });
+    return roots;
+  };
+
+  const taskTree = buildTree(filteredTasks);
+
+  // Tạo danh sách project dùng cho filter dropdown
   const allProjectsList = activeWorkspace === 'ALL' 
       ? Object.values(workspaces).flat() 
       : (workspaces[activeWorkspace] || []);
 
-  if (!isLoaded) return <div className="min-h-screen bg-[#09090b] flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
+  if (!isLoaded) return <div className="min-h-screen dark:bg-[#09090b] bg-slate-50 flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col">
-      <div className="flex flex-col md:flex-row justify-between md:items-center bg-black border-b border-neutral-800 pr-4">
+    <div className="min-h-screen dark:bg-[#09090b] bg-slate-50 text-slate-800 dark:text-slate-300 font-mono flex flex-col">
+      <div className="flex flex-col md:flex-row justify-between md:items-center dark:bg-black bg-white border-b dark:border-neutral-800 border-neutral-200 pr-4">
          <ModuleHeader title={t('todo.title')} />
          
          {/* WORKSPACE INDICATOR IN HEADER */}
@@ -238,26 +312,26 @@ export default function TodoListPage() {
         </div>
 
         {/* BOARD (SINGLE LIST) */}
-        <div className="flex-1 overflow-y-auto bg-black border border-neutral-800 p-4 relative">
-          <div className="flex justify-between items-center mb-6 sticky top-0 bg-black py-2 z-10 border-b border-neutral-800">
-            <h2 className="text-xl font-bold tracking-widest text-slate-300 flex items-center gap-2">
+        <div className="flex-1 overflow-y-auto dark:bg-black bg-white border dark:border-neutral-800 border-neutral-200 p-4 relative">
+          <div className="flex justify-between items-center mb-6 sticky top-0 dark:bg-black bg-white py-2 z-20 border-b dark:border-neutral-800 border-neutral-200">
+            <h2 className="text-xl font-bold tracking-widest dark:text-slate-300 text-slate-800 flex items-center gap-2">
               <Terminal size={20} className="text-emerald-500" /> TASK_QUEUE
-              <span className="text-xs bg-neutral-900 text-neutral-500 px-2 py-0.5 font-normal ml-2">{filteredTasks.length}</span>
+              <span className="text-xs dark:bg-neutral-900 bg-neutral-100 text-neutral-500 px-2 py-0.5 font-normal ml-2">{filteredTasks.length}</span>
             </h2>
             <div className="flex gap-4 items-center">
-              {isSyncing && <span className="text-xs text-blue-400 animate-pulse uppercase tracking-widest hidden md:inline">[SYNCING_CLOUD...]</span>}
+              {isSyncing && <span className="text-xs text-blue-500 animate-pulse uppercase tracking-widest hidden md:inline">[SYNCING_CLOUD...]</span>}
               {syncError && <span className="text-xs text-rose-500 uppercase tracking-widest">[{syncError}]</span>}
               <button
                 onClick={syncBacklogTasks}
                 disabled={isSyncing}
-                className="text-neutral-500 hover:text-blue-400 transition-colors p-1"
+                className="text-neutral-400 hover:text-blue-500 transition-colors p-1"
                 title="Force Cloud Sync"
               >
-                <RefreshCw size={16} className={isSyncing ? "animate-spin text-blue-400" : ""} />
+                <RefreshCw size={16} className={isSyncing ? "animate-spin text-blue-500" : ""} />
               </button>
               <button
                 onClick={() => setShowConfig(true)}
-                className="text-neutral-500 hover:text-blue-400 transition-colors p-1 flex items-center gap-2"
+                className="text-neutral-400 hover:text-blue-500 transition-colors p-1 flex items-center gap-2"
                 title="System Config"
               >
                 <Settings size={16} /> <span className="text-xs uppercase hidden sm:inline">SYS_CONFIG</span>
@@ -266,37 +340,12 @@ export default function TodoListPage() {
           </div>
 
           <div className="flex flex-col gap-3">
-            {filteredTasks.map(task => {
-              const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
+            {taskTree.map(task => (
+              <TaskItem key={task.id} task={task} />
+            ))}
 
-              return (
-                <div key={task.id} className="border border-blue-500/30 bg-[#061224] p-4 group hover:border-blue-400/60 transition-colors flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-
-                  <div className="flex-1 flex flex-col gap-2 w-full">
-                    <div className="flex gap-2 items-center flex-wrap">
-                      <a href={task.url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500/20 transition-colors flex items-center gap-1 font-bold">
-                        {task.id} <ExternalLink size={10} />
-                      </a>
-                      <span className={`text-[10px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold`}>
-                        {priority.id}
-                      </span>
-                      <span className="text-[10px] text-neutral-500 border border-neutral-800 bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px]" title={task.projectName}>
-                        {task.projectName || task.module}
-                      </span>
-                      <span className={`text-[10px] px-1.5 py-0.5 uppercase border border-neutral-700 ${task.status === 'DONE' ? 'text-emerald-500 border-emerald-500/30' : 'text-neutral-400'}`}>
-                        {task.status}
-                      </span>
-                    </div>
-                    <p className={`text-sm ${task.status === 'DONE' ? 'text-neutral-500 line-through' : 'text-blue-100'}`}>
-                      {task.title}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-
-            {filteredTasks.length === 0 && (
-              <div className="text-center flex flex-col items-center justify-center text-neutral-700 text-xs py-16 uppercase tracking-widest border border-dashed border-neutral-800 gap-4">
+            {taskTree.length === 0 && (
+              <div className="text-center flex flex-col items-center justify-center text-neutral-400 text-xs py-16 uppercase tracking-widest border border-dashed dark:border-neutral-800 border-neutral-300 gap-4">
                 <Terminal size={32} className="opacity-20" />
                 <p>{t('todo.empty_status') || 'NO TASKS IN QUEUE. SYNC BACKLOG OR CREATE NEW TASK.'}</p>
               </div>

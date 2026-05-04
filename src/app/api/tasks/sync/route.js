@@ -40,12 +40,36 @@ export async function POST() {
            }
         }
 
-        // 3. Fetch issue
+        // 3. Fetch issue của mình
         const issuesRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/issues?apiKey=${BACKLOG_API_KEY}&assigneeId[]=${userData.id}&statusId[]=1&statusId[]=2&statusId[]=3`);
-        const issues = await issuesRes.json();
+        const myIssues = await issuesRes.json();
 
-        if (!Array.isArray(issues)) continue;
+        if (!Array.isArray(myIssues)) continue;
 
+        // 3.1. Fetch sub-tasks (các issue con)
+        const myIssueIds = myIssues.map(i => i.id);
+        const childIssues = [];
+        if (myIssueIds.length > 0) {
+            // Chia nhỏ mảng để url không quá dài (tối đa 20 id một lần)
+            const chunkArray = (arr, size) => arr.length ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)] : [];
+            const chunks = chunkArray(myIssueIds, 20);
+            
+            for (const chunk of chunks) {
+               const params = chunk.map(id => `parentIssueId[]=${id}`).join('&');
+               const childRes = await fetch(`https://${BACKLOG_DOMAIN}/api/v2/issues?apiKey=${BACKLOG_API_KEY}&${params}&statusId[]=1&statusId[]=2&statusId[]=3`);
+               const children = await childRes.json();
+               if (Array.isArray(children)) {
+                   childIssues.push(...children);
+               }
+            }
+        }
+
+        // Gộp issues và lọc trùng lặp
+        const allIssuesMap = new Map();
+        myIssues.forEach(i => allIssuesMap.set(i.id, i));
+        childIssues.forEach(i => allIssuesMap.set(i.id, i));
+        
+        const issues = Array.from(allIssuesMap.values());
         totalIssues += issues.length;
 
         // Map project
@@ -78,6 +102,7 @@ export async function POST() {
             url: `https://${BACKLOG_DOMAIN}/view/${issue.issueKey}`,
             issueType: issue.issueType ? issue.issueType.name : null,
             assigneeName: issue.assignee ? issue.assignee.name : null,
+            parentIssueId: issue.parentIssueId ? issue.parentIssueId.toString() : null,
             lastSyncedAt: new Date()
           };
 
