@@ -23,9 +23,14 @@ export default function TodoListPage() {
   // Modals
   const [showConfig, setShowConfig] = useState(false);
   const [configData, setConfigData] = useState({ domain: '', apiKey: '' });
-  
+
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [newTask, setNewTask] = useState({ title: '', description: '', priority: 'P2', projectKey: '', domain: '' });
+
+  // Filters
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterProject, setFilterProject] = useState('ALL');
+  const [filterStatus, setFilterStatus] = useState('ALL');
 
   useEffect(() => {
     fetchInitialData();
@@ -60,7 +65,7 @@ export default function TodoListPage() {
         const data = await res.json();
         setWorkspaces(data.workspaces || {});
       }
-    } catch (e) {}
+    } catch (e) { }
   };
 
   const fetchConfig = async () => {
@@ -69,10 +74,10 @@ export default function TodoListPage() {
       if (res.ok) {
         const conf = await res.json();
         if (conf.domain) {
-           setConfigData({ domain: conf.domain, apiKey: conf.apiKey });
+          setConfigData({ domain: conf.domain, apiKey: conf.apiKey });
         }
       }
-    } catch (e) {}
+    } catch (e) { }
   };
 
   const syncBacklogTasks = async () => {
@@ -130,48 +135,101 @@ export default function TodoListPage() {
     setShowCreateModal(true);
   };
 
+  // Lọc task
+  const filteredTasks = tasks.filter(task => {
+    // Lọc theo search (ID hoặc title)
+    const matchesSearch = searchQuery === '' || 
+      task.id.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      task.title.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    // Lọc theo Project
+    const matchesProject = filterProject === 'ALL' || task.module === filterProject;
+    
+    // Lọc theo Status
+    const matchesStatus = filterStatus === 'ALL' || task.status === filterStatus;
+
+    return matchesSearch && matchesProject && matchesStatus;
+  });
+
+  // Tạo danh sách project dùng cho filter dropdown
+  const allProjectsList = Object.values(workspaces).flat();
+
   if (!isLoaded) return <div className="min-h-screen bg-[#09090b] flex items-center justify-center font-mono text-emerald-500 animate-pulse">BOOTING TERMINAL...</div>;
 
   return (
     <div className="min-h-screen bg-[#09090b] text-slate-300 font-mono flex flex-col">
-      <ModuleHeader title={t('todo.title')} />
-      
+      <div className="flex flex-col md:flex-row justify-between md:items-center bg-black border-b border-neutral-800 pr-4">
+         <ModuleHeader title={t('todo.title')} />
+         
+         {/* WORKSPACE INDICATOR IN HEADER */}
+         {Object.keys(workspaces).length > 0 && (
+           <div className="flex gap-4 text-xs pb-4 md:pb-0 px-4 md:px-0">
+             <span className="text-neutral-500 uppercase tracking-widest flex items-center gap-1 hidden md:flex">
+               <FolderSync size={14} /> CONNECTED:
+             </span>
+             {Object.keys(workspaces).map(ws => (
+               <span key={ws} className="text-blue-400 border-b border-blue-500/30 pb-0.5">{ws}</span>
+             ))}
+           </div>
+         )}
+      </div>
+
       <div className="flex-1 p-4 lg:p-8 flex flex-col">
-        <div className="mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <p className="text-xs text-neutral-500 uppercase tracking-widest border-l-2 border-emerald-500 pl-3">
-            {t('todo.subtitle')}
-          </p>
-          <button 
+        {/* ACTION BAR */}
+        <div className="mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 bg-black border border-neutral-800 p-4">
+          
+          {/* Filters */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+            <input 
+              type="text"
+              placeholder="Search ID, Title..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-48 placeholder:text-neutral-600"
+            />
+            
+            <select 
+              value={filterProject}
+              onChange={e => setFilterProject(e.target.value)}
+              className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-40 uppercase"
+            >
+              <option value="ALL">ALL PROJECTS</option>
+              {allProjectsList.map(p => (
+                <option key={p.key} value={p.key}>[{p.key}]</option>
+              ))}
+            </select>
+
+            <select 
+              value={filterStatus}
+              onChange={e => setFilterStatus(e.target.value)}
+              className="bg-neutral-900 border border-neutral-800 p-2 px-3 text-xs text-slate-300 focus:outline-none focus:border-blue-500 font-mono w-full sm:w-40 uppercase"
+            >
+              <option value="ALL">ALL STATUSES</option>
+              <option value="TODO">TODO</option>
+              <option value="IN_PROGRESS">IN_PROGRESS</option>
+              <option value="DONE">DONE</option>
+            </select>
+          </div>
+
+          <button
             onClick={openCreateModal}
-            className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 p-2 px-6 hover:bg-emerald-500 hover:text-black transition-colors flex items-center justify-center gap-2 uppercase text-sm font-bold"
+            className="w-full lg:w-auto bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 p-2 px-6 hover:bg-emerald-500 hover:text-black transition-colors flex items-center justify-center gap-2 uppercase text-sm font-bold shrink-0"
           >
             <Plus size={16} /> NEW_TASK
           </button>
         </div>
 
-        {/* WORKSPACE INDICATOR */}
-        {Object.keys(workspaces).length > 0 && (
-          <div className="mb-4 flex gap-4 text-xs">
-             <span className="text-neutral-500 uppercase tracking-widest flex items-center gap-1">
-               <FolderSync size={14}/> CONNECTED_WORKSPACES:
-             </span>
-             {Object.keys(workspaces).map(ws => (
-                <span key={ws} className="text-blue-400 border-b border-blue-500/30 pb-0.5">{ws}</span>
-             ))}
-          </div>
-        )}
-
-      {/* BOARD (SINGLE LIST) */}
-      <div className="flex-1 overflow-y-auto bg-black border border-neutral-800 p-4 relative">
-         <div className="flex justify-between items-center mb-6 sticky top-0 bg-black py-2 z-10 border-b border-neutral-800">
+        {/* BOARD (SINGLE LIST) */}
+        <div className="flex-1 overflow-y-auto bg-black border border-neutral-800 p-4 relative">
+          <div className="flex justify-between items-center mb-6 sticky top-0 bg-black py-2 z-10 border-b border-neutral-800">
             <h2 className="text-xl font-bold tracking-widest text-slate-300 flex items-center gap-2">
-              <Terminal size={20} className="text-emerald-500"/> TASK_QUEUE
-              <span className="text-xs bg-neutral-900 text-neutral-500 px-2 py-0.5 font-normal ml-2">{tasks.length}</span>
+              <Terminal size={20} className="text-emerald-500" /> TASK_QUEUE
+              <span className="text-xs bg-neutral-900 text-neutral-500 px-2 py-0.5 font-normal ml-2">{filteredTasks.length}</span>
             </h2>
             <div className="flex gap-4 items-center">
               {isSyncing && <span className="text-xs text-blue-400 animate-pulse uppercase tracking-widest hidden md:inline">[SYNCING_CLOUD...]</span>}
               {syncError && <span className="text-xs text-rose-500 uppercase tracking-widest">[{syncError}]</span>}
-              <button 
+              <button
                 onClick={syncBacklogTasks}
                 disabled={isSyncing}
                 className="text-neutral-500 hover:text-blue-400 transition-colors p-1"
@@ -179,7 +237,7 @@ export default function TodoListPage() {
               >
                 <RefreshCw size={16} className={isSyncing ? "animate-spin text-blue-400" : ""} />
               </button>
-              <button 
+              <button
                 onClick={() => setShowConfig(true)}
                 className="text-neutral-500 hover:text-blue-400 transition-colors p-1 flex items-center gap-2"
                 title="System Config"
@@ -187,138 +245,138 @@ export default function TodoListPage() {
                 <Settings size={16} /> <span className="text-xs uppercase hidden sm:inline">SYS_CONFIG</span>
               </button>
             </div>
-         </div>
+          </div>
 
-         <div className="flex flex-col gap-3">
-            {tasks.map(task => {
+          <div className="flex flex-col gap-3">
+            {filteredTasks.map(task => {
               const priority = PRIORITIES.find(p => p.id === task.priority) || PRIORITIES[3];
-              
+
               return (
                 <div key={task.id} className="border border-blue-500/30 bg-[#061224] p-4 group hover:border-blue-400/60 transition-colors flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                  
+
                   <div className="flex-1 flex flex-col gap-2 w-full">
-                     <div className="flex gap-2 items-center flex-wrap">
-                        <a href={task.url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500/20 transition-colors flex items-center gap-1 font-bold">
-                           {task.id} <ExternalLink size={10} />
-                        </a>
-                        <span className={`text-[10px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold`}>
-                           {priority.id}
-                        </span>
-                        <span className="text-[10px] text-neutral-500 border border-neutral-800 bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px]" title={task.projectName}>
-                           {task.projectName || task.module}
-                        </span>
-                        <span className={`text-[10px] px-1.5 py-0.5 uppercase border border-neutral-700 ${task.status === 'DONE' ? 'text-emerald-500 border-emerald-500/30' : 'text-neutral-400'}`}>
-                           {task.status}
-                        </span>
-                     </div>
-                     <p className={`text-sm ${task.status === 'DONE' ? 'text-neutral-500 line-through' : 'text-blue-100'}`}>
-                        {task.title}
-                     </p>
+                    <div className="flex gap-2 items-center flex-wrap">
+                      <a href={task.url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-400 border border-blue-500/30 px-1.5 py-0.5 uppercase hover:bg-blue-500/20 transition-colors flex items-center gap-1 font-bold">
+                        {task.id} <ExternalLink size={10} />
+                      </a>
+                      <span className={`text-[10px] px-1.5 py-0.5 uppercase border ${priority.border} ${priority.color} ${priority.bg} font-bold`}>
+                        {priority.id}
+                      </span>
+                      <span className="text-[10px] text-neutral-500 border border-neutral-800 bg-black px-1.5 py-0.5 uppercase truncate max-w-[120px]" title={task.projectName}>
+                        {task.projectName || task.module}
+                      </span>
+                      <span className={`text-[10px] px-1.5 py-0.5 uppercase border border-neutral-700 ${task.status === 'DONE' ? 'text-emerald-500 border-emerald-500/30' : 'text-neutral-400'}`}>
+                        {task.status}
+                      </span>
+                    </div>
+                    <p className={`text-sm ${task.status === 'DONE' ? 'text-neutral-500 line-through' : 'text-blue-100'}`}>
+                      {task.title}
+                    </p>
                   </div>
                 </div>
               );
             })}
-            
-            {tasks.length === 0 && (
+
+            {filteredTasks.length === 0 && (
               <div className="text-center flex flex-col items-center justify-center text-neutral-700 text-xs py-16 uppercase tracking-widest border border-dashed border-neutral-800 gap-4">
                 <Terminal size={32} className="opacity-20" />
                 <p>{t('todo.empty_status') || 'NO TASKS IN QUEUE. SYNC BACKLOG OR CREATE NEW TASK.'}</p>
               </div>
             )}
-         </div>
-      </div>
+          </div>
+        </div>
 
-      {/* SYS CONFIG MODAL */}
-      {showConfig && (
-         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+        {/* SYS CONFIG MODAL */}
+        {showConfig && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
             <div className="bg-[#09090b] border border-blue-500 w-full max-w-lg p-6 shadow-2xl flex flex-col gap-6">
-               <h2 className="text-xl font-bold text-blue-500 uppercase tracking-widest border-b border-blue-500/30 pb-4 flex justify-between">
-                  <span>SYSTEM INTEGRATION CONFIG</span>
-                  <button onClick={() => setShowConfig(false)} className="text-neutral-500 hover:text-white"><X size={20}/></button>
-               </h2>
-               
-               <form onSubmit={saveConfig} className="flex flex-col gap-4">
-                  <div className="flex flex-col gap-2">
-                     <label className="text-[10px] text-neutral-500 uppercase">Platform</label>
-                     <input type="text" value="BACKLOG" disabled className="w-full bg-neutral-900 border border-neutral-800 p-3 text-sm text-neutral-500 font-mono"/>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                     <label className="text-[10px] text-blue-400 uppercase">Domain (ex: sanshinbts.backlog.com)</label>
-                     <input type="text" value={configData.domain} onChange={e => setConfigData({...configData, domain: e.target.value})} placeholder="your-space.backlog.com" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 focus:outline-none focus:border-blue-500 font-mono" required/>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                     <label className="text-[10px] text-blue-400 uppercase">API Key</label>
-                     <input type="password" value={configData.apiKey} onChange={e => setConfigData({...configData, apiKey: e.target.value})} placeholder="********************" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 focus:outline-none focus:border-blue-500 font-mono" required/>
-                  </div>
+              <h2 className="text-xl font-bold text-blue-500 uppercase tracking-widest border-b border-blue-500/30 pb-4 flex justify-between">
+                <span>SYSTEM INTEGRATION CONFIG</span>
+                <button onClick={() => setShowConfig(false)} className="text-neutral-500 hover:text-white"><X size={20} /></button>
+              </h2>
 
-                  <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
-                     <button type="submit" disabled={isSyncing} className="w-full py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
-                       {isSyncing ? <RefreshCw size={14} className="animate-spin" /> : 'SAVE & FULL SYNC'}
-                     </button>
-                  </div>
-               </form>
+              <form onSubmit={saveConfig} className="flex flex-col gap-4">
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] text-neutral-500 uppercase">Platform</label>
+                  <input type="text" value="BACKLOG" disabled className="w-full bg-neutral-900 border border-neutral-800 p-3 text-sm text-neutral-500 font-mono" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] text-blue-400 uppercase">Domain (ex: sanshinbts.backlog.com)</label>
+                  <input type="text" value={configData.domain} onChange={e => setConfigData({ ...configData, domain: e.target.value })} placeholder="your-space.backlog.com" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 focus:outline-none focus:border-blue-500 font-mono" required />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] text-blue-400 uppercase">API Key</label>
+                  <input type="password" value={configData.apiKey} onChange={e => setConfigData({ ...configData, apiKey: e.target.value })} placeholder="********************" className="w-full bg-black border border-blue-500/50 p-3 text-sm text-blue-100 focus:outline-none focus:border-blue-500 font-mono" required />
+                </div>
+
+                <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
+                  <button type="submit" disabled={isSyncing} className="w-full py-3 px-4 bg-blue-500/10 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
+                    {isSyncing ? <RefreshCw size={14} className="animate-spin" /> : 'SAVE & FULL SYNC'}
+                  </button>
+                </div>
+              </form>
             </div>
-         </div>
-      )}
+          </div>
+        )}
 
-      {/* CREATE TASK MODAL */}
-      {showCreateModal && (
-         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+        {/* CREATE TASK MODAL */}
+        {showCreateModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
             <div className="bg-[#09090b] border border-emerald-500 w-full max-w-xl p-6 shadow-2xl flex flex-col gap-6">
-               <h2 className="text-xl font-bold text-emerald-500 uppercase tracking-widest border-b border-emerald-500/30 pb-4 flex justify-between">
-                  <span>DEPLOY NEW TASK</span>
-                  <button onClick={() => setShowCreateModal(false)} className="text-neutral-500 hover:text-white"><X size={20}/></button>
-               </h2>
-               
-               <form onSubmit={handleCreateTask} className="flex flex-col gap-4">
-                  <div className="flex flex-col gap-2">
-                     <label className="text-[10px] text-emerald-500 uppercase">Task Summary</label>
-                     <input type="text" value={newTask.title} onChange={e => setNewTask({...newTask, title: e.target.value})} placeholder="Task summary..." className="w-full bg-black border border-emerald-500/50 p-3 text-sm text-emerald-100 focus:outline-none focus:border-emerald-500 font-mono" autoFocus required/>
+              <h2 className="text-xl font-bold text-emerald-500 uppercase tracking-widest border-b border-emerald-500/30 pb-4 flex justify-between">
+                <span>DEPLOY NEW TASK</span>
+                <button onClick={() => setShowCreateModal(false)} className="text-neutral-500 hover:text-white"><X size={20} /></button>
+              </h2>
+
+              <form onSubmit={handleCreateTask} className="flex flex-col gap-4">
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] text-emerald-500 uppercase">Task Summary</label>
+                  <input type="text" value={newTask.title} onChange={e => setNewTask({ ...newTask, title: e.target.value })} placeholder="Task summary..." className="w-full bg-black border border-emerald-500/50 p-3 text-sm text-emerald-100 focus:outline-none focus:border-emerald-500 font-mono" autoFocus required />
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex flex-col gap-2 flex-1">
+                    <label className="text-[10px] text-neutral-500 uppercase">Target Workspace</label>
+                    <select
+                      value={newTask.domain}
+                      onChange={e => {
+                        const newDomain = e.target.value;
+                        const newProject = workspaces[newDomain]?.[0]?.key || '';
+                        setNewTask({ ...newTask, domain: newDomain, projectKey: newProject })
+                      }}
+                      className="w-full bg-black border border-neutral-700 p-3 text-sm text-slate-300 focus:outline-none focus:border-emerald-500 font-mono"
+                    >
+                      {Object.keys(workspaces).length === 0 && <option value="">No workspace synced</option>}
+                      {Object.keys(workspaces).map(ws => (
+                        <option key={ws} value={ws}>{ws}</option>
+                      ))}
+                    </select>
                   </div>
 
-                  <div className="flex gap-4">
-                     <div className="flex flex-col gap-2 flex-1">
-                        <label className="text-[10px] text-neutral-500 uppercase">Target Workspace</label>
-                        <select 
-                           value={newTask.domain}
-                           onChange={e => {
-                              const newDomain = e.target.value;
-                              const newProject = workspaces[newDomain]?.[0]?.key || '';
-                              setNewTask({...newTask, domain: newDomain, projectKey: newProject})
-                           }}
-                           className="w-full bg-black border border-neutral-700 p-3 text-sm text-slate-300 focus:outline-none focus:border-emerald-500 font-mono"
-                        >
-                           {Object.keys(workspaces).length === 0 && <option value="">No workspace synced</option>}
-                           {Object.keys(workspaces).map(ws => (
-                              <option key={ws} value={ws}>{ws}</option>
-                           ))}
-                        </select>
-                     </div>
-
-                     <div className="flex flex-col gap-2 flex-1">
-                        <label className="text-[10px] text-neutral-500 uppercase">Target Project</label>
-                        <select 
-                           value={newTask.projectKey}
-                           onChange={e => setNewTask({...newTask, projectKey: e.target.value})}
-                           className="w-full bg-black border border-neutral-700 p-3 text-sm text-slate-300 focus:outline-none focus:border-emerald-500 font-mono"
-                        >
-                           {(!workspaces[newTask.domain] || workspaces[newTask.domain].length === 0) && <option value="">No projects found</option>}
-                           {workspaces[newTask.domain]?.map(p => (
-                              <option key={p.key} value={p.key}>[{p.key}] {p.name}</option>
-                           ))}
-                        </select>
-                     </div>
+                  <div className="flex flex-col gap-2 flex-1">
+                    <label className="text-[10px] text-neutral-500 uppercase">Target Project</label>
+                    <select
+                      value={newTask.projectKey}
+                      onChange={e => setNewTask({ ...newTask, projectKey: e.target.value })}
+                      className="w-full bg-black border border-neutral-700 p-3 text-sm text-slate-300 focus:outline-none focus:border-emerald-500 font-mono"
+                    >
+                      {(!workspaces[newTask.domain] || workspaces[newTask.domain].length === 0) && <option value="">No projects found</option>}
+                      {workspaces[newTask.domain]?.map(p => (
+                        <option key={p.key} value={p.key}>[{p.key}] {p.name}</option>
+                      ))}
+                    </select>
                   </div>
+                </div>
 
-                  <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
-                     <button type="submit" className="w-full py-3 px-4 bg-emerald-500/10 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
-                       <Plus size={14} /> DEPLOY TASK TO CLOUD
-                     </button>
-                  </div>
-               </form>
+                <div className="flex gap-4 mt-4 pt-4 border-t border-neutral-800">
+                  <button type="submit" className="w-full py-3 px-4 bg-emerald-500/10 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-black transition-colors uppercase font-bold text-xs flex justify-center items-center gap-2">
+                    <Plus size={14} /> DEPLOY TASK TO CLOUD
+                  </button>
+                </div>
+              </form>
             </div>
-         </div>
-      )}
+          </div>
+        )}
 
       </div>
     </div>
